@@ -41,7 +41,8 @@
         "list": "cpp",
         "atomic": "cpp",
         "compare": "cpp",
-        "iterator": "cpp"
+        "iterator": "cpp",
+        "queue": "cpp"
     },
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4}",
     "editor.fontSize": 14.5,
