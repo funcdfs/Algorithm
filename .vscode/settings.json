@@ -42,7 +42,12 @@
         "atomic": "cpp",
         "compare": "cpp",
         "iterator": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "bit": "cpp",
+        "cctype": "cpp",
+        "clocale": "cpp",
+        "ctime": "cpp",
+        "deque": "cpp"
     },
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4}",
     "editor.fontSize": 14.5,
