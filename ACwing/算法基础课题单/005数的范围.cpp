@@ -18,7 +18,7 @@ int main() {
                 r = mid;
             else
                 l = mid + 1;
-        }
+        } // 区间向左移动
 
         if (q[l] != x)
             cout << "-1 -1" << endl;
