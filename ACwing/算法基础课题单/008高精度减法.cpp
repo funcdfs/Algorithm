@@ -16,15 +16,14 @@ vector<int> sub(vector<int> &A, vector<int> &B) {
     vector<int> C;
     for (int i = 0, t = 0; i < A.size(); i++) {
         t = A[i] - t;
-        if (i < B.size()) t -= B[i];
+        if (i < B.size()) 
+            t -= B[i]; // 
         C.push_back((t + 10) % 10);
-        if (t < 0)
-            t = 1;
-        else
-            t = 0;
-    }
 
-    while (C.size() > 1 && C.back() == 0) C.pop_back();
+        if (t < 0) t = 1; // 判断要不要借位
+        else t = 0;
+    }
+    while (C.size() > 1 && C.back() == 0) C.pop_back(); // 去除前导零 
     return C;
 }
 
@@ -36,6 +35,7 @@ int mian() {
     for (int i = b.size() - 1; i >= 0; i--) B.push_back(b[i] - '0');
 
     vector<int> C;
+    
     if (cmp(A, B))
         C = sub(A, B);
     else {
