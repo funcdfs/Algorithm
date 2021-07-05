@@ -31,3 +31,5 @@ int main (){
     printf("%lld", merge_sort(q, 0, n - 1));
     return 0;
 }
+
+// https://www.acwing.com/activity/content/code/content/1396468/

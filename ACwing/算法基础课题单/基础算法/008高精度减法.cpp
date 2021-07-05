@@ -45,3 +45,5 @@ int mian() {
     for (int i = C.size() - 1; i >= 0; i--) cout << C.at(i);
     return 0;
 }
+
+// https:  // www.acwing.com/activity/content/code/content/1403159/

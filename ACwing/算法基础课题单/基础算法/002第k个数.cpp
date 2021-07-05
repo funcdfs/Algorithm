@@ -27,3 +27,5 @@ int main() {
     printf("%d", q[k - 1]);
     return 0;
 }
+
+// https://www.acwing.com/activity/content/code/content/1394265/

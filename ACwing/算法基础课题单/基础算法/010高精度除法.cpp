@@ -27,3 +27,5 @@ int main() {
     for (int i = C.size() - 1; i >= 0; i--) printf("%d", C[i]);
     cout << endl << r << endl;
 }
+
+// https:  // www.acwing.com/activity/content/code/content/1403265/

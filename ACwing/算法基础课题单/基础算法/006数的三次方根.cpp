@@ -14,3 +14,5 @@ int main() {
     }
     printf("%.6lf", l);
 }
+
+// https://www.acwing.com/activity/content/code/content/1403022/
