@@ -4,11 +4,9 @@
 imap ( ()<Left>
 imap [ []<Left>
 imap {<CR> {}<Left><CR><Tab><CR><Esc><Up><S-A>
-imap "" ""<Left>
-imap '' ''<Left>
+imap " ""<Left>
+imap ' ''<Left>
 
-nmap <C-v> p 
-nmap <C-c> y
 nmap <Enter> o 
 
 " esc 键更新为 jj
@@ -58,3 +56,8 @@ filetype plugin on
 
 set scrolloff=4
 set showcmd 
+
+" 去除括号高亮，太难看了
+" :NoMatchParen
+let loaded_matchparen=1
+set noswapfile
