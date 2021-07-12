@@ -1,11 +1,9 @@
 " 自动补全括号
-" imap ( ()<ESC>i
-" imap () ()<ESC>a
 imap ( ()<Left>
 imap [ []<Left>
 imap {<CR> {}<Left><CR><Tab><CR><Esc><Up><S-A>
-imap " ""<Left>
-imap ' ''<Left>
+inoremap " ""<Left>
+inoremap ' ''<Left>
 
 nmap <Enter> o 
 
