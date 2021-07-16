@@ -1,9 +1,8 @@
 #include <algorithm>
 #include <iostream>
-
 using namespace std;
 
-const int N = 100010;
+const int N = 1e5 + 10;
 
 int n, m;
 int h[N], cnt;
@@ -22,16 +21,13 @@ int main() {
     scanf("%d%d", &n, &m);
     for (int i = 1; i <= n; i++) scanf("%d", &h[i]);
     cnt = n;
-
     for (int i = n / 2; i; i--) down(i);
-
     while (m--) {
         printf("%d ", h[1]);
         h[1] = h[cnt--];
         down(1);
     }
-
-    puts("");
-
     return 0;
 }
+
+// https://www.acwing.com/activity/content/code/content/1465888/

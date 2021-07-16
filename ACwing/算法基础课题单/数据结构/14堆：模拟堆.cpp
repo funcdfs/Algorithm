@@ -7,12 +7,15 @@ using namespace std;
 
 const int N = 100010;
 
-int h[N], ph[N], hp[N], cnt;
+int cnt;
+int h[N];   //堆
+int ph[N];  //存放第k个插入点在堆中的下标
+int hp[N];  //存放堆中点的插入次序（即堆中某点是第几个插入的点）
 
 void heap_swap(int a, int b) {
-    swap(ph[hp[a]], ph[hp[b]]);
+    swap(ph[hp[a]], ph[hp[b]]);  //
     swap(hp[a], hp[b]);
-    swap(h[a], h[b]);
+    swap(h[a], h[b]);  // 交换堆中的两个点
 }
 
 void down(int u) {
@@ -70,3 +73,5 @@ int main() {
 
     return 0;
 }
+
+// https://www.acwing.com/activity/content/code/content/1466871/

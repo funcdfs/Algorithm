@@ -5,7 +5,7 @@ using namespace std;
 const int N = 100010;
 
 int m;
-int q[N], hh, tt;
+int q[N], hh, tt = -1;
 
 int main() {
     cin >> m;
@@ -17,14 +17,16 @@ int main() {
         cin >> op;
         if (op == "push") {
             cin >> x;
-            q[tt++] = x;
+            q[++tt] = x;
         } else if (op == "pop")
             hh++;
         else if (op == "empty")
-            cout << (hh <= tt - 1 ? "NO" : "YES") << endl;
+            cout << (hh <= tt ? "NO" : "YES") << endl;
         else
             cout << q[hh] << endl;
     }
 
     return 0;
 }
+
+// https://www.acwing.com/activity/content/code/content/1461916/
