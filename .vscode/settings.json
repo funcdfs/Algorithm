@@ -47,7 +47,10 @@
         "cctype": "cpp",
         "clocale": "cpp",
         "ctime": "cpp",
-        "deque": "cpp"
+        "deque": "cpp",
+        "unordered_map": "cpp",
+        "stack": "cpp",
+        "xhash": "cpp"
     },
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4}",
     "editor.fontSize": 14.5,
