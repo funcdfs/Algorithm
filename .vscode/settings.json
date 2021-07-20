@@ -54,7 +54,7 @@
     },
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4}",
     "editor.fontSize": 14.5,
-    "editor.fontFamily": "Source Code Pro",
+    "editor.fontFamily": "hasklig",
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
     "editor.formatOnPaste": true
