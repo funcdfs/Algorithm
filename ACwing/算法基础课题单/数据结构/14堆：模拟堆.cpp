@@ -44,10 +44,8 @@ int main() {
         scanf("%s", op);
         if (!strcmp(op, "I")) {
             scanf("%d", &x);
-            cnt++;
-            m++;
-            ph[m] = cnt, hp[cnt] = m;
-            h[cnt] = x;
+            cnt++, m++;
+            ph[m] = cnt, hp[cnt] = m, h[cnt] = x;
             up(cnt);
         } else if (!strcmp(op, "PM"))
             printf("%d\n", h[1]);

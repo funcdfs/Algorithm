@@ -6,6 +6,8 @@ const int N = 100010;
 
 int m;
 int q[N], hh, tt = -1;
+// tt 代表栈顶， tt 等于 -1 的时候栈中元素为空
+// hh 的值代表要弹出元素的边界
 
 int main() {
     cin >> m;

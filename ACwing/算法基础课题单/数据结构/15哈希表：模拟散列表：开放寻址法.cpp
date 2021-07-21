@@ -9,6 +9,8 @@ int h[N];
 
 int find(int x) {
     int t = (x % N + N) % N;
+    // 哈希函数
+    // + N % N 的意义是为了让取余之后的数字变成正数
     while (h[t] != null && h[t] != x) {
         t++;
         if (t == N) t = 0;
@@ -18,7 +20,7 @@ int find(int x) {
 
 int main() {
     memset(h, 0x3f, sizeof h);
-
+    // https://www.cplusplus.com/reference/cstring/memset/
     int n;
     scanf("%d", &n);
 
