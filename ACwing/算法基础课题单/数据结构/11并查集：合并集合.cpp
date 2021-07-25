@@ -1,13 +1,14 @@
 #include <iostream>
-
 using namespace std;
 
 const int N = 100010;
 
 int p[N];
 
+// 注意和蹲坑法进行区分哦
 int find(int x) {
     if (p[x] != x) p[x] = find(p[x]);
+    //将路径上的所有点的父节点都变为 x 的父节点，搜索一遍，之后的操作都是 O(1)）
     return p[x];
 }
 
