@@ -1,37 +1,31 @@
+#include <algorithm>
+#include <cstdio>
+#include <cstring>
 #include <iostream>
+
 using namespace std;
 
-const int N = 1010;
-int n, m, q;
-int a[N][N], b[N][N];
+const int N = 100010, M = N * 2;
 
-void insert(int x1, int y1, int x2, int y2, int c) {
-    b[x1][y1] += c;
-    b[x1][y2 + 1] -= c;
-    b[x2 + 1][y1] -= c;
-    b[x2 + 1][y2 + 1] += c;
+int n;
+int head[N], e[M], ne[M], idx;  // 领接表
+int ans = N;
+bool st[N];
+
+void add(int a, int b) { e[idx] = b, ne[idx] = head[a], head[a] = idx++; }
+
+void dfs(int u) {
+    st[u] = true;
+    for (int i = head[u]; i != -1; i = ne[i]) {
+        int j = e[i]; // 记录当前链表中的节点对应图中的编号是多少
+        if (!st[j]) dfs(j);
+    }
 }
-
 int main() {
-    cin >> n >> m >> q;
-    for (int i = 1; i <= n; i++)
-        for (int j = 1; j <= m; j++) cin >> a[i][j];
-    for (int i = 1; i <= n; i++)
-        for (int j = 1; j <= m; j++) insert(i, j, i, j, a[i][j]);
-        
-    while (q--) {
-        int x1, y1, x2, y2, c;
-        cin >> x1 >> y1 >> x2 >> y2 >> c;
-        insert(x1, y1, x2, y2, c);
-    }
-    for (int i = 1; i <= n; i++)
-        for (int j = 1; i <= m; j++)
-            b[i][j] += b[i - 1][j] + b[i][j - 1] - b[i - 1][j - 1];
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= m; j++) {
-            cout << b[i][j] << ' ';
-        }
-        cout << endl;
-    }
+
+    memset(head, -1, sizeof head);
+
+    dfs(1);
+
     return 0;
 }
