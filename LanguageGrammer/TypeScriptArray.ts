@@ -336,9 +336,60 @@ for (const n of aEntries) {
 // ! Array.from() 方法从一个类似数组或可迭代对象创建一个新的，浅拷贝的数组实例。
 // 用来将各种类型的数据转换为 数组
 
-
-console.log(Array.from('foo'));
+console.log(Array.from("foo"));
 // expected output: Array ["f", "o", "o"]
 
-console.log(Array.from([1, 2, 3], x => x + x));
+console.log(Array.from([1, 2, 3], (x) => x + x));
 // expected output: Array [2, 4, 6]
+
+// ! 使用 arrayof 创建数组
+// let numbers3 = Array.of(1);
+// let numbers4 = Array.of(1, 2, 3, 4, 5, 6);
+
+// 等价于
+
+// let numbers3 = [1];
+// let numbers4 = [1, 2, 3, 4, 5, 6];
+
+// 可以用这种方法复制，已经存在的数组 （解构操作符，三个点）
+// let numbersCopy = Array.of(...numbers4);
+
+// 等价于使用： from
+
+// let numbers2 = Array.from(numbers);
+
+// ! 使用 fill 方法（相当于 cpp 中的 memset 函数）：
+
+// numbersCopy.fill(0);
+
+// numbersCopy.fill(2, 1); 指定开始填充的索引 ，用于部分赋值
+let numbersCopy = [0, 2, 3, 4, 5, 6];
+numbersCopy.fill(1, 1, 4); // 变为 0,1,1,1,5,6 下标 1 开始， 到 4 结束
+// console.log(numbersCopy);
+
+// let ones = Array(6).fill(1); ，在初始化的时候进行赋值操作
+
+// ! copyWithin 复制数组的一部分 arr.copyWithin(target[, start[, end]])
+
+let copyArray = [1, 2, 3, 4, 5, 6];
+copyArray.copyWithin(2, 0, 3);
+
+console.log(copyArray); // [ 1, 2, 1, 2, 3, 6 ]
+
+// ! find 和 findIndex 的不同之处在于，find 方法返回第一个满足条件的值，findIndex
+// ! 方法则返回这个值在数组里的索引。如果没有满足条件的值，find 会返回 undefined，而 findIndex 返回-1
+
+// let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+// function multipleOf13(element, index, array) {
+//     return element % 13 == 0;
+// }
+// console.log(numbers.find(multipleOf13));  // * 13
+// console.log(numbers.findIndex(multipleOf13)); // * 12
+
+// ECMAScript 7 include 方法，存在返回 true， 不存在返回 false
+
+// ! 类型数组 Int32Array; Uint32Array; Float32Array; Float64Array;
+// let test = new Int32Array(10).fill(2);
+
+// typescript 中的数组，添加冒号的类型声明
+// const friends: Person[]
