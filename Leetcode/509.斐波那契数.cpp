@@ -10,20 +10,25 @@
 #include <vector>
 using namespace std;
 
+/* tags: DP
+ * 逻辑压缩：空间压缩
+ *
+ */
+
 class Solution {
    public:
     int fib(int N) {  // 自底向上的方法
         if (N == 1 || N == 0) {
             return N;
         }
-        int dp0 = 0;
-        int dp1 = 1;
+        int before = 0;
+        int last = 1;
         for (int i = 2; i <= N; i++) {
-            int cur = dp0;
-            dp0 = dp1;
-            dp1 = dp0 + cur;
+            int cur = before;
+            before = last;
+            last = before + cur;
         }
-        return dp1;
+        return last;
     }
 };
 // @lc code=end
