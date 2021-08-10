@@ -1,5 +1,7 @@
 > 【动态规划】：指那些看上去很懵逼但存在几行 for 循环就可以实现最优解的题目
 
+**以下收录的题目都给出了题解链接**
+
 ## 步骤
 
 | 进度 | 步骤                       | 详细描述                                               |
@@ -39,12 +41,15 @@
         }
     } // 有障碍物的路径 dp 数组记录距离为 0， 不是障碍物的时候才进行计算 
     ```
-- `Medium_2` [LeetCode 343 整数拆分](https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0343.%E6%95%B4%E6%95%B0%E6%8B%86%E5%88%86.md)
-  - （动态规划， 贪心）
+- `Medium_2` [LeetCode 343 整数拆分](../Algorithm/Markdown/0343.整数拆分.md)
+  - （动态规划，贪心）
   - 给定一个正整数 n，将其拆分为至少两个正整数的和，并使这些整数的乘积最大化。 返回你可以获得的最大乘积。
   - `dp[i] = max(dp[i], max(j * (i - j), j * dp[i - j]));` 取两种渠道中的最大值
-- `Medium_2` [LeetCode 96 不同的二叉搜索树](https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0096.%E4%B8%8D%E5%90%8C%E7%9A%84%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.md)
-  - （二叉树， 动态规划）
-  -  `dp[i] += dp[以j为头结点左子树节点数量] * dp[以j为头结点右子树节点数量]`
+
 
 ## 背包九讲
+
+面试：01 背包，完全背包，多重背包， 分组背包
+
+- 01 背包
+  - 
