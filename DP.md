@@ -42,16 +42,45 @@
 
 对于面试有：01 背包，完全背包，多重背包， 分组背包
 
-- 01 背包 [详解](https://github.com/fengwei2002/Algorithm/blob/main/Markdown/DP_001_01%E8%83%8C%E5%8C%85.md)
-  - ![01背包DP分析.png](https://cdn.acwing.com/media/article/image/2021/08/11/101476_9478d007fa-01背包DP分析.png) 
-- 完全背包 [详解](https://github.com/fengwei2002/Algorithm/blob/main/Markdown/DP_002_%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85.md)
-  - ![完全背包DP分析.png](https://cdn.acwing.com/media/article/image/2021/08/11/101476_e43fbe84fa-完全背包DP分析.png) 
-- 多重背包 [详解](https://github.com/fengwei2002/Algorithm/blob/main/Markdown/DP_003_%E5%A4%9A%E9%87%8D%E8%83%8C%E5%8C%85.md)
-  - ![多重背包 DP 分析.png](https://cdn.acwing.com/media/article/image/2021/08/11/101476_aa17c55cfa-多重背包DP-分析.png) 
-- 分组背包 [详解](https://github.com/fengwei2002/Algorithm/blob/main/Markdown/DP_004%E5%88%86%E7%BB%84%E8%83%8C%E5%8C%85.md)
-  - ![分组背包DP分析.png](https://cdn.acwing.com/media/article/image/2021/08/11/101476_9f18e718fa-分组背包DP分析.png) 
+- **01 背包**[详解](/Markdown/DP_001_01背包.md)
+  - `f[i][j] = max(f[i][j], f[i - 1][j - v[i]] + w[i]);`
+  - `f[j] = max(f[j], f[j - v[i]] + w[i];` 逆序遍历
+- **完全背包** [详解](/Markdown/DP_002_完全背包.md)
+  - `f[i][j] = max(f[i][j], f[i - 1][j - v[i] * k] + k * w[i]);`
+  - `f[j] = max(f[j], f[j - v[i]] + w[i]);` 顺序遍历
+- **多重背包** [详解](/Markdown/DP_003_多重背包.md)
+  - `f[i][j] = max(f[i][j], f[i - 1][j - v[i] * k] + w[i] * k);`
+  - 二进制分组优化 + 01 背包
+- **分组背包** [详解](/Markdown/DP_004分组背包.md)
+  - `f[j] = max(f[j], f[j - v[i][k]] + w[i][k]);`
 
-其余背包问题之后补充
+> 其余背包问题之后补充
 
+## 线性DP
 
+将那些状态计算有一种模糊的递推关系的 DP 问题称为线性 DP
+```
++ test
+- test 
+! test 
+```
+- [数字三角形](/Markdown/DP_005_数字三角形.md)
+- [最长上升子序列](/Markdown/DP_006最长上升子序列.md)
+  - [最长上升子序列 II](Markdown/DP_006最长上升子序列优化.md)
+- [最长公共子序列](/Markdown/DP_007最长公共子序列.md)
+- 最短编辑距离
+- 编辑距离
+## 区间DP
+- AcWing 282. 石子合并
+## 计数类DP
+AcWing 900. 整数划分
+## 数位统计DP
+- AcWing 338. 计数问题
+## 状态压缩DP
+- AcWing 291. 蒙德里安的梦想
+- AcWing 91. 最短Hamilton路径
+## 树形DP
+- AcWing 285. 没有上司的舞会
+## 记忆化搜索
+- AcWing 901. 滑雪
 
