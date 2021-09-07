@@ -1,9 +1,14 @@
 #include <iostream>
+
 using namespace std;
+typedef long long LL;
 
 const int N = 1e6 + 10;
 int n, q[N], tmp[N];
-typedef long long LL;
+
+// -- 左侧逆序对的数量
+// -- 右侧逆序对的数量
+// -- 交界处的 逆序对的数量 j = mid - i + 1
 
 LL merge_sort(int q[], int l, int r) {
     if (l >= r) return 0;
@@ -19,8 +24,10 @@ LL merge_sort(int q[], int l, int r) {
             tmp[k++] = q[j++];
         }
     }
+    // 扫尾
     while (i <= mid) tmp[k++] = q[i++];
     while (j <= r) tmp[k++] = q[j++];
+    // 物归原主
     for (int i = l, j = 0; i <= r; i++, j++) q[i] = tmp[j];
     return ans;
 }
