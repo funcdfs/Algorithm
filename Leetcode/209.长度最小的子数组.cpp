@@ -46,16 +46,18 @@ class Solution {
 class Solution_双指针 {
    public:  // O(n)
     int minSubArrayLen(int target, vector<int>& nums) {
-        int res = INT_MAX;
+        int asn = INT_MAX;
         //  i j 为双指针， sum 是 i 到 j 的和
         for (int i = 0, j = 0, sum = 0; i < nums.size(); i++) {
             sum += nums[i];
             while (sum - nums[j] >= target) sum -= nums[j++];
-            // j 向后移动，找到满足ij满足条件的最右侧 j 的值
-            if (sum >= target) res = min(res, i - j + 1);
+            //! 如果 while 循环可以执行的话
+            //! 说明 新加入的 i 可以至少电梯一个去掉的 j
+            // j 向后移动，找到满足 ij 满足条件的最右侧 j 的值
+            if (sum >= target) asn = min(asn, i - j + 1);
         }
-        if (res == INT_MAX) res = 0;
-        return res;
+        if (asn == INT_MAX) asn = 0;
+        return asn;
     }
 };
 
@@ -67,8 +69,8 @@ class Solution_前缀和加二分查找 {
         vector<int> a(nums.size() + 1, 0);
         for (int i = 1; i <= nums.size(); i++) a[i] = nums[i - 1];
         for (int i = 1; i <= nums.size(); i++) s[i] = s[i - 1] + a[i];
-        for (auto i : s) cout << i << ' ';
-        puts("");
+        // // for (auto i : s) cout << i << ' ';
+        // // puts("");
         // s[i] 代表前缀和数组， a[i] 代表区间元素
 
         for (int i = 0; i < s.size(); i++) {
@@ -82,9 +84,9 @@ class Solution_前缀和加二分查找 {
                 else
                     l = mid + 1;
             }
-            cout << " i = " << i << " l = " << l << endl;
+            // // cout << " i = " << i << " l = " << l << endl;
             if (s[l] - s[i] >= target) {
-                cout << s[l] - s[i] << ">> 区间长度 " << l - i << endl;
+                // // cout << s[l] - s[i] << ">> 区间长度 " << l - i << endl;
                 ans = min(ans, l - i);
                 // !  l - i + 1 是 s 数组的长度，不加 1 是 a 数组的长度
             }
@@ -92,6 +94,8 @@ class Solution_前缀和加二分查找 {
         return ans == INT_MAX ? 0 : ans;
     }
 };
+
+
 class Solution_暴力解法 {
    public:  // O(n^2)
     int minSubArrayLen(int s, vector<int>& nums) {
