@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func Hello() {
+func main_Hello() {
 	var test = 1
 	print(test)
 	var testStr = "1"

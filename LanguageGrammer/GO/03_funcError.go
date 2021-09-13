@@ -18,7 +18,7 @@ import (
 	"strconv"
 )
 
-func FuncError() {
+func main_FuncError() {
 	var orig string = "ABC"
 	// var orig2 string = "1"
 

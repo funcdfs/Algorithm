@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func IfGrammer() {
+func main_IfGrammer() {
 	// if condition {    // 无括号
 	//	   do something
 	// }
