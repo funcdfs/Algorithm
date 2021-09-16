@@ -69,11 +69,11 @@ func main_数组常量初始化() {
 	for i := 0; i < len(arrKeyValue); i++ {
 		fmt.Printf("Person at %d is %s\n", i, arrKeyValue[i])
 	}
-	var arrAge = [5]int{18, 20, 15, 22, 16}
+	// var arrAge = [5]int{18, 20, 15, 22, 16}
 	// 未手动声明的数组元素值都是，0
 
 	// key: value 语法
-	var arrKeyValue = [5]string{3: "Chris", 4: "Ron"}
+	// var arrKeyValue = [5]string{3: "Chris", 4: "Ron"}
 	// 只有索引 3 和 4 被赋予实际的值，其他元素都被设置为空的字符串
 
 }
