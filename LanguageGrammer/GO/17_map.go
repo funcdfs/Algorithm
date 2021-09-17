@@ -9,21 +9,20 @@ pair 的一个元素是 key，对应的另一个元素是 value，所以这个�
 
 map 这种数据结构在其他编程语言中也称为字典（Python）、hash 和 HashTable 等。
 
-
 */
 
 func main_map基础语法() {
 	var value int
 	var isPresent bool // 两个变量用于接收 map 测试的结果
 
-	map1 := make(map[string]int)
+	map1 := make(map[string]int) // 创建爱你一个空的 map
 
-	map1["ShangHai"] = 55
-	map1["BeiJing"] = 20
+	map1["ShangHai"] = 55 // 使用 name[key] = val 语法设置键值对
+	map1["BeiJing"] = 20 // fmt.Println("", name) 可以直接打印一个 map 
 	map1["Washington"] = 25
 
 	value, isPresent = map1["BeiJing"]
-	// _, ok := map1[key1] // 如果key1存在则ok == true，否则 ok 的值为 false
+	// _, ok := map1[key1] // 如果 key1 存在则 ok == true，否则 ok 的值为 false
 
 	if isPresent {
 		fmt.Printf("BeiJing 在 map1 中的值是 %d\n", value)

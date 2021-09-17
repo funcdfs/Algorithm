@@ -8,3 +8,6 @@ func main_Hello() {
 	var testStr = "1"
 	fmt.Printf("%s", testStr)
 }
+
+// go run 执行代码
+// go build 生成可执行程序

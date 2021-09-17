@@ -107,4 +107,6 @@ TODO new和 make 的区别
 TODO 多维切片
 TODO bytes 包
 
+https://go.dev/blog/slices-intro
+
 */

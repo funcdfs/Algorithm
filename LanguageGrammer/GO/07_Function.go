@@ -35,13 +35,15 @@ func getX2AndX3_2(input int) (x2 int, x3 int) {
 // mult_returnval.go
 
 func SumProductDiff(i, j int) (int, int, int) {
-	return i + j, i * j, i - j
+	return i + j, i * j, i - j // 当多个连续的参数为同样类型时， 可以仅声明最后一个参数的类型，忽略之前相同类型参数的类型声明。
 }
 
 func SumProductDiffN(i, j int) (s int, p int, d int) {
 	s, p, d = i+j, i*j, i-j
 	return
 }
+// 如果你仅仅需要返回值的一部分的话，你可以使用空白标识符 _和逗号，使用部分返回值
+
 
 func main_mult_returnval() {
 	sum, prod, diff := SumProductDiff(3, 4)

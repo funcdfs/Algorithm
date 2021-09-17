@@ -24,7 +24,7 @@ func main() {
 	fmt.Printf("The minimum in the slice is: %d", x)
 }
 
-func min(s ...int) int {
+func min(s ...int) int { // 接收任意数量的 int 作为参数
 	if len(s) == 0 {
 		return 0
 	}
@@ -37,3 +37,6 @@ func min(s ...int) int {
 	}
 	return min
 }
+
+// 如果你有一个含有多个值的 slice，想把它们作为参数使用， 你需要这样调用 func(slice...)。
+

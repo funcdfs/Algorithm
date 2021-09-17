@@ -2,6 +2,17 @@ package main
 
 import "fmt"
 
+func fact(n int) int {
+	if n == 0 {
+		return 1
+	}
+	return n * fact(n-1)
+}
+
+func main_阶乘() {
+	fmt.Println(fact(7))
+}
+
 func main_fibonacci() {
 	result := 0
 	for i := 0; i <= 10; i++ {
@@ -39,6 +50,7 @@ func print1To10(n int) {
 // 实现一个输出前 30 个整数的阶乘的程序。--------------------
 
 var sum int = 1
+
 func factorial(n int) {
 	if n == 1 {
 		fmt.Printf("%d", sum)
@@ -52,6 +64,3 @@ func factorial(n int) {
 func main() {
 	factorial(4)
 }
-
-
-

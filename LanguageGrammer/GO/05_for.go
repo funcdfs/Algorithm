@@ -106,3 +106,21 @@ func main_For_range() {
 // i = 3 v = 8
 // i = 4 v = 16
 // i = 5 v = 32
+
+
+
+
+
+
+
+
+
+
+
+
+// range 在字符串中迭代 unicode 码点(code point)。 第一个返回值是字符的起始字节位置，然后第二个是字符本身。
+
+
+// for i, c := range "go" {
+//     fmt.Println(i, c)
+// }

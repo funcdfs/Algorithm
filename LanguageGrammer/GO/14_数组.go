@@ -119,3 +119,7 @@ func Sum(a *[3]float64) (sum float64) {
 	}
 	return sum
 }
+
+
+// 注意，使用 fmt.Println 打印数组时，会按照 [v1 v2 v3 ...] 的格式打印。
+

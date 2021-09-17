@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main_IfGrammer() {
-	// if condition {    // 无括号
+	// if condition {    // 圆括号不是必须的，但是方括号是必须的
 	//	   do something
 	// }
 	fmt.Print("ifGrammer")
@@ -31,3 +31,6 @@ func IsGreater(x, y int) bool {
 	// return false   should be:
 	return x > y
 }
+
+// Go 没有三目运算符， 即使是基本的条件判断，依然需要使用完整的 if 语句。
+
