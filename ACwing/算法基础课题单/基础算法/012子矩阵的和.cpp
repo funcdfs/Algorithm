@@ -1,3 +1,5 @@
+// 输入子矩阵的左上角坐标和右下角坐标。输出子矩阵中石油数字的和
+
 #include <iostream>
 
 using namespace std;
@@ -27,4 +29,6 @@ int main() {
 
     return 0;
 }
+
+
 // https://www.acwing.com/activity/content/code/content/1415612/

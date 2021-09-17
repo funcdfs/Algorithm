@@ -2,7 +2,7 @@
 
 遇到 DP 问题可以画一个图：
 
-![DP分析框架.png](https://cdn.acwing.com/media/article/image/2021/08/11/101476_c99d7ec5f9-DP分析框架.png) 
+![DP分析框架](https://cdn.acwing.com/media/article/image/2021/08/11/101476_c99d7ec5f9-DP分析框架.png) 
 
 ## 斐波那契数列
 
