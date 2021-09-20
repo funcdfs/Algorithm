@@ -39,6 +39,15 @@ struct TreeNode {
  * right(right) {}
  * };
  */
+class Solution {
+public:
+    int maxDepth(TreeNode* root) {
+        if (!root) return 0;
+        return max(maxDepth(root->left), maxDepth(root->right)) + 1;
+    }
+};
+
+// @lc code=end
 
 class Solution_循环写法 {
    public:
@@ -61,5 +70,3 @@ class Solution_循环写法 {
         return depth;
     }
 };
-
-// @lc code=end
