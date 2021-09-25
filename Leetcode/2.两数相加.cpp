@@ -8,16 +8,14 @@
 #include <vector>
 
 using namespace std;
-/*2021-07-27-19-14*/
+/*2021-09-25-23-39*/
 // ? 思路解析：
 /*
  *
- *
- *
- *
- ! --难点：
- ! -- 注意 listnode 的写法即可
- ! -- 同加法运算
+ *  从个位开始累加，累加值合并到 t 中，
+ *     然后使用 进位值构建结果链表
+ !
+ !
  */
 
 struct ListNode {
@@ -27,6 +25,7 @@ struct ListNode {
     ListNode(int x) : val(x), next(nullptr) {}
     ListNode(int x, ListNode* next) : val(x), next(next) {}
 };
+
 // @lc code=start
 
 class Solution {
@@ -35,28 +34,58 @@ class Solution {
         ListNode* head = nullptr;
         ListNode* tail = nullptr;
 
-        int container = 0;
-
-        while (l1 != nullptr || l2 != nullptr || container > 0) {
-            if (l1 != nullptr) {
-                container += l1->val;
+        int t = 0;
+        while (l1 || l2 || t > 0) {
+            if (l1) {
+                t += l1->val;
                 l1 = l1->next;
             }
-            if (l2 != nullptr) {
-                container += l2->val;
+            if (l2) {
+                t += l2->val;
                 l2 = l2->next;
             }
-            // printf("container == %d\n", container);
+
             if (head == nullptr) {
-                head = tail = new ListNode(container % 10);
+                head = tail = new ListNode(t % 10);
             } else {
-                tail->next = new ListNode(container % 10);
+                tail->next = new ListNode(t % 10);
                 tail = tail->next;
             }
-            container /= 10;
-            // printf("container == %d\n", container);
+
+            t /= 10;
         }
         return head;
     }
 };
 // @lc code=end
+
+class Solution2 {
+   public:
+    ListNode* addTwoNumbers(ListNode* list_1, ListNode* list_2) {
+        ListNode* head = nullptr;
+        ListNode* tail = head;
+
+        int t = 0;
+        while (list_1 || list_2 || t > 0) {
+            if (list_1) {
+                t += list_1->val;
+                list_1 = list_1->next;
+            }
+            if (list_2) {
+                t += list_2->val;
+                list_2 = list_2->next;
+            }
+
+            if (head == nullptr) {
+                head = tail = new ListNode(t % 10);
+            } else {
+                tail->next = new ListNode(t % 10);
+                tail = tail->next;
+            }
+
+            t /= 10;
+        }
+
+        return head;
+    }
+};
