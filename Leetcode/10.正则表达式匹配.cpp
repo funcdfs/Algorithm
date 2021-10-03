@@ -60,6 +60,7 @@ public:
     bool isMatch(string s, string p) {
         int n = s.size(), m = p.size();
         s = ' ' + s, p = ' ' + p;
+        
         vector<vector<bool>> f(n + 1, vector<bool>(m + 1, false));
         f[0][0] = true;
 

@@ -8,17 +8,17 @@
 #include <vector>
 
 using namespace std;
-/*2021-07-27-23-29*/
-// ? 思路解析：
-/*
+
+/*2021-10-03-20-52*/
+
+//from https://github.com/fengwei2002/Algorithm
+/* 
+ !
+ !
+ * 高阶二分
  *
- *
- *
- *
- ! --难点：
- ! --
- ! --
  */
+
 // @lc code=start
 class Solution {
    public:
@@ -65,3 +65,45 @@ class Solution {
     }
 };
 // @lc code=end
+
+class Solution {
+public:
+    double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
+        double ans = 0;
+        int tot = nums1.size() + nums2.size();
+        if (tot % 2 == 0) {
+            double left = find(nums1, 0, nums2, 0, tot / 2);
+            double right = find(nums1, 0, nums2, 0, tot / 2 + 1);
+            ans = (left + right) / 2.0;
+        } else {
+            ans = find(nums1, 0, nums2, 0, tot / 2 + 1);
+        }
+
+        return ans;
+    }
+
+    double find(vector<int>& nums1, int i, vector<int>& nums2, int j, int k) {
+        if (nums1.size() - i > nums2.size() - j) {
+            return find(nums2, j, nums1, i, k);
+        } 
+
+        if (k == 1) {
+            if (nums1.size() == i)
+                return nums2[j + k - 1];
+            else
+                return min(nums1[i], nums2[j]);
+        }
+
+        if (nums1.size() == i) {
+            return nums2[j + k - 1];
+        }
+
+        int newi = min((int)nums1.size(), i + k / 2);
+        int newj = j + k / 2;
+        if (nums1[newi - 1] > nums2[newj - 1]) {
+            return find(nums1, i, nums2, newj, k - (newj - j));
+        } else {
+            return find(nums1, newi, nums2, j, k - (newi - i));
+        }
+    }
+};

@@ -3,11 +3,13 @@
  *
  * [5] 最长回文子串
  */
+
 #include <algorithm>
 #include <iostream>
 #include <vector>
-
 using namespace std;
+
+//from https://github.com/fengwei2002/Algorithm
 /*2021-09-22-14-42*/
 // ? 思路解析：
 /*
