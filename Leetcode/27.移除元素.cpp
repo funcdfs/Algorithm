@@ -8,12 +8,15 @@
 #include <vector>
 
 using namespace std;
-/*2021-09-08-18-18*/
-// ? 思路解析： 值保留值不等于 val 的元素
+
+//from https://github.com/fengwei2002/Algorithm
+/*2021-10-02-21-12*/
+
+// ? 思路解析： 只保留值不等于 val 的元素
 
 // @lc code=start
 class Solution {
-public:
+   public:
     int removeElement(vector<int>& nums, int val) {
         if (nums.size() == 0) return 0;
 
@@ -25,4 +28,3 @@ public:
     }
 };
 // @lc code=end
-

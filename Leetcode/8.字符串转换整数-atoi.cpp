@@ -16,7 +16,7 @@ using namespace std;
 /*
  !
  !
- *
+ * 题解： https://leetcode-cn.com/problems/string-to-integer-atoi/solution/lc8-fengwei2002-by-fengwei2002-sg6u/
  *
  */
 
@@ -26,10 +26,10 @@ class Solution {
     int myAtoi(string str) {
         int k = 0;
         while (k < str.size() && str[k] == ' ') k++;
-        if (k == str.size()) return 0; // 去除空格的操作
+        if (k == str.size()) return 0;
 
         int minus = 1;
-        if (str[k] == '-') // 读取符号的操作
+        if (str[k] == '-')
             minus = -1, k++;
         else if (str[k] == '+')
             k++;
@@ -38,17 +38,14 @@ class Solution {
         while (k < str.size() && str[k] >= '0' && str[k] <= '9') {
             int x = str[k] - '0';
 
-            //判断是否越界
             if (minus > 0 && ans > (INT_MAX - x) / 10) return INT_MAX;
             if (minus < 0 && -ans < (INT_MIN + x) / 10) return INT_MIN;
             if (-ans * 10 - x == INT_MIN) return INT_MIN;
+            if (ans > INT_MAX) break;
 
-            // 逐位加法
             ans = ans * 10 + x;
             k++;
-            if (ans > INT_MAX) break;
         }
-        // 添加符号到答案中
         ans *= minus;
 
         return ans;

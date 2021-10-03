@@ -16,7 +16,7 @@ using namespace std;
  *  利用哈希表进行存储，遍历一遍数组，每次考察 target - nums[i] 是否存在于 哈希表中
  *     将 nums[i] 对应的下标放入哈希表中， 哈希表可以在 O(1) 时间内找到一个数字
  *     所以加快了 时间复杂度
- ! 
+ !  https://leetcode-cn.com/problems/two-sum/solution/lc1-fengwei2002-ha-xi-biao-by-fengwei200-t94y/
  ! 
  */
 
