@@ -29,6 +29,7 @@ class Solution {
             else
                 r = mid - 1;
         }
+
         cout << l << r;
         if (target >= nums[0])
             l = 0;

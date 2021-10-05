@@ -8,18 +8,20 @@
 #include <vector>
 
 using namespace std;
-/*2021-08-16-12-10*/
+
+/*2021-10-05-21-30*/
+
+//from https://github.com/fengwei2002/Algorithm
 // ? 思路解析：
-/* 
+/*
  * 二分模板的应用
- * 
+ *
  ! --难点： 边界情况的仔细判断
  */
 
-
 // @lc code=start
 class Solution {
-public:
+   public:
     vector<int> searchRange(vector<int>& nums, int target) {
         vector<int> ans;
         int n = nums.size();
@@ -32,16 +34,20 @@ public:
         int l = 0, r = n - 1;
         while (l < r) {
             int mid = (l + r) >> 1;
-            if (nums[mid] >= k) r = mid;
-            else l = mid + 1;
+            if (nums[mid] >= k)
+                r = mid;
+            else
+                l = mid + 1;
         }
         if (nums[l] == k) {
             ans.push_back(l);
             l = 0, r = n - 1;
             while (l < r) {
                 int mid = (l + r + 1) >> 1;
-                if (nums[mid] <= k) l = mid;
-                else r = mid - 1;
+                if (nums[mid] <= k)
+                    l = mid;
+                else
+                    r = mid - 1;
             }
             ans.push_back(l);
         } else {
@@ -52,4 +58,3 @@ public:
     }
 };
 // @lc code=end
-
