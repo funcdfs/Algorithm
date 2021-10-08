@@ -14,36 +14,48 @@ using namespace std;
 // from https://github.com/fengwei2002/Algorithm
 /*
  !
- ! 写DFS 问题的时候画一个类似于 全排列问题的树
- 然后将树转换为代码
-
+ ! 回溯框架题
  *
  *
  */
 
 // @lc code=start
 class Solution {
-   public:
+private:
     vector<string> ans;
-    string strs[10] = {
-        "", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz",
+    string path;
+
+    const string keyMap[10] = {
+        "",
+        "", "abc", "def",
+        "ghi", "jkl", "mno",
+        "pqrs", "tuv", "wxyz",
     };
 
-    vector<string> letterCombinations(string digits) {
-        if (digits.empty()) return ans;
+    void dfs(string& digits, int index, string& path) {
+        if (path.size() == digits.size()) {
+            ans.push_back(path);
+            return;
+        }
 
-        dfs(digits, 0, "");
-        return ans;
-    }
+        string keyMapItem = keyMap[digits[index] - '0'];
 
-    void dfs(string& digits, int u, string path) {  // digits,当前使第几位，路径
-        if (u == digits.size())
-            ans.push_back(path);  // 如果 u 已经等于最后一位了
-        else {  // 否则遍历当前的这一位可以取哪些字符
-            for (auto c : strs[digits[u] - '0']) {
-                dfs(digits, u + 1, path + c);
-            }
+        for (int i = 0; i < keyMapItem.size(); i++) {
+            path.push_back(keyMapItem.at(i));
+            dfs(digits, index + 1, path);
+            path.pop_back();
         }
     }
+public:
+    vector<string> letterCombinations(string digits) {
+        ans.clear();
+        path.clear();
+        
+        if (digits.size() == 0) return ans;
+        
+        dfs(digits, 0, path);
+        return ans;
+    }
 };
+// 链接：https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/solution/lc17-fengwei2002-by-fengwei2002-3oj4/
 // @lc code=end

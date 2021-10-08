@@ -5,19 +5,20 @@
  */
 #include <algorithm>
 #include <iostream>
-#include <stack>
 #include <vector>
 #include <queue>
+#include <stack>
 
 using namespace std;
-/*2021-09-16-17-48*/
+/*2021-09-21-09-57*/
 // ? 思路解析：
-/*
- *
- *
- !
- !
+/* 
+ * 
+ * 
+ ! 
+ ! 
  */
+
 
 struct TreeNode {
     int val;
@@ -54,7 +55,7 @@ class Solution {
 
 // @lc code=end
 
-class Solution_迭代法前序遍历_深度优先遍历 {
+class Solution_前序遍历 {
    public:
     TreeNode* invertTree(TreeNode* root) {
         if (root == NULL) return root;
@@ -64,7 +65,8 @@ class Solution_迭代法前序遍历_深度优先遍历 {
         while (!st.empty()) {
             TreeNode* node = st.top();  // 中
             st.pop();
-            swap(node->left, node->right);
+
+            swap(node->left, node->right); // 节点处理
             if (node->right) st.push(node->right);  // 右
             if (node->left) st.push(node->left);    // 左
         }
@@ -72,7 +74,8 @@ class Solution_迭代法前序遍历_深度优先遍历 {
     }
 };
 
-class Solution_层次遍历翻转二叉树_广度优先遍历 {
+
+class Solution_层次遍历 {
    public:
     TreeNode* invertTree(TreeNode* root) {
         queue<TreeNode*> que;
@@ -83,6 +86,7 @@ class Solution_层次遍历翻转二叉树_广度优先遍历 {
             for (int i = 0; i < size; i++) {
                 TreeNode* node = que.front();
                 que.pop();
+
                 swap(node->left, node->right);  // 节点处理
                 if (node->left) que.push(node->left);
                 if (node->right) que.push(node->right);

@@ -41,6 +41,7 @@ struct TreeNode {
  * right(right) {}
  * };
  */
+
 class Solution {
    public:
     bool isSymmetric(TreeNode *root) {
@@ -55,7 +56,7 @@ class Solution {
 };
 // @lc code=end
 
-class Solution_分开的写法 {
+class Solution_详细的 {
    public:
     bool compare(TreeNode *left, TreeNode *right) {
         if (left == NULL && right != NULL)

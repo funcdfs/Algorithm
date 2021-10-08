@@ -39,18 +39,14 @@ struct TreeNode {
 class Solution {
 public:
     int countNodes(TreeNode* root) {
-        int ans = 0;
-        if (!root) return ans;
-
-        return ans;
+        if (!root) return 0;
+        auto l = root->left, r = root->right;
+        int x = 1, y = 1;
+        while (l) l = l->left, x ++ ;
+        while (r) r = r->right, y ++ ;
+        if (x == y) return (1 << x) - 1;
+        
+        return countNodes(root->left) + 1 + countNodes(root->right);
     }
 };
 // @lc code=end
-
-#include <iostream>
-
-using namespace std;
-
-int main() {
-    return 
-}

@@ -40,14 +40,16 @@ class Solution {
 // @lc code=end
 
 class Solution_02 {
-public:
+   public:
     bool searchMatrix(vector<vector<int>>& matrix, int target) {
         for (int i = 0; i < matrix.size(); i++) {
             int l = 0, r = matrix.at(i).size() - 1;
             while (l < r) {
                 int mid = (l + r) >> 1;
-                if (matrix.at(i).at(mid) >= target) r = mid;
-                else l = mid + 1;
+                if (matrix.at(i).at(mid) >= target)
+                    r = mid;
+                else
+                    l = mid + 1;
             }
             if (matrix.at(i).at(r) == target) return true;
         }
