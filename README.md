@@ -8,7 +8,7 @@
 
 ### LeetCode 题解
 
-- [LeetCode 题解 1-30 ](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/LeetcodeNote/LeetcodeWeek1%2B2.md)
+- [done LeetCode 题解 1-50](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/LeetcodeNote/LeetcodeWeek1%2B2%2B3.md)
 - 
 
 ### LeetCode 周赛
