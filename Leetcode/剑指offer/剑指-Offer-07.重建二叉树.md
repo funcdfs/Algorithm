@@ -1,0 +1,97 @@
+[题目链接](https://leetcode-cn.com/problems/zhong-jian-er-cha-shu-lcof/)  
+[题解链接](https://leetcode-cn.com/problems/zhong-jian-er-cha-shu-lcof/solution/jz07-fengwei2002-by-kycu-ic03/)
+
+https://github.com/fengwei2002/algorithm
+
+### 剑指 Offer 07. 重建二叉树
+
+输入某二叉树的前序遍历和中序遍历的结果，请构建该二叉树并返回其根节点。
+
+假设输入的前序遍历和中序遍历的结果中都不含重复的数字。
+
+### 思路
+
+前序遍历： 根，左，右
+中序遍历： 左，根，右
+
+对于前序遍历中的一个点，在中序遍历中进行查找，就可以知道左子树的节点个数和右子树的节点个数
+
+快速找到一个数字在中序遍历中的位置可以开一个哈希表
+
+假设 k 代表前序遍历的第一个节点 在 中序遍历中的下标
+
+考虑每次中序遍历迭代时候的 DFS 新下标：左子树：`il, k - 1` 右子树：`k + 1, ir`
+
+**考虑每次前序遍历迭代时候的 DFS 新下标：**'
+- 左子树：`pl + 1, pl + k - il`
+- 右子树：`pl + k - il + 1, pr`
+
+
+### C++
+
+``` cpp
+class Solution {
+public:
+    unordered_map<int, int> hash;
+    vector<int> preorder, inorder;
+
+    TreeNode* buildTree(vector<int>& _preorder, vector<int>& _inorder) {
+        preorder = _preorder;
+        inorder = _inorder;
+        for (int i = 0; i < inorder.size(); i++) hash[inorder[i]] = i;
+        return dfs(0, preorder.size() - 1, 0, inorder.size() - 1);
+    }
+
+    TreeNode* dfs(int pl, int pr, int il, int ir) {
+        if (pl > pr) return nullptr;
+
+        auto root = new TreeNode(preorder[pl]); // 以前序遍历的第一个节点为根节点开辟一颗树
+        int k = hash[root->val];
+
+        auto left = dfs(pl + 1, pl + k - il, il, k - 1);
+        auto right = dfs(pl + k - il + 1, pr, k + 1, ir);
+
+        root->left = left, root->right = right;
+        return root;
+    }
+};
+```
+
+``` go
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+var hash = make(map[int]int)
+var preorder []int
+var inorder []int
+
+func buildTree(_preorder []int, _inorder []int) *TreeNode {
+    preorder = _preorder
+    inorder = _inorder
+    for i, _:= range inorder {
+        hash[inorder[i]] = i
+    }
+    return dfs(0, len(preorder) - 1, 0, len(inorder) - 1)
+}
+
+func dfs(pl int, pr int, il int, ir int) *TreeNode {
+    if pl > pr {
+        return nil
+    }
+
+    root := &TreeNode{preorder[pl], nil, nil}
+    k := hash[root.Val]
+
+    left := dfs(pl + 1, pl + k - il, il, k - 1)
+    right := dfs(pl + k - il + 1, pr, k + 1, ir)
+
+    root.Left = left
+    root.Right = right
+    return root
+}
+```

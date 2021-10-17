@@ -1,0 +1,126 @@
+[题目链接](https://leetcode-cn.com/problems/ti-huan-kong-ge-lcof/)  
+[题解链接](https://leetcode-cn.com/problems/ti-huan-kong-ge-lcof/solution/jz05-fengwei2002-liang-chong-fang-fa-by-zhy3g/)
+
+https://github.com/fengwei2002/algorithm
+
+### 思路
+(线性扫描)
+
+时间 $O(n)$, 空间 $O(n)$ 的遍历解法
+
+### 代码
+
+``` cpp
+// https://github.com/fengwei2002/algorithm
+
+class Solution {
+   public:
+    string replaceSpace(string s) {
+        string ans = "";
+        for (int i = 0; i < s.size(); i++) {
+            if (s[i] == ' ') {
+                ans += "%20";
+            } else {
+                ans += s[i];
+            }
+        }
+        return ans;
+    }
+};
+```
+
+``` go 
+func replaceSpace(s string) string {
+    n := len(s)
+    ans := ""
+    for i := 0; i < n; i++ {
+        if s[i] == ' ' {
+            ans += "%20"
+        } else {
+            ans += string(s[i])
+        }
+    }
+    return ans
+}
+```
+
+如果面试官说我不想要 $O(n)$ 的空间， 那么就使用这种双指针写法
+(双指针扫描)
+
+- 首先遍历一遍原数组，求出最终答案的长度 $length$；
+- 将原数组 resize 成 length 大小；
+- 使用两个指针，**指针 i 指向原字符串的末尾，指针 j 指向 length 的位置**；
+- 两个指针分别从后往前遍历，如果 `str[i] == ' '`，则指针 j 的位置上依次填充`'0', '2', '%'`，这样倒着看就是 `"%20"`；如果 `str[i] != ' '`，则指针 j 的位置上填充该字符即可。
+- 由于 i 之前的字符串，在变换之后，长度一定不小于原字符串，所以遍历过程中一定有 `i <= j`，这样可以保证 `str[j]` 不会覆盖还未遍历过的 `str[i]`，从而答案是正确的。
+
+空间是 $n \to 3*n = O(n)$   
+时间是 $O(n)$
+
+
+``` cpp 
+class Solution {
+   public:
+    string replaceSpaces(string &str) {
+
+        int len = 0;
+        for (auto c : str)
+            if (c == ' ')
+                len += 3;
+            else
+                len ++ ;
+
+        int i = str.size() - 1, j = len - 1;
+
+        str.resize(len);
+
+        while (i >= 0) {
+            if (str[i] == ' ') {
+                str[j--] = '0';
+                str[j--] = '2';
+                str[j--] = '%';
+            } else{
+                str[j--] = str[i];
+            } 
+            i--;
+        }
+        return str;
+    }
+};
+```
+
+
+``` go 
+func replaceSpace(s string) string {
+    b := []byte(s)
+    length := len(b)
+
+    spaceCount := 0
+    for _, value := range b {
+        if value == ' ' {
+            spaceCount++
+        }
+    } // 计算空格的数量
+
+    appendSize := spaceCount * 2
+    tmp := make([]byte, appendSize)
+    b = append(b, tmp...) // 将切片加到原本切片的后面
+
+    i := length - 1
+    j := len(b) - 1
+    for i >= 0 {
+        if b[i] != ' ' {
+            b[j] = b[i]
+            i--
+            j--
+        } else {
+            b[j] = '0'
+            b[j-1] = '2'
+            b[j-2] = '%'
+            i--
+            j = j - 3
+        }
+    }
+
+    return string(b)
+}
+```
