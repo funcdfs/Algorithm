@@ -8,35 +8,32 @@
 #include <vector>
 
 using namespace std;
-/*2021-08-09-13-49*/
-// ? 思路解析：
-/* 
- * 
- * 
- * 
- * 
- ! --难点：
- ! --
- ! --
- */
 
+/*2021-10-16-13-21*/
+
+// depository:
+// https://github.com/fengwei2002/Algorithm
+// solution link:
+// https://leetcode-cn.com/problems/unique-paths-ii/solution/lc63-fengwei200-dp-by-kycu-4oc4/
 
 // @lc code=start
 class Solution {
    public:
-    int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid) {
-        int m = obstacleGrid.size();
-        int n = obstacleGrid[0].size();
-        vector<vector<int>> dp(m, vector<int>(n, 0));
-        for (int i = 0; i < m && obstacleGrid[i][0] == 0; i++) dp[i][0] = 1;
-        for (int j = 0; j < n && obstacleGrid[0][j] == 0; j++) dp[0][j] = 1;
-        for (int i = 1; i < m; i++) {
-            for (int j = 1; j < n; j++) {
-                if (obstacleGrid[i][j] == 1) continue;
-                dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
+    int uniquePathsWithObstacles(vector<vector<int>>& board) {
+        int n = board.size();
+        int m = board[0].size();
+        vector<vector<int>> f(n, vector<int>(m, 0));
+
+        for (int i = 0; i < n && board[i][0] == 0; i++) f[i][0] = 1;
+        for (int j = 0; j < m && board[0][j] == 0; j++) f[0][j] = 1;
+
+        for (int i = 1; i < n; i++) {
+            for (int j = 1; j < m; j++) {
+                if (board[i][j] == 1) continue;
+                f[i][j] = f[i - 1][j] + f[i][j - 1];
             }
         }
-        return dp[m - 1][n - 1];
+        return f[m - 1][n - 1];
     }
 };
 
