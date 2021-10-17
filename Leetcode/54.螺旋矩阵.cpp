@@ -8,48 +8,42 @@
 #include <vector>
 
 using namespace std;
-/*2021-09-08-20-09*/
-// ? 思路解析：
-/*
- *
- *  用 数组偏移量 写法
- !  int dx[] = {0, 1, 0, -1}, dy[] = {1, 0, -1, 0};
- !  x = 0,1,0,-1 ; y = 1,0,-1,0
- */
+
+/*2021-10-13-21-35*/
+
+// depository: 
+// https://github.com/fengwei2002/Algorithm
+// solution link: 
+// https://leetcode-cn.com/problems/spiral-matrix/solution/lc54-fengwei2002-pian-yi-liang-shu-zu-by-0hal/
 
 // @lc code=start
 class Solution {
    public:
     vector<int> spiralOrder(vector<vector<int>>& matrix) {
-        vector<int> res;
-        int n = matrix.size(); // n 代表多少行
-        if (!n) return res;
-        int m = matrix[0].size(); // m 代表多少列
+        vector<int> ans;
+        int n = matrix.size();
+        if (n == 0) return ans;
 
-        int dx[] = {0, 1, 0, -1}, dy[] = {1, 0, -1, 0};
-        // 定义偏移量数组
+        int m = matrix[0].size();
 
-        vector<vector<bool>> vis(n, vector<bool>(m));
-        // 定义 vis 数组 
+        int dx[] = {0, 1, 0, -1};
+        int dy[] = {1, 0, -1, 0};
 
-        int x = 0, y = 0, d = 0; // 用 d 来表示方向  
-        for (int i = 0; i < n * m; i++) {
-            res.push_back(matrix[x][y]);
+        vector<vector<bool>> vis(n, vector<bool>(m, false));
+
+        for (int i = 0, x = 0, y = 0, d = 0; i < n * m; i++) {
+            ans.push_back(matrix[x][y]);
             vis[x][y] = true;
 
-            // 求下一个格子
             int a = x + dx[d], b = y + dy[d];
-            // a < 0 || a >= n || b < 0 || b >= m 代表出界了
-            // vis[a][b] 
             if (a < 0 || a >= n || b < 0 || b >= m || vis[a][b]) {
-                d = (d + 1) % 4; // 0123 四个方向进行循环
-                a = x + dx[d], b = y + dy[d]; //更新下标
+                d = (d + 1) % 4;
+                a = x + dx[d], b = y + dy[d];
             }
-
-            x = a, y = b; //记下来 a b 
+            x = a, y = b;
         }
 
-        return res;
+        return ans;
     }
 };
 // @lc code=end

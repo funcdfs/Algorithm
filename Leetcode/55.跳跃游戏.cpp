@@ -4,19 +4,29 @@
  * [55] 跳跃游戏
  */
 
+#include <algorithm>
+#include <iostream>
+#include <vector>
 
+using namespace std;
+
+/*2021-10-16-13-45*/
+
+// depository:
+// https://github.com/fengwei2002/Algorithm
+// solution link:
+// https://leetcode-cn.com/problems/jump-game/solution/lc55-fengwei2002-by-kycu-p3f2/
 
 // @lc code=start
+
 class Solution {
    public:
     bool canJump(vector<int>& nums) {
-        int cover = 0;
-        if (nums.size() == 1) return true;  // 只有一个元素，就是能达到
-        for (int i = 0; i <= cover; i++) {  // 注意这里是小于等于cover
-            cover = max(i + nums[i], cover);
-            if (cover >= nums.size() - 1) return true;  // 说明可以覆盖到终点了
+        for (int i = 0, k = 0; i < nums.size(); i++) {
+            if (i > k) return false;
+            k = max(k, i + nums[i]);  // 记录每次的可以跳到的最远的位置
         }
-        return false;
+        return true;
     }
 };
 

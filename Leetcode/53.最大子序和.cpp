@@ -10,14 +10,13 @@
 #include <vector>
 
 using namespace std;
-/*2021-08-21-00-55*/
-// ? 思路解析：
-/*
- *
- *
- !
- !
- */
+
+/*2021-10-13-19-16*/
+
+// depository:
+// https://github.com/fengwei2002/Algorithm
+// solution link:
+// https://leetcode-cn.com/problems/maximum-subarray/solution/lc53-fengwei2002-ji-chu-dp-by-kycu-zhl0/
 
 // @lc code=start
 class Solution {
@@ -44,6 +43,20 @@ class Solution {
         int ans = -1e9;
         for (int i = 0; i < n; i++) ans = max(ans, f[i]);
 
+        return ans;
+    }
+};
+
+class Solution2 {
+   public:
+    int maxSubArray(vector<int>& nums) {
+        int ans = INT_MIN;
+
+        for (int i = 0, last = 0; i < nums.size(); i++) {
+            last = nums[i] + max(last, 0);
+            ans = max(ans, last);
+        }
+        
         return ans;
     }
 };
