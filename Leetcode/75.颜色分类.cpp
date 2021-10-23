@@ -8,39 +8,26 @@
 #include <vector>
 
 using namespace std;
-/*2021-07-20-18-56*/
-// ? 思路解析：
-/*
- *
- *
- * 快排模板，无难点
- *
- ! --难点：
- ! --
- ! --
- */
+
+/*2021-10-23-21-40*/
+
+// depository:
+// https://github.com/fengwei2002/Algorithm
+// solution link: 三指针
+// https://leetcode-cn.com/problems/sort-colors/solution/lc75-fengwei2002-by-kycu-3ivm/
+
 // @lc code=start
 class Solution {
    public:
-    void quick_sort(int q[], int l, int r) {
-        if (l >= r) return;
-        int i = l - 1, r = r + 1, x = (l + r) >> 1;
-    }
-    void sortColors(vector<int> &nums) {
-        int *array = new int[nums.size()];
-        for (int i = 0; i < nums.size(); i++) {
-            array[i] = nums.at(i);
+    void sortColors(vector<int>& nums) {
+        for (int i = 0, j = 0, k = nums.size() - 1; i <= k;) {
+            if (nums[i] == 0)
+                swap(nums[i++], nums[j++]);
+            else if (nums[i] == 2)
+                swap(nums[i], nums[k--]);
+            else
+                i++;
         }
-        quick_sort(array, 0, nums.size() - 1);
-        for (int i = 0; i < nums.size(); i++) {
-            nums.at(i) = array[i];
-        }
-        delete[] array;
     }
 };
 // @lc code=end
-
-class SolutionMy_01 {
-   public:
-    void sortColors(vector<int> &nums) { sort(nums.begin(), nums.end()); }
-};
