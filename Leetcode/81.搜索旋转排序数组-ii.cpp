@@ -8,46 +8,43 @@
 #include <vector>
 
 using namespace std;
-/*2021-08-17-17-14*/
-// ? 思路解析：
-/* 
- * lc33 增加条件
- * 
- ! 
- ! 
- */
+
+/*2021-10-23-21-50*/
+
+// depository:
+// https://github.com/fengwei2002/Algorithm
+// solution link:
+// https://leetcode-cn.com/problems/search-in-rotated-sorted-array-ii/solution/lc81-fengwei2002-by-kycu-p67z/
 
 // @lc code=start
 class Solution {
-public:
+   public:
     bool search(vector<int>& nums, int target) {
         int n = nums.size() - 1;
         while (n > 0 && nums[n] == nums[0]) n--;
         int l = 0, r = n;
-        
-        while(l < r) {
+
+        while (l < r) {
             int mid = (l + r + 1) >> 1;
-            if (nums[mid] >= nums[0]) l = mid;
-            else r = mid - 1;
-        }
+            if (nums[mid] >= nums[0])
+                l = mid;
+            else
+                r = mid - 1;
+        } // 去除前导零之后找到 两段的边界位置
 
-        cout << l << r << endl;
-
-
-        if (target >= nums[0]) l = 0;
-        else l = r + 1, r = n;
-
-        cout << l << r << endl;
-
+        if (target >= nums[0])
+            l = 0;
+        else
+            l = r + 1, r = n;
 
         while (l < r) {
             int mid = (l + r) >> 1;
-            if (nums[mid] >= target) r = mid;
-            else l = mid + 1;
+            if (nums[mid] >= target)
+                r = mid;
+            else
+                l = mid + 1;
         }
-        cout << l << r << endl;
         return nums[r] == target;
     }
 };
 // @lc code=end
-
