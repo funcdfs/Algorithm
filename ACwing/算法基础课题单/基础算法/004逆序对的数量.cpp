@@ -13,6 +13,7 @@ int n, q[N], tmp[N];
 LL merge_sort(int q[], int l, int r) {
     if (l >= r) return 0;
     int mid = (l + r) >> 1;
+
     LL ans = merge_sort(q, l, mid) + merge_sort(q, mid + 1, r);
 
     int k = 0, i = l, j = mid + 1;
@@ -20,7 +21,9 @@ LL merge_sort(int q[], int l, int r) {
         if (q[i] <= q[j])
             tmp[k++] = q[i++];
         else {
-            ans += mid - i + 1;
+            ans += mid - i + 1; // 如果 q[i] > q[j] 
+            // 那么对于 q[j] 这一个点， q[i to mid] 都是逆序对
+            // 所以答案加上 mid - i + 1
             tmp[k++] = q[j++];
         }
     }

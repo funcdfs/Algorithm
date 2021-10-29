@@ -1,21 +1,5 @@
 LeetCode 51-110 题
 
-
-[题目链接]()  
-[题解链接]()
-
-https://github.com/fengwei2002/algorithm
-
-### 思路
-
-### 代码
-
-``` cpp
-// https://github.com/fengwei2002/algorithm
-
-
-```
-
 | SOLUTIONLINK |  | TAGS | STEPS |
 | ------ | ---- | ---- | ------ |
 | [0051](https://leetcode-cn.com/problems/n-queens/solution/lc51-fengwei2002-dfs-by-kycu-clwn/) | [51.n-皇后](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/51.n-皇后.cpp) |DFS| 典中典，用 `u - i + n` 和 `u + i` 表示对角线 dg，udg|
@@ -35,7 +19,7 @@ https://github.com/fengwei2002/algorithm
 | [0065](https://leetcode-cn.com/problems/valid-number/solution/lc65-fengwei2002-mian-xiang-yang-li-bian-krja/) | [65.有效数字](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/65.有效数字.cpp) |模拟| 没意思，pass，面向样例编程|
 | [0066](https://leetcode-cn.com/problems/plus-one/solution/lc66-fengwei2002-gao-jing-du-jia-fa-by-k-g03q/) | [66.加一](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/66.加一.cpp) | 高精度加法| 高精度加法模板题，利用两次翻转可以使代码更加美观|
 | [0067](https://leetcode-cn.com/problems/add-binary/solution/lc67-fengwei2002-mo-ni-by-kycu-y3mu/) | [67.二进制求和](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/67.二进制求和.cpp) | 高精度加法 | 高精度加法模板题++|
-| 0068 | [68.文本左右对齐](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/68.文本左右对齐.cpp) |模拟| 大模拟|
+| [0068](https://leetcode-cn.com/problems/text-justification/solution/lc68-fengwei2002-by-kycu-cts9/) | [68.文本左右对齐](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/68.文本左右对齐.go) |模拟| 大模拟|
 | [0069](https://leetcode-cn.com/problems/sqrtx/solution/lc69-fengwei2002-fu-dian-shu-er-fen-by-k-q2ia/) | [69.x-的平方根](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/69.x-的平方根.cpp) |二分| 浮点数二分典中典|
 | [0070](https://leetcode-cn.com/problems/climbing-stairs/solution/lc70-fengwei2002-dp-by-kycu-kfe0/) | [70.爬楼梯](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/70.爬楼梯.cpp) | DP | 简单 DP： `f[i] = f[i - 1] + f[i - 2]`|
 | [0071](https://leetcode-cn.com/problems/simplify-path/solution/lc71-fengwei2002-by-kycu-z3ke/) | [71.简化路径](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/71.简化路径.cpp) | 栈模拟| 用两个字符串模拟栈的操作，遇到 `.` 不作为，遇到 `..` 弹出上一段路径，否则就正常加入结果路径|
@@ -58,23 +42,23 @@ https://github.com/fengwei2002/algorithm
 | [0088](https://leetcode-cn.com/problems/merge-sorted-array/solution/lc88-fengwei2002-by-kycu-rejy/) | [88.合并两个有序数组](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/88.合并两个有序数组.cpp) | 双指针 | 避免没有被用过的数字被覆盖，从后往前，依次放入最大值，nums1 不用进行扫尾操作 |
 | [0089](https://leetcode-cn.com/problems/gray-code/solution/lc89-fengwei2002-by-kycu-rjei/) | [89.格雷编码](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/89.格雷编码.cpp) | 找规律 | 在将现有数字镜像对称之后，将上半部分尾部加上 0，将下半部分尾部加上 1|
 | [0090](https://leetcode-cn.com/problems/subsets-ii/solution/lc90-fengwei2002-by-kycu-jkwn/) | [90.子集-ii](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/90.子集-ii.cpp) | DFS | 子集中可以包含包含重复元素，答案中不包含重复子集，排序之后`if (i > startIndex && nums[i] == nums[i - 1]), continue;` |
-| [0091](https://leetcode-cn.com/problems/decode-ways/solution/lc91-fengwei2002-by-kycu-1yv7/) | [91.解码方法](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/91.解码方法.cpp) |tags| Content|
-| [0092](https://leetcode-cn.com/problems/reverse-linked-list-ii/solution/lc92-fengwei2002-by-kycu-f9si/) | [92.反转链表-ii](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/92.反转链表-ii.cpp) |tags| Content|
-| [0093](https://leetcode-cn.com/problems/restore-ip-addresses/solution/lc93-fengwei2002-by-kycu-ptu7/) | [93.复原-ip-地址](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/93.复原-ip-地址.cpp) |tags| Content|
-| [0094](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/lc94-fengwei2002-by-kycu-9iye/) | [94.二叉树的中序遍历](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/94.二叉树的中序遍历.cpp) |tags| Content|
-| [0095](https://leetcode-cn.com/problems/unique-binary-search-trees-ii/solution/lc95-fengwei2002-by-kycu-lrga/) | [95.不同的二叉搜索树-ii](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/95.不同的二叉搜索树-ii.cpp) |tags| Content|
-| [0096](https://leetcode-cn.com/problems/unique-binary-search-trees/solution/lc96-fengwei2002-by-kycu-lekx/) | [96.不同的二叉搜索树](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/96.不同的二叉搜索树.cpp) |tags| Content|
-| [0097](https://leetcode-cn.com/problems/interleaving-string/solution/lc97-fengwei2002-by-kycu-y68b/) | [97.交错字符串](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/97.交错字符串.cpp) |tags| Content|
-| [0098](https://leetcode-cn.com/problems/validate-binary-search-tree/solution/lc98-fengwei2002-by-kycu-8dl4/) | [98.验证二叉搜索树](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/98.验证二叉搜索树.cpp) |tags| Content|
-| [0099](https://leetcode-cn.com/problems/recover-binary-search-tree/solution/lc99-fengwei2002-by-kycu-45z2/) | [99.恢复二叉搜索树](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/99.恢复二叉搜索树.cpp) |tags| Content|
-| [0100](https://leetcode-cn.com/problems/same-tree/solution/lc100-fengwei2002-by-kycu-2pce/) | [100.相同的树](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/100.相同的树.cpp) |tags| Content|
-| 0101 | [101.对称二叉树](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/101.对称二叉树.cpp) |tags| Content|
-| 0102 | [102.二叉树的层序遍历](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/102.二叉树的层序遍历.cpp) |tags| Content|
-| 0103 | [103.二叉树的锯齿形层序遍历](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/103.二叉树的锯齿形层序遍历.cpp) |tags| Content|
-| 0104 | [104.二叉树的最大深度](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/104.二叉树的最大深度.cpp) |tags| Content|
-| 0105 | [105.从前序与中序遍历序列构造二叉树](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/105.从前序与中序遍历序列构造二叉树.cpp) |tags| Content|
-| 0106 | [106.从中序与后序遍历序列构造二叉树](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/106.从中序与后序遍历序列构造二叉树.cpp) |tags| Content|
-| 0107 | [107.二叉树的层序遍历-ii](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/107.二叉树的层序遍历-ii.cpp) |tags| Content|
-| 0108 | [108.将有序数组转换为二叉搜索树](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/108.将有序数组转换为二叉搜索树.cpp) |tags| Content|
-| 0109 | [109.有序链表转换二叉搜索树](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/109.有序链表转换二叉搜索树.cpp) |tags| Content|
-| 0110 | [110.平衡二叉树](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/110.平衡二叉树.cpp) |tags| Content|
+| [0091](https://leetcode-cn.com/problems/decode-ways/solution/lc91-fengwei2002-by-kycu-1yv7/) | [91.解码方法](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/91.解码方法.cpp) | DP | 带有条件的斐波那契数列 |
+| [0092](https://leetcode-cn.com/problems/reverse-linked-list-ii/solution/lc92-fengwei2002-by-kycu-f9si/) | [92.反转链表-ii](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/92.反转链表-ii.cpp) | 链表| 翻转固定区间内的链表元素，一趟遍历完成|
+| [0093](https://leetcode-cn.com/problems/restore-ip-addresses/solution/lc93-fengwei2002-by-kycu-ptu7/) | [93.复原-ip-地址](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/93.复原-ip-地址.cpp) | DFS | 刚好存在四位数字的时候放入结果中|
+| [0094](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/lc94-fengwei2002-by-kycu-9iye/) | [94.二叉树的中序遍历](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/94.二叉树的中序遍历.cpp) | 二叉树 | 模板题，二叉树中序遍历迭代写法是先将左子树全部入栈，然后拐向右子树|
+| [0095](https://leetcode-cn.com/problems/unique-binary-search-trees-ii/solution/lc95-fengwei2002-by-kycu-lrga/) | [95.不同的二叉搜索树-ii](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/95.不同的二叉搜索树-ii.cpp) | DFS | 根节点在 `1 - n` 中选取，左右根节点在lr区间选取，两两组合输出|
+| [0096](https://leetcode-cn.com/problems/unique-binary-search-trees/solution/lc96-fengwei2002-by-kycu-lekx/) | [96.不同的二叉搜索树](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/96.不同的二叉搜索树.cpp) | DFS | 输出对应的卡特兰数，DP，或者暴力搜索|
+| [0097](https://leetcode-cn.com/problems/interleaving-string/solution/lc97-fengwei2002-by-kycu-y68b/) | [97.交错字符串](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/97.交错字符串.cpp) | 字符串 DP | 条件 DP `f[i][j] = f[i][j - 1] || f[i - 1][j]` |
+| [0098](https://leetcode-cn.com/problems/validate-binary-search-tree/solution/lc98-fengwei2002-by-kycu-8dl4/) | [98.验证二叉搜索树](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/98.验证二叉搜索树.cpp) | 二叉树 | 判断中序遍历是否为 升序 数组|
+| [0099](https://leetcode-cn.com/problems/recover-binary-search-tree/solution/lc99-fengwei2002-by-kycu-45z2/) | [99.恢复二叉搜索树](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/99.恢复二叉搜索树.cpp) | 二叉树 | 在一个数组中，寻找至多两个不满足升序的区间边界，进行边界值的交换|
+| [0100](https://leetcode-cn.com/problems/same-tree/solution/lc100-fengwei2002-by-kycu-2pce/) | [100.相同的树](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/100.相同的树.cpp) | DFS | 递归判断左右子树是否同时相同 |
+| [0101](https://leetcode-cn.com/problems/symmetric-tree/solution/lc101-fengwei2002-by-kycu-ylj4/) | [101.对称二叉树](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/101.对称二叉树.go) | DFS | 和相同的树同理，只不过需要判断的是左子树的左子树和右子树的右子树|
+| [0102](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/solution/lc102-fengwei2002-by-kycu-pkxp/) | [102.二叉树的层序遍历](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/102.二叉树的层序遍历.go) | 二叉树 | 模板题，迭代写法使用队列完成 |
+| [0103](https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/solution/lc103-fengwei2002-by-kycu-19d9/) | [103.二叉树的锯齿形层序遍历](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/103.二叉树的锯齿形层序遍历.go) | 二叉树 | 每次得到一个完整的 ansitem 之后进行 flag 的判断，执行或者不执行数组的翻转|
+| [0104](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/solution/lc104-fengwei2002-by-kycu-7p9e/) | [104.二叉树的最大深度](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/104.二叉树的最大深度.go) | DFS | 根节点的长度是左右节点最大长度加一，递归到左右子树分别执行 |
+| [0105](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/solution/lc105fengwei2002-by-kycu-co7w/) | [105.从前序与中序遍历序列构造二叉树](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/105.从前序与中序遍历序列构造二叉树.go) | 二叉树 | 在中序遍历中寻找前序遍历的第一个节点，位置记为 left，然后左子树的前序遍历就是除了根节点的left个元素，右子树的前序遍历就是剩余的 left 元素，inorder 同理|
+| [0106](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/solution/lc106-fengwei2002-by-kycu-8h26/) | [106.从中序与后序遍历序列构造二叉树](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/106.从中序与后序遍历序列构造二叉树.go) | 二叉树 | 同上，在中序遍历中寻找后序遍历的最后一个节点位置记为 left， 然后除去根节点的 left 个元素的后序遍历作为新的右子树的后序遍历|
+| [0107](https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii/solution/lc107-fengwei2002-by-kycu-0dzf/) | [107.二叉树的层序遍历-ii](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/107.二叉树的层序遍历-ii.go) | 二叉树 | 对垒实现，得到层序遍历结果之后将 ans 数组逆序|
+| [0108](https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/solution/lc108-fengwei2002-by-kycu-8eyj/) | [108.将有序数组转换为二叉搜索树](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/108.将有序数组转换为二叉搜索树.go) | 二叉树 | val 等于 中间节点，左子树等于左侧节点递归执行的结果，右子树等于右侧节点递归执行的结果 |
+| [0109](https://leetcode-cn.com/problems/convert-sorted-list-to-binary-search-tree/solution/lc109-fengwei2002-by-kycu-smfq/) | [109.有序链表转换二叉搜索树](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/109.有序链表转换二叉搜索树.go) | 二叉树 | 链表不为空的时候，将链表的值存储到一个数组中，调用上一题的函数 |
+| [0110](https://leetcode-cn.com/problems/balanced-binary-tree/solution/lc110-fengwei2002-by-kycu-8n9j/) | [110.平衡二叉树](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/110.平衡二叉树.go) | 二叉树 | 如果搜索的过程中发现某个节点的左右子树差值的绝对值大于 1 返回 false，否则返回 true |
