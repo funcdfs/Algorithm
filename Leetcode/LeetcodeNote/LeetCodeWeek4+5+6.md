@@ -1,6 +1,6 @@
 LeetCode 51-110 题
 
-| SOLUTIONLINK |  | TAGS | STEPS |
+| SOLUTIONLINK | Code | TAGS | STEPS |
 | ------ | ---- | ---- | ------ |
 | [0051](https://leetcode-cn.com/problems/n-queens/solution/lc51-fengwei2002-dfs-by-kycu-clwn/) | [51.n-皇后](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/51.n-皇后.cpp) |DFS| 典中典，用 `u - i + n` 和 `u + i` 表示对角线 dg，udg|
 | [0052](https://leetcode-cn.com/problems/n-queens-ii/solution/lc52-fengwei2002-dfs-by-kycu-f4wm/) | [52.n皇后-ii](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/52.n皇后-ii.cpp) |DFS| 同上一题，这个题不用进行 `board` 的存储，只用三个 `bool` 数组即可完成|
