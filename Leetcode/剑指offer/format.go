@@ -1,39 +1,26 @@
-func exist(board [][]byte, word string) bool {
-	for i := 0; i < len(board); i++ {
-		for j := 0; j < len(board[0]); j++ {
-			if dfs(board, word, 0, i, j) == true {
-				return true
-			}
-		}
-	}
-	return false
-}
+package main
 
-func dfs(board [][]byte, word string, u int, x int, y int) bool {
-	if board[x][y] != word[u] {
-		return false
-	}
-	if u == len(word)-1 {
-		return true
-	}
+import (
+    "fmt"
+    "time"
+)
 
-	dx := [4]int{-1, 0, 1, 0}
-	dy := [4]int{0, 1, 0, -1}
+func main() {
 
-	t := board[x][y]
-	board[x][y] = '.'
-	for i := 0; i < 4; i++ {
-		a := x + dx[i]
-		b := y + dy[i]
-		if a < 0 || a >= len(board) || b < 0 || b >= len(board[0]) || board[a][b] == '.' {
-			continue
-		}
-		if dfs(board, word, u+1, a, b) == true {
-			return true
-		}
-	}
+    timer1 := time.NewTimer(2 * time.Second)
 
-	board[x][y] = t
+    <-timer1.C
+    fmt.Println("Timer 1 fired")
 
-	return false
+    timer2 := time.NewTimer(time.Second)
+    go func() {
+        <-timer2.C
+        fmt.Println("Timer 2 fired")
+    }()
+    stop2 := timer2.Stop()
+    if stop2 {
+        fmt.Println("Timer 2 stopped")
+    }
+
+    time.Sleep(2 * time.Second)
 }
