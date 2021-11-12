@@ -5,7 +5,7 @@ using namespace std;
 const int N = 100010;
 
 int n, m;
-int p[N], cnt[N];
+int p[N], cnt[N]; // 只保证根节点的 size 有意义
 
 int find(int x) {
     if (p[x] != x) p[x] = find(p[x]);

@@ -1,19 +1,21 @@
 #include <iostream>
+
 using namespace std;
 
 const int N = 1e5 + 10;
-int stk[N], tt;
+int stk[N], tt, m;
 
 int main() {
-    int m = 0;
     cin >> m;
-    while (m--) {
-        string op;
-        cin >> op;
+    while (m -- ) {
+        string op = "";
         int x = 0;
+
+        cin >> op;
         if (op == "push") {
             cin >> x;
-            stk[++tt] = x;
+            tt++;
+            stk[tt] = x;
         } else if (op == "pop") {
             tt--;
         } else if (op == "empty") {
@@ -22,7 +24,7 @@ int main() {
             } else {
                 cout << "NO" << endl;
             }
-        } else {
+        } else if (op == "query") {
             cout << stk[tt] << endl;
         }
     }
