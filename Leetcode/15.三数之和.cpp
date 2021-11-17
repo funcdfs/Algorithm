@@ -32,10 +32,10 @@ class Solution {
         vector<vector<int>> ans(0, vector<int>(0, 0));
 
         int n = nums.size();
-        sort(nums.begin(), nums.end());
-
+        sort(nums.begin(), nums.end()); // 记得要优先排序
+ 
         for (int i = 0; i < n; i++) {
-            if (i > 0 && nums[i] == nums[i - 1]) continue;
+            if (i > 0 && nums[i] == nums[i - 1]) continue; // 这一步是去掉相同的 i
 
             int k = n - 1; // k 是逆序开始的一个指针
             int j = i + 1; // j 是 i 后面的一个指针
@@ -47,7 +47,7 @@ class Solution {
                 } else { // 找到了一个三元组
                     ans.push_back({nums[i], nums[j], nums[k]}); // 放入三元组的写法， 不用先声明 itemAns 
                     // 在找到结果后进行去重，而不是在找到结果前进行去重
-                    while (k > j && nums[k] == nums[k - 1]) k--;
+                    while (k > j && nums[k] == nums[k - 1]) k--; // 这两步是对于一个 i 去掉相同的 j 和 k
                     while (k > j && nums[j] == nums[j + 1]) j++;
                     k--, j++;
                 }

@@ -13,3 +13,14 @@
 | [0118](https://leetcode-cn.com/problems/pascals-triangle/solution/lc118-fengwei2002-by-kycu-5q8i/) | [118.杨辉三角](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/118.杨辉三角.go) | DP | `line[j] = f[i-1][j-1] + f[i-1][j]`|
 | [0119](https://leetcode-cn.com/problems/pascals-triangle-ii/solution/lc119-fengwei2002-by-kycu-nfcf/) | [119.杨辉三角-ii](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/119.杨辉三角-ii.go) | DP | 滚动数组的优化写法，就是先按照没有滚动数组把程序写出来，然后所有的行坐标 `&1` |
 | [0120](https://leetcode-cn.com/problems/triangle/solution/lc120-fengwei2002-by-kycu-rcxn/) | [120.三角形最小路径和](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/120.三角形最小路径和.go) | 条件 DP | 注意边界情况的判断，不要漏掉某种情况|
+
+| [0121](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/solution/lc121-fengwei2002-by-kycu-38dw/) | [121.买卖股票的最佳时机](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/121.买卖股票的最佳时机.cpp) |tags| Content|
+| [0122](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/solution/lc122-fengwei2002-by-kycu-irmm/) | [name](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/name.cpp) |tags| Content|
+| [0123](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/solution/lc123-fengwei2002-by-kycu-srvo/) | [name](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/name.cpp) |tags| Content|
+| 0124 | [name](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/name.cpp) |tags| Content|
+| 0125 | [name](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/name.cpp) |tags| Content|
+| 0126 | [name](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/name.cpp) |tags| Content|
+| 0127 | [name](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/name.cpp) |tags| Content|
+| 0128 | [name](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/name.cpp) |tags| Content|
+| 0129 | [name](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/name.cpp) |tags| Content|
+| 0130 | [name](https://github.com/fengwei2002/Algorithm/blob/main/Leetcode/name.cpp) |tags| Content|

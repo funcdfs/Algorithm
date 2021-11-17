@@ -3,21 +3,7 @@
 
 using namespace std;
 
-void divide_暴力解法(int n) {
-    for (int i = 2; i <= n; i++) {
-        if (n % i == 0) {
-            int s = 0;
-            while (n % i == 0) {
-                n /= i;
-                s++;
-            }
-            printf("%d %d\n", i, s);
-        }
-    }
-}
-
 void divide(int x) {
-    // n 中最多只包含一个大于 sqrt n 的质因子
     for (int i = 2; i <= x / i; i++) {
         if (x % i == 0) {
             int s = 0;
@@ -25,7 +11,9 @@ void divide(int x) {
             cout << i << ' ' << s << endl; // 底数和指数
         }
     }
-    // 单独处理： 每个数都有和 1 的质因数分解
+
+    // 从小到大枚举 n 的所有质因数， 如果 n % i 等于 0 的话， 就将 i 的次数求出来
+    // 单独处理： 大于 根号 n 的质因子
     if (x > 1) cout << x << ' ' << 1 << endl; 
     cout << endl;
 }
@@ -57,3 +45,6 @@ int main() {
 每个合数都可以写成几个质数（也可称为素数）相乘的形式 [2]  ，这几个质数就都叫做这个合数的质因数。
 如果一个质数是某个数的因数，那么就说这个质数是这个数的质因数；而这个因数一定是一个质数
 */
+
+
+// 时间复杂度 O(log_n) 到 O(sqrt_n)

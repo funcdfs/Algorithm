@@ -1,49 +1,46 @@
+
+
 #include <iostream>
 
 using namespace std;
 
-const int N = 20;
+const int N = 10;
 
 int n;
-char g[N][N];
-bool col[N], dg[N], udg[N];  // 同一列，正对角线，反对角线
-/*
- * 因为每行只可以出现一个皇后，同全排列写法，每次枚举第 n 行哪个位置可以放入皇后
- */
+bool row[N], col[N], diagonal[N * 2], antiDiagonal[N * 2];
 
-void dfs(int u) {
-    if (u == n) {
-        // 如果皇后数量达标的话，输出这个棋盘，同数字全排列
-        for (int i = 0; i < n; i++) puts(g[i]);
-        puts("");
+char chessBoard[N][N];
+
+void dfs(int x, int y, int sum) {
+    if (sum > n) return;
+    if (y == n) y = 0, x++;
+    if (x == n) {
+        if (sum == n) {
+            for (int i = 0; i < n; i++) puts(chessBoard[i]);
+            puts("");
+        }
         return;
     }
 
-    for (int i = 0; i < n; i++) {
-        // 如果当前的行可以放，对角线可以放
-        if (!col[i] && !dg[u + i] && !udg[n - u + i]) {
-            // 反对角线  y = x + k || k = y - x
-            // (因为坐标不能为负数，所以加上一个常量 n即可) 正对角线 y = -x + k
-            // || k = y + x （是大于 0 的一个值， 不用进行处理）
-            g[u][i] = 'Q';
-            col[i] = dg[u + i] = udg[n - u + i] = true;
-            // 进行状态转换
-            dfs(u + 1);
-            // 迭代
+    chessBoard[x][y] = '.';
 
-            col[i] = dg[u + i] = udg[n - u + i] = false;
-            // 状态回溯, 恢复现场， 与递归之前的代码完全对称
-            g[u][i] = '.';
-        }
+    dfs(x, y + 1, sum);
+
+    if (!row[x] && !col[y] && !diagonal[x + y] && !antiDiagonal[x - y + n]) {
+        row[x] = col[y] = diagonal[x + y] = antiDiagonal[x - y + n] = true;
+        chessBoard[x][y] = 'Q';
+
+        dfs(x, y + 1, sum + 1);
+
+        chessBoard[x][y] = '.';
+        row[x] = col[y] = diagonal[x + y] = antiDiagonal[x - y + n] = false;
     }
 }
 
 int main() {
     cin >> n;
-    for (int i = 0; i < n; i++)
-        for (int j = 0; j < n; j++) g[i][j] = '.';
-
-    dfs(0);
-
+    dfs(0, 0, 0);
     return 0;
 }
+
+// https://www.acwing.com/activity/content/code/content/1519746/

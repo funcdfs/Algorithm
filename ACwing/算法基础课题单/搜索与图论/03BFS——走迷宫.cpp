@@ -11,7 +11,7 @@ const int N = 110;
 
 int n, m;
 int g[N][N], d[N][N]; 
-// g 数组存储图， d 数组存储每一个点到起点点的距离
+// g 数组存储图， d 数组存储每一个点到起点的距离
 
 int bfs() {
     queue<PII> q;
