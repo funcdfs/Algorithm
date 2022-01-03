@@ -1,4 +1,4 @@
-// 返回元素的其实位置和结束位置
+// 返回元素的起始位置和结束位置
 
 #include <iostream>
 
@@ -13,7 +13,6 @@ void cal(int k) {
     while (l < r) {
         int mid = (l + r) >> 1;
         if (a[mid] >= k) r = mid; // 如果某个值大于目标值，说明要寻找的区间端点在左侧，使用 r = mid 更新边界
-        
         else l = mid + 1;
     }
     if (a[l] != k) 

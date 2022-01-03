@@ -18,6 +18,7 @@ vector<int> add(vector<int> &A, vector<int> &B) {
     return C;
 }
 
+// 逆序存储 A B 以及结果 C，记得放 1，不用去除前导零
 int main() {
     string a, b;
     cin >> a >> b;

@@ -3,7 +3,7 @@
 using namespace std;
 typedef long long LL;
 
-const int N = 1e6 + 10;
+const int N = 1e5 + 10;
 int n, q[N], tmp[N];
 
 // -- 左侧逆序对的数量
@@ -21,23 +21,27 @@ LL merge_sort(int q[], int l, int r) {
         if (q[i] <= q[j])
             tmp[k++] = q[i++];
         else {
-            ans += mid - i + 1; // 如果 q[i] > q[j] 
+            tmp[k++] = q[j++];
+            // 如果 q[i] > q[j]
             // 那么对于 q[j] 这一个点， q[i to mid] 都是逆序对
             // 所以答案加上 mid - i + 1
-            tmp[k++] = q[j++];
+            ans += mid - i + 1;
         }
     }
+
     // 扫尾
     while (i <= mid) tmp[k++] = q[i++];
     while (j <= r) tmp[k++] = q[j++];
+
     // 物归原主
     for (int i = l, j = 0; i <= r; i++, j++) q[i] = tmp[j];
+
     return ans;
 }
 
-int main (){
-    scanf("%d", &n);
-    for (int i = 0; i < n; i++) scanf("%d", &q[i]);
+int main() {
+    cin >> n;
+    for (int i = 0; i < n; i++) cin >> q[i];
     printf("%lld", merge_sort(q, 0, n - 1));
     return 0;
 }

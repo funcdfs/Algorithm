@@ -29,6 +29,7 @@ vector<int> sub(vector<int> &A, vector<int> &B) {
     return C;
 }
 
+// 逆序存储 A B 以及结果 C
 int main() {
     string a, b;
     vector<int> A, B;

@@ -37,7 +37,7 @@ func f1() int {
 	}()
 	return x
 }
-
+	
 func f2() (x int) {
 	defer func() {
 		x++

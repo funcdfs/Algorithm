@@ -11,10 +11,7 @@ int head[N], e[N], ne[N], idx; // 领接表
 int d[N], q[N];             // 每个点的入度
 
 void add(int a, int b) { e[idx] = b, ne[idx] = head[a], head[a] = idx++; }
-void add(int a, int b) {
-    e[idx] = b;
-    ne
-}
+
 bool topsort() {
     int hh = 0, tt = -1;
 
