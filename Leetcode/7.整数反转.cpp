@@ -40,17 +40,3 @@ class Solution {
     }
 };
 // @lc code=end
-
-class demo {
-   public:
-    int reverse(int x) {
-        int t = 0;
-        while (x) {
-            if (t > 0 && t > (INT_MAX - x % 10) / 10) return 0;
-            if (t < 0 && t < (INT_MIN - x % 10) / 10) return 0;
-            t = t * 10 + x % 10;
-            x /= 10;
-        }
-        return t;
-    }
-};

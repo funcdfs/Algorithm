@@ -3,22 +3,21 @@
  *
  * [13] 罗马数字转整数
  */
+
 #include <algorithm>
 #include <iostream>
-#include <unordered_map>
 #include <vector>
+#include <unordered_map>
 
 using namespace std;
 
-/*2021-09-30-10-18*/
+/*2022-01-09-23-33*/
 
-// from https://github.com/fengwei2002/Algorithm
-/*
- ! 模拟 找规律
- !
- *
- *
- */
+// https://github.com/fengwei2002/Algorithm
+// solution link: 
+// https://leetcode-cn.com/problems/roman-to-integer/solution/lc13-fengwei2002-by-fengwei2002-dfdr/
+
+
 
 // @lc code=start
 class Solution {

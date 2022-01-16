@@ -10,45 +10,53 @@
 
 using namespace std;
 
-/*2021-09-26-20-30*/
+/*2022-01-09-22-51*/
 
-// from https://github.com/fengwei2002/Algorithm
-/*
- !
- !
- * 题解： https://leetcode-cn.com/problems/string-to-integer-atoi/solution/lc8-fengwei2002-by-fengwei2002-sg6u/
- *
- */
+// https://github.com/fengwei2002/Algorithm
+// solution link: 
+// https://leetcode-cn.com/problems/string-to-integer-atoi/solution/lc8-fengwei2002-by-fengwei2002-sg6u/
 
 // @lc code=start
 class Solution {
-   public:
-    int myAtoi(string str) {
-        int k = 0;
-        while (k < str.size() && str[k] == ' ') k++;
-        if (k == str.size()) return 0;
+public:
+    int myAtoi(string s) {
+        int index = 0;
+        // 丢弃前面所有的空格
+        while (index < s.size() && s[index] == ' ') index++;
+        if (index == s.size()) return 0;
+        
 
+        // 检查是正号还是负号
         int minus = 1;
-        if (str[k] == '-')
-            minus = -1, k++;
-        else if (str[k] == '+')
-            k++;
+        if (s[index] == '-') {
+            minus = -1;
+            index++;
+        } else if (s[index] == '+') {
+            index++;
+        }
 
         int ans = 0;
-        while (k < str.size() && str[k] >= '0' && str[k] <= '9') {
-            int x = str[k] - '0';
+        while (index < s.size() && s[index] >= '0' && s[index] <= '9') {
+            int x = s[index] - '0';
 
-            if (minus > 0 && ans > (INT_MAX - x) / 10) return INT_MAX;
-            if (minus < 0 && -ans < (INT_MIN + x) / 10) return INT_MIN;
-            if (-ans * 10 - x == INT_MIN) return INT_MIN;
-            if (ans > INT_MAX) break;
-
+            // 判断是否越界
+            if (ans > (INT_MAX - x) / 10) {
+                if (minus > 0) {
+                    return INT_MAX;
+                } else {
+                    return INT_MIN;
+                }
+            }
+            
             ans = ans * 10 + x;
-            k++;
+            index++;
+            if (ans > INT_MAX) break;
         }
+
         ans *= minus;
 
         return ans;
     }
 };
+
 // @lc code=end

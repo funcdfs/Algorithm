@@ -2,44 +2,44 @@
 
 using namespace std;
 
-const int N = 100010;
-
+const int N = 1e5 + 10;
 int son[N][26], cnt[N], idx;
-char str[N];
 
-void insert(char *str) {
+void insert(string str) {
     int p = 0;
-    for (int i = 0; str[i]; i++) {
+    for (int i = 0; i < str.size(); i++) {
         int u = str[i] - 'a';
-        if (!son[p][u]) son[p][u] = ++idx;
+        if (!son[p][u]) {
+            son[p][u] = ++idx;
+        }
         p = son[p][u];
     }
     cnt[p]++;
 }
 
-int query(char *str) {
+int query(string str) {
     int p = 0;
-    for (int i = 0; str[i]; i++) {
+    for (int i = 0; i < str.size(); i++) {
         int u = str[i] - 'a';
-        if (!son[p][u]) return 0;
+        if (!son[p][u]) {
+            return 0;
+        }
         p = son[p][u];
     }
     return cnt[p];
 }
 
 int main() {
-    int n;
-    scanf("%d", &n);
+    int n = 0;
+    cin >> n;
     while (n--) {
-        char op[2];
-        scanf("%s%s", op, str);
-        if (*op == 'I')
+        string op, str;
+        cin >> op >> str;
+        if (op == "I") {
             insert(str);
-        else
-            printf("%d\n", query(str));
+        } else {
+            cout << query(str) << endl;
+        }
     }
-
     return 0;
 }
-
-// https://www.acwing.com/activity/content/code/content/1463073/
