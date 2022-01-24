@@ -4,7 +4,7 @@
 class MinStack {
   public:
     /** initialize your data structure here. */
-    stack<int> minStack;    // 维护一个单调栈，储存最小值
+    stack<int> minStack;    // 维护一个非严格的单调栈，储存最小值
     stack<int> valStack;
 
     MinStack() {
@@ -16,10 +16,11 @@ class MinStack {
 
         // 如果 push 的 x ，小于单调栈的最小值，则 x 对应的最小值就是 x 
         //                  否则，x 对应的单调栈的最小值就是 minStack.top()
-        if (minStack.empty() || x < minStack.top()) 
+        if (minStack.empty() || x < minStack.top()) {
             minStack.push(x);
-        else
+        } else {
             minStack.push(minStack.top());
+        }
     }
 
     void pop() {
