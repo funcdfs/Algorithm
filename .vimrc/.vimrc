@@ -1,10 +1,7 @@
 "==========================================
 " ProjectLink: https://github.com/wklken/vim-for-server
-" Author:  fengwei2002
-" Version: 0.3
 " Email: konng_0120@qq.com
 " github: https://github.com/fengwei2002
-" ReadMe: README.md
 " Last_modify: 2021-09-29
 " Desc: simple vim config for server, without any plugins.
 "==========================================
@@ -127,7 +124,8 @@ endif
 
 " theme
 set background=dark
-colorscheme desert
+# colorscheme desert
+colorscheme atom
 
 " set mark column color
 hi! link SignColumn   LineNr
@@ -256,13 +254,13 @@ set noeb
 " 括号自动补全 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Parenthesis/bracket
+" => Parenthesis/bracket 需要自动括号匹配的话，手动去除对应的注释符
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-imap ( ()<Left>
-imap [ []<Left>
+" imap ( ()<Left>
+" imap [ []<Left>
 inoremap {<CR> {}<Left><CR><Tab><CR><Esc><Up><S-A>
-inoremap " ""<Left>
-inoremap ' ''<Left>
+" inoremap " ""<Left>
+" inoremap ' ''<Left>
 
 set cursorcolumn  "or set cuc 设置光标所在的列
 set cursorline    "or set cul 设置光标所在的行
@@ -270,6 +268,10 @@ set cursorline    "or set cul 设置光标所在的行
 " red（红），white（白），black（黑），green（绿），yellow（黄），blue（蓝），purple（紫），
 " gray（灰），brown（棕），tan(褐色)，syan(青色)
 " 更多高亮颜色设置, 可以:h highlight 查看manual
-highlight CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=NONE guifg=NONE
+highlight CursorLine   cterm=NONE ctermbg=red ctermfg=white guibg=NONE guifg=NONE
 highlight CursorColumn cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
-        
+
+set noswapfile
+set mouse=a
+
+
