@@ -1,4 +1,4 @@
-```
+``` cpp
     1   2   3   4   5   6   7  
    #############################
  1 #   |   #   |   #   |   |   #
@@ -65,11 +65,99 @@
 9
 ```
 
+**输入样例**：
+
+``` cpp
+5 7
+3 14 11 2 2 2 6
+5 3 10 4 5 1 4
+13 13 7 5 5 9 4
+15 3 12 9 12 11 12
+11 8 10 10 10 14 15
+```
+
+**输出样例**：
+
+``` cpp
+5
+20
+```
+
+
+
 ## 思路
 
 看某个方向有没有墙，就是看某一位的二进制表示是不是 1
 
+相比于池塘计数多了一个统计数量的过程
+
 
 ``` cpp 
+#include <iostream>
+#include <algorithm>
+#include <queue>
 
+using namespace std;
+
+const int N = 55;
+int n, m;
+int g[N][N];
+bool st[N][N];
+
+int bfs(int x, int y) {
+    queue<pair<int, int>> q;
+	int area = 0;
+    q.push({x, y});
+    area++;
+    st[x][y] = true;
+
+    int dx[4] = {0, -1, 0, 1};
+    int dy[4] = {-1, 0, 1, 0};
+    
+    while (q.size()) {
+        auto t = q.front();
+        q.pop();
+        
+        
+        int tx = t.first, ty = t.second;
+        for (int i = 0; i < 4; i++) {
+            int a = dx[i] + tx;
+            int b = dy[i] + ty;
+            
+            if (a < 0 || a >= n || b < 0 || b >= m) continue;
+            if (st[a][b] == true) continue;
+            if (g[tx][ty] >> i & 1) continue;
+            
+            q.push({a, b});
+            area++;
+            st[a][b] = true;
+        }
+    }
+    
+    return area;
+}
+
+int main() {
+    cin >> n >> m;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            cin >> g[i][j];
+        }
+    }
+    
+    int cnt = 0, area = 0;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            if (!st[i][j]) {
+                area = max(area, bfs(i, j));
+                cnt++;
+            }
+        }
+    }
+    cout << cnt << '\n' << area << endl;
+    return 0;
+}
 ```
+
+注意 `area++` 的时刻，如果在放入的时候加，那么就全部在放入元素的时候加，如果在 pop 的时候++，那么就全部在 pop 的时候进行统计
+
