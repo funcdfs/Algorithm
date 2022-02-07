@@ -1,0 +1,189 @@
+[General]
+tab_width=4
+cursor_width=2
+geometry=@Rect(0 0 0 0)
+editor_font="@Variant(\0\0\0@\0\0\0,\0S\0o\0u\0r\0\x63\0\x65\0 \0\x43\0o\0\x64\0\x65\0 \0P\0r\0o\0 \0M\0\x65\0\x64\0i\0u\0m@&\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x39\x10)"
+use_custom_application_font=true
+custom_application_font=@Variant(\0\0\0@\0\0\0\x4\x9e\xd1OS@$\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x32\x10)
+default_language=C++
+format_on_manual_save=false
+format_on_auto_save=false
+editor_theme=Light
+detached_run_terminal_program=xterm
+detached_run_terminal_arguments=-e
+auto_complete_parentheses=true
+auto_remove_parentheses=true
+tab_jump_out_parentheses=false
+auto_indent=true
+auto_save=false
+auto_save_interval=1000
+auto_save_interval_type=After the last modification
+wrap_text=false
+beta=false
+replace_tabs=false
+save_tests=false
+maximized_window=true
+check_update=true
+opacity=100
+view_mode=split
+splitter_size=@ByteArray(\0\0\0\xff\0\0\0\x1\0\0\0\x2\0\0\x4\xaf\0\0\x2\x99\x1\xff\xff\xff\xff\x1\0\0\0\x1\0)
+right_splitter_size=@ByteArray(\0\0\0\xff\0\0\0\x1\0\0\0\x2\0\0\x1w\0\0\x2:\x1\xff\xff\xff\xff\x1\0\0\0\x2\0)
+force_close=false
+show_compile_and_run_only=false
+display_eoln_in_diff=false
+save_faster=true
+default_time_limit=5000
+output_length_limit=500000
+output_display_length_limit=50000
+message_length_limit=20000
+html_diff_viewer_length_limit=50000
+open_file_length_limit=20000
+display_test_case_length_limit=500000
+testcases_matching_rules=@Variant(\0\0\0\v\0\0\0\x2\0\0\0\x10\0(\0.\0*\0)\0\\\0.\0i\0n\0\0\0\f\0\\\0\x31\0.\0\x61\0n\0s), @Variant(\0\0\0\v\0\0\0\x2\0\0\0\x10\0(\0.\0*\0)\0\\\0.\0i\0n\0\0\0\f\0\\\0\x31\0.\0o\0u\0t), @Variant(\0\0\0\v\0\0\0\x2\0\0\0\xe\0i\0n\0*\0.\0t\0x\0t\0\0\0\f\0\\\0\x31\0.\0\x61\0n\0s), @Variant(\0\0\0\v\0\0\0\x2\0\0\0\xe\0i\0n\0*\0.\0t\0x\0t\0\0\0\f\0\\\0q\0.\0o\0u\0t)
+input_file_save_path=./${basename}_${1-index}.in
+answer_file_save_path=./${basename}_${1-index}.ans
+default_file_paths_for_problem_urls=@Invalid()
+test_cases_font=@Variant(\0\0\0@\0\0\0\x16\0U\0\x62\0u\0n\0t\0u\0 \0M\0o\0n\0o@(\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x32\x10)
+extra_bottom_margin=true
+message_logger_font=@Variant(\0\0\0@\0\0\0\x1e\0S\0o\0u\0r\0\x63\0\x65\0 \0\x43\0o\0\x64\0\x65\0 \0P\0r\0o@$\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x32\x10)
+save_file_on_compilation=true
+save_file_on_execution=true
+restore_old_problem_url=false
+open_old_file_for_old_problem_url=true
+locale=\x7b80\x4f53\x4e2d\x6587
+ui_style=default
+run_on_empty_testcase=true
+check_on_testcases_with_empty_output=false
+test_case_maximum_height=300
+auto_load_external_changes_if_no_unsaved_modification=true
+ask_for_loading_external_changes=true
+recent_files=C:/Algorithm/Company/\x7b14\x8bd5\x9762\x8bd5\x8f85\x5bfc\x8bfe/04\x7b2c\x56db\x8bb2/23\x4f7f\x7528\x524d\x5e8f\x904d\x5386\x548c\x4e2d\x5e8f\x904d\x5386\x91cd\x5efa\x4e8c\x53c9\x6811.cpp, C:/Algorithm/Company/\x7b14\x8bd5\x9762\x8bd5\x8f85\x5bfc\x8bfe/04\x7b2c\x56db\x8bb2/1492\x6700\x957f\x4e0a\x5347\x5b50\x5e8f\x5217.cpp, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/P3654FirstStep.cpp, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/P1706\x5168\x6392\x5217\x95ee\x9898.cpp, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/P1157\x7ec4\x5408\x7684\x8f93\x51fa.cpp, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/004-\x9009\x6570P1036.cpp, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/P1618.cpp, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/P2089.cpp, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/P2241.cpp, C:/Algorithm/Codeforces/contest/1627/a/a.cpp, C:/Algorithm/Codeforces/contest/1627/F.cpp, C:/Algorithm/Codeforces/contest/1627/E.cpp, C:/Algorithm/Codeforces/contest/1627/D.cpp, C:/Algorithm/Codeforces/contest/1627/C.cpp, C:/Algorithm/Codeforces/contest/1627/B.cpp, C:/Algorithm/Codeforces/contest/1627/A.cpp, C:/Algorithm/Codeforces/contest/1627/P.cpp, C:/Algorithm/Codeforces/contest/1627/O.cpp, C:/Algorithm/Codeforces/contest/1627/N.cpp, C:/Algorithm/Codeforces/contest/1627/M.cpp
+number_of_problems_in_contest=6
+first_time_user=false
+show_only_monospaced_font=false
+total_usage_time=470452
+promotion_dialog_shown=true
+auto_uncheck_accepted_testcases=false
+full_screen_dialog_shown=true
+file_problem_binding=C:/Algorithm/Codeforces/contest/1627/a/a.cpp, https://codeforces.com/problemset/problem/1627/A, C:/Algorithm/Company/\x7b14\x8bd5\x9762\x8bd5\x8f85\x5bfc\x8bfe/04\x7b2c\x56db\x8bb2/1492\x6700\x957f\x4e0a\x5347\x5b50\x5e8f\x5217.cpp, https://www.acwing.com/problem/content/1492/, C:/Algorithm/Company/\x7b14\x8bd5\x9762\x8bd5\x8f85\x5bfc\x8bfe/04\x7b2c\x56db\x8bb2/23\x4f7f\x7528\x524d\x5e8f\x904d\x5386\x548c\x4e2d\x5e8f\x904d\x5386\x91cd\x5efa\x4e8c\x53c9\x6811.cpp, https://www.acwing.com/problem/content/23/, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/P1157\x7ec4\x5408\x7684\x8f93\x51fa.cpp, https://www.luogu.com.cn/problem/P1157, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/P1618.cpp, https://www.luogu.com.cn/problem/P1618, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/P1706\x5168\x6392\x5217\x95ee\x9898.cpp, https://www.luogu.com.cn/problem/P1706, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/P2241.cpp, https://www.luogu.com.cn/problem/P2241, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/P3654FirstStep.cpp, https://www.luogu.com.cn/problem/P3654
+
+[clang_format]
+program=D:/LLVM/bin/clang-format.exe
+arguments=
+style=BasedOnStyle: Google\nIndentWidth: 4\n
+
+[yapf]
+program=python
+arguments=-m yapf
+style="[style]\nbased_on_style = pep8"
+
+[cpp]
+template_path=D:\\cpeditor\\cpeditor\\files\\main.cpp
+template_cursor_position_regex=main\\(\\)
+template_cursor_position_offset_type=end
+template_cursor_position_offset_characters=4
+compile_command=c++ -Wall
+output_path=${tmpdir}/${basename}
+run_arguments=
+parentheses=@Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0(\0\0\0\x2\0\0\0)\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0{\0\0\0\x2\0\0\0}\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0[\0\0\0\x2\0\0\0]\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0\"\0\0\0\x2\0\0\0\"\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0'\0\0\0\x2\0\0\0'\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1)
+compiler_output_codec=UTF-8
+
+[java]
+template_path=
+compile_command=javac
+run_arguments=
+run_command=java
+class_name=Main
+output_path=${tmpdir}
+template_cursor_position_regex=
+template_cursor_position_offset_type=end
+template_cursor_position_offset_characters=0
+parentheses=@Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0(\0\0\0\x2\0\0\0)\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0{\0\0\0\x2\0\0\0}\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0[\0\0\0\x2\0\0\0]\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0\"\0\0\0\x2\0\0\0\"\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0'\0\0\0\x2\0\0\0'\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1)
+compiler_output_codec=UTF-8
+
+[python]
+template_path=
+template_cursor_position_regex=
+template_cursor_position_offset_type=end
+template_cursor_position_offset_characters=0
+run_arguments=
+run_command=python
+parentheses=@Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0(\0\0\0\x2\0\0\0)\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0{\0\0\0\x2\0\0\0}\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0[\0\0\0\x2\0\0\0]\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0\"\0\0\0\x2\0\0\0\"\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0'\0\0\0\x2\0\0\0'\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1)
+
+[competitive_companion]
+enable=true
+connection_port=10045
+open_new_tab=true
+set_time_limit_for_tab=false
+head_comments=Problem: ${json.name}\nContest: ${json.group}\nURL: ${json.url}\ndate: ${time}\nMemory Limit: ${json.memoryLimit} MB\nTime Limit: ${json.timeLimit} ms\n
+head_comments_time_format=yyyy-MM-dd HH:mm:ss
+head_comments_powered_by_cp_editor=false
+
+[hotkey]
+format=Alt+Shift+F
+kill=
+compile_run=Alt+Q
+run=
+compile=
+change_view_mode=Alt+1
+snippets=
+
+[hot_exit]
+enable=true
+auto_save=false
+auto_save_interval=20000
+
+[cf]
+path=D:/cpeditor/cftools/cf_v1.0.0_windows_64/cf.exe
+show_toast_messages=true
+
+[lsp]
+path_cpp=clangd
+path_java=
+path_python=python
+use_linting_cpp=false
+use_linting_java=false
+use_linting_python=true
+use_autocomplete_cpp=false
+use_autocomplete_java=false
+use_autocomplete_python=false
+delay_cpp=10
+delay_java=2000
+delay_python=20
+args_cpp=
+args_java=
+args_python=-m pyls
+
+[Language%20Config]
+C%2B%2B\snippet\main="#include <iostream>\n#include <vector>\n#include <algorithm>\n\n#define INF 0x3f3f3f3f\ntypedef long long ll;\n\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(0);\n\n\n\n    return 0;\n}"
+
+[proxy]
+enabled=true
+type=System
+host_name=127.0.0.1
+port=1080
+user=
+password=
+
+[default_path]
+names_and_paths=@Variant(\0\0\0\v\0\0\0\x2\0\0\0\xe\0\x63\0o\0n\0t\0\x65\0s\0t\0\0\0>\0\x43\0:\0/\0\x41\0l\0g\0o\0r\0i\0t\0h\0m\0/\0\x43\0o\0\x64\0\x65\0\x66\0o\0r\0\x63\0\x65\0s\0/\0\x63\0o\0n\0t\0\x65\0s\0t), @Variant(\0\0\0\v\0\0\0\x2\0\0\0\x10\0s\0\x65\0t\0t\0i\0n\0g\0s\0\0\0\0), @Variant(\0\0\0\v\0\0\0\x2\0\0\0\x10\0s\0n\0i\0p\0p\0\x65\0t\0s\0\0\0@\0\x43\0:\0/\0\x41\0l\0g\0o\0r\0i\0t\0h\0m\0/\0\x43\0o\0\x64\0\x65\0\x66\0o\0r\0\x63\0\x65\0s\0/\0t\0\x65\0m\0p\0l\0\x61\0t\0\x65)
+action\open_file\uses=${file}
+action\open_file\changes="file, testcase, checker"
+action\save_file\uses=${file}
+action\save_file\changes="file, testcase, checker"
+action\open_contest\uses=${contest}
+action\open_contest\changes="contest, file, testcase, checker"
+action\load_single_test_case\uses=${testcase}
+action\load_single_test_case\changes=testcase
+action\add_pairs_of_test_cases\uses=${testcase}
+action\add_pairs_of_test_cases\changes=testcase
+action\save_test_case_to_a_file\uses=${testcase}
+action\save_test_case_to_a_file\changes=testcase
+action\custom_checker\uses=${checker}
+action\custom_checker\changes=checker
+action\export_and_import_settings\uses=${settings}
+action\export_and_import_settings\changes=settings
+action\export_and_load_session\uses=${session}
+action\export_and_load_session\changes=session
+action\extract_and_load_snippets\uses=${snippets}
+action\extract_and_load_snippets\changes=snippets
