@@ -1,0 +1,1 @@
+https://leetcode-cn.com/problems/simplified-fractions/solution/lc1447-fengwei2002-by-konng0120-c3rb/

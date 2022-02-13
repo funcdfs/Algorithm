@@ -5,62 +5,18 @@
 // Memory Limit: 64 MB
 // Time Limit: 1000 ms
 
-
 /* @ https://github.com/fengwei2002/Algorithm */
 
-#include <iostream>
-#include <vector>
-#include <algorithm>
 
-#define INF 0x3f3f3f3f
-typedef long long LL;
-
-using namespace std;
-
-
-
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(0);
-
-
-
-    return 0;
+class Solution {
+	public:
+	bool isMatch(string s, string p) {
+		int n = s.size(), m = p.size();
+		s = ' ' + s, p = ' ' + p;
+		
+		vector<vector<bool>> f(n + 1, vector<bool>(m + 1, false));
+		// f[i][j] 表示 s 的前 i 个字符和 p 的前 j 个字符是否存在一个合法方案
+		
+		
+	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
