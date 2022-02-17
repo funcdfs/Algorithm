@@ -5,10 +5,6 @@
  */
 package leetcode
 
-import (
-	"container/list"
-)
-
 /* --- 2021-10-25-17-55 --- */
 
 // https://github.com/fengwei2002/Algorithm
@@ -27,27 +23,27 @@ func levelOrder(root *TreeNode) [][]int {
 	if root == nil {
 		return ans
 	}
-	que := list.New()
-	que.PushBack(root)
+	que := make([]*TreeNode, 0)
+	que = append(que, root)
 
-	for que.Len() > 0 {
-		size := que.Len()
-		ansItem := []int{}
+	for len(que) > 0 {
+		size := len(que)
+		ansItem := make([]int, 0)
 
 		for i := 0; i < size; i++ {
-			node := que.Remove(que.Front()).(*TreeNode)
+			node := que[0]
+			que = que[1:]
+
 			ansItem = append(ansItem, node.Val)
 			if node.Left != nil {
-				que.PushBack(node.Left)
+				que = append(que, node.Left)
 			}
 			if node.Right != nil {
-				que.PushBack(node.Right)
+				que = append(que, node.Right)
 			}
 		}
 		ans = append(ans, ansItem)
-		ansItem = []int{}
 	}
 	return ans
 }
-
 // @lc code=end
