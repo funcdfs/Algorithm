@@ -1,8 +1,8 @@
-// Problem: P2392 kkksc03考前临时抱佛脚
-// Contest: Luogu
-// URL: https://www.luogu.com.cn/problem/P2392
-// date: 2022-02-10 18:07:45
-// Memory Limit: 125 MB
+// Problem: 1295：装箱问题
+// Contest: SSOIER
+// URL: http://ybt.ssoier.cn:8088/problem_show.php?pid=1295
+// date: 2022-02-19 11:26:53
+// Memory Limit: 65 MB
 // Time Limit: 1000 ms
 
 
@@ -11,10 +11,13 @@
 #define INF 0x3f3f3f3f
 #define LL long long
 #define PII pair<int, int>
+
 // for debug:
-#define d(a)  // cout << #a << " = " << a << ' ';
-#define dline // cout << " ----- " << endl;
-#define dendl // cout << " | \n";
+
+// #define d(a)  // cout << #a << " = " << a << ' ';
+// #define dline // cout << " ----- " << endl;
+// #define dendl // cout << " | \n";
+
 #define d(a)  cout << #a << " = " << a << ' ';
 #define dline cout << " ----- " << endl;
 #define dendl cout << " | \n";
@@ -37,28 +40,3 @@ int main() {
     
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
