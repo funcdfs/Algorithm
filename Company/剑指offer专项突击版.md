@@ -1,10 +1,4 @@
-算法小仓库开张了~
-
-## **🧱🧱⛏️⛏️施工中**
-
-<details>
-<summary><strong> 剑指 offer 专项突击版 C++/golang/python 全题解索引 </strong></summary>
-<div>
+剑指 offer 专项突击版 C++/golang/python 全题解
 
 - [01 减法试除](https://leetcode-cn.com/problems/xoh6Oh/solution/jz2-001-fengwei2002-by-kycu-22ay/)
 - [02 二进制加法](https://leetcode-cn.com/problems/JFETK5/solution/jz2-002-fengwei2002-by-kycu-l23h/)
@@ -57,5 +51,5 @@
 - [49 从根节点到叶节点的路径数字之和](https://leetcode-cn.com/problems/3Etpl5/solution/jz2-049-fengwei2002-by-konng0120-btp0/)
 - [50 向下的节点路径之和](https://leetcode-cn.com/problems/6eUYwP/solution/jz2-050-fengwei2002-by-konng0120-lyv1/)
 
-</div>
-</details>
+
+
