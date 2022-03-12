@@ -2,9 +2,9 @@
 tab_width=4
 cursor_width=2
 geometry=@Rect(0 0 0 0)
-editor_font="@Variant(\0\0\0@\0\0\0,\0S\0o\0u\0r\0\x63\0\x65\0 \0\x43\0o\0\x64\0\x65\0 \0P\0r\0o\0 \0M\0\x65\0\x64\0i\0u\0m@&\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x39\x10)"
+editor_font=@Variant(\0\0\0@\0\0\0\x1e\0S\0o\0u\0r\0\x63\0\x65\0 \0\x43\0o\0\x64\0\x65\0 \0P\0r\0o@&\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x39\x10)
 use_custom_application_font=true
-custom_application_font=@Variant(\0\0\0@\0\0\0\x4\x9e\xd1OS@$\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x32\x10)
+custom_application_font=@Variant(\0\0\0@\0\0\0\b\x97\x1e\x9e\\\x81\xfbiw@$\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x32\x10)
 default_language=C++
 format_on_manual_save=false
 format_on_auto_save=false
@@ -20,19 +20,19 @@ auto_save_interval=1000
 auto_save_interval_type=After the last modification
 wrap_text=false
 beta=false
-replace_tabs=false
-save_tests=false
+replace_tabs=true
+save_tests=true
 maximized_window=true
 check_update=true
 opacity=100
 view_mode=split
-splitter_size=@ByteArray(\0\0\0\xff\0\0\0\x1\0\0\0\x2\0\0\x4\xaf\0\0\x2\x99\x1\xff\xff\xff\xff\x1\0\0\0\x1\0)
-right_splitter_size=@ByteArray(\0\0\0\xff\0\0\0\x1\0\0\0\x2\0\0\x1w\0\0\x2:\x1\xff\xff\xff\xff\x1\0\0\0\x2\0)
+splitter_size=@ByteArray(\0\0\0\xff\0\0\0\x1\0\0\0\x2\0\0\x4M\0\0\x2\xfb\x1\xff\xff\xff\xff\x1\0\0\0\x1\0)
+right_splitter_size=@ByteArray(\0\0\0\xff\0\0\0\x1\0\0\0\x2\0\0\0\xbd\0\0\x2Q\x1\xff\xff\xff\xff\x1\0\0\0\x2\0)
 force_close=false
 show_compile_and_run_only=false
 display_eoln_in_diff=false
 save_faster=true
-default_time_limit=5000
+default_time_limit=1000
 output_length_limit=500000
 output_display_length_limit=50000
 message_length_limit=20000
@@ -45,7 +45,7 @@ answer_file_save_path=./${basename}_${1-index}.ans
 default_file_paths_for_problem_urls=@Invalid()
 test_cases_font=@Variant(\0\0\0@\0\0\0\x16\0U\0\x62\0u\0n\0t\0u\0 \0M\0o\0n\0o@(\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x32\x10)
 extra_bottom_margin=true
-message_logger_font=@Variant(\0\0\0@\0\0\0\x1e\0S\0o\0u\0r\0\x63\0\x65\0 \0\x43\0o\0\x64\0\x65\0 \0P\0r\0o@$\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x32\x10)
+message_logger_font=@Variant(\0\0\0@\0\0\0\f\x97\x1e\x9e\\e\x87iw{I[\xbd@&\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x32\x10)
 save_file_on_compilation=true
 save_file_on_execution=true
 restore_old_problem_url=false
@@ -57,15 +57,18 @@ check_on_testcases_with_empty_output=false
 test_case_maximum_height=300
 auto_load_external_changes_if_no_unsaved_modification=true
 ask_for_loading_external_changes=true
-recent_files=C:/Algorithm/Company/\x7b14\x8bd5\x9762\x8bd5\x8f85\x5bfc\x8bfe/04\x7b2c\x56db\x8bb2/23\x4f7f\x7528\x524d\x5e8f\x904d\x5386\x548c\x4e2d\x5e8f\x904d\x5386\x91cd\x5efa\x4e8c\x53c9\x6811.cpp, C:/Algorithm/Company/\x7b14\x8bd5\x9762\x8bd5\x8f85\x5bfc\x8bfe/04\x7b2c\x56db\x8bb2/1492\x6700\x957f\x4e0a\x5347\x5b50\x5e8f\x5217.cpp, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/P3654FirstStep.cpp, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/P1706\x5168\x6392\x5217\x95ee\x9898.cpp, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/P1157\x7ec4\x5408\x7684\x8f93\x51fa.cpp, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/004-\x9009\x6570P1036.cpp, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/P1618.cpp, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/P2089.cpp, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/P2241.cpp, C:/Algorithm/Codeforces/contest/1627/a/a.cpp, C:/Algorithm/Codeforces/contest/1627/F.cpp, C:/Algorithm/Codeforces/contest/1627/E.cpp, C:/Algorithm/Codeforces/contest/1627/D.cpp, C:/Algorithm/Codeforces/contest/1627/C.cpp, C:/Algorithm/Codeforces/contest/1627/B.cpp, C:/Algorithm/Codeforces/contest/1627/A.cpp, C:/Algorithm/Codeforces/contest/1627/P.cpp, C:/Algorithm/Codeforces/contest/1627/O.cpp, C:/Algorithm/Codeforces/contest/1627/N.cpp, C:/Algorithm/Codeforces/contest/1627/M.cpp
+recent_files=C:/Algorithm/AcWing/\x7b97\x6cd5\x63d0\x9ad8\x8bfe\x9898\x5355/\x80cc\x5305\x95ee\x9898/\x88c5\x7bb1\x95ee\x9898.cpp, C:/Algorithm/Company/\x7b14\x8bd5\x9762\x8bd5\x8f85\x5bfc\x8bfe/1258\x6269\x5c55\x4e8c\x53c9\x6811.cpp, C:/Algorithm/Company/\x7b14\x8bd5\x9762\x8bd5\x8f85\x5bfc\x8bfe/1257\x533b\x9662\x8bbe\x7f6e.cpp, C:/Algorithm/LuoGu/\x3010\x52a8\x6001\x89c4\x5212\x31\x3011\x52a8\x6001\x89c4\x5212\x7684\x5f15\x5165/P1216\x6570\x5b57\x4e09\x89d2\x5f62.cpp, D:/cpeditor/demo.cpp, C:/Algorithm/AcWing/\x7b97\x6cd5\x63d0\x9ad8\x8bfe\x9898\x5355/\x6811\x72b6\x6570\x7ec4\x32\x34\x33\x697c\x5170\x56fe\x817e.cpp, D:/cpeditor/cpeditor/files/py.py, C:/Algorithm/AcWing/\x7b97\x6cd5\x63d0\x9ad8\x8bfe\x9898\x5355/\x6811\x72b6\x6570\x7ec4\x32\x34\x33\x697c\x5170\x56fe\x817e-\x66b4\x529b\x89e3\x6cd5.cpp, C:/Algorithm/Company/\x7b14\x8bd5\x9762\x8bd5\x8f85\x5bfc\x8bfe/1256\x627e\x51fa\x6811\x6839\x548c\x5b69\x5b50.cpp, C:/Algorithm/AcWing/\x7b97\x6cd5\x63d0\x9ad8\x8bfe\x9898\x5355/\x6700\x957f\x4e0a\x5347\x5b50\x5e8f\x5217/\x6700\x957f\x516c\x5171\x4e0a\x5347\x5b50\x5e8f\x5217\x32_\x590d\x6742\x5ea6\x4f18\x5316.cpp, C:/Algorithm/AcWing/\x7b97\x6cd5\x63d0\x9ad8\x8bfe\x9898\x5355/\x6700\x957f\x4e0a\x5347\x5b50\x5e8f\x5217/\x6700\x957f\x516c\x5171\x4e0a\x5347\x5b50\x5e8f\x5217\x31.cpp, C:/Algorithm/AcWing/\x7b97\x6cd5\x63d0\x9ad8\x8bfe\x9898\x5355/\x6700\x957f\x4e0a\x5347\x5b50\x5e8f\x5217/189\x5bfc\x5f39\x9632\x5fa1\x7cfb\x7edf.cpp, C:/Algorithm/Codeforces/\x7ebf\x6027\x44P/CodeForces-191A.cpp, C:/Algorithm/AcWing/\x7b97\x6cd5\x57fa\x7840\x8bfe\x9898\x5355/06-[\x8d2a\x5fc3]-greed/\x533a\x95f4\x8986\x76d6.cpp, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/0014-P2036PERKET.cpp, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/0013-kkksc03\x8003\x524d\x4e34\x65f6\x62b1\x4f5b\x811aP2392.cpp, C:/Algorithm/AcWing/\x7b97\x6cd5\x63d0\x9ad8\x8bfe\x9898\x5355/\x53cb\x597d\x57ce\x5e02.cpp, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/0012-P3799\x5996\x68a6\x62fc\x6728\x68d2.cpp, C:/Algorithm/AcWing/\x7b97\x6cd5\x63d0\x9ad8\x8bfe\x9898\x5355/1027\x65b9\x683c\x53d6\x6570.cpp, C:/Algorithm/AcWing/\x7b97\x6cd5\x63d0\x9ad8\x8bfe\x9898\x5355/1018\x6700\x4f4e\x901a\x884c\x8d39.cpp
 number_of_problems_in_contest=6
 first_time_user=false
 show_only_monospaced_font=false
-total_usage_time=470452
+total_usage_time=1316309
 promotion_dialog_shown=true
 auto_uncheck_accepted_testcases=false
 full_screen_dialog_shown=true
-file_problem_binding=C:/Algorithm/Codeforces/contest/1627/a/a.cpp, https://codeforces.com/problemset/problem/1627/A, C:/Algorithm/Company/\x7b14\x8bd5\x9762\x8bd5\x8f85\x5bfc\x8bfe/04\x7b2c\x56db\x8bb2/1492\x6700\x957f\x4e0a\x5347\x5b50\x5e8f\x5217.cpp, https://www.acwing.com/problem/content/1492/, C:/Algorithm/Company/\x7b14\x8bd5\x9762\x8bd5\x8f85\x5bfc\x8bfe/04\x7b2c\x56db\x8bb2/23\x4f7f\x7528\x524d\x5e8f\x904d\x5386\x548c\x4e2d\x5e8f\x904d\x5386\x91cd\x5efa\x4e8c\x53c9\x6811.cpp, https://www.acwing.com/problem/content/23/, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/P1157\x7ec4\x5408\x7684\x8f93\x51fa.cpp, https://www.luogu.com.cn/problem/P1157, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/P1618.cpp, https://www.luogu.com.cn/problem/P1618, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/P1706\x5168\x6392\x5217\x95ee\x9898.cpp, https://www.luogu.com.cn/problem/P1706, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/P2241.cpp, https://www.luogu.com.cn/problem/P2241, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/P3654FirstStep.cpp, https://www.luogu.com.cn/problem/P3654
+file_problem_binding=C:/Algorithm/AcWing/\x7b97\x6cd5\x57fa\x7840\x8bfe\x9898\x5355/06-[\x8d2a\x5fc3]-greed/\x533a\x95f4\x8986\x76d6.cpp, https://www.acwing.com/problem/content/909/, C:/Algorithm/AcWing/\x7b97\x6cd5\x57fa\x7840\x8bfe\x9898\x5355/06-[\x8d2a\x5fc3]-greed/\x5408\x5e76\x679c\x5b50.cpp, https://www.acwing.com/problem/content/150/, C:/Algorithm/AcWing/\x7b97\x6cd5\x63d0\x9ad8\x8bfe\x9898\x5355/1015.\x6458\x82b1\x751f.cpp, https://www.acwing.com/problem/content/description/1017/, C:/Algorithm/AcWing/\x7b97\x6cd5\x63d0\x9ad8\x8bfe\x9898\x5355/\x53cb\x597d\x57ce\x5e02.cpp, "http://ybt.ssoier.cn:8088/problem_show.php?pid=1263", C:/Algorithm/AcWing/\x7b97\x6cd5\x63d0\x9ad8\x8bfe\x9898\x5355/\x6700\x957f\x4e0a\x5347\x5b50\x5e8f\x5217/189\x5bfc\x5f39\x9632\x5fa1\x7cfb\x7edf.cpp, https://www.acwing.com/problem/content/189/, C:/Algorithm/AcWing/\x7b97\x6cd5\x63d0\x9ad8\x8bfe\x9898\x5355/\x6700\x957f\x4e0a\x5347\x5b50\x5e8f\x5217/\x6700\x957f\x516c\x5171\x4e0a\x5347\x5b50\x5e8f\x5217\x31.cpp, https://www.acwing.com/problem/content/274/, C:/Algorithm/AcWing/\x7b97\x6cd5\x63d0\x9ad8\x8bfe\x9898\x5355/\x6811\x72b6\x6570\x7ec4\x32\x34\x33\x697c\x5170\x56fe\x817e.cpp, https://www.acwing.com/problem/content/243/, C:/Algorithm/AcWing/\x7b97\x6cd5\x63d0\x9ad8\x8bfe\x9898\x5355/\x80cc\x5305\x95ee\x9898/\x88c5\x7bb1\x95ee\x9898.cpp, "http://ybt.ssoier.cn:8088/problem_show.php?pid=1295", C:/Algorithm/Codeforces/contest/1627/a/a.cpp, https://codeforces.com/problemset/problem/1627/A, C:/Algorithm/Codeforces/\x7ebf\x6027\x44P/CodeForces-191A.cpp, https://vjudge.net/problem/CodeForces-191A, C:/Algorithm/Company/\x7b14\x8bd5\x9762\x8bd5\x8f85\x5bfc\x8bfe/04\x7b2c\x56db\x8bb2/1492\x6700\x957f\x4e0a\x5347\x5b50\x5e8f\x5217.cpp, https://www.acwing.com/problem/content/1492/, C:/Algorithm/Company/\x7b14\x8bd5\x9762\x8bd5\x8f85\x5bfc\x8bfe/04\x7b2c\x56db\x8bb2/23\x4f7f\x7528\x524d\x5e8f\x904d\x5386\x548c\x4e2d\x5e8f\x904d\x5386\x91cd\x5efa\x4e8c\x53c9\x6811.cpp, https://www.acwing.com/problem/content/23/, C:/Algorithm/Company/\x7b14\x8bd5\x9762\x8bd5\x8f85\x5bfc\x8bfe/04\x7b2c\x56db\x8bb2/\x4f7f\x7528\x5c42\x5e8f\x904d\x5386\x548c\x4e2d\x5e8f\x904d\x5386\x91cd\x5efa\x4e8c\x53c9\x6811.cpp, https://www.acwing.com/problem/content/1261/, C:/Algorithm/Company/\x7b14\x8bd5\x9762\x8bd5\x8f85\x5bfc\x8bfe/04\x7b2c\x56db\x8bb2/\x5706\x684c\x5ea7\x4f4d.cpp, https://www.acwing.com/problem/content/1493/, C:/Algorithm/Company/\x7b14\x8bd5\x9762\x8bd5\x8f85\x5bfc\x8bfe/04\x7b2c\x56db\x8bb2/\x6839\x636e\x542b\x6709\x7a7a\x503c\x7684\x524d\x5e8f\x904d\x5386\x91cd\x5efa\x4e8c\x53c9\x6811\x63pp.cpp, https://www.acwing.com/problem/content/46/, C:/Algorithm/Company/\x7b14\x8bd5\x9762\x8bd5\x8f85\x5bfc\x8bfe/04\x7b2c\x56db\x8bb2/\x6b63\x5219\x8868\x8fbe\x5f0f\x5339\x914d.cpp, https://www.acwing.com/problem/content/28/, C:/Algorithm/Company/\x7b14\x8bd5\x9762\x8bd5\x8f85\x5bfc\x8bfe/1256\x627e\x51fa\x6811\x6839\x548c\x5b69\x5b50.cpp, https://www.acwing.com/problem/content/1256/, C:/Algorithm/Company/\x7b14\x8bd5\x9762\x8bd5\x8f85\x5bfc\x8bfe/1258\x6269\x5c55\x4e8c\x53c9\x6811.cpp, https://www.acwing.com/problem/content/1258/, C:/Algorithm/LuoGu/\x3010\x52a8\x6001\x89c4\x5212\x31\x3011\x52a8\x6001\x89c4\x5212\x7684\x5f15\x5165/P1216\x6570\x5b57\x4e09\x89d2\x5f62.cpp, https://www.luogu.com.cn/problem/P1216, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/0012-P3799\x5996\x68a6\x62fc\x6728\x68d2.cpp, https://www.luogu.com.cn/problem/P3799, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/0013-kkksc03\x8003\x524d\x4e34\x65f6\x62b1\x4f5b\x811aP2392.cpp, https://www.luogu.com.cn/problem/P2392, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/0014-P2036PERKET.cpp, https://www.luogu.com.cn/problem/P2036, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/008-\x6d82\x56fd\x65d7P3392.cpp, https://www.luogu.com.cn/problem/P3392, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/P1157\x7ec4\x5408\x7684\x8f93\x51fa.cpp, https://www.luogu.com.cn/problem/P1157, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/P1618.cpp, https://www.luogu.com.cn/problem/P1618, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/P1706\x5168\x6392\x5217\x95ee\x9898.cpp, https://www.luogu.com.cn/problem/P1706, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/P2241.cpp, https://www.luogu.com.cn/problem/P2241, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-3\x66b4\x529b\x679a\x4e3e/P3654FirstStep.cpp, https://www.luogu.com.cn/problem/P3654, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-4-\x4e8c\x5206\x67e5\x627e/P2249\x3010\x6df1\x57fa\x31\x33.\x4f8b\x31\x3011\x67e5\x627e.cpp, https://www.luogu.com.cn/problem/P2249, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-4\x9012\x63a8\x548c\x9012\x5f52/01\x6570\x697c\x68afP1255.cpp, https://www.luogu.com.cn/problem/P1255, C:/Algorithm/LuoGu/\x7b97\x6cd5\x31-4\x9012\x63a8\x548c\x9012\x5f52/02\x8fc7\x6cb3\x5352P1002.cpp, https://www.luogu.com.cn/problem/P1002
+display_stopwatch=true
+toggle_stopwatch_on_tab_switch=false
+hide_stopwatch_result=false
 
 [clang_format]
 program=D:/LLVM/bin/clang-format.exe
@@ -78,13 +81,13 @@ arguments=-m yapf
 style="[style]\nbased_on_style = pep8"
 
 [cpp]
-template_path=D:\\cpeditor\\cpeditor\\files\\main.cpp
+template_path=D:/cpeditor/cpeditor/files/main.cpp
 template_cursor_position_regex=main\\(\\)
 template_cursor_position_offset_type=end
 template_cursor_position_offset_characters=4
-compile_command=c++ -Wall
+compile_command="c++ -Wall -std=gnu++17"
 output_path=${tmpdir}/${basename}
-run_arguments=
+run_arguments="-std=gnu++2a"
 parentheses=@Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0(\0\0\0\x2\0\0\0)\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0{\0\0\0\x2\0\0\0}\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0[\0\0\0\x2\0\0\0]\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0\"\0\0\0\x2\0\0\0\"\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\x2\0\0\0'\0\0\0\x2\0\0\0'\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1)
 compiler_output_codec=UTF-8
 
@@ -125,7 +128,7 @@ kill=
 compile_run=Alt+Q
 run=
 compile=
-change_view_mode=Alt+1
+change_view_mode=
 snippets=
 
 [hot_exit]
@@ -155,7 +158,7 @@ args_java=
 args_python=-m pyls
 
 [Language%20Config]
-C%2B%2B\snippet\main="#include <iostream>\n#include <vector>\n#include <algorithm>\n\n#define INF 0x3f3f3f3f\ntypedef long long ll;\n\nusing namespace std;\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(0);\n\n\n\n    return 0;\n}"
+C%2B%2B\snippet\main="/* https://github.com/fengwei2002/algorithm */\n\n#define INF 0x3f3f3f3f\n#define LL long long\n#define PII pair<int, int>\n\n// for debug:\n\n// #define d(a)  // cout << #a << \" = \" << a << ' ';\n// #define dline // cout << \" ----- \" << endl;\n// #define dendl // cout << \" | \\n\";\n\n#define d(a)  cout << #a << \" = \" << a << ' ';\n#define dline cout << \" ----- \" << endl;\n#define dendl cout << \" | \\n\";\n\n#include <algorithm>\n#include <iostream>\n#include <vector>\n\nusing namespace std;\n\nconst int N = 1e5 + 10;\n\n\n\nint main() {\n    ios::sync_with_stdio(false);\n    cin.tie(0);\n    \n    \n    \n    return 0;\n}"
 
 [proxy]
 enabled=true
@@ -166,7 +169,7 @@ user=
 password=
 
 [default_path]
-names_and_paths=@Variant(\0\0\0\v\0\0\0\x2\0\0\0\xe\0\x63\0o\0n\0t\0\x65\0s\0t\0\0\0>\0\x43\0:\0/\0\x41\0l\0g\0o\0r\0i\0t\0h\0m\0/\0\x43\0o\0\x64\0\x65\0\x66\0o\0r\0\x63\0\x65\0s\0/\0\x63\0o\0n\0t\0\x65\0s\0t), @Variant(\0\0\0\v\0\0\0\x2\0\0\0\x10\0s\0\x65\0t\0t\0i\0n\0g\0s\0\0\0\0), @Variant(\0\0\0\v\0\0\0\x2\0\0\0\x10\0s\0n\0i\0p\0p\0\x65\0t\0s\0\0\0@\0\x43\0:\0/\0\x41\0l\0g\0o\0r\0i\0t\0h\0m\0/\0\x43\0o\0\x64\0\x65\0\x66\0o\0r\0\x63\0\x65\0s\0/\0t\0\x65\0m\0p\0l\0\x61\0t\0\x65)
+names_and_paths=@Variant(\0\0\0\v\0\0\0\x2\0\0\0\xe\0\x63\0h\0\x65\0\x63\0k\0\x65\0r\0\0\0\x36\0\x43\0:\0/\0\x41\0l\0g\0o\0r\0i\0t\0h\0m\0/\0\x41\0\x63\0W\0i\0n\0g\0/{\x97l\xd5\x63\xd0\x9a\xd8\x8b\xfe\x98\x98SU), @Variant(\0\0\0\v\0\0\0\x2\0\0\0\xe\0\x63\0o\0n\0t\0\x65\0s\0t\0\0\0>\0\x43\0:\0/\0\x41\0l\0g\0o\0r\0i\0t\0h\0m\0/\0\x43\0o\0\x64\0\x65\0\x66\0o\0r\0\x63\0\x65\0s\0/\0\x63\0o\0n\0t\0\x65\0s\0t), @Variant(\0\0\0\v\0\0\0\x2\0\0\0\b\0\x66\0i\0l\0\x65\0\0\0\x36\0\x43\0:\0/\0\x41\0l\0g\0o\0r\0i\0t\0h\0m\0/\0\x41\0\x63\0W\0i\0n\0g\0/{\x97l\xd5\x63\xd0\x9a\xd8\x8b\xfe\x98\x98SU), "@Variant(\0\0\0\v\0\0\0\x2\0\0\0\x10\0s\0\x65\0t\0t\0i\0n\0g\0s\0\0\0,\0\x43\0:\0/\0\x41\0l\0g\0o\0r\0i\0t\0h\0m\0/\0.\0\x63\0p\0\x65\0\x64\0i\0t\0o\0r)", @Variant(\0\0\0\v\0\0\0\x2\0\0\0\x10\0s\0n\0i\0p\0p\0\x65\0t\0s\0\0\0@\0\x43\0:\0/\0\x41\0l\0g\0o\0r\0i\0t\0h\0m\0/\0\x43\0o\0\x64\0\x65\0\x66\0o\0r\0\x63\0\x65\0s\0/\0t\0\x65\0m\0p\0l\0\x61\0t\0\x65), @Variant(\0\0\0\v\0\0\0\x2\0\0\0\x10\0t\0\x65\0s\0t\0\x63\0\x61\0s\0\x65\0\0\0\x36\0\x43\0:\0/\0\x41\0l\0g\0o\0r\0i\0t\0h\0m\0/\0\x41\0\x63\0W\0i\0n\0g\0/{\x97l\xd5\x63\xd0\x9a\xd8\x8b\xfe\x98\x98SU)
 action\open_file\uses=${file}
 action\open_file\changes="file, testcase, checker"
 action\save_file\uses=${file}
@@ -187,3 +190,9 @@ action\export_and_load_session\uses=${session}
 action\export_and_load_session\changes=session
 action\extract_and_load_snippets\uses=${snippets}
 action\extract_and_load_snippets\changes=snippets
+
+[wakatime]
+path=D:/wakacli/wakatime-cli.exe
+api_key=e7f549a2-7433-4fee-8ff2-641a6fb61ca9
+enable=true
+proxy=true
