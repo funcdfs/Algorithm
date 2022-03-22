@@ -3,13 +3,13 @@
 ## **🧱🧱⛏️⛏️施工中**
 
 <details>
-<summary><strong> 剑指 offer 专项突击版 C++/golang/python 全题解索引 </strong></summary>
+<summary><strong> <a herf = "https://leetcode-cn.com/problem-list/e8X3pBZi/">剑指 offer 专项突击版 </a> c++/golang/python 全题解索引 </strong></summary>
 <div>
 
 - [01 减法试除](https://leetcode-cn.com/problems/xoh6Oh/solution/jz2-001-fengwei2002-by-kycu-22ay/)
 - [02 二进制加法](https://leetcode-cn.com/problems/JFETK5/solution/jz2-002-fengwei2002-by-kycu-l23h/)
-- [03 数组中二进制1的个数](https://leetcode-cn.com/problems/w3tCBm/solution/jz2-03-fengwei2002-by-kycu-oa5q/)
-- [04 只出现一次的数字2](https://leetcode-cn.com/problems/WGki4K/solution/jz02-004-fengwei2002-by-konng0120-mhn5/)
+- [03 数组中二进制 1 的个数](https://leetcode-cn.com/problems/w3tCBm/solution/jz2-03-fengwei2002-by-kycu-oa5q/)
+- [04 只出现一次的数字 2](https://leetcode-cn.com/problems/WGki4K/solution/jz02-004-fengwei2002-by-konng0120-mhn5/)
 - [05 单词长度的最大乘积](https://leetcode-cn.com/problems/aseY1I/solution/jz2-05-fengwei2002-by-kycu-1jti/)
 - [06 排序数组中的两个数字之和](https://leetcode-cn.com/problems/kLl5u1/solution/jz2-06-fengwei2002-by-kycu-g6su/)
 - [07 三数之和](https://leetcode-cn.com/problems/1fGaJU/solution/jz2-07-fengwei2002-by-kycu-5hrk/)
@@ -35,7 +35,7 @@
 - [27 回文链表](https://leetcode-cn.com/problems/aMhZSa/solution/jz2-027-fengwei2002-by-konng0120-pka3/)
 - [28 扁平化多级双向链表](https://leetcode-cn.com/problems/Qv1Da2/solution/jz2-028-fengwei2002-by-konng0120-uf3q/)
 - [29 排序的循环链表插入值](https://leetcode-cn.com/problems/4ueAj6/solution/jz2-029-fengwei2002-by-konng0120-14xn/)
-- [30 插入，删除，随机访问都是 O(1) 的容器](https://leetcode-cn.com/problems/FortPu/solution/jz2-030-fengwei2002-by-konng0120-ks38/)
+- [30 插入，删除，随机访问 O(1) 的容器](https://leetcode-cn.com/problems/FortPu/solution/jz2-030-fengwei2002-by-konng0120-ks38/)
 - [31 LRUCache](https://leetcode-cn.com/problems/OrIXps/solution/jz2-031-fengwei2002-by-konng0120-2qpx/)
 - [32 有效变位词](https://leetcode-cn.com/problems/dKk3P7/solution/jz2-032-fengwei2002-by-konng0120-6p0k/)
 - [33 变位词组](https://leetcode-cn.com/problems/sfvd7V/solution/jz02-033-fengwei2002-by-konng0120-oz4y/)
@@ -56,6 +56,88 @@
 - [48 二叉树序列化与反序列化](https://leetcode-cn.com/problems/h54YBf/solution/jz2-048-fengwei2002-by-konng0120-f1hh/)
 - [49 从根节点到叶节点的路径数字之和](https://leetcode-cn.com/problems/3Etpl5/solution/jz2-049-fengwei2002-by-konng0120-btp0/)
 - [50 向下的节点路径之和](https://leetcode-cn.com/problems/6eUYwP/solution/jz2-050-fengwei2002-by-konng0120-lyv1/)
+- [51 节点之和的最大路径](https://leetcode-cn.com/problems/jC7MId/solution/jz2-051-fengwei2002-by-konng0120-08oz/)
+- [52 展平二叉搜索树](https://leetcode-cn.com/problems/NYBBNL/solution/by-konng0120-x91o/)
+- [53 二叉搜索树中的中序后继](https://leetcode-cn.com/problems/P5rCT8/solution/by-konng0120-r6qt/)
+- [54 所有大于等于节点的值之和](https://leetcode-cn.com/problems/w6cpku/solution/by-konng0120-0hxu/)
+- [55 二叉搜索树迭代器](https://leetcode-cn.com/problems/kTOapQ/solution/by-konng0120-1jk1/)
+- [56 BST 中的两数之和](https://leetcode-cn.com/problems/opLdQZ/solution/by-konng0120-4n5g/)
+- gp rbtree [57 ](https://leetcode-cn.com/problems/7WqeDu/solution/by-konng0120-0je8/)
+- gp rbtree [58 日程表](https://leetcode-cn.com/problems/fi9suh/solution/by-konng0120-oy6r/)
+- [59 数据流中的第 k 大元素](https://leetcode-cn.com/problems/jBjn9C/solution/by-konng0120-jib9/)
+- [60 出现频率最高的 k 个数字 要求 O(n) 复杂度](https://leetcode-cn.com/problems/g5c51o/solution/by-konng0120-27vd/)
+- gp heap [61 和最小的 k 个数对](https://leetcode-cn.com/problems/qn8gGX/solution/by-konng0120-z9zi/)
+- gp 析构函数 [62 实现 trie](https://leetcode-cn.com/problems/QC3q1f/solution/by-konng0120-4w4y/)
+- [63 替换单词]() 
+- [64 神奇的字典]() 
+- [65 最短的字符编码](https://leetcode-cn.com/problems/iSwD2y/solution/by-konng0120-bin2/)
+- [66 单词之和](https://leetcode-cn.com/problems/z1R5dt/solution/by-konng0120-fsha/)
+- [67 最大异或和](https://leetcode-cn.com/problems/ms70jA/solution/by-konng0120-056h/)
+- [68 查找插入位置](https://leetcode-cn.com/problems/N6YdxV/solution/by-konng0120-9vj7/)
+- [69 山峰的顶点](https://leetcode-cn.com/problems/B1IidL/solution/by-konng0120-wdxo/)
+- [70 排序数组中只出现一次的数字](https://leetcode-cn.com/problems/skFtm2/solution/by-konng0120-nbs4/)
+- [71 按权重生成随机数](https://leetcode-cn.com/problems/cuyjEf/solution/by-konng0120-4br3/)
+- [72 实现 sqrt 函数](https://leetcode-cn.com/problems/jJ0w9p/solution/by-konng0120-foyd/)
+- [73 爱吃香蕉的柯柯](https://leetcode-cn.com/problems/nZZqjQ/solution/by-konng0120-9b1q/)
+- [74 合并区间](https://leetcode-cn.com/problems/SsGoHC/solution/by-konng0120-1ew9/)
+- [75 数组相对排序](https://leetcode-cn.com/problems/0H97ZC/solution/by-konng0120-3mwd/)
+- [76 数组中的第 k 大的数字](https://leetcode-cn.com/problems/xx4gT2/solution/by-konng0120-vz56/)
+- [77 链表排序](https://leetcode-cn.com/problems/7WHec2/solution/by-konng0120-tjoy/)
+- [78 合并排序链表](https://leetcode-cn.com/problems/vvXgSW/solution/by-konng0120-iw2a/)
+- [79 所有子集](https://leetcode-cn.com/problems/TVdhkn/solution/jz2-7-by-kycu-viw9/)
+- [80 含有 k 个元素的组合](https://leetcode-cn.com/problems/uUsW3B/solution/by-konng0120-mgcs/)
+- [81 允许重复选择元素的组合](https://leetcode-cn.com/problems/Ygoe9J/solution/by-konng0120-jjm5/)
+- [82 含有重复元素集合的组合](https://leetcode-cn.com/problems/4sjJUc/solution/by-konng0120-bdje/)
+- [83 没有重复元素集合的全排列](https://leetcode-cn.com/problems/VvJkup/solution/by-konng0120-ur87/)
+- [84 含有重复元素集合的全排列](https://leetcode-cn.com/problems/7p8L0Z/solution/by-konng0120-ihdc/)
+- [85 生成匹配的括号](https://leetcode-cn.com/problems/IDBivT/solution/by-konng0120-cm8n/)
+- [86 分割回文子字符串](https://leetcode-cn.com/problems/M99OJA/solution/by-konng0120-y3ul/)
+- [87 复原 IP](https://leetcode-cn.com/problems/0on3uN/solution/by-konng0120-b847/)
+- [88 爬楼梯的最少成本](https://leetcode-cn.com/problems/GzCJIP/solution/by-konng0120-at57/)
+- [89 房屋偷盗](https://leetcode-cn.com/problems/Gu0c2T/solution/by-konng0120-g9hd/)
+- [90 环形房屋偷盗](https://leetcode-cn.com/problems/PzWKhm/solution/by-konng0120-x73e/)
+- [91 粉刷房子](https://leetcode-cn.com/problems/JEj789/solution/by-konng0120-qnai/)
+- [92 翻转字符](https://leetcode-cn.com/problems/cyJERH/solution/by-konng0120-ug41/)
+- [93 最长斐波那契数列](https://leetcode-cn.com/problems/Q91FMA/solution/by-konng0120-7o1h/)
+- [94 最少回文分割](https://leetcode-cn.com/problems/omKAoA/solution/by-konng0120-91n3/)
+- [95 最长公共子序列]()
+- [96 字符串交织]()
+- [97 子序列的数目]()
+- [98 路径的数目]()
+- [99 最小路径之和]()
+- [100 三角形中最小路径之和]()
+- [101 分割等和子集]()
+- [102 加减的目标值]()
+- [103 最少的硬币数目]()
+- [104 排列的数目]()
+- [105 岛屿的最大面积]()
+- [106 二分图]()
+- [107 矩阵中的距离]()
+- [108 单词演变]()
+- [109 开密码锁]()
+- [110 所有路径]()
+- [111 计算除法]()
+- [112 最长递增路径]()
+- [113 课程顺序]()
+- [114 外星文字典]()
+- [115 重建序列]()
+- [116 省份数量]()
+- [117 相似的字符串]()
+- [118 多余的边]()
+- [119 最长连续序列]()
+
+
+
+</div>
+</details>
+
+
+
+<details>
+<summary><strong> 剑指 offer 第二版 C++/golang/python 全题解索引 </strong></summary>
+<div>
+
+
 
 </div>
 </details>
