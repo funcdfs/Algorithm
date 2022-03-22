@@ -3,8 +3,12 @@
 ## **🧱🧱⛏️⛏️施工中**
 
 <details>
-<summary><strong> <a herf = "https://leetcode-cn.com/problem-list/e8X3pBZi/">剑指 offer 专项突击版 </a> c++/golang/python 全题解索引 </strong></summary>
+<summary><strong> <a herf = ""> </a> 剑指 offer 专项突击版 c++/golang/python 全题解索引 </strong></summary>
 <div>
+
+</br>
+
+> [剑指 offer 专项突击版题集](https://leetcode-cn.com/problem-list/e8X3pBZi/)
 
 - [01 减法试除](https://leetcode-cn.com/problems/xoh6Oh/solution/jz2-001-fengwei2002-by-kycu-22ay/)
 - [02 二进制加法](https://leetcode-cn.com/problems/JFETK5/solution/jz2-002-fengwei2002-by-kycu-l23h/)
@@ -134,10 +138,12 @@
 
 
 <details>
-<summary><strong> 剑指 offer 第二版 C++/golang/python 全题解索引 </strong></summary>
+<summary><strong> 程序员面试金典（第 6 版） c++/golang/python 全题解索引 </strong></summary>
 <div>
 
+> [程序员面试金典（第 6 版）题集](https://leetcode-cn.com/problem-list/xb9lfcwi/)
 
+- [面试题 01.01. 判定字符是否唯一]()
 
 </div>
 </details>
