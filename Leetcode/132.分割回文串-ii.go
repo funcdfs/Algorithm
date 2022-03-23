@@ -14,20 +14,9 @@ package leetcode
 
 // @lc code=start
 func minCut(s string) int {
-	// f[i] 表示 s[1 - i] 的所有分割方案
-	// 属性是最小值
-
-	// 状态计算：
-	// f[i] 
-	// 	1 - i
-	//  2 - i
-	//  i - i 
-	//  k - i 
-
-	n := len(s)
+	m := len(s) 
+	s = " " + s 
 	
-
-
 }
 // @lc code=end
 

@@ -14,6 +14,3 @@ cmake-build-debug/CMakeFiles/3.20.2/CompilerIdC/CMakeCCompilerId.c
 cmake-build-debug/CMakeFiles/3.20.2/CompilerIdCXX/a.exe
 cmake-build-debug/CMakeFiles/3.20.2/CompilerIdCXX/CMakeCXXCompilerId.cpp
 /format
-*.in
-*.ans
-*.out 
