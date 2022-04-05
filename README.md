@@ -104,19 +104,19 @@
 - [92 翻转字符](https://leetcode-cn.com/problems/cyJERH/solution/by-konng0120-ug41/)
 - [93 最长斐波那契数列](https://leetcode-cn.com/problems/Q91FMA/solution/by-konng0120-7o1h/)
 - [94 最少回文分割](https://leetcode-cn.com/problems/omKAoA/solution/by-konng0120-91n3/)
-- [95 最长公共子序列]()
-- [96 字符串交织]()
-- [97 子序列的数目]()
-- [98 路径的数目]()
-- [99 最小路径之和]()
-- [100 三角形中最小路径之和]()
-- [101 分割等和子集]()
-- [102 加减的目标值]()
-- [103 最少的硬币数目]()
-- [104 排列的数目]()
-- [105 岛屿的最大面积]()
+- [95 最长公共子序列](https://leetcode-cn.com/problems/qJnOS7/solution/by-konng0120-l0ez/)
+- [96 字符串交织](https://leetcode-cn.com/problems/IY6buf/solution/by-konng0120-3l2j/)
+- [97 子序列的数目](https://leetcode-cn.com/problems/21dk04/solution/by-konng0120-sg5c/)
+- [98 路径的数目](https://leetcode-cn.com/problems/2AoeFn/solution/by-konng0120-9r17/)
+- [99 最小路径之和](https://leetcode-cn.com/problems/0i0mDW/solution/jz2-099-fengwei2002-by-konng0120-pra0/)
+- [100 三角形中最小路径之和](https://leetcode-cn.com/problems/IlPe0q/solution/by-konng0120-obhf/)
+- [101 分割等和子集](https://leetcode-cn.com/problems/NUPfPr/solution/by-konng0120-p7jw/)
+- [102 加减的目标值](https://leetcode-cn.com/problems/YaVDxD/solution/by-konng0120-xlcc/)
+- [103 最少的硬币数目](https://leetcode-cn.com/problems/gaM7Ch/solution/by-konng0120-zl07/)
+- [104 排列的数目](https://leetcode-cn.com/problems/D0F0SV/solution/by-konng0120-rdeg/)
+- [105 岛屿的最大面积](https://leetcode-cn.com/problems/ZL6zAn/solution/by-konng0120-r4o6/)
 - [106 二分图]()
-- [107 矩阵中的距离]()
+- [107 矩阵中的距离](https://leetcode-cn.com/problems/2bCMpM/solution/by-konng0120-msj3/)
 - [108 单词演变]()
 - [109 开密码锁]()
 - [110 所有路径]()
@@ -147,3 +147,6 @@
 
 </div>
 </details>
+
+
+

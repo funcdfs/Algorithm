@@ -1,65 +1,49 @@
-// 在一堆数字中寻找最大值/最小值的操作可以通过堆来进行优化，O(1)
-// 稀疏图，但是数据范围变大了，使用领接表进行存储
 #include <iostream>
+#include <queue> 
 #include <algorithm>
-#include <cstring>
-#include <queue>
+#include <cstring> 
 
-using namespace std;
+using namespace std; 
 
-typedef pair<int, int> PII;
+const int N = 1e5 + 10; 
 
-const int N = 1e6 + 10;
-
-int n, m;
-int head[N], w[N], e[N], ne[N], idx;
+int n, m; 
+int h[N], w[N], e[N], ne[N], idx; 
 int dist[N];
-bool st[N];
+bool st[N]; 
 
 void add(int a, int b, int c) {
-    e[idx] = b, w[idx] = c;
-    ne[idx] = head[a], head[a] = idx++;
-} // 使用领接表存图， w 代表权重
+    e[idx] = b, w[idx] = c, ne[idx] = h[a], h[a] = idx++; 
+}
+
+
+typedef pair<int, int> PII; 
+
 
 int dijkstra() {
-    memset(dist, 0x3f, sizeof dist);
-    dist[1] = 0;
+    memset(dist, 0x3f, sizeof dist); 
+    dist[1] = 0; 
     
-    priority_queue<PII, vector<PII>, greater<PII>> heap; // 定义小根堆
-    heap.push({0, 1}); // heap 中放入 第一个点，第一个点到自己的距离是 0
-
-    while (heap.size()) {
-        auto t = heap.top();
-        heap.pop(); // 每次找出当前距离最小的那一个点
-        
-        int f = t.second, distance = t.first;
-        if (st[f] == true) continue;
-        st[f] = true;
-        
-        for (int i = head[f]; i != -1; i = ne[i]) {
-            int j = e[i];
-            if (dist[j] > dist[f] + w[i]) {
-                dist[j] = dist[f] + w[i];
-                heap.push({dist[j], j});
-            }
-        }
+    priority_queue<
+    
+    if (dist[n] == 0x3f3f3f3f) {
+        return -1; 
+    } else {
+        return dist[n]; 
     }
-    
-    if (dist[n] == 0x3f3f3f3f) return -1;
-    return dist[n];
 }
-
 
 int main() {
-    cin >> n >> m;
-    memset(head, -1, sizeof head);
+    cin >> n >> m; 
+    
+    // 邻接表的初始化，将所有的表头进行初始化 
+    memset(h, -1, sizeof h); 
+    
     while (m--) {
-        int a = 0, b = 0, c = 0;
-        cin >> a >> b >> c;
-        add(a, b, c);
+        int a, b, c; 
+        cin >> a >> b >> c; 
+        add(a, b, c); 
+        // 邻接表不对重边做重复的处理 
     }
-    
-    cout << dijkstra() << endl;
-    
-    return 0;
 }
+

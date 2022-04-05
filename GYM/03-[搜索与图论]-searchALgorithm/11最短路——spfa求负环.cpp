@@ -1,68 +1,63 @@
-#include <algorithm>
-#include <cstring>
+// 只要不存在负环就可以使用 spfa 算法 
+
 #include <iostream>
-#include <queue>
+#include <cstring>
+#include <algorithm>
+#include <queue> 
 
-using namespace std;
+using namespace std; 
 
-const int N = 2010, M = 10010;
+int n, m; 
+const int N = 510; 
+int g[N][N]; 
+int dist[N]; 
+bool st[N];
 
-int n, m;
-int head[N], w[M], e[M], ne[M], idx;
-int dist[N], cnt[N]; // cnt 存储当前最短路的边数
-bool st[N];          // 用来判断一个点是否在 队列中出现
+int spfa() {
+    memset(dist, 0x3f, sizeof dist); // 初始化所有点的距离 
+    dist[1] = 0; 
 
-void add(int a, int b, int c) {
-    e[idx] = b, w[idx] = c;
-    ne[idx] = head[a], head[a] = idx++;
-}
-
-bool spfa() {
-    queue<int> q;
-    for (int i = 1; i <= n; i++) {
-        st[i] = true;
-        q.push(i);
-    }
+    queue<int> q; // 定义一个队列来存储所有待更新的点 
+    q.push(1); 
+    st[1] = true; // 用来表示队列中是否存在这个点，存储重复的点没有意义
 
     while (q.size()) {
-        int t = q.front();
-        q.pop();
-        st[t] = false;
+        int t = q.front(); 
+        q.pop(); 
 
-        for (int i = head[t]; i != -1; i = ne[i]) {
-            int j = e[i];
+        st[t] = false; 
+        
+        for (int i = h[t]; i != -1; i = ne[i]) {
+            int j = e[i]; 
             if (dist[j] > dist[t] + w[i]) {
-                dist[j] = dist[t] + w[i];
-                cnt[j] = cnt[t] + 1;
-                if (cnt[j] >= n) return true; // 说明 1 到 j 最少出现了 n 条边， 那么就是 n + 1 个点，抽屉原理可得必然存在环
+                dist[j] = dist[t] + w[i]; 
                 if (!st[j]) {
-                    q.push(j);
-                    st[j] = true;
+                    q.push(j); 
+                    st[j] = true; 
                 }
             }
         }
     }
 
-    return false;
+    if (dist[n] == 0x3f3f3f3f) {
+        return -1; 
+    }
+    return dist[n]; 
 }
-
+    
 int main() {
-    cin >> n >> m;
-    memset(head, -1, sizeof head);
-
+    memset(g, 0x3f, sizeof g); 
+    
+    cin >> n >> m; 
     while (m--) {
-        int a, b, c;
-        cin >> a >> b >> c;
-        add(a, b, c);
+        int a, b, c; 
+        cin >> a >> b >> c; 
+        g[a][b] = min(g[a][b], c); 
     }
-
-    if (spfa() == true) {
-        puts("Yes");
-    } else {
-        puts("No");
-    }
-
-    return 0;
+    
+    int t = spfa(); 
+    
+    cout << t << endl; 
+    
+    return 0; 
 }
-
-// https://www.acwing.com/activity/content/code/content/2027059/

@@ -11,7 +11,7 @@ struct Edge {
 } es[M];               // 开辟结构体数组，用来存储每一条边的信息
 
 int n, m, k;
-int dist[N], last[N];  // dist 数组和 last 数组， last 数组用来记录摸鱼执行更新前的 dist 数组的值
+int dist[N], last[N];  // dist 数组和 last 数组， last 数组用来记录执行更新前的 dist 数组的值
 
 void bellman_ford() {
     memset(dist, 0x3f, sizeof dist);

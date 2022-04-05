@@ -1,58 +1,69 @@
 #include <iostream>
-#include <cstring>
+#include <queue>
+#include <vector>
 #include <algorithm>
 
 using namespace std;
 
-// 给出一个图，可能存在重边和自环，设计一种方法，实现不重复，不遗漏的遍历图中所有的点
+vector<vector<int>> g;  // 存储邻接表关系
 
-// 用领接表存储图
-const int N = 1e5 + 10, M = 1e6 + 10;
-int n, m; // 存储点数和边数
-int head[N], e[M], ne[M], idx;
+int n, m;
 
-// head[N] 存储每一个点的所有出边
-// e[M]  存储每一个边的起点值
-// ne[M] 存储每一个边的结尾值
+vector<bool> st;
 
-bool dfsSt[N], bfsSt[N];
-
-void add(int a, int b) {
-    e[idx] = b, ne[idx] = head[a], head[a] = idx++;
-}
-
-
-// 有很多篇文章可以参阅，请先看编号较小的那篇(因此你可能需要先排序)。
-
-
-int q[N];
-void bfs() {
-    int hh = 0, tt = -1;
-    q[++tt] = 1;
-
-    while (hh <= tt) {
-        int t = q[hh++];
-
-        for (int i = head[t]; i != -1; i = ne[i]) {
-            int j = e[i];
-            if (bfsSt[j] == false) {
-                q[++tt] = j;
-                cout << j << ' ';
-            }
+void dfs(int x) {
+    st[x] = true; 
+    cout << x << ' '; 
+    for (int i = 0; i < g[x].size(); i++) {
+        if (st[g[x][i]] == false) {
+            dfs(g[x][i]);
         }
     }
 }
 
+void bfs(int x) {
+    fill(st.begin(), st.end(), 0);
+
+    st[x] = true;
+    queue<int> q;
+    q.push(x);
+
+    while (q.size()) {
+        auto t = q.front();
+        q.pop();
+        cout << t << ' ';
+
+        for (int i = 0; i < g[t].size(); i++) {
+            // 遍历 t 的所有出边
+            if (st[g[t][i]] == false) {
+                st[g[t][i]] = true;
+                q.push(g[t][i]);
+            }
+        }
+    }
+    cout << endl;
+}
 
 int main() {
     cin >> n >> m;
-    while (m--) {
+    // n 个点 m 条边
+
+    g.resize(n + 1);
+    st.resize(n + 1);
+    
+    for (int i = 1; i <= m; i++) {
         int a, b;
         cin >> a >> b;
-        add(a, b);
+        g[a].push_back(b);
     }
-    // dfs();
-    bfs();
+
+    for (int i = 1; i <= n; i++) {
+        sort(g[i].begin(), g[i].end());
+    }  // 按照到达的边的从小到大的顺序
+
+    dfs(1);
+    cout << endl;
+    bfs(1);
 
     return 0;
 }

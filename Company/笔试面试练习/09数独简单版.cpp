@@ -1,10 +1,12 @@
-/*
- @ $%U%$
- @ $%Y%$-$%M%$-$%D%$-$%h%$-$%m%$-$%s%$
- @ https://github.com/fengwei2002/Algorithm
-*/
+// Problem: 数独简单版
+// Contest: AcWing
+// url:  https://www.acwing.com/problem/content/1615/
+// date: 2022-04-02 15:37:20
+// Memory Limit: 64 MB
+// Time Limit:   1000 ms
 
-// #define d(a)  // https://github.com/fengwei2002/algorithm
+
+// #define d(a)  // https://github.com/fengwei2002/Algorithm
 // #define dline // konng0120@gmail.com
 // #define dendl // 
 
@@ -12,16 +14,16 @@
 #define dline cout << " ----- " << endl;
 #define dendl cout << " | \n";
 
-#define LL  long long
+#define LL long long
 #define ULL unsigned long long
 #define PII pair<int, int>
 #define INF 0x3f3f3f3f
 
 #include <algorithm>
+#include <functional>
 #include <iostream>
 #include <unordered_map>
 #include <vector>
-#include <functional>
 
 using namespace std;
 
@@ -35,37 +37,3 @@ int main() {
     
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
