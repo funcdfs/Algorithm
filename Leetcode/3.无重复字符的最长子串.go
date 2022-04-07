@@ -3,26 +3,24 @@
  *
  * [3] 无重复字符的最长子串
  */
-
 package leetcode
 
-/* --- 2022-01-04-17-18 --- */
+/* --- 2022-04-06-16-21 --- */
 
 // https://github.com/fengwei2002/Algorithm
-// solution link:
-// https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/solution/lc-3-fengwei2002-ha-xi-biao-by-fengwei20-nj6v/
 
 // @lc code=start
 func lengthOfLongestSubstring(s string) int {
+	// 大概思路就是维护一个动态的滑动窗口哈希表
+	hash := make(map[byte]int, 0)
 	ans := 0
-	hash := make(map[byte]int)
 	for l, r := 0, 0; r < len(s); r++ {
-		hash[s[r]] += 1
+		hash[s[r]] += 1 
 		for {
 			cnt, _ := hash[s[r]]
 			if cnt > 1 {
 				hash[s[l]] -= 1
-				l++
+				l += 1
 			} else {
 				break
 			}
@@ -38,5 +36,4 @@ func max(a, b int) int {
 	}
 	return a
 }
-
 // @lc code=end

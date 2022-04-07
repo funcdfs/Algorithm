@@ -13,11 +13,10 @@ package leetcode
 
 // @lc code=start
 func twoSum(nums []int, target int) []int {
-	hash := make(map[int]int)
+	hash := make(map[int]int, 0)
 	for i := 0; i < len(nums); i++ {
-		another := target - nums[i]
-		if pos, ok := hash[another]; ok {
-			return []int{pos, i}
+		if v, ok := hash[target - nums[i]]; ok == true {
+			return []int{v, i}
 		}
 		hash[nums[i]] = i
 	}
