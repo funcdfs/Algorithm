@@ -47,3 +47,27 @@ func levelOrder(root *TreeNode) [][]int {
 	return ans
 }
 // @lc code=end
+
+
+// 递归实现：
+
+func DFSlevelOrder(root *TreeNode) [][]int {
+    ans := make([][]int, 0)
+    
+    var dfs func(*TreeNode, int)
+    dfs = func(cur *TreeNode, level int) {
+        if cur == nil {
+            return 
+        }
+        if level == len(ans) {
+            path := make([]int, 0)
+            ans = append(ans, path)
+        }
+        
+        ans[level] = append(ans[level], cur.Val)
+        dfs(cur.Left, level + 1)
+        dfs(cur.Right, level + 1)
+    }
+    dfs(root, 0)
+    return ans 
+}

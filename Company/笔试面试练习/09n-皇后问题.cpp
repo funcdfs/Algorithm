@@ -1,4 +1,11 @@
 // Problem: n-皇后问题
+// Contest: AcWing
+// url:  https://www.acwing.com/problem/content/845/
+// date: 2022-04-09 19:55:24
+// Memory Limit: 64 MB
+// Time Limit:   1000 ms
+
+// Problem: n-皇后问题
 // date: 2022-04-02 15:05:05
 // Memory Limit: 64 MB
 // Time Limit:   1000 ms
