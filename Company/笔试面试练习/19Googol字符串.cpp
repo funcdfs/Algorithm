@@ -1,8 +1,8 @@
-// Problem: P1113 杂务
-// Contest: Luogu
-// url:  https://www.luogu.com.cn/problem/P1113
-// date: 2022-03-31 15:55:27
-// Memory Limit: 125 MB
+// Problem: Googol字符串
+// Contest: AcWing
+// url:  https://www.acwing.com/problem/content/633/
+// date: 2022-04-21 19:31:02
+// Memory Limit: 64 MB
 // Time Limit:   1000 ms
 
 
@@ -27,28 +27,26 @@
 
 using namespace std;
 
-int n; 
+
 
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
     
-    cin >> n; 
-    // 必须完成的杂务的数目
+    int t = 0; 
+    cin >> t; 
     
-    for (int i = 0; i < n; i++) {
-        int id, len; 
-        cin >> id >> len; 
-        int x = 0; 
-        vector<int> pre(0, 0); 
-        while (cin >> x, x) {
-            pre.push_back(x);
-        }
-        
+    function<int(int)> cal = [&](int k) -> int {
+        int ans = 0; 
+        return ans; 
+    }; 
+    
+    for (int loop = 0; loop < t; loop++) {
+        int k = 0; 
+        cin >> k; 
+        // 求出 S_10^100 这个字符串的第 K 个数字是 0 还是 1  
+        cout << "Case #" << loop + 1 << ": " << cal(k) << endl; 
     }
-    
-    // 建图，每个 node 存在一个权重，然后考虑到达每个点的路径上所有点的权重之和 
-    
     
     return 0;
 }

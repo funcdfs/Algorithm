@@ -1,8 +1,8 @@
-// Problem: P1113 杂务
-// Contest: Luogu
-// url:  https://www.luogu.com.cn/problem/P1113
-// date: 2022-03-31 15:55:27
-// Memory Limit: 125 MB
+// Problem: 劣马
+// Contest: AcWing
+// url:  https://www.acwing.com/problem/content/697/
+// date: 2022-04-21 19:56:52
+// Memory Limit: 64 MB
 // Time Limit:   1000 ms
 
 
@@ -27,28 +27,29 @@
 
 using namespace std;
 
-int n; 
+
 
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
     
-    cin >> n; 
-    // 必须完成的杂务的数目
+    int t = 0; 
+    cin >> t ;
     
-    for (int i = 0; i < n; i++) {
-        int id, len; 
-        cin >> id >> len; 
-        int x = 0; 
-        vector<int> pre(0, 0); 
-        while (cin >> x, x) {
-            pre.push_back(x);
+    for (int l = 0; l < t; l++) {
+        int m = 0;
+        cin >> m; 
+        for (int i = 0; i < m; i++) {
+            string a, b; 
+            cin >> a >> b; 
+            // 代表 a 和 b 是一个敌对关系 
+            // 在无向图中连接 a 和 b 
+            
         }
         
+        // 输出这个无向图是否为一个二分图 
+        cout << "Case #" << l + 1 << ": " << cal() << endl;  
     }
-    
-    // 建图，每个 node 存在一个权重，然后考虑到达每个点的路径上所有点的权重之和 
-    
     
     return 0;
 }
