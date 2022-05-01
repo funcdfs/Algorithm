@@ -10,7 +10,7 @@ package leetcode
 
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/distinct-subsequences/solution/lc115-fengwei2002-by-kycu-6xrr/
+// https://leetcode.cn/problems/distinct-subsequences/solution/lc115-fengwei2002-by-kycu-6xrr/
 
 // @lc code=start
 func numDistinct(s1 string, s2 string) int {

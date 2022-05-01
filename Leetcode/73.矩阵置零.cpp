@@ -14,7 +14,7 @@ using namespace std;
 // depository:
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/set-matrix-zeroes/solution/lc73-fengwei2002-by-kycu-z34l/
+// https://leetcode.cn/problems/set-matrix-zeroes/solution/lc73-fengwei2002-by-kycu-z34l/
 
 // @lc code=start
 class Solution {

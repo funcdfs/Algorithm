@@ -3,7 +3,7 @@
  *
  * [155] 最小栈
  *
- * https://leetcode-cn.com/problems/min-stack/description/
+ * https://leetcode.cn/problems/min-stack/description/
  *
  * algorithms
  * Easy (57.45%)

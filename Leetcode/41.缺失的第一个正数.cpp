@@ -12,7 +12,7 @@ using namespace std;
 /*2021-10-09-19-36*/
 
 // from https://github.com/fengwei2002/Algorithm
-// 链接：https://leetcode-cn.com/problems/first-missing-positive/solution/lc41-fengwei2002-si-wei-ti-by-kycu-p4l2/
+// 链接：https://leetcode.cn/problems/first-missing-positive/solution/lc41-fengwei2002-si-wei-ti-by-kycu-p4l2/
 /*
  !
  !

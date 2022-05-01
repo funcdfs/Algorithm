@@ -14,7 +14,7 @@ using namespace std;
 
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/valid-palindrome/solution/lc125-fengwei2002-by-kycu-j760/
+// https://leetcode.cn/problems/valid-palindrome/solution/lc125-fengwei2002-by-kycu-j760/
 
 // @lc code=start
 class Solution {

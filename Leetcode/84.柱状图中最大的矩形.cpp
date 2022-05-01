@@ -15,7 +15,7 @@ using namespace std;
 // depository:
 // https://github.com/fengwei2002/Algorithm
 // solution link:  单调栈的应用
-// https://leetcode-cn.com/problems/largest-rectangle-in-histogram/solution/lc84-fengwei2002-by-kycu-33ky/
+// https://leetcode.cn/problems/largest-rectangle-in-histogram/solution/lc84-fengwei2002-by-kycu-33ky/
 
 // @lc code=start
 class Solution {

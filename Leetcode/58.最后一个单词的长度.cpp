@@ -14,7 +14,7 @@ using namespace std;
 // depository:
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/length-of-last-word/solution/lc58-fengwei2002wang-su-ti-by-kycu-4e6h/
+// https://leetcode.cn/problems/length-of-last-word/solution/lc58-fengwei2002wang-su-ti-by-kycu-4e6h/
 
 // @lc code=start
 class Solution {

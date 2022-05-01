@@ -9,7 +9,7 @@ package leetcode
 
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/zigzag-conversion/solution/lc6-fengwei2002-zhao-gui-lu-by-fengwei20-p6nc/
+// https://leetcode.cn/problems/zigzag-conversion/solution/lc6-fengwei2002-zhao-gui-lu-by-fengwei20-p6nc/
 
 // @lc code=start
 func convert(s string, n int) string {

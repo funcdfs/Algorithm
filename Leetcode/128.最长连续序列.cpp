@@ -14,7 +14,7 @@ using namespace std;
 
 // https://github.com/fengwei2002/Algorithm
 // solution link: 
-// https://leetcode-cn.com/problems/longest-consecutive-sequence/solution/lc128-fengwei2002-by-kycu-c4ez/
+// https://leetcode.cn/problems/longest-consecutive-sequence/solution/lc128-fengwei2002-by-kycu-c4ez/
 
 
 // @lc code=start

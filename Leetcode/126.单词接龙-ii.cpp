@@ -16,7 +16,7 @@ using namespace std;
 
 // https://github.com/fengwei2002/Algorithm
 // solution link: 
-// https://leetcode-cn.com/problems/word-ladder-ii/solution/lc126-fengwei2002-by-kycu-5lcn/
+// https://leetcode.cn/problems/word-ladder-ii/solution/lc126-fengwei2002-by-kycu-5lcn/
 
 // @lc code=start
 class Solution {

@@ -10,7 +10,7 @@ package leetcode
 // https://github.com/fengwei2002/Algorithm
 
 // solution link:
-// https://leetcode-cn.com/problems/binary-search-tree-iterator/solution/lc173-fengwei2002-by-konng0120-4c8e/
+// https://leetcode.cn/problems/binary-search-tree-iterator/solution/lc173-fengwei2002-by-konng0120-4c8e/
 
 type TreeNode struct {
 	Val   int

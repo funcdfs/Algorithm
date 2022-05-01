@@ -9,7 +9,7 @@ package leetcode
 
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/text-justification/solution/lc68-fengwei2002-by-kycu-cts9/
+// https://leetcode.cn/problems/text-justification/solution/lc68-fengwei2002-by-kycu-cts9/
 
 // @lc code=start
 func fullJustify(words []string, maxWidth int) []string {

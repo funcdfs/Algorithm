@@ -14,7 +14,7 @@ using namespace std;
 // depository:
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/scramble-string/solution/lc87-fengwei2002-by-kycu-obql/
+// https://leetcode.cn/problems/scramble-string/solution/lc87-fengwei2002-by-kycu-obql/
 
 // @lc code=start
 class Solution {

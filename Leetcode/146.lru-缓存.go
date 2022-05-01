@@ -3,7 +3,7 @@
  *
  * [146] LRU 缓存机制
  *
- * https://leetcode-cn.com/problems/lru-cache/description/
+ * https://leetcode.cn/problems/lru-cache/description/
  *
  * algorithms
  * Medium (52.47%)

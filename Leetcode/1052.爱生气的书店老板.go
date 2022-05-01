@@ -10,7 +10,7 @@ package leetcode
 // https://github.com/fengwei2002/Algorithm
 
 // solution link:
-// https://leetcode-cn.com/problems/grumpy-bookstore-owner/solution/lc1052-fengwei2002-hua-dong-chuang-kou-b-gul9/
+// https://leetcode.cn/problems/grumpy-bookstore-owner/solution/lc1052-fengwei2002-hua-dong-chuang-kou-b-gul9/
 
 // @lc code=start
 func maxSatisfied(customers []int, grumpy []int, minutes int) int {

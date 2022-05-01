@@ -13,7 +13,7 @@ import (
 
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/sum-root-to-leaf-numbers/solution/lc129-fengwei2002-by-kycu-2anv/
+// https://leetcode.cn/problems/sum-root-to-leaf-numbers/solution/lc129-fengwei2002-by-kycu-2anv/
 
 type TreeNode struct {
 	Val   int

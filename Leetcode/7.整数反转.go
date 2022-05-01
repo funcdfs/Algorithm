@@ -11,7 +11,7 @@ import "math"
 
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/reverse-integer/solution/lc7-fengwei2002-qiao-miao-chu-li-chao-gu-q0we/
+// https://leetcode.cn/problems/reverse-integer/solution/lc7-fengwei2002-qiao-miao-chu-li-chao-gu-q0we/
 
 // @lc code=start
 func reverse(x int) int {

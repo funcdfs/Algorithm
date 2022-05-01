@@ -14,7 +14,7 @@ using namespace std;
 // depository:
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/subsets-ii/solution/lc90-fengwei2002-by-kycu-jkwn/
+// https://leetcode.cn/problems/subsets-ii/solution/lc90-fengwei2002-by-kycu-jkwn/
 
 // @lc code=start
 class Solution {

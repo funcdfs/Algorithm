@@ -18,7 +18,7 @@
  * };
  */
 
-// 题解：https://leetcode-cn.com/problems/range-sum-of-bst/solution/cjian-ji-dai-ma-di-gui-by-orangeman/
+// 题解：https://leetcode.cn/problems/range-sum-of-bst/solution/cjian-ji-dai-ma-di-gui-by-orangeman/
 // struct TreeNode {
 //     /*每一个node拥有值，以及左右节点的信息*/
 //     int val;

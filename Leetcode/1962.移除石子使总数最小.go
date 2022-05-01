@@ -10,7 +10,7 @@ package leetcode
 // https://github.com/fengwei2002/Algorithm
 
 // solution link:
-// https://leetcode-cn.com/problems/remove-stones-to-minimize-the-total/solution/lc1962-fengwei2002-by-konng0120-ovex/
+// https://leetcode.cn/problems/remove-stones-to-minimize-the-total/solution/lc1962-fengwei2002-by-konng0120-ovex/
 
 // @lc code=start
 func minStoneSum(piles []int, k int) int {

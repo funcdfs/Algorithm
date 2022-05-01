@@ -1,7 +1,7 @@
 // Problem: 幸存者游戏
 // Contest: AcWing
 // url:  https://www.acwing.com/problem/content/881/
-// date: 2022-04-21 20:39:53
+// date: 2022-04-21 20:47:07
 // Memory Limit: 64 MB
 // Time Limit:   1000 ms
 
@@ -32,6 +32,11 @@ using namespace std;
 int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);
+    
+    int n = 0, m = 0; 
+    cin >> n >> m; 
+    
+    // 输出这个约瑟夫环的最后一个人 
     
     
     

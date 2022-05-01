@@ -1,5 +1,5 @@
-[题目链接](https://leetcode-cn.com/problems/remove-colored-pieces-if-both-neighbors-are-the-same-color/)  
-[题解链接](https://leetcode-cn.com/problems/remove-colored-pieces-if-both-neighbors-are-the-same-color/solution/lc-fengwei2002-by-kycu-cc9q/)
+[题目链接](https://leetcode.cn/problems/remove-colored-pieces-if-both-neighbors-are-the-same-color/)  
+[题解链接](https://leetcode.cn/problems/remove-colored-pieces-if-both-neighbors-are-the-same-color/solution/lc-fengwei2002-by-kycu-cc9q/)
 
 https://github.com/fengwei2002/algorithm
 

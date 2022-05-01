@@ -24,7 +24,7 @@ import "math"
 
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/triangle/solution/lc120-fengwei2002-by-kycu-rcxn/
+// https://leetcode.cn/problems/triangle/solution/lc120-fengwei2002-by-kycu-rcxn/
 
 // @lc code=start
 func minimumTotal(triangle [][]int) int {

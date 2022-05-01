@@ -3,7 +3,7 @@
  *
  * [160] 相交链表
  *
- * https://leetcode-cn.com/problems/intersection-of-two-linked-lists/description/
+ * https://leetcode.cn/problems/intersection-of-two-linked-lists/description/
  *
  * algorithms
  * Easy (61.96%)

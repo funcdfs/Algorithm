@@ -14,7 +14,7 @@ using namespace std;
 // depository:
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/rotate-list/solution/lc61-fengwei2002-lian-biao-mo-ni-by-kycu-q859/
+// https://leetcode.cn/problems/rotate-list/solution/lc61-fengwei2002-lian-biao-mo-ni-by-kycu-q859/
 
 struct ListNode {
     int val;

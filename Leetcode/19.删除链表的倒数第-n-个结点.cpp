@@ -15,7 +15,7 @@ using namespace std;
 /*
  !
  !
- * https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/solution/lc-19-fengwei2002-by-fengwei2002-e11l/
+ * https://leetcode.cn/problems/remove-nth-node-from-end-of-list/solution/lc-19-fengwei2002-by-fengwei2002-e11l/
  *
  */
 struct ListNode {

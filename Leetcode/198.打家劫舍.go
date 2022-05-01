@@ -9,7 +9,7 @@ package leetcode
 
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/house-robber/solution/lc198-fengwei2002-by-kycu-3qst/
+// https://leetcode.cn/problems/house-robber/solution/lc198-fengwei2002-by-kycu-3qst/
 
 // @lc code=start
 func rob(nums []int) int {

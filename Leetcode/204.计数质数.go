@@ -10,9 +10,9 @@ package leetcode
 
 // https://github.com/fengwei2002/Algorithm
 // problem link:
-// https://leetcode-cn.com/problems/count-primes/
+// https://leetcode.cn/problems/count-primes/
 // solution link:
-// https://leetcode-cn.com/problems/count-primes/solution/lc204-fengwei2002-by-kycu-yt14/
+// https://leetcode.cn/problems/count-primes/solution/lc204-fengwei2002-by-kycu-yt14/
 
 // @lc code=start
 func countPrimes(n int) int {

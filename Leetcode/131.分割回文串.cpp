@@ -13,7 +13,7 @@ using namespace std;
 
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/palindrome-partitioning/solution/lc131-fengwei2002-dfs-by-kycu-eow5/
+// https://leetcode.cn/problems/palindrome-partitioning/solution/lc131-fengwei2002-dfs-by-kycu-eow5/
 
 // @lc code=start
 class Solution {

@@ -10,7 +10,7 @@ package leetcode
 // https://github.com/fengwei2002/Algorithm
 
 // solution link:
-// https://leetcode-cn.com/problems/sort-list/solution/lc148-fengwei2002-by-konng0120-zzje/
+// https://leetcode.cn/problems/sort-list/solution/lc148-fengwei2002-by-konng0120-zzje/
 
 type ListNode struct {
 	Val  int

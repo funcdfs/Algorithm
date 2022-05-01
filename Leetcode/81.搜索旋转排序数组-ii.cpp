@@ -14,7 +14,7 @@ using namespace std;
 // depository:
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/search-in-rotated-sorted-array-ii/solution/lc81-fengwei2002-by-kycu-p67z/
+// https://leetcode.cn/problems/search-in-rotated-sorted-array-ii/solution/lc81-fengwei2002-by-kycu-p67z/
 
 // @lc code=start
 class Solution {

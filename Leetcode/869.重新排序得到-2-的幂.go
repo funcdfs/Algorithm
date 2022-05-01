@@ -13,7 +13,7 @@ import (
 
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/reordered-power-of-2/solution/lc869-fengwei2002-by-kycu-xz2t/
+// https://leetcode.cn/problems/reordered-power-of-2/solution/lc869-fengwei2002-by-kycu-xz2t/
 
 // @lc code=start
 func reorderedPowerOf2(n int) bool {

@@ -14,9 +14,9 @@ using namespace std;
 
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// on: https://leetcode-cn.com/problems/construct-binary-search-tree-from-preorder-traversal/solution/jian-kong-er-cha-shu-by-leetcode/
+// on: https://leetcode.cn/problems/construct-binary-search-tree-from-preorder-traversal/solution/jian-kong-er-cha-shu-by-leetcode/
 // ologn: 使用前序遍历和中序遍历
-// myLink: https://leetcode-cn.com/problems/construct-binary-search-tree-from-preorder-traversal/solution/lc1008-fengwei2002-by-kycu-gztq/
+// myLink: https://leetcode.cn/problems/construct-binary-search-tree-from-preorder-traversal/solution/lc1008-fengwei2002-by-kycu-gztq/
 
 struct TreeNode {
     int val;

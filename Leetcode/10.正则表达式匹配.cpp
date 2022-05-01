@@ -14,7 +14,7 @@ using namespace std;
 
 // from https://github.com/fengwei2002/Algorithm
 /*
- !https://leetcode-cn.com/problems/regular-expression-matching/solution/lc10zheng-ze-biao-da-shi-pi-pei-by-fengw-zjz3/
+ !https://leetcode.cn/problems/regular-expression-matching/solution/lc10zheng-ze-biao-da-shi-pi-pei-by-fengw-zjz3/
  !
  *
  *

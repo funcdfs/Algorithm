@@ -10,7 +10,7 @@ package leetcode
 // https://github.com/fengwei2002/Algorithm
 
 // solution link:
-// https://leetcode-cn.com/problems/reduction-operations-to-make-the-array-elements-equal/solution/lc1887-fengwei2002ha-xi-biao-you-xian-ji-qw20/
+// https://leetcode.cn/problems/reduction-operations-to-make-the-array-elements-equal/solution/lc1887-fengwei2002ha-xi-biao-you-xian-ji-qw20/
 
 // @lc code=start
 func reductionOperations(nums []int) int {

@@ -9,7 +9,7 @@ package leetcode
 
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/solution/lc114-fengwei2002-by-kycu-13h6/
+// https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/solution/lc114-fengwei2002-by-kycu-13h6/
 
 type TreeNode struct {
 	Val   int

@@ -12,7 +12,7 @@ import "container/list"
 
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii/solution/lc107-fengwei2002-by-kycu-0dzf/
+// https://leetcode.cn/problems/binary-tree-level-order-traversal-ii/solution/lc107-fengwei2002-by-kycu-0dzf/
 
 type TreeNode struct {
 	Val   int

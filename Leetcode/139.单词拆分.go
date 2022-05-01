@@ -10,7 +10,7 @@ package leetcode
 // https://github.com/fengwei2002/Algorithm
 
 // solution link:
-// https://leetcode-cn.com/problems/word-break/solution/lc139-fengwei2002-by-konng0120-3m3e/
+// https://leetcode.cn/problems/word-break/solution/lc139-fengwei2002-by-konng0120-3m3e/
 
 // @lc code=start
 func wordBreak(s string, wordDict []string) bool {

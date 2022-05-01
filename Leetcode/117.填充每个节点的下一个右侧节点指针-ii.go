@@ -11,7 +11,7 @@ import "container/list"
 
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node-ii/solution/lc117-fengwei2002-by-kycu-pvjd/
+// https://leetcode.cn/problems/populating-next-right-pointers-in-each-node-ii/solution/lc117-fengwei2002-by-kycu-pvjd/
 
 type Node struct {
 	Val   int

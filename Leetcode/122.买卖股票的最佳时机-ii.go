@@ -9,7 +9,7 @@ package leetcode
 
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/solution/lc122-fengwei2002-by-kycu-irmm/
+// https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/solution/lc122-fengwei2002-by-kycu-irmm/
 
 // @lc code=start
 func maxProfit(prices []int) int {

@@ -3,7 +3,7 @@
  *
  * [208] 实现 Trie (前缀树)
  *
- * https://leetcode-cn.com/problems/implement-trie-prefix-tree/description/
+ * https://leetcode.cn/problems/implement-trie-prefix-tree/description/
  *
  * algorithms
  * Medium (71.87%)
@@ -68,7 +68,7 @@
  // https://github.com/fengwei2002/Algorithm
  
  // solution link: 
- // https://leetcode-cn.com/problems/implement-trie-prefix-tree/solution/lc208-fengwei2002-by-kycu-jiww/
+ // https://leetcode.cn/problems/implement-trie-prefix-tree/solution/lc208-fengwei2002-by-kycu-jiww/
  
 
 // @lc code=start

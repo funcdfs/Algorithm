@@ -1,6 +1,6 @@
-[题目链接](https://leetcode-cn.com/problems/minimum-number-of-moves-to-seat-everyone/)
+[题目链接](https://leetcode.cn/problems/minimum-number-of-moves-to-seat-everyone/)
 
-[题解链接](https://leetcode-cn.com/problems/minimum-number-of-moves-to-seat-everyone/solution/lc-fengwei2002-by-kycu-2owt/)
+[题解链接](https://leetcode.cn/problems/minimum-number-of-moves-to-seat-everyone/solution/lc-fengwei2002-by-kycu-2owt/)
 
 ### Problem A - 使每位学生都有座位的最少移动次数
 

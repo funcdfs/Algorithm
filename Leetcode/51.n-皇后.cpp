@@ -12,7 +12,7 @@ using namespace std;
 /*2021-10-12-17-24*/
 
 // from https://github.com/fengwei2002/Algorithm
-// https://leetcode-cn.com/problems/n-queens/solution/lc51-fengwei2002-dfs-by-kycu-clwn/
+// https://leetcode.cn/problems/n-queens/solution/lc51-fengwei2002-dfs-by-kycu-clwn/
 
 // @lc code=start
 class Solution {

@@ -12,8 +12,8 @@ using namespace std;
 /*2021-10-05-22-52*/
 
 //from https://github.com/fengwei2002/Algorithm
-/* https://leetcode-cn.com/problems/longest-valid-parentheses/
- ! https://leetcode-cn.com/problems/longest-valid-parentheses/solution/lc32-fengwei2002-zhan-de-gao-nan-du-ying-uaye/
+/* https://leetcode.cn/problems/longest-valid-parentheses/
+ ! https://leetcode.cn/problems/longest-valid-parentheses/solution/lc32-fengwei2002-zhan-de-gao-nan-du-ying-uaye/
  ! 太难了这个题，保证遇到原题可以写出来就可以了
  */
 

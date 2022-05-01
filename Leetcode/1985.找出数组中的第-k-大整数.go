@@ -3,7 +3,7 @@
  *
  * [1985] 找出数组中的第 K 大整数
  *
- * https://leetcode-cn.com/problems/find-the-kth-largest-integer-in-the-array/description/
+ * https://leetcode.cn/problems/find-the-kth-largest-integer-in-the-array/description/
  *
  * algorithms
  * Medium (41.49%)

@@ -14,7 +14,7 @@ using namespace std;
 // depository:
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/solution/lc83-fengwei2002-by-kycu-0n25/
+// https://leetcode.cn/problems/remove-duplicates-from-sorted-list/solution/lc83-fengwei2002-by-kycu-0n25/
 
 struct ListNode {
     int val;

@@ -10,7 +10,7 @@ package leetcode
 // https://github.com/fengwei2002/Algorithm
 
 // solution link: 
-// https://leetcode-cn.com/problems/binary-tree-inorder-traversal/solution/lc94-fengwei2002-by-kycu-9iye/
+// https://leetcode.cn/problems/binary-tree-inorder-traversal/solution/lc94-fengwei2002-by-kycu-9iye/
 type TreeNode struct {
 	Val int
 	Left *TreeNode

@@ -14,7 +14,7 @@ using namespace std;
 // depository:
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/insert-interval/solution/lc57-fengwei2002-mo-ni-by-kycu-f004/
+// https://leetcode.cn/problems/insert-interval/solution/lc57-fengwei2002-mo-ni-by-kycu-f004/
 
 // @lc code=start
 // https://github.com/fengwei2002/algorithm

@@ -15,7 +15,7 @@ using namespace std;
 // depository:
 // https://github.com/fengwei2002/Algorithm
 // solution link: 特别牛逼的思路
-// https://leetcode-cn.com/problems/maximal-rectangle/solution/lc85-fengwei2002-by-kycu-fr0x/
+// https://leetcode.cn/problems/maximal-rectangle/solution/lc85-fengwei2002-by-kycu-fr0x/
 
 // @lc code=start
 class Solution {

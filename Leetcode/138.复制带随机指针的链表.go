@@ -10,7 +10,7 @@ package leetcode
 // https://github.com/fengwei2002/Algorithm
 
 // solution link:
-// https://leetcode-cn.com/problems/copy-list-with-random-pointer/solution/lc136-fengwei2002-by-konng0120-488t/
+// https://leetcode.cn/problems/copy-list-with-random-pointer/solution/lc136-fengwei2002-by-konng0120-488t/
 
 type Node struct {
 	Val    int

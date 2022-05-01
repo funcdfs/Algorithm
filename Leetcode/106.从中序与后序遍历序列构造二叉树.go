@@ -9,7 +9,7 @@ package leetcode
 
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/solution/lc106-fengwei2002-by-kycu-8h26/
+// https://leetcode.cn/problems/construct-binary-tree-from-inorder-and-postorder-traversal/solution/lc106-fengwei2002-by-kycu-8h26/
 type TreeNode struct {
 	Val   int
 	Left  *TreeNode

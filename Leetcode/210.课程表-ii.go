@@ -3,7 +3,7 @@
  *
  * [210] 课程表 II
  *
- * https://leetcode-cn.com/problems/course-schedule-ii/description/
+ * https://leetcode.cn/problems/course-schedule-ii/description/
  *
  * algorithms
  * Medium (54.79%)
@@ -67,7 +67,7 @@ package leetcode
 // https://github.com/fengwei2002/Algorithm
 
 // solution link: 
-// https://leetcode-cn.com/problems/course-schedule-ii/solution/lc210-fengwei2002-by-kycu-8hya/
+// https://leetcode.cn/problems/course-schedule-ii/solution/lc210-fengwei2002-by-kycu-8hya/
 
 // @lc code=start
 func findOrder(n int, edges [][]int) []int {

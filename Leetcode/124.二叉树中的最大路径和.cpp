@@ -13,7 +13,7 @@ using namespace std;
 
 // https://github.com/fengwei2002/Algorithm
 // solution link: 
-// https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/solution/lc124-fengwei2002-by-kycu-xg9w/
+// https://leetcode.cn/problems/binary-tree-maximum-path-sum/solution/lc124-fengwei2002-by-kycu-xg9w/
 
 struct TreeNode {
     int val;

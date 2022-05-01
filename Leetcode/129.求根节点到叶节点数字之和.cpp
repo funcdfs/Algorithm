@@ -13,7 +13,7 @@ using namespace std;
 
 // https://github.com/fengwei2002/Algorithm
 // solution link: 
-// https://leetcode-cn.com/problems/sum-root-to-leaf-numbers/solution/lc129-fengwei2002-by-kycu-jr9s/
+// https://leetcode.cn/problems/sum-root-to-leaf-numbers/solution/lc129-fengwei2002-by-kycu-jr9s/
 
 struct TreeNode {
     int val;

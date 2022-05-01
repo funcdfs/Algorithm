@@ -13,7 +13,7 @@ using namespace std;
 
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/complement-of-base-10-integer/solution/lc1009-fengwei2002-by-kycu-ypru/
+// https://leetcode.cn/problems/complement-of-base-10-integer/solution/lc1009-fengwei2002-by-kycu-ypru/
 
 // @lc code=start
 class Solution {

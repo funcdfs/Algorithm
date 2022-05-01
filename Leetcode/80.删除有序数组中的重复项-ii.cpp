@@ -14,7 +14,7 @@ using namespace std;
 // depository:
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array-ii/solution/lc80-fengwei2002-by-kycu-gl1v/
+// https://leetcode.cn/problems/remove-duplicates-from-sorted-array-ii/solution/lc80-fengwei2002-by-kycu-gl1v/
 
 // @lc code=start
 class Solution {

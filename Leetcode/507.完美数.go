@@ -3,7 +3,7 @@
  *
  * [507] 完美数
  *
- * https://leetcode-cn.com/problems/perfect-number/description/
+ * https://leetcode.cn/problems/perfect-number/description/
  *
  * algorithms
  * Easy (48.75%)

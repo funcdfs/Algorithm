@@ -9,7 +9,7 @@ package leetcode
 
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/solution/lc105fengwei2002-by-kycu-co7w/
+// https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/solution/lc105fengwei2002-by-kycu-co7w/
 
 type TreeNode struct {
 	Val   int

@@ -12,7 +12,7 @@ import "strconv"
 // https://github.com/fengwei2002/Algorithm
 
 // solution link:
-// https://leetcode-cn.com/problems/compare-version-numbers/solution/lc165-fengwei2002-by-konng0120-pl0v/
+// https://leetcode.cn/problems/compare-version-numbers/solution/lc165-fengwei2002-by-konng0120-pl0v/
 
 // @lc code=start
 func compareVersion(version1 string, version2 string) int {

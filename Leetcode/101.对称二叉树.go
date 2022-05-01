@@ -9,7 +9,7 @@ package leetcode
 
 // https://github.com/fengwei2002/Algorithm
 // solution link: 
-// https://leetcode-cn.com/problems/symmetric-tree/solution/lc101-fengwei2002-by-kycu-ylj4/
+// https://leetcode.cn/problems/symmetric-tree/solution/lc101-fengwei2002-by-kycu-ylj4/
 
 type TreeNode struct {
 	Val int

@@ -10,7 +10,7 @@ package leetcode
 
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/pascals-triangle/solution/lc118-fengwei2002-by-kycu-5q8i/
+// https://leetcode.cn/problems/pascals-triangle/solution/lc118-fengwei2002-by-kycu-5q8i/
 
 // @lc code=start
 func generate(numRows int) [][]int {

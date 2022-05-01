@@ -15,7 +15,7 @@ type TreeNode struct {
 
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/solution/lc108-fengwei2002-by-kycu-8eyj/
+// https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/solution/lc108-fengwei2002-by-kycu-8eyj/
 
 // @lc code=start
 

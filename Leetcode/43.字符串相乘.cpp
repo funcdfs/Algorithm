@@ -13,7 +13,7 @@ using namespace std;
 
 // from https://github.com/fengwei2002/Algorithm
 /*
- ! https://leetcode-cn.com/problems/multiply-strings/solution/lc43-fengwei2002-gao-jing-du-cheng-fa-by-nd65/
+ ! https://leetcode.cn/problems/multiply-strings/solution/lc43-fengwei2002-gao-jing-du-cheng-fa-by-nd65/
  !
  *
  *

@@ -10,7 +10,7 @@ package leetcode
 
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/solution/lc111-fengwei2002-by-kycu-y68q/
+// https://leetcode.cn/problems/minimum-depth-of-binary-tree/solution/lc111-fengwei2002-by-kycu-y68q/
 
 type TreeNode struct {
 	Val   int

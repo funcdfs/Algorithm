@@ -3,7 +3,7 @@
  *
  * [209] 长度最小的子数组
  *
- * https://leetcode-cn.com/problems/minimum-size-subarray-sum/description/
+ * https://leetcode.cn/problems/minimum-size-subarray-sum/description/
  *
  * algorithms
  * Medium (46.75%)
@@ -68,7 +68,7 @@ package leetcode
 // https://github.com/fengwei2002/Algorithm
 
 // solution link:
-// https://leetcode-cn.com/problems/minimum-size-subarray-sum/solution/lc209-fengwei2002-by-kycu-mfnn/
+// https://leetcode.cn/problems/minimum-size-subarray-sum/solution/lc209-fengwei2002-by-kycu-mfnn/
 
 // @lc code=start
 func minSubArrayLen(target int, nums []int) int {

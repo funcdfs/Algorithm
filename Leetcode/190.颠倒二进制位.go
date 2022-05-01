@@ -9,7 +9,7 @@ package leetcode
 
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/reverse-bits/solution/lc190-fengwei2002-by-kycu-9sor/
+// https://leetcode.cn/problems/reverse-bits/solution/lc190-fengwei2002-by-kycu-9sor/
 
 // @lc code=start
 func reverseBits(num uint32) uint32 {

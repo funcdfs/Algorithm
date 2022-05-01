@@ -10,7 +10,7 @@ package leetcode
 // https://github.com/fengwei2002/Algorithm
 
 // solution link:
-// https://leetcode-cn.com/problems/single-element-in-a-sorted-array/solution/lc540-fengwei2002-by-konng0120-v64w/
+// https://leetcode.cn/problems/single-element-in-a-sorted-array/solution/lc540-fengwei2002-by-konng0120-v64w/
 
 // @lc code=start
 func singleNonDuplicate(nums []int) int {

@@ -14,7 +14,7 @@ using namespace std;
 // depository:
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/sqrtx/solution/lc69-fengwei2002-fu-dian-shu-er-fen-by-k-q2ia/
+// https://leetcode.cn/problems/sqrtx/solution/lc69-fengwei2002-fu-dian-shu-er-fen-by-k-q2ia/
 
 /*
  ! --难点：

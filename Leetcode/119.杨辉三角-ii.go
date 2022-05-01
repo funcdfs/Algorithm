@@ -10,7 +10,7 @@ package leetcode
 
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/pascals-triangle-ii/solution/lc119-fengwei2002-by-kycu-nfcf/
+// https://leetcode.cn/problems/pascals-triangle-ii/solution/lc119-fengwei2002-by-kycu-nfcf/
 
 // @lc code=start
 func getRow(rowIndex int) []int {

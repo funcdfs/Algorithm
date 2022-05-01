@@ -11,7 +11,7 @@ package leetcode
 // https://github.com/fengwei2002/Algorithm
 
 // solution link: 
-// https://leetcode-cn.com/problems/sum-of-nodes-with-even-valued-grandparent/solution/lc1315-fengwei2002-by-konng0120-z9o5/
+// https://leetcode.cn/problems/sum-of-nodes-with-even-valued-grandparent/solution/lc1315-fengwei2002-by-konng0120-z9o5/
 
 
 // @lc code=start

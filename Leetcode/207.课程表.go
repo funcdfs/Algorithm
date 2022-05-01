@@ -3,7 +3,7 @@
  *
  * [207] 课程表
  *
- * https://leetcode-cn.com/problems/course-schedule/description/
+ * https://leetcode.cn/problems/course-schedule/description/
  *
  * algorithms
  * Medium (54.06%)

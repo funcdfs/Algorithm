@@ -9,7 +9,7 @@ package leetcode
 
 // https://github.com/fengwei2002/Algorithm
 // solution link: 
-// https://leetcode-cn.com/problems/bitwise-and-of-numbers-range/solution/lc201-fengwei2002-by-kycu-spio/
+// https://leetcode.cn/problems/bitwise-and-of-numbers-range/solution/lc201-fengwei2002-by-kycu-spio/
 
 
 // @lc code=start

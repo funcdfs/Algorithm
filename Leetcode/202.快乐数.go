@@ -9,9 +9,9 @@ package leetcode
 
 // https://github.com/fengwei2002/Algorithm
 // problem link:
-// https://leetcode-cn.com/problems/happy-number/
+// https://leetcode.cn/problems/happy-number/
 // solution link: 
-// https://leetcode-cn.com/problems/happy-number/solution/lc202-fengwei2002-by-kycu-oq94/
+// https://leetcode.cn/problems/happy-number/solution/lc202-fengwei2002-by-kycu-oq94/
 
 
 // @lc code=start

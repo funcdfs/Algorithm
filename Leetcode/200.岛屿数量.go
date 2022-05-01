@@ -9,7 +9,7 @@ package leetcode
 
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/number-of-islands/solution/lc200-fengwei2002-by-kycu-yqdo/
+// https://leetcode.cn/problems/number-of-islands/solution/lc200-fengwei2002-by-kycu-yqdo/
 
 // @lc code=start
 func numIslands(grid [][]byte) int {

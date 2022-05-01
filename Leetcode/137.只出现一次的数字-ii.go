@@ -11,7 +11,7 @@ package leetcode
 // https://github.com/fengwei2002/Algorithm
 
 // solution link:
-// https://leetcode-cn.com/problems/single-number-ii/solution/lc137-fengwei2002-by-konng0120-wpsc/
+// https://leetcode.cn/problems/single-number-ii/solution/lc137-fengwei2002-by-konng0120-wpsc/
 
 // @lc code=start
 func singleNumber(nums []int) int {

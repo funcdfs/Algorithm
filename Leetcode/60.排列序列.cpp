@@ -14,7 +14,7 @@ using namespace std;
 // depository:
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/permutation-sequence/solution/lc60-fengwei2002-ji-shu-fa-by-kycu-wpwd/
+// https://leetcode.cn/problems/permutation-sequence/solution/lc60-fengwei2002-ji-shu-fa-by-kycu-wpwd/
 
 // @lc code=start
 class Solution {

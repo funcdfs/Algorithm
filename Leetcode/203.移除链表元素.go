@@ -9,9 +9,9 @@ package leetcode
 
 // https://github.com/fengwei2002/Algorithm
 // problem link:
-// https://leetcode-cn.com/problems/remove-linked-list-elements/
+// https://leetcode.cn/problems/remove-linked-list-elements/
 // solution link: 
-// https://leetcode-cn.com/problems/remove-linked-list-elements/solution/lc203-fengwei2002-by-kycu-komv/
+// https://leetcode.cn/problems/remove-linked-list-elements/solution/lc203-fengwei2002-by-kycu-komv/
 
  type ListNode struct {
 	 Val int

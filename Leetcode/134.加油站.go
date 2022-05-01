@@ -10,7 +10,7 @@ package leetcode
 // https://github.com/fengwei2002/Algorithm
 
 // solution link: 
-// https://leetcode-cn.com/problems/gas-station/solution/lc134-fengwei2002-by-konng0120-nvua/
+// https://leetcode.cn/problems/gas-station/solution/lc134-fengwei2002-by-konng0120-nvua/
 
 // @lc code=start
 func canCompleteCircuit(gas []int, cost []int) int {

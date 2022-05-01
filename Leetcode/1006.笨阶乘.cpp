@@ -15,8 +15,8 @@ using namespace std;
 
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// others: https://leetcode-cn.com/problems/clumsy-factorial/solution/fu-xue-ming-zhu-yu-dao-cheng-chu-li-ji-s-furg/
-// me: https://leetcode-cn.com/problems/clumsy-factorial/solution/1006-fengwei2002-by-kycu-op9l/
+// others: https://leetcode.cn/problems/clumsy-factorial/solution/fu-xue-ming-zhu-yu-dao-cheng-chu-li-ji-s-furg/
+// me: https://leetcode.cn/problems/clumsy-factorial/solution/1006-fengwei2002-by-kycu-op9l/
 
 // @lc code=start
 class Solution {

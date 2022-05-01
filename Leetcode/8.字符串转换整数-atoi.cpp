@@ -14,7 +14,7 @@ using namespace std;
 
 // https://github.com/fengwei2002/Algorithm
 // solution link: 
-// https://leetcode-cn.com/problems/string-to-integer-atoi/solution/lc8-fengwei2002-by-fengwei2002-sg6u/
+// https://leetcode.cn/problems/string-to-integer-atoi/solution/lc8-fengwei2002-by-fengwei2002-sg6u/
 
 // @lc code=start
 class Solution {

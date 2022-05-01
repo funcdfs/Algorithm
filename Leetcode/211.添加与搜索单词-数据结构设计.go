@@ -3,7 +3,7 @@
  *
  * [211] 添加与搜索单词 - 数据结构设计
  *
- * https://leetcode-cn.com/problems/design-add-and-search-words-data-structure/description/
+ * https://leetcode.cn/problems/design-add-and-search-words-data-structure/description/
  *
  * algorithms
  * Medium (51.24%)

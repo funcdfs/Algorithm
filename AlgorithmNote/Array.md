@@ -16,7 +16,7 @@
 - lc 27 移除元素
   - lc 26 删除重复元素
   - lc 283 将 0 移动到数组末尾
-  - lc [977 有序数组的平方](https://leetcode-cn.com/problems/squares-of-a-sorted-array/) `O(n + logn) -> O(n)`
+  - lc [977 有序数组的平方](https://leetcode.cn/problems/squares-of-a-sorted-array/) `O(n + logn) -> O(n)`
   - lc 209 长度最小的子数组 前缀和 + 二分 / 双指针
 
 矩阵操作

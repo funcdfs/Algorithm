@@ -14,7 +14,7 @@ using namespace std;
 // depository:
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/partition-list/solution/lc86-fengwei2002-by-kycu-4kri/
+// https://leetcode.cn/problems/partition-list/solution/lc86-fengwei2002-by-kycu-4kri/
 
 struct ListNode {
     int val;

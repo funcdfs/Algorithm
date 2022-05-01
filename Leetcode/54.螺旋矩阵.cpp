@@ -14,7 +14,7 @@ using namespace std;
 // depository: 
 // https://github.com/fengwei2002/Algorithm
 // solution link: 
-// https://leetcode-cn.com/problems/spiral-matrix/solution/lc54-fengwei2002-pian-yi-liang-shu-zu-by-0hal/
+// https://leetcode.cn/problems/spiral-matrix/solution/lc54-fengwei2002-pian-yi-liang-shu-zu-by-0hal/
 
 // @lc code=start
 class Solution {

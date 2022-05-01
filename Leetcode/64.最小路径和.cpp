@@ -14,7 +14,7 @@ using namespace std;
 // depository:
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/minimum-path-sum/solution/lc64-fengwei2002-dp-by-kycu-1xwa/
+// https://leetcode.cn/problems/minimum-path-sum/solution/lc64-fengwei2002-dp-by-kycu-1xwa/
 
 // @lc code=start
 // 增加权值的 不同路径

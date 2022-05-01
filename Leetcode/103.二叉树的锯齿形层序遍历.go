@@ -9,7 +9,7 @@ package leetcode
 
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/solution/lc103-fengwei2002-by-kycu-19d9/
+// https://leetcode.cn/problems/binary-tree-zigzag-level-order-traversal/solution/lc103-fengwei2002-by-kycu-19d9/
 
 type TreeNode struct {
 	Val   int

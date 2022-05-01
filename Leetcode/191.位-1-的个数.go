@@ -10,7 +10,7 @@ package leetcode
 
 // https://github.com/fengwei2002/Algorithm
 // solution link: 
-// https://leetcode-cn.com/problems/number-of-1-bits/solution/lc191-fengwei2002-by-kycu-3exj/
+// https://leetcode.cn/problems/number-of-1-bits/solution/lc191-fengwei2002-by-kycu-3exj/
 
 
 // @lc code=start

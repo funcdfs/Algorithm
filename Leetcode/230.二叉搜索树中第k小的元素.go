@@ -10,7 +10,7 @@ package leetcode
 // https://github.com/fengwei2002/Algorithm
 
 // solution link:
-// https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst/solution/1c230-fengwei2002-by-konng0120-z0td/
+// https://leetcode.cn/problems/kth-smallest-element-in-a-bst/solution/1c230-fengwei2002-by-konng0120-z0td/
 
 // @lc code=start
 /**

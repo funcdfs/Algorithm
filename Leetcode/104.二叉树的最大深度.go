@@ -9,7 +9,7 @@ package leetcode
 
 // https://github.com/fengwei2002/Algorithm
 // solution link: 
-// https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/solution/lc104-fengwei2002-by-kycu-7p9e/
+// https://leetcode.cn/problems/maximum-depth-of-binary-tree/solution/lc104-fengwei2002-by-kycu-7p9e/
 
 type TreeNode struct {
 	Val int

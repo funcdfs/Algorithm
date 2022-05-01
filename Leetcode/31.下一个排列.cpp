@@ -15,7 +15,7 @@ using namespace std;
 /*
  ! 找规律
  !
- https://leetcode-cn.com/problems/next-permutation/solution/lc-fengwei2002-zhao-gui-lu-by-fengwei200-w72c/
+ https://leetcode.cn/problems/next-permutation/solution/lc-fengwei2002-zhao-gui-lu-by-fengwei200-w72c/
  *
  *
  */

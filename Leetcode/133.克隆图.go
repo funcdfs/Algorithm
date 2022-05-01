@@ -10,7 +10,7 @@ package leetcode
 // https://github.com/fengwei2002/Algorithm
 
 // solution link:
-//https://leetcode-cn.com/problems/clone-graph/solution/lc133-fengwei2002-by-konng0120-wz7y/
+//https://leetcode.cn/problems/clone-graph/solution/lc133-fengwei2002-by-konng0120-wz7y/
 type Node struct {
 	Val       int
 	Neighbors []*Node

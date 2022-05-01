@@ -12,7 +12,7 @@ import "math"
 
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/solution/lc121-fengwei2002-by-kycu-38dw/
+// https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/solution/lc121-fengwei2002-by-kycu-38dw/
 
 // @lc code=start
 func maxProfit(prices []int) int {

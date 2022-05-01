@@ -13,7 +13,7 @@ using namespace std;
 
 // https://github.com/fengwei2002/Algorithm
 // solution link: 
-// https://leetcode-cn.com/problems/surrounded-regions/solution/lc130-fengwei2002-ni-xiang-si-kao-by-kyc-6s1a/
+// https://leetcode.cn/problems/surrounded-regions/solution/lc130-fengwei2002-ni-xiang-si-kao-by-kyc-6s1a/
 
 
 // @lc code=start

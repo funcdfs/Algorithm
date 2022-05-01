@@ -15,7 +15,7 @@ import (
 // https://github.com/fengwei2002/Algorithm
 
 // solution link:
-// https://leetcode-cn.com/problems/largest-number/solution/lc179-fengwei2002-by-konng0120-mo3n/
+// https://leetcode.cn/problems/largest-number/solution/lc179-fengwei2002-by-konng0120-mo3n/
 
 // @lc code=start
 func largestNumber(nums []int) string {

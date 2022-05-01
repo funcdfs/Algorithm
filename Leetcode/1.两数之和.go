@@ -9,7 +9,7 @@ package leetcode
 
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/two-sum/solution/lc1-fengwei2002-ha-xi-biao-by-fengwei200-t94y/
+// https://leetcode.cn/problems/two-sum/solution/lc1-fengwei2002-ha-xi-biao-by-fengwei200-t94y/
 
 // @lc code=start
 func twoSum(nums []int, target int) []int {

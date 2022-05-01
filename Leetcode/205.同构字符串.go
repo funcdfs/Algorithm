@@ -10,7 +10,7 @@ package leetcode
 // https://github.com/fengwei2002/Algorithm
 
 // solution link:
-// https://leetcode-cn.com/problems/isomorphic-strings/solution/lc205-fengwei2002-by-kycu-rs78/
+// https://leetcode.cn/problems/isomorphic-strings/solution/lc205-fengwei2002-by-kycu-rs78/
 
 // @lc code=start
 func isIsomorphic(s string, t string) bool {

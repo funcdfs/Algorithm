@@ -9,7 +9,7 @@ package leetcode
 
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/convert-sorted-list-to-binary-search-tree/solution/lc109-fengwei2002-by-kycu-smfq/
+// https://leetcode.cn/problems/convert-sorted-list-to-binary-search-tree/solution/lc109-fengwei2002-by-kycu-smfq/
 
 type ListNode struct {
 	Val  int

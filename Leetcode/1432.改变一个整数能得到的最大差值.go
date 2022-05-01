@@ -10,7 +10,7 @@ package leetcode
 // https://github.com/fengwei2002/Algorithm
 
 // solution link:
-// https://leetcode-cn.com/problems/max-difference-you-can-get-from-changing-an-integer/solution/lc1432-fengwei2002-by-konng0120-ht33/
+// https://leetcode.cn/problems/max-difference-you-can-get-from-changing-an-integer/solution/lc1432-fengwei2002-by-konng0120-ht33/
 
 // @lc code=start
 func maxDiff(num int) int {

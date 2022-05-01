@@ -10,7 +10,7 @@ package leetcode
 
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/path-sum-ii/solution/lc113-fengwei2002-guan-yu-bu-li-jie-slic-hank/
+// https://leetcode.cn/problems/path-sum-ii/solution/lc113-fengwei2002-guan-yu-bu-li-jie-slic-hank/
 
 type TreeNode struct {
 	Val   int

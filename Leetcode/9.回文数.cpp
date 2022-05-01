@@ -16,7 +16,7 @@ using namespace std;
 /*
  !
  ! 题解：
- https://leetcode-cn.com/problems/palindrome-number/solution/lc9-fengwei2002-by-fengwei2002-8kg0/
+ https://leetcode.cn/problems/palindrome-number/solution/lc9-fengwei2002-by-fengwei2002-8kg0/
  *
  *
  */

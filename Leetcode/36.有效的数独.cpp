@@ -14,7 +14,7 @@ using namespace std;
 /*2021-10-05-21-47*/
 
 // from https://github.com/fengwei2002/Algorithm
-//  https://leetcode-cn.com/problems/valid-sudoku/
+//  https://leetcode.cn/problems/valid-sudoku/
 
 // @lc code=start
 class Solution {

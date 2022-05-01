@@ -10,4 +10,7 @@
 **virtual contest**
 
 - [2022-01-17-虚拟周赛203 TODO: stone-game-v](https://github.com/fengwei2002/Algorithm/blob/main/LeetCodeContest/2022-01-17-%E8%99%9A%E6%8B%9F203.md)
-- [2022-01-17-虚拟周赛203]()
+  - [竞赛链接](https://leetcode.cn/contest/weekly-contest-203/)
+- [2022-04-28 虚拟竞赛 204]()
+  -  [竞赛链接](https://leetcode.cn/contest/weekly-contest-204/)
+- 

@@ -6,7 +6,7 @@
 
 // from fengwei2002/algorithm
 // 2021-10-03-15-49
-// https://leetcode-cn.com/problems/add-two-numbers/solution/lc2-fengwei2002-mo-ni-gao-jing-du-jia-fa-ng51/
+// https://leetcode.cn/problems/add-two-numbers/solution/lc2-fengwei2002-mo-ni-gao-jing-du-jia-fa-ng51/
 
 // @lc code=start
 /**

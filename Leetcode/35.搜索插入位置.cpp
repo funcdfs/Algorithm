@@ -12,7 +12,7 @@ using namespace std;
 /*2021-10-05-21-29*/
 
 // from https://github.com/fengwei2002/Algorithm
-// https://leetcode-cn.com/problems/search-insert-position/
+// https://leetcode.cn/problems/search-insert-position/
 
 // @lc code=start
 class Solution {

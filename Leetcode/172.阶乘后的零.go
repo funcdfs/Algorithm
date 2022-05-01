@@ -10,7 +10,7 @@ package leetcode
 // https://github.com/fengwei2002/Algorithm
 
 // solution link:
-// https://leetcode-cn.com/problems/factorial-trailing-zeroes/solution/lc172-fengwei2002-by-konng0120-ikh1/
+// https://leetcode.cn/problems/factorial-trailing-zeroes/solution/lc172-fengwei2002-by-konng0120-ikh1/
 
 // @lc code=start
 func trailingZeroes(n int) int {

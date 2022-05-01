@@ -9,7 +9,7 @@ package leetcode
 
 // https://github.com/fengwei2002/Algorithm
 // solution link:
-// https://leetcode-cn.com/problems/binary-tree-right-side-view/solution/lc199-fengwei2002-by-kycu-n845/
+// https://leetcode.cn/problems/binary-tree-right-side-view/solution/lc199-fengwei2002-by-kycu-n845/
 
 type TreeNode struct {
 	Val   int
