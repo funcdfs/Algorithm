@@ -1,8 +1,8 @@
 [General]
 tab_width=4
-cursor_width=2
+cursor_width=1
 geometry=@Rect(0 0 0 0)
-editor_font=@Variant(\0\0\0@\0\0\0\x1e\0S\0o\0u\0r\0\x63\0\x65\0 \0\x43\0o\0\x64\0\x65\0 \0P\0r\0o@&\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x39\x10)
+editor_font=@Variant(\0\0\0@\0\0\0\xe\0G\0o\0 \0M\0o\0n\0o@&\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x32\x10)
 use_custom_application_font=true
 custom_application_font=@Variant(\0\0\0@\0\0\0\b\x97\x1e\x9e\\\x81\xfbiw@$\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x32\x10)
 default_language=C++
@@ -20,7 +20,7 @@ auto_save_interval=1000
 auto_save_interval_type=After the last modification
 wrap_text=false
 beta=false
-replace_tabs=true
+replace_tabs=false
 save_tests=true
 maximized_window=true
 check_update=true
@@ -43,9 +43,9 @@ testcases_matching_rules=@Variant(\0\0\0\v\0\0\0\x2\0\0\0\x10\0(\0.\0*\0)\0\\\0.
 input_file_save_path=./${basename}_${1-index}.in
 answer_file_save_path=./${basename}_${1-index}.ans
 default_file_paths_for_problem_urls=@Invalid()
-test_cases_font=@Variant(\0\0\0@\0\0\0\x16\0U\0\x62\0u\0n\0t\0u\0 \0M\0o\0n\0o@(\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x32\x10)
+test_cases_font=@Variant(\0\0\0@\0\0\0\xe\0G\0o\0 \0M\0o\0n\0o@(\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x32\x10)
 extra_bottom_margin=true
-message_logger_font=@Variant(\0\0\0@\0\0\0\f\x97\x1e\x9e\\e\x87iw{I[\xbd@&\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x32\x10)
+message_logger_font=@Variant(\0\0\0@\0\0\0\b\x97\x1e\x9e\\\x81\xfbiw@$\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x32\x10)
 save_file_on_compilation=true
 save_file_on_execution=true
 restore_old_problem_url=false
@@ -61,7 +61,7 @@ recent_files=C:/Algorithm/AcWing/\x7b97\x6cd5\x63d0\x9ad8\x8bfe\x9898\x5355/\x80
 number_of_problems_in_contest=6
 first_time_user=false
 show_only_monospaced_font=false
-total_usage_time=1316309
+total_usage_time=1316553
 promotion_dialog_shown=true
 auto_uncheck_accepted_testcases=false
 full_screen_dialog_shown=true
@@ -81,7 +81,7 @@ arguments=-m yapf
 style="[style]\nbased_on_style = pep8"
 
 [cpp]
-template_path=D:/cpeditor/cpeditor/files/main.cpp
+template_path=C:\\app\\cpeditor\\template.cpp
 template_cursor_position_regex=main\\(\\)
 template_cursor_position_offset_type=end
 template_cursor_position_offset_characters=4
@@ -137,7 +137,7 @@ auto_save=false
 auto_save_interval=20000
 
 [cf]
-path=D:/cpeditor/cftools/cf_v1.0.0_windows_64/cf.exe
+path=C:/app/cpeditor/cf_v1.0.0/cf_v1.0.0_windows_64/cf.exe
 show_toast_messages=true
 
 [lsp]
@@ -169,7 +169,7 @@ user=
 password=
 
 [default_path]
-names_and_paths=@Variant(\0\0\0\v\0\0\0\x2\0\0\0\xe\0\x63\0h\0\x65\0\x63\0k\0\x65\0r\0\0\0\x36\0\x43\0:\0/\0\x41\0l\0g\0o\0r\0i\0t\0h\0m\0/\0\x41\0\x63\0W\0i\0n\0g\0/{\x97l\xd5\x63\xd0\x9a\xd8\x8b\xfe\x98\x98SU), @Variant(\0\0\0\v\0\0\0\x2\0\0\0\xe\0\x63\0o\0n\0t\0\x65\0s\0t\0\0\0>\0\x43\0:\0/\0\x41\0l\0g\0o\0r\0i\0t\0h\0m\0/\0\x43\0o\0\x64\0\x65\0\x66\0o\0r\0\x63\0\x65\0s\0/\0\x63\0o\0n\0t\0\x65\0s\0t), @Variant(\0\0\0\v\0\0\0\x2\0\0\0\b\0\x66\0i\0l\0\x65\0\0\0\x36\0\x43\0:\0/\0\x41\0l\0g\0o\0r\0i\0t\0h\0m\0/\0\x41\0\x63\0W\0i\0n\0g\0/{\x97l\xd5\x63\xd0\x9a\xd8\x8b\xfe\x98\x98SU), "@Variant(\0\0\0\v\0\0\0\x2\0\0\0\x10\0s\0\x65\0t\0t\0i\0n\0g\0s\0\0\0,\0\x43\0:\0/\0\x41\0l\0g\0o\0r\0i\0t\0h\0m\0/\0.\0\x63\0p\0\x65\0\x64\0i\0t\0o\0r)", @Variant(\0\0\0\v\0\0\0\x2\0\0\0\x10\0s\0n\0i\0p\0p\0\x65\0t\0s\0\0\0@\0\x43\0:\0/\0\x41\0l\0g\0o\0r\0i\0t\0h\0m\0/\0\x43\0o\0\x64\0\x65\0\x66\0o\0r\0\x63\0\x65\0s\0/\0t\0\x65\0m\0p\0l\0\x61\0t\0\x65), @Variant(\0\0\0\v\0\0\0\x2\0\0\0\x10\0t\0\x65\0s\0t\0\x63\0\x61\0s\0\x65\0\0\0\x36\0\x43\0:\0/\0\x41\0l\0g\0o\0r\0i\0t\0h\0m\0/\0\x41\0\x63\0W\0i\0n\0g\0/{\x97l\xd5\x63\xd0\x9a\xd8\x8b\xfe\x98\x98SU)
+names_and_paths=@Variant(\0\0\0\v\0\0\0\x2\0\0\0\xe\0\x63\0h\0\x65\0\x63\0k\0\x65\0r\0\0\0\x36\0\x43\0:\0/\0\x41\0l\0g\0o\0r\0i\0t\0h\0m\0/\0\x41\0\x63\0W\0i\0n\0g\0/{\x97l\xd5\x63\xd0\x9a\xd8\x8b\xfe\x98\x98SU), @Variant(\0\0\0\v\0\0\0\x2\0\0\0\xe\0\x63\0o\0n\0t\0\x65\0s\0t\0\0\0>\0\x43\0:\0/\0\x41\0l\0g\0o\0r\0i\0t\0h\0m\0/\0\x43\0o\0\x64\0\x65\0\x66\0o\0r\0\x63\0\x65\0s\0/\0\x63\0o\0n\0t\0\x65\0s\0t), @Variant(\0\0\0\v\0\0\0\x2\0\0\0\b\0\x66\0i\0l\0\x65\0\0\0\x36\0\x43\0:\0/\0\x41\0l\0g\0o\0r\0i\0t\0h\0m\0/\0\x41\0\x63\0W\0i\0n\0g\0/{\x97l\xd5\x63\xd0\x9a\xd8\x8b\xfe\x98\x98SU), @Variant(\0\0\0\v\0\0\0\x2\0\0\0\x10\0s\0\x65\0t\0t\0i\0n\0g\0s\0\0\0\x36\0\x43\0:\0/\0\x63\0o\0\x64\0\x65\0/\0\x41\0l\0g\0o\0r\0i\0t\0h\0m\0/\0.\0\x63\0p\0\x65\0\x64\0i\0t\0o\0r), @Variant(\0\0\0\v\0\0\0\x2\0\0\0\x10\0s\0n\0i\0p\0p\0\x65\0t\0s\0\0\0@\0\x43\0:\0/\0\x41\0l\0g\0o\0r\0i\0t\0h\0m\0/\0\x43\0o\0\x64\0\x65\0\x66\0o\0r\0\x63\0\x65\0s\0/\0t\0\x65\0m\0p\0l\0\x61\0t\0\x65), @Variant(\0\0\0\v\0\0\0\x2\0\0\0\x10\0t\0\x65\0s\0t\0\x63\0\x61\0s\0\x65\0\0\0\x36\0\x43\0:\0/\0\x41\0l\0g\0o\0r\0i\0t\0h\0m\0/\0\x41\0\x63\0W\0i\0n\0g\0/{\x97l\xd5\x63\xd0\x9a\xd8\x8b\xfe\x98\x98SU)
 action\open_file\uses=${file}
 action\open_file\changes="file, testcase, checker"
 action\save_file\uses=${file}
