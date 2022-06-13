@@ -55,6 +55,16 @@ int main() {
     	add(a, b); 
     }
     
+    // 出度为 0 的路径总数就是 ans 
+    int ans = 0; 
+    
+    queue<int> que; 
+    for (int i = 0; i < n; i++) {
+    	if (inDegree[i] == 0) {
+    		
+    	}
+    }
+    
     
     return 0;
 }
