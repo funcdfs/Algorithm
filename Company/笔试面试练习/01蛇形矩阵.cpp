@@ -26,7 +26,7 @@ int main() {
         int a = dx[d] + x; 
         int b = dy[d] + y;
         if (a < 0 || a >= n || b < 0 || b >= m || g[a][b] != 0) {
-            d = (d + 1) % 4; 
+            d = (d + 1) % 4; // 注意这里的方向切换的方法 
             a = x + dx[d]; 
             b = y + dy[d]; 
         } 

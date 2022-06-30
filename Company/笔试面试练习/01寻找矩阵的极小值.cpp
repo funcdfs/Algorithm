@@ -28,7 +28,7 @@ public:
             
             // 找出 mid 的左右两个 value 
             LL leftValue = (mid > 0) ? query(minValueRow, mid - 1) : INF; 
-            LL rightValue = (mid <= n - 1) ? query(minValueRow, mid + 1): INF; 
+            LL rightValue = (mid + 1 <= n - 1) ? query(minValueRow, mid + 1): INF; 
             
             if (minValue < leftValue && minValue < rightValue) return {minValueRow, mid};
             if (leftValue < minValue) r = mid - 1; 
