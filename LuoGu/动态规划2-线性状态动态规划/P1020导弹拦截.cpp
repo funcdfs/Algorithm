@@ -1,34 +1,32 @@
-// Problem: 1285：最大上升子序列和
-// Contest: SSOIER
-// URL: http://ybt.ssoier.cn:8088/problem_show.php?pid=1285
-// date: 2022-02-14 18:24:44
-// Memory Limit: 65 MB
+// Problem: P1020 [NOIP1999 普及组] 导弹拦截
+// Contest: Luogu
+// URL: https://www.luogu.com.cn/problem/P1020
+// date: 2022-07-06 16:32:40
+// Memory Limit: 125 MB
 // Time Limit: 1000 ms
 
 
 /* https://github.com/fengwei2002/algorithm */
+// for debug:
+// #define d(a)  // cout << #a << " = " << a << ' ';
+// #define dline // cout << " ----- " << endl;
+// #define dendl // cout << " | \n";
+#define d(a)  cout << #a << " = " << a << ' ';
+#define dline cout << " ----- " << endl;
+#define dendl cout << " | \n";
 
 #define INF 0x3f3f3f3f
 #define LL long long
 #define PII pair<int, int>
 
-// for debug:
-
-// #define d(a)  // cout << #a << " = " << a << ' ';
-// #define dline // cout << " ----- " << endl;
-// #define dendl // cout << " | \n";
-
-#define d(a)  cout << #a << " = " << a << ' ';
-#define dline cout << " ----- " << endl;
-#define dendl cout << " | \n";
-
 #include <algorithm>
+#include <functional>
 #include <iostream>
+#include <numeric>
+#include <unordered_map>
 #include <vector>
 
 using namespace std;
-
-const int N = 1e5 + 10;
 
 
 
@@ -38,41 +36,7 @@ int main() {
     
     
     
+    
+    
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
