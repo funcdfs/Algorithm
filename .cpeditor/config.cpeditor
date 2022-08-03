@@ -26,7 +26,7 @@ maximized_window=true
 check_update=true
 opacity=100
 view_mode=split
-splitter_size=@ByteArray(\0\0\0\xff\0\0\0\x1\0\0\0\x2\0\0\x4\x95\0\0\x2\xb3\x1\xff\xff\xff\xff\x1\0\0\0\x1\0)
+splitter_size=@ByteArray(\0\0\0\xff\0\0\0\x1\0\0\0\x2\0\0\x4q\0\0\x2\xd7\x1\xff\xff\xff\xff\x1\0\0\0\x1\0)
 right_splitter_size=@ByteArray(\0\0\0\xff\0\0\0\x1\0\0\0\x2\0\0\x1\x34\0\0\x1\xf0\x1\xff\xff\xff\xff\x1\0\0\0\x2\0)
 force_close=false
 show_compile_and_run_only=false
@@ -84,7 +84,7 @@ style="[style]\nbased_on_style = pep8"
 template_path=C:\\code\\Algorithm\\.cpeditor\\template.cpp
 template_cursor_position_regex=main\\(\\)
 template_cursor_position_offset_type=end
-template_cursor_position_offset_characters=4
+template_cursor_position_offset_characters=61
 compile_command="c++ -Wall -std=gnu++17 -D github_fengwei2002"
 output_path=${tmpdir}/${basename}
 run_arguments="-std=gnu++17"
@@ -118,7 +118,7 @@ enable=true
 connection_port=10045
 open_new_tab=true
 set_time_limit_for_tab=true
-head_comments="URL: ${json.url}\nProblem: ${json.name}, Contest: ${json.group}\nMem ${json.memoryLimit} MB, Time ${json.timeLimit} ms\nDate: ${time}"
+head_comments="URL: ${json.url}\nNAME: ${json.name}, ${json.group}\nLIMIT: ${json.memoryLimit} MB, ${json.timeLimit} ms\nDATE: ${time}"
 head_comments_time_format=yyyy-MM-dd HH:mm:ss
 head_comments_powered_by_cp_editor=false
 
