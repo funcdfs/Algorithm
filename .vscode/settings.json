@@ -3,6 +3,11 @@
         "*.html": "html",
         "functional": "cpp",
         "ostream": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "chrono": "cpp",
+        "random": "cpp",
+        "limits": "cpp",
+        "ranges": "cpp",
+        "valarray": "cpp"
     }
 }
