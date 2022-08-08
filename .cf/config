@@ -1,0 +1,38 @@
+{
+  "template": [
+    {
+      "alias": "cpp20",
+      "lang": "73",
+      "path": "C:\\code\\Algorithm\\Codeforces\\template\\main.cpp",
+      "suffix": [
+        "cpp20",
+        "cpp"
+      ],
+      "before_script": "g++ $%full%$ -o $%file%$.exe -std=c++2a",
+      "script": "./$%file%$.exe",
+      "after_script": "rm $%file%$.exe"
+    },
+    {
+      "alias": "cpp",
+      "lang": "73",
+      "path": "C:\\Users\\konng\\.cf\\main.cpp",
+      "suffix": [
+        "cpp"
+      ],
+      "before_script": "g++ $%full%$ -o $%file%$.exe -std=c++2a -D github_fengwei2002",
+      "script": "./$%file%$.exe",
+      "after_script": "rm $%file%$.exe"
+    }
+  ],
+  "default": 1,
+  "gen_after_parse": false,
+  "host": "https://codeforces.com",
+  "proxy": "",
+  "folder_name": {
+    "acmsguru": "acmsguru",
+    "contest": "contest",
+    "group": "group",
+    "gym": "gym",
+    "root": "cf"
+  }
+}
