@@ -20,3 +20,5 @@ auto ptrace = [](const char* name, auto&& A, auto&&... rest) {
     const char* open = strchr(name, '['); cerr.write(name, open-name);
     ((cerr << '[' << rest << ']'), ...); cerr << " = " << A << '\n';;
 };
+#define dline() cerr << "\n"
+// #define debug(...) 42
