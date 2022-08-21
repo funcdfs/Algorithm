@@ -5,8 +5,7 @@ using namespace std;
 #ifdef github_fengwei2002
 #include "algo/debug.h"
 #else
-#define debug(...) 4
-#define dline() 2
+#define debug(...) 42
 #endif
 /*----------------------------------*/
 
