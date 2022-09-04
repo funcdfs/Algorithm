@@ -9,87 +9,124 @@ using namespace std;
 #endif
 /*----------------------------------*/
 
-int getSuit(vector<int>& a, int x) {
-    int ans = -1; 
+int trans(vector<int>& a) {
+    int ans = 0;
     for (int i = 0; i < a.size(); i++) {
-        if (a[i] <= x) {
-            ans = a[i]; 
-        }
-    } 
-    
-    if (ans == -1) {
-        return *min_element(a.begin(), a.end()); 
-    } 
-    
-    return ans; 
+        ans = ans * 10 + a[i];
+    }
+    return ans;
 }
 
-int cal(vector<int>& a, int n) {
-    vector<int> ori(0, 0); 
-    while (n > 0) {
-        ori.push_back(n % 10); 
-        n /= 10; 
-    } 
-    reverse(ori.begin(), ori.end()); 
-    debug(a, ori);
-    int maxValue = *max_element(a.begin(), a.end()); 
-    
-    vector<int> ans(ori.size(), 0);  
-    int idx = 0; 
-    for (int i = 0; i < ori.size(); i++) {
-        int t = getSuit(a, ori[i]); 
-        debug(i, t); 
-        if (t < ori[i]) {
-            ans[i] = t; 
-            idx = i; 
-            break; 
-        } else if (t == ori[i]) {
-            ans[i] = t; 
-            continue; 
-        } else if (t > ori[i]) {
-            // 数组中的所有的元素都大于 这个 位置的数字 
-            int f = maxValue; 
-            for (int l = 0; l < ori.size() - 2; l++) {
-                f = f * 10 + maxValue; 
+int findMaxNum(vector<int>& a, vector<int>& b) {
+    int maxVal = *max_element(a.begin(), a.end());
+    function<int(int)> find1st = [&](int val) {
+        int x = -1;
+        for (int i = 0; i < a.size(); i++) {
+            if (a[i] <= val) {
+                x = a[i];
             }
-            return f; 
         }
-    } 
-    
-    for (int i = idx + 1; i < ans.size(); i++) {
-        ans[i] = maxValue; 
-    }
-    debug(ans); 
-    
-    int f = ans[0]; 
-    for (int i = 1; i < ans.size(); i++) {
-        f = f * 10 + ans[i]; 
-    } 
-    return f; 
+        return x;
+    };
+    function<int(int)> find2nd = [&](int val) {
+        int x = -1;
+        for (int i = 0; i < a.size(); i++) {
+            if (a[i] < val) {
+                x = a[i];
+            }
+        }
+        return x;
+    };
+    /* ------------------------------------ */
+
+    int ans = 0;
+    function<void(vector<int>&, int)> dfs = [&](vector<int>& path, int lastIdx) {
+        debug(path, lastIdx);
+        if (path == b) {
+            path.pop_back();
+            lastIdx = path.size();
+            debug(1);
+            dfs(path, lastIdx);
+        }
+
+        if (path.size() == b.size()) {
+            ans = trans(path);
+            return;
+        }
+
+        int v = b[path.size()];
+        if (lastIdx != -1) {
+            int t = find2nd(v);
+            if (t != -1) {
+                path.push_back(t);
+                int len = path.size();
+                debug(path);
+                for (int i = 0; i < b.size() - len; i++) {
+                    path.push_back(maxVal);
+                }
+                debug("after", path);
+                ans = trans(path);
+                return;
+            } else {
+                // not exist 2nd, only have 1st or nil
+                path.pop_back();
+                lastIdx--;
+                dfs(path, lastIdx);
+            }
+        } else {
+            int t = find1st(v);
+            if (t != -1) {
+                path.push_back(t);
+                dfs(path, -1);
+            } else {
+                path.clear();
+                for (int i = 0; i < b.size() - 1; i++) {
+                    path.push_back(maxVal);
+                }
+                ans = trans(path);
+                return;
+            }
+        }
+        return;
+    };
+
+    vector<int> c(0, 0);
+    dfs(c, -1);
+    return ans;
 }
 
 int main() {
-    cin.tie(nullptr), ios::sync_with_stdio(false);
-    
-    int n = 0; 
-    cin >> n; 
-    
-    int x = 0; 
-    vector<int> a(0, 0); 
-    while (cin >> x) {
-        a.push_back(x); 
-    } 
-    
-    cout << cal(a, n) << "\n"; 
-    
-    // 数组中的数字组成的小于 n 个最大的整数  
-    
+    int n = 0;
+    cin >> n;
+    vector<int> a(0, 0);
+    for (int x = 0; cin >> x;) {
+        a.push_back(x);
+    }
+
+    vector<int> b;
+    while (n) {
+        b.push_back(n % 10);
+        n /= 10;
+    }
+    reverse(b.begin(), b.end());
+    cout << findMaxNum(a, b);
+
     return 0;
 }
 
-
 /*
+(45)[path, lastIdx]: [{}, -1]
+(45)[path, lastIdx]: [{3}, -1]
+(45)[path, lastIdx]: [{3, 2}, -1]
+(45)[path, lastIdx]: [{3, 2, 1}, -1]
+(50)[1]: [1]
+(45)[path, lastIdx]: [{3, 2}, 2]
+(45)[path, lastIdx]: [{3}, 1]
+(65)[path]: [{3, 1}]
+(69)["after", path]: [after, {3, 1, 3}]
 
+321
+1 2 3
 
-
+313
 */
