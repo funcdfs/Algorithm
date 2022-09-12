@@ -1,0 +1,1 @@
+"g++ $%full%$ -o $%file%$.exe -Wall -std=gnu++2a -D github_fengwei2002 -Wno-sign-compare
