@@ -15,25 +15,61 @@ using namespace std;
 /*-----------------------*/
 
 
+const int N = 12, M = 1 << 10, K = 110; 
+
+int n, m; 
+vector<int> state; // 表示所有合法的状态 
+int id[M], cnt[M];   // 每一个状态和下标之间的映射关系，每一个状态里面 1 的个数
+vector<int> head[M]; // 每一个状态所有可以转移到的其他的状态
+int f[N][K][M];
+
+bool check(int state) {
+    for (itn i = 0; i < n; i++) {
+        if ((state >> i & 1) && (state >> i + 1 & 1)) {
+            return false; 
+        }
+    } 
+    return true;
+}
+
+int count(int state) {
+    int ans = 0; 
+    for (int i = 0; i < n; i++) {
+        ans += state >> i & 1; 
+    } 
+    
+    return ans;
+}
 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(0);
+    cin >> n >> m; 
     
-    int n = 0; 
-    cin >> n; 
-    vector<int> a(n); 
-    for (int i = 0; i < n; i++) cin >> a[i]; 
+    for (int i = 0; i < 1 << n; i++) {
+        if (check(i)) {
+            state.push_back(i); 
+            id[i] = state.size() - 1; 
+            cnt[i] = count(i); 
+        }
+    }
     
-    debug(a); 
-
-    return 0;
+    for (int i = 0; i < state.size(); i++) {
+        for (int j = 0; j < state.size(); j++) {
+            int a = state[i]; 
+            int b = state[j]; 
+            if ((a & b) == 0 && )
+        }
+    }
 }
 
 
 /*
 
 n*n 个棋盘，放置 k 个国王， 国王可以攻击周围的 8 个格子，求使得他们无法相互攻击的方案的总数 
+
+
+
+
+
 
 状态压缩DP: 
 
