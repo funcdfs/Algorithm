@@ -1,4 +1,3 @@
-cd /c/code/Algorithm
 time=$(date "+%Y%m%d-%H%M%S")
 
 git add .
