@@ -7,9 +7,9 @@
 using namespace std;
 /*----------------------------------*/
 #ifdef github_fengwei2002
-#include "algo/debug.h"
+#include "algo/dbg.h"
 #else
-#define debug(...) 42
+#define dbg(...) 42
 #endif
 /*----------------------------------*/
 
@@ -52,7 +52,7 @@ int main() {
             
             while (que.size()) {
                 auto [x, y] = que.front(); 
-                debug(x, y); 
+                dbg(x, y); 
                 que.pop_front(); 
                 if (x == n && y == m) return dist[x][y]; 
                 

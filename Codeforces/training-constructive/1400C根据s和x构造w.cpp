@@ -7,9 +7,9 @@
 using namespace std;
 /*----------------------------------*/
 #ifdef github_fengwei2002
-#include "algo/debug.h"
+#include "algo/dbg.h"
 #else
-#define debug(...) 42
+#define dbg(...) 42
 #endif
 /*----------------------------------*/
 
@@ -36,7 +36,7 @@ int main() {
                 }
             }
         }
-        debug(w);
+        dbg(w);
 
         for (int i = 0; i < n; i++) {
             // 判断每一个 1 的左右两侧会不会存在 1 

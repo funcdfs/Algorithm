@@ -7,9 +7,9 @@
 using namespace std;
 /*----------------------------------*/
 #ifdef github_fengwei2002
-#include "algo/debug.h"
+#include "algo/dbg.h"
 #else
-#define debug(...) 4
+#define dbg(...) 4
 #define dline() 2
 #endif
 /*----------------------------------*/

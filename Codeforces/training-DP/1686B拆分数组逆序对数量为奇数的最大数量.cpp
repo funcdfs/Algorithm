@@ -8,9 +8,9 @@
 using namespace std;
 
 #ifdef github_fengwei2002
-#include "algo/debug.h"
+#include "algo/dbg.h"
 #else
-#define debug(...) 42
+#define dbg(...) 42
 #endif
 /*-----------------------*/
 
@@ -19,7 +19,7 @@ int findMaxSplitMethodCnt(vector<int>& a) {
 	int ans = 0; 
 	
 	for (int i = 0; i < n - 1; i++) {
-		debug(a[i]); 
+		dbg(a[i]); 
 		if (a[i] > a[i+1]) {
 			ans++; 
 			i++; 

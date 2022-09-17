@@ -6,9 +6,9 @@
 using namespace std;
 /*----------------------------------*/
 #ifdef github_fengwei2002
-#include "algo/debug.h"
+#include "algo/dbg.h"
 #else
-#define debug(...) 42
+#define dbg(...) 42
 #endif
 /*----------------------------------*/
 
@@ -35,7 +35,7 @@ int main() {
                         break; 
                     }
                 }
-                debug(a[i], ok); 
+                dbg(a[i], ok); 
                 if (ok == false) {
                     return false; 
                 }

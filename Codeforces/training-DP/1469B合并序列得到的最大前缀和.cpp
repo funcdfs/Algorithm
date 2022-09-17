@@ -8,9 +8,9 @@
 using namespace std;
 /*----------------------------------*/
 #ifdef github_fengwei2002
-#include "algo/debug.h"
+#include "algo/dbg.h"
 #else
-#define debug(...) 42
+#define dbg(...) 42
 #endif
 /*----------------------------------*/
 
@@ -45,9 +45,9 @@ int main() {
             sBlue[i] = sBlue[i - 1] + b[i - 1]; 
             maxSumBlue = max(maxSumBlue, sBlue[i]); 
         }
-        debug(r, b); 
-        debug(sRed, sBlue); 
-        debug(maxSumRed, maxSumBlue); 
+        dbg(r, b); 
+        dbg(sRed, sBlue); 
+        dbg(maxSumRed, maxSumBlue); 
         cerr << "\n"; 
         cout << maxSumRed + maxSumBlue << "\n"; 
     }

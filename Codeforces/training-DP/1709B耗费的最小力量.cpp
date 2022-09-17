@@ -8,9 +8,9 @@
 using namespace std;
 
 #ifdef github_fengwei2002
-#include "algo/debug.h"
+#include "algo/dbg.h"
 #else
-#define debug(...) 42
+#define dbg(...) 42
 #endif
 /*-----------------------*/
 
@@ -37,8 +37,8 @@ int main() {
     for (int i = 1; i <= n - 1; i++) {
         sum[i] = sum[i - 1] + diff[i - 1]; 
     }
-    debug(diff); 
-    debug(sum); 
+    dbg(diff); 
+    dbg(sum); 
     
     vector<int> rDiff(n - 1); 
     vector<LL> rSum(n); 
@@ -53,8 +53,8 @@ int main() {
     for (int i = n - 2; i >= 0; i--) {
         rSum[i] = rSum[i + 1] + rDiff[i]; 
     }
-    debug(rDiff); 
-    debug(rSum); 
+    dbg(rDiff); 
+    dbg(rSum); 
     
     while (tt--) {
         int l, r; 

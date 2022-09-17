@@ -6,9 +6,9 @@
 using namespace std;
 /*----------------------------------*/
 #ifdef github_fengwei2002
-#include "algo/debug.h"
+#include "algo/dbg.h"
 #else
-#define debug(...) 42
+#define dbg(...) 42
 #endif
 /*----------------------------------*/
 
@@ -27,10 +27,10 @@ int main() {
     int r2 = 0, r4 = 0; 
     for (int i = 0; i < n; i++) {
         mp[a[i]]++; 
-        if (mp[a[i]] % 2 == 0) r2 += 1, debug(i, a[i]); 
+        if (mp[a[i]] % 2 == 0) r2 += 1, dbg(i, a[i]); 
         if (mp[a[i]] % 4 == 0) r4 += 1; 
     }
-    debug("init", r2, r4); 
+    dbg("init", r2, r4); 
     int q = 0; 
     cin >> q;
     string s; 
@@ -46,7 +46,7 @@ int main() {
             if (mp[x] % 4 == 0) r4--; 
             mp[x]--;
         }
-        debug(r2, r4); 
+        dbg(r2, r4); 
         // one r4 can add two value in r2
         cout << (r2 - 2 >= 2 and r4 >= 1 ? "YES\n" : "NO\n"); 
     }

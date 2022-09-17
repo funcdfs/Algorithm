@@ -7,9 +7,9 @@
 using namespace std;
 /*----------------------------------*/
 #ifdef github_fengwei2002
-#include "algo/debug.h"
+#include "algo/dbg.h"
 #else
-#define debug(...) 42
+#define dbg(...) 42
 #endif
 /*----------------------------------*/
 
@@ -30,7 +30,7 @@ int main() {
         int minVal = *min_element(a.begin(), a.end()); 
         int pos = find(a.begin(), a.end(), minVal) - a.begin(); 
         
-        debug(minVal, pos); 
+        dbg(minVal, pos); 
         
         int first = 1e9 + 7; 
         int second = 1e9 + 9; 
@@ -53,7 +53,7 @@ int main() {
             }
         }
         
-        debug(a); 
+        dbg(a); 
     }
     
     return 0;

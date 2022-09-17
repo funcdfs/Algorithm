@@ -7,9 +7,9 @@
 using namespace std;
 /*----------------------------------*/
 #ifdef github_fengwei2002
-#include "algo/debug.h"
+#include "algo/dbg.h"
 #else
-#define debug(...) 42
+#define dbg(...) 42
 #endif
 /*----------------------------------*/
 
@@ -27,7 +27,7 @@ int main() {
         cin >> a >> b >> c;  
         w[i] = w[i] * pow(10, a + b + c); 
     }
-    debug(w); 
+    dbg(w); 
     
     int ans = 0; 
     for (int i = 0; i < n; i++) {

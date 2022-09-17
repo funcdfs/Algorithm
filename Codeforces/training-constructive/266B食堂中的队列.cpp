@@ -7,9 +7,9 @@
 using namespace std;
 /*----------------------------------*/
 #ifdef github_fengwei2002
-#include "algo/debug.h"
+#include "algo/dbg.h"
 #else
-#define debug(...) 42
+#define dbg(...) 42
 #endif
 /*----------------------------------*/
 
@@ -28,15 +28,15 @@ int main() {
 
     for (int time = 1; time <= t; time++) {
         for (int i = 0; i + 1 < n; ) {
-            debug(time, i, s);
+            dbg(time, i, s);
             if (s[i] == 'B' && s[i + 1] == 'G') {
                 swap(s[i], s[i + 1]); 
                 i += 2; 
             } else {
                 i += 1; 
             }
-            debug("after"); 
-            debug(time, i, s); 
+            dbg("after"); 
+            dbg(time, i, s); 
             cerr << "\n"; 
         }
     }

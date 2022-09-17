@@ -7,9 +7,9 @@
 using namespace std;
 /*----------------------------------*/
 #ifdef github_fengwei2002
-#include "algo/debug.h"
+#include "algo/dbg.h"
 #else
-#define debug(...) 42
+#define dbg(...) 42
 #endif
 /*----------------------------------*/
 
@@ -35,7 +35,7 @@ int main() {
             maxFreq = max(maxFreq, v);
         }
         if (maxFreq >= (n % 2 ? n / 2 + 1 : n / 2)) {
-            debug("Hi"); 
+            dbg("Hi"); 
             int ans = n - 2 * (n - maxFreq);
             cout << ans << '\n';
         } else {

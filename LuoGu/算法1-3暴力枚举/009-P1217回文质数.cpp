@@ -11,7 +11,7 @@
 #define INF 0x3f3f3f3f
 #define LL long long
 #define PII pair<int, int>
-// for debug:
+// for dbg:
 // #define d(a)  // cout << #a << " = " << a << ' ';
 // #define dline // cout << " ----- " << endl;
 // #define dendl // cout << " | \n";

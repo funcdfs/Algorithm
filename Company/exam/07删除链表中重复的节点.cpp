@@ -7,7 +7,7 @@
 
 
 /* https://github.com/fengwei2002/algorithm */
-// for debug:
+// for dbg:
 // #define d(a)  // cout << #a << " = " << a << ' ';
 // #define dline // cout << " ----- " << endl;
 // #define dendl // cout << " | \n";

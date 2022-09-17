@@ -6,9 +6,9 @@
 using namespace std;
 /*----------------------------------*/
 #ifdef github_fengwei2002
-#include "algo/debug.h"
+#include "algo/dbg.h"
 #else
-#define debug(...) 42
+#define dbg(...) 42
 #endif
 /*----------------------------------*/
 
@@ -57,7 +57,7 @@ int main() {
         char backEle = s[j];
         /* s[l] to s[r] is the same color lamps*/
 
-        debug("origin t: ", t);
+        dbg("origin t: ", t);
         if (t.size() >= 2) {
             int idx = 1;
             while (idx <= t.size()) {
@@ -68,7 +68,7 @@ int main() {
             if (t.back() == backEle) {
                 t.back() = diff(t.rbegin()[1], backEle); 
             }
-            debug(t, backEle);
+            dbg(t, backEle);
         }
         i = j - 1;
         changed += t;

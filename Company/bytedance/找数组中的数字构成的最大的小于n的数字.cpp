@@ -3,9 +3,9 @@
 using namespace std;
 /*----------------------------------*/
 #ifdef github_fengwei2002
-#include "algo/debug.h"
+#include "algo/dbg.h"
 #else
-#define debug(...) 42
+#define dbg(...) 42
 #endif
 /*----------------------------------*/
 
@@ -41,11 +41,11 @@ int findMaxNum(vector<int>& a, vector<int>& b) {
 
     int ans = 0;
     function<void(vector<int>&, int)> dfs = [&](vector<int>& path, int lastIdx) {
-        debug(path, lastIdx);
+        dbg(path, lastIdx);
         if (path == b) {
             path.pop_back();
             lastIdx = path.size();
-            debug(1);
+            dbg(1);
             dfs(path, lastIdx);
         }
 
@@ -60,11 +60,11 @@ int findMaxNum(vector<int>& a, vector<int>& b) {
             if (t != -1) {
                 path.push_back(t);
                 int len = path.size();
-                debug(path);
+                dbg(path);
                 for (int i = 0; i < b.size() - len; i++) {
                     path.push_back(maxVal);
                 }
-                debug("after", path);
+                dbg("after", path);
                 ans = trans(path);
                 return;
             } else {

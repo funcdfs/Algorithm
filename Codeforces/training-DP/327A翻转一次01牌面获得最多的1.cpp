@@ -8,9 +8,9 @@
 using namespace std;
 /*----------------------------------*/
 #ifdef github_fengwei2002
-#include "algo/debug.h"
+#include "algo/dbg.h"
 #else
-#define debug(...) 4
+#define dbg(...) 4
 #define dline() 2
 #endif
 /*----------------------------------*/
@@ -131,12 +131,12 @@ int main() {
             f[i] = max(-1, f[i - 1] - 1); 
         }
     }
-    debug(f); 
+    dbg(f); 
     
     int cnt = accumulate(a.begin(), a.end(), 0); // 原本的 1 的数量 
     int ans = *max_element(f.begin(), f.end());  // 一次操作可以得到的最大贡献
     
-    debug(cnt, ans); 
+    dbg(cnt, ans); 
     
     cout << cnt + ans << "\n"; 
     

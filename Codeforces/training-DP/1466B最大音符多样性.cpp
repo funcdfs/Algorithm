@@ -8,9 +8,9 @@
 using namespace std;
 
 #ifdef github_fengwei2002
-#include "algo/debug.h"
+#include "algo/dbg.h"
 #else
-#define debug(...) 42
+#define dbg(...) 42
 #endif
 /*-----------------------*/
 
@@ -33,7 +33,7 @@ int main() {
 
         sort(a.begin(), a.end());
         a.erase(unique(a.begin(), a.end()), a.end());
-        debug(a);
+        dbg(a);
 
         for (int i = a.size() - 1; i >= 0; i--) {
             int x = a[i];
@@ -57,7 +57,7 @@ int main() {
         }
         sort(ans.begin(), ans.end());
         ans.erase(unique(ans.begin(), ans.end()), ans.end());
-        debug(ans);
+        dbg(ans);
         cout << ans.size() << endl;
     }
 

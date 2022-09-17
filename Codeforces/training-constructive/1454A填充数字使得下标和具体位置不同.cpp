@@ -7,9 +7,9 @@
 using namespace std;
 /*----------------------------------*/
 #ifdef github_fengwei2002
-#include "algo/debug.h"
+#include "algo/dbg.h"
 #else
-#define debug(...) 42
+#define dbg(...) 42
 #endif
 /*----------------------------------*/
 
@@ -28,11 +28,11 @@ int main() {
         vector<int> a(n, 0); 
         for (int i = 0; i < n / 2; i++) a[i] = n - i; 
         
-        debug(a); 
+        dbg(a); 
         
         for (int i = n / 2; i < n; i++) a[i] = i + 1 - n / 2; 
          
-        debug(a);
+        dbg(a);
         
         for (int i = 0; i < a.size(); i++) {
             cout << a[i] << " \n"[i == a.size() - 1];

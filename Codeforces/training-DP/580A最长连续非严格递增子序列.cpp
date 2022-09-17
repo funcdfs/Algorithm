@@ -8,9 +8,9 @@
 using namespace std;
 
 #ifdef github_fengwei2002
-#include "algo/debug.h"
+#include "algo/dbg.h"
 #else
-#define debug(...) 42
+#define dbg(...) 42
 #endif
 /*-----------------------*/
 
@@ -36,8 +36,8 @@ int main() {
         }
     }
     
-    debug(a); 
-    debug(f); 
+    dbg(a); 
+    dbg(f); 
 	 cout << *max_element(f.begin(), f.end()) << endl; 
     return 0;
 }

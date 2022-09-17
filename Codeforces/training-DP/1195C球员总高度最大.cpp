@@ -7,9 +7,9 @@
 using namespace std;
 /*----------------------------------*/
 #ifdef github_fengwei2002
-#include "algo/debug.h"
+#include "algo/dbg.h"
 #else
-#define debug(...) 42
+#define dbg(...) 42
 #endif
 /*----------------------------------*/
 
@@ -33,7 +33,7 @@ int main() {
     vector<vector<int64_t>> f(n, vector<int64_t>(2, 0)); 
     f[0][0] = a[0]; 
     f[0][1] = b[0]; 
-    debug(f[0][0], f[0][1]); 
+    dbg(f[0][0], f[0][1]); 
     // init f[0] 
     
     if (n == 1) { // case n == 1
@@ -49,7 +49,7 @@ int main() {
         f[1][1] = max(f[0][1], f[0][0] + b[1]); 
     }
     // init f[1] 
-    debug(f[1][0], f[1][1]); 
+    dbg(f[1][0], f[1][1]); 
     
     for (int i = 2; i <= n - 1; i++) {
         f[i][0] = max({
@@ -64,7 +64,7 @@ int main() {
             f[i - 2][0] + b[i], 
             f[i - 2][1] + b[i],  
         }); 
-        debug(i, f[i][0], f[i][1]); 
+        dbg(i, f[i][0], f[i][1]); 
     } 
     
     cout << max(f[n - 1][0], f[n - 1][1]) << "\n"; 

@@ -8,9 +8,9 @@
 using namespace std;
 /*----------------------------------*/
 #ifdef github_fengwei2002
-#include "algo/debug.h"
+#include "algo/dbg.h"
 #else
-#define debug(...) 42
+#define dbg(...) 42
 #endif
 /*----------------------------------*/
 
@@ -43,7 +43,7 @@ int calRowValue(vector<char>& a, int x, int y) {
             f[i] = min(f[i - 1] + x, f[i - 2] + y); 
         }
     } 
-    debug(f); 
+    dbg(f); 
     return f[a.size() - 1]; 
 }
 

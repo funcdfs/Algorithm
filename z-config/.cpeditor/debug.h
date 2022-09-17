@@ -1,4 +1,4 @@
-#define debug(...) pr("(", __LINE__, ")[", #__VA_ARGS__, "]: ["), pc(__VA_ARGS__)
+#define dbg(...) pr("(", __LINE__, ")[", #__VA_ARGS__, "]: ["), pc(__VA_ARGS__)
 
 template<class T1, class T2> istream& operator>>(istream& is, pair<T1,T2>& p) { is >> p.first >> p.second; return is; }
 template<class T> istream& operator>>(istream& is, vector<T>& v) { for(auto& x: v) is >> x; return is; }
@@ -21,4 +21,4 @@ auto ptrace = [](const char* name, auto&& A, auto&&... rest) {
     ((cerr << '[' << rest << ']'), ...); cerr << " = " << A << '\n';;
 };
 // #define dline() cerr << "\n"
-// #define debug(...) 42
+// #define dbg(...) 42

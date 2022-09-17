@@ -1,5 +1,5 @@
 // URL: https://codeforces.com/problemset/problem/996/A
-// NAME: A. Hit the Lottery, Codeforces - Codeforces Round #492 (Div. 2) [Thanks, uDebug!]
+// NAME: A. Hit the Lottery, Codeforces - Codeforces Round #492 (Div. 2) [Thanks, udbg!]
 // LIMIT: 256 MB, 1000 ms
 // DATE: 2022-08-04 12:06:51
 
@@ -8,9 +8,9 @@
 using namespace std;
 
 #ifdef github_fengwei2002
-#include "algo/debug.h"
+#include "algo/dbg.h"
 #else
-#define debug(...) 42
+#define dbg(...) 42
 #endif
 /*-----------------------*/
 
@@ -28,7 +28,7 @@ int main() {
 	long ans = 0; 
 	int index = bills.size() - 1; 
 	while (n >= 0) {
-		// debug(n, ans, index, bills[index]); 
+		// dbg(n, ans, index, bills[index]); 
 		if (n >= bills[index]) {
 			n -= bills[index]; 
 			ans++; 

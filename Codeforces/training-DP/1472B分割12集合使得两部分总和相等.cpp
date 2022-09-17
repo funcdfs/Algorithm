@@ -8,20 +8,20 @@
 using namespace std;
 
 #ifdef github_fengwei2002
-#include "algo/debug.h"
+#include "algo/dbg.h"
 #else
-#define debug(...) 42
+#define dbg(...) 42
 #endif
 /*-----------------------*/
 
 bool solve(vector<int>& cand) {
-	debug(cand);
+	dbg(cand);
 	int sum = accumulate(cand.begin(), cand.end(), 0); 
 	if (sum % 2) {
 		return false; 
 	} 
 	sum >>= 1;  
-	debug(sum);
+	dbg(sum);
 	vector<bool> f(sum + 1, false); 
 	f[0] = true; 
 	for (int i = 1; i <= cand.size(); i++) {
@@ -29,7 +29,7 @@ bool solve(vector<int>& cand) {
 			f[j] = f[j] || f[j - cand[i - 1]]; 
 		}
 	} 
-	for (auto x : f) debug(x); 
+	for (auto x : f) dbg(x); 
 	return f[sum]; 
 }
 
@@ -44,7 +44,7 @@ int main() {
     	cin >> n; 
     	vector<int> cand(n, 0); 
     	for (int i = 0; i < n; i++) cin >> cand[i]; 
-    	debug(cand);
+    	dbg(cand);
     	if (solve(cand)) {
     		cout << "YES" << endl; 
     	} else {

@@ -7,9 +7,9 @@
 using namespace std;
 /*----------------------------------*/
 #ifdef github_fengwei2002
-#include "algo/debug.h"
+#include "algo/dbg.h"
 #else
-#define debug(...) 42
+#define dbg(...) 42
 #endif
 /*----------------------------------*/
 
@@ -36,7 +36,7 @@ int main() {
     for (int i = 1; i <= n; i++) {
         s[i] = s[i - 1] + a[i - 1]; 
     }
-    debug(s); 
+    dbg(s); 
     
     // s[i] == s[j], max distance i -> j 
     

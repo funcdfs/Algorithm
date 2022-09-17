@@ -7,9 +7,9 @@
 using namespace std;
 /*----------------------------------*/
 #ifdef github_fengwei2002
-#include "algo/debug.h"
+#include "algo/dbg.h"
 #else
-#define debug(...) 42
+#define dbg(...) 42
 #endif
 /*----------------------------------*/
 
@@ -42,7 +42,7 @@ int main() {
             p.push_back({n, 1}); 
         }
         
-        debug(p); 
+        dbg(p); 
         // 因子出现的频次数组 
         
         int maxFreq = 0; 

@@ -7,9 +7,9 @@
 using namespace std;
 /*----------------------------------*/
 #ifdef github_fengwei2002
-#include "algo/debug.h"
+#include "algo/dbg.h"
 #else
-#define debug(...) 42
+#define dbg(...) 42
 #endif
 /*----------------------------------*/
 
@@ -43,9 +43,9 @@ int main() {
             // 1 2 3 
             // x x x x 
             // ans: 3 - 1 - 1
-            debug("Hi");
-            debug(a); 
-            debug(L, R); // L = 1, R = 2, the answer is 1 
+            dbg("Hi");
+            dbg(a); 
+            dbg(L, R); // L = 1, R = 2, the answer is 1 
         }
     }    
     

@@ -6,9 +6,9 @@
 using namespace std;
 /*----------------------------------*/
 #ifdef github_fengwei2002
-#include "algo/debug.h"
+#include "algo/dbg.h"
 #else
-#define debug(...) 42
+#define dbg(...) 42
 #endif
 /*----------------------------------*/
 
@@ -46,9 +46,9 @@ int main_test() {
         cin >> n >> k; 
         
         int t = k; 
-        debug("init: ", (n % t)); 
+        dbg("init: ", (n % t)); 
         while ((n % t) != 0) {
-            debug(n, t); 
+            dbg(n, t); 
             n--; // 总量减去 1
             t--; // 坑的位置少了一个 （放了一个 1 ）
         }
