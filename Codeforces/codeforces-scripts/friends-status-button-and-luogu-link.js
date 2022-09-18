@@ -23,7 +23,7 @@
     let id = s[s.length - 1];
     let friendBtn = document.createElement('li');
 
-    friendBtn.innerHTML = `<a href="https://codeforces.com/contest/${contestId}/status/${id}?friends=on">Friends Status</a>`;
+    friendBtn.innerHTML = `<a href="https://codeforces.com/contest/${contestId}/status/${id}?friends=on" target="_blank">Friends Status</a>`;
     friendBtn.classList.add('friendBtn')
     document.querySelector(".second-level-menu-list").appendChild(friendBtn);
 })();
@@ -36,7 +36,7 @@ if (/\/problemset\/problem\/(\d*)\/([A-Z][1-9]?)$/.test(pathname)) {
 }
 else if (/\/contest\/(\d*)\/problem\/([A-Z][1-9]?)$/.test(pathname)) {
     let x = $('.header>.title'), y = x.html();
-    x.html(`<a href="https://www.luogu.com.cn/problem/CF${RegExp.$1 + RegExp.$2}" target="_blank">${y}</a>`);
+    x.html(`${RegExp.$1 + RegExp.$2} <a href="https://www.luogu.com.cn/problem/CF${RegExp.$1 + RegExp.$2}" target="_blank">${y}</a>`);
 }
 if (0) {
     var stateObject = {};
