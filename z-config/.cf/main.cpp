@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-#ifdef github_fengwei2002
+#ifdef LOCAL
 #include "algo/dbg.h"
 #else
 #define dbg(...) 42

@@ -85,7 +85,7 @@ template_path=C:/code/Algorithm/z-config/.cpeditor/template.cpp
 template_cursor_position_regex=main\\(\\)
 template_cursor_position_offset_type=end
 template_cursor_position_offset_characters=63
-compile_command="g++ -Wall -std=gnu++2a -D github_fengwei2002 -Wno-sign-compare"
+compile_command="g++ -Wall -std=gnu++2a -D LOCAL -Wno-sign-compare"
 output_path=${tmpdir}/${basename}
 run_arguments="-std=gnu++2a"
 parentheses=@Variant(\0\0\0\t\0\0\0\x5\0\0\0\a\0(\0\0\0\a\0)\0\0\0\x2\0\0\0\0\0\0\0\x2\0\0\0\x2\0\0\0\x2\0\0\0\x1), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\a\0{\0\0\0\a\0}\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\a\0[\0\0\0\a\0]\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1\0\0\0\x2\0\0\0\x1), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\a\0\"\0\0\0\a\0\"\0\0\0\x2\0\0\0\0\0\0\0\x2\0\0\0\0\0\0\0\x2\0\0\0\0), @Variant(\0\0\0\t\0\0\0\x5\0\0\0\a\0'\0\0\0\a\0'\0\0\0\x2\0\0\0\0\0\0\0\x2\0\0\0\0\0\0\0\x2\0\0\0\0)
@@ -158,7 +158,7 @@ args_java=
 args_python=-m pyls
 
 [Language%20Config]
-C%2B%2B\snippet\default="#include <bits/stdc++.h>\nusing namespace std;\n/*----------------------------------*/\n#ifdef github_fengwei2002\n#include \"algo/dbg.h\"\n#else\n#define dbg(...) 42\n#endif\n/*----------------------------------*/\n\n\n\nint main() {\n    cin.tie(nullptr), ios::sync_with_stdio(false);\n    \n    \n    \n    return 0;\n}\n\n\n/*\n\n\n\n*/"
+C%2B%2B\snippet\default="#include <bits/stdc++.h>\nusing namespace std;\n/*----------------------------------*/\n#ifdef LOCAL\n#include \"algo/dbg.h\"\n#else\n#define dbg(...) 42\n#endif\n/*----------------------------------*/\n\n\n\nint main() {\n    cin.tie(nullptr), ios::sync_with_stdio(false);\n    \n    \n    \n    return 0;\n}\n\n\n/*\n\n\n\n*/"
 C%2B%2B\snippet\a_main="int main() {\n    cin.tie(0)->sync_with_stdio(false);\n    \n    \n    \n    return 0;\n}"
 Python\snippet\debug="import sys\ndef debug(*args, **kwargs):\n    print(*args, file=sys.stderr, **kwargs)\n    pass\n\n"
 Python\snippet\main="\n\n\ndef main():\n    n = input() \n    a = list(map(int, input().split()))\n    \n    print(a, n)\n\n\nif __name__ == \"__main__\":\n    main() \n"
