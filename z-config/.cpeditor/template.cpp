@@ -8,8 +8,6 @@ using namespace std;
 #define dbg(...) 42
 #endif
 
-
-
 int main() {
    cin.tie(nullptr), ios::sync_with_stdio(false);
    
