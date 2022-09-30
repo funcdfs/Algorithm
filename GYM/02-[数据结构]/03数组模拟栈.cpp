@@ -1,34 +1,31 @@
-#include <iostream>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-const int N = 1e5 + 10;
-int stk[N], tt, m;
+const int N = 1e5 + 10; 
+int stk[N], tt; 
 
 int main() {
-    cin >> m;
-    while (m -- ) {
-        string op = "";
-        int x = 0;
-
-        cin >> op;
-        if (op == "push") {
-            cin >> x;
-            tt++;
-            stk[tt] = x;
-        } else if (op == "pop") {
-            tt--;
-        } else if (op == "empty") {
-            if (tt == 0) {
-                cout << "YES" << endl;
-            } else {
-                cout << "NO" << endl;
-            }
-        } else if (op == "query") {
-            cout << stk[tt] << endl;
-        }
-    }
-    return 0;
+   cin.tie(nullptr), ios::sync_with_stdio(false);
+   
+   int m = 0; 
+   cin >> m; 
+   while (m--) {
+      string op = ""; 
+      cin >> op; 
+      int x = 0; 
+      if (op == "push") {
+         cin >> x; 
+         stk[++tt] = x; 
+      } else if (op == "pop") {
+         tt--; 
+      } else if (op == "empty") {
+         if (tt == 0) cout << "YES" << '\n'; 
+         else cout << "NO" << '\n'; 
+      }  else {
+         cout << stk[tt] << '\n'; 
+      }
+   }
+   
+   return 0;
 }
-
-// https://www.acwing.com/activity/content/code/content/1461831/
