@@ -4,16 +4,7 @@
 // DATE: 2022-08-08 11:12:22
 
 #include <bits/stdc++.h>
-
 using namespace std;
-
-#ifdef LOCAL
-#include "algo/dbg.h"
-#else
-#define dbg(...) 42
-#endif
-/*-----------------------*/
-
 
 const int N = 12, M = 1 << 10, K = 110; 
 
@@ -24,7 +15,7 @@ vector<int> head[M]; // 每一个状态所有可以转移到的其他的状态
 int f[N][K][M];
 
 bool check(int state) {
-    for (itn i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         if ((state >> i & 1) && (state >> i + 1 & 1)) {
             return false; 
         }
