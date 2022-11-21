@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 #ifdef LOCAL
 #include "algo/dbg.h"
 #else
@@ -8,14 +9,13 @@ using namespace std;
 
 
 
-int main() {
+auto main() -> int32_t {
    cin.tie(nullptr), ios::sync_with_stdio(false);
    
    
    
    return 0;
 }
-
 
 /*
 

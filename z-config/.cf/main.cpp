@@ -13,7 +13,7 @@ using namespace std;
 #endif
 
 
-int main() {
+auto main() -> int32_t {
     cin.tie(nullptr), ios::sync_with_stdio(false);
     
     
