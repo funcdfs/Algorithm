@@ -1,14 +1,4 @@
-"==========================================
-" ProjectLink: https://github.com/wklken/vim-for-server
-" Email: konng_0120@qq.com
-" github: https://github.com/fengwei2002
-" Last_modify: 2021-09-29
-" Desc: simple vim config for server, without any plugins.
-"==========================================
-
-" syntax
 syntax on
-
 " history : how many lines of history VIM has to remember
 set history=2000
 
@@ -34,8 +24,6 @@ set t_vb=
 set tm=500
 
 
-" show location
-"   set cursorcolumn
 set cursorline
 
 " movement
@@ -87,6 +75,7 @@ fun! ToggleFold()
     endif
 endfun
 
+
 " encoding
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
@@ -115,17 +104,13 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-" NOT SUPPORT
-" Enable basic mouse behavior such as resizing buffers.
-" set mouse=a
+set mouse=a
 
-
-" ============================ theme and status line ============================
 
 " theme
 set background=dark
-# colorscheme desert
-colorscheme atom
+colorscheme desert
+# colorscheme atom
 
 " set mark column color
 hi! link SignColumn   LineNr
@@ -248,30 +233,5 @@ cnoremap <C-k> <t_ku>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 
-" 关闭 vim 错误提示音
-set noeb
-
-" 括号自动补全 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Parenthesis/bracket 需要自动括号匹配的话，手动去除对应的注释符
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" imap ( ()<Left>
-" imap [ []<Left>
 inoremap {<CR> {}<Left><CR><Tab><CR><Esc><Up><S-A>
-" inoremap " ""<Left>
-" inoremap ' ''<Left>
-
-set cursorcolumn  "or set cuc 设置光标所在的列
-set cursorline    "or set cul 设置光标所在的行
-" cterm 表示原生vim设置央视, 设置为NONE表示可以自定义设置
-" red（红），white（白），black（黑），green（绿），yellow（黄），blue（蓝），purple（紫），
-" gray（灰），brown（棕），tan(褐色)，syan(青色)
-" 更多高亮颜色设置, 可以:h highlight 查看manual
-highlight CursorLine   cterm=NONE ctermbg=red ctermfg=white guibg=NONE guifg=NONE
-highlight CursorColumn cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
-
 set noswapfile
-set mouse=a
-
-
