@@ -1,4 +1,5 @@
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\FontSubstitutes]
-"SimSun"="LXGW ZhenKai"
+"SimSun"="方正行黑简体"
+// 手动进入路径，改为 方正行黑简体
