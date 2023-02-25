@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#ifdef LOCAL
+#ifdef LOCAL /* For Debugging Purposes */
 #include "algo/dbg.h"
 #else
 #define dbg(...) 42
