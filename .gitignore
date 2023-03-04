@@ -1,5 +1,7 @@
+/.vscode
+.vscode
+*/.vscode
 *.in
 *.ans
 z-config/.cf/session
 z-config/.cpeditor/python.py
-/.vscode
