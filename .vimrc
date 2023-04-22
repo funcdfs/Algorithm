@@ -5,4 +5,6 @@ nnoremap <leader>q :q<CR>
 " Quickly save the current file
 nnoremap <leader>w :w<CR>
 " select all
-map <Leader>sa ggVG
+map <Leader>s ggVG
+" delete all
+map <Leader>d ggdG
