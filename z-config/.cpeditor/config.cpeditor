@@ -1,10 +1,10 @@
 [General]
-tab_width=2
-cursor_width=4
+tab_width=4
+cursor_width=2
 geometry=@Rect(586 178 1032 600)
 editor_font=@Variant(\0\0\0@\0\0\0\x1e\0S\0o\0u\0r\0\x63\0\x65\0 \0\x43\0o\0\x64\0\x65\0 \0P\0r\0o@(\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x32\x10)
 use_custom_application_font=true
-custom_application_font=@Variant(\0\0\0@\0\0\0\fe\xb9kc\x88L\x9e\xd1{\x80OS@(\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x32\x10)
+custom_application_font=@Variant(\0\0\0@\0\0\0\x1e\x97\x1e\x9e\\e\x87iw\0 \0G\0\x42\0 \\O^U\x96\x5\x8b\xfbrH\0 \0R@(\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x32\x10)
 default_language=C++
 format_on_manual_save=false
 format_on_auto_save=false
@@ -13,17 +13,17 @@ detached_run_terminal_program=xterm
 detached_run_terminal_arguments=-e
 auto_complete_parentheses=true
 auto_remove_parentheses=true
-tab_jump_out_parentheses=false
+tab_jump_out_parentheses=true
 auto_indent=true
-auto_save=false
+auto_save=true
 auto_save_interval=1000
 auto_save_interval_type=After the last modification
 wrap_text=false
-beta=false
+beta=true
 replace_tabs=true
 save_tests=false
-maximized_window=false
-check_update=false
+maximized_window=true
+check_update=true
 opacity=100
 view_mode=split
 splitter_size=@ByteArray(\0\0\0\xff\0\0\0\x1\0\0\0\x2\0\0\x5\xa8\0\0\x3\xea\x1\xff\xff\xff\xff\x1\0\0\0\x1\0)
@@ -61,7 +61,7 @@ recent_files=C:/Algorithm/Codeforces/training-math/459B\x5dee\x503c\x6700\x5927\
 number_of_problems_in_contest=7
 first_time_user=false
 show_only_monospaced_font=false
-total_usage_time=6009610
+total_usage_time=6010388
 promotion_dialog_shown=true
 auto_uncheck_accepted_testcases=false
 full_screen_dialog_shown=true
@@ -69,11 +69,14 @@ file_problem_binding=C:/Algorithm/AcWing/\x7b97\x6cd5\x57fa\x7840\x8bfe\x9898\x5
 display_stopwatch=true
 toggle_stopwatch_on_tab_switch=true
 hide_stopwatch_result=false
+highlight_error_line=false
+error_message_color=red
+warn_message_color=green
 
 [clang_format]
 program=C:/app/cpeditor/mingw32/bin/clang-format.exe
 arguments=
-style=BasedOnStyle: Google\nColumnLimit: 90\nIndentWidth: 2
+style=BasedOnStyle: Google\nColumnLimit: 90\nIndentWidth: 4
 
 [yapf]
 program=python
@@ -118,7 +121,7 @@ enable=true
 connection_port=10045
 open_new_tab=true
 set_time_limit_for_tab=true
-head_comments="https://github.com/fengwei2002, ${time}\n${json.url}\n${json.name}, ${json.group}"
+head_comments="https://github.com/funcdfs, ${time}\n${json.url}\n${json.name}, ${json.group}"
 head_comments_time_format=yyyy.MM.dd-hh:mm:ss
 head_comments_powered_by_cp_editor=false
 

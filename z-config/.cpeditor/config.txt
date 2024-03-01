@@ -1,0 +1,2 @@
+C:\app\cpeditor\mingw32\include\c++\13.2.0
+put algo/dbg.h

@@ -11,20 +11,9 @@
       "before_script": "g++ $%full%$ -o $%file%$.exe -std=c++2a",
       "script": "./$%file%$.exe",
       "after_script": "rm $%file%$.exe"
-    },
-    {
-      "alias": "cpp",
-      "lang": "73",
-      "path": "C:\\Users\\konng\\.cf\\main.cpp",
-      "suffix": [
-        "cpp"
-      ],
-      "before_script": "g++ $%full%$ -o $%file%$.exe -std=c++2a -D LOCAL",
-      "script": "./$%file%$.exe",
-      "after_script": "rm $%file%$.exe"
     }
   ],
-  "default": 1,
+  "default": 0,
   "gen_after_parse": false,
   "host": "https://codeforces.com",
   "proxy": "",
