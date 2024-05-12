@@ -1,8 +1,8 @@
 {
   "template": [
     {
-      "alias": "cpp20",
-      "lang": "73",
+      "alias": "cpp17",
+      "lang": "54",
       "path": "C:\\code\\Algorithm\\Codeforces\\template\\main.cpp",
       "suffix": [
         "cpp20",
