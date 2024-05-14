@@ -1,8 +1,3 @@
-/**
- * author: https://github.com/funcdfs
- * created: 2024-05-14 22:22:48
-**/
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -10,15 +5,11 @@ using namespace std;
 #include "algo/dbg.h"
 #else
 #define dbg(...) 1
-#endif /* https://github.com/funcdfs/Algorithm/blob/main/AAA/dbg.h */
-
-
+#endif /* https://gist.github.com/funcdfs */
 
 auto main() -> int32_t {
     cin.tie(nullptr), ios::sync_with_stdio(false);
-    
-    
-    
+
     return 0;
 }
 /*
