@@ -1,27 +1,22 @@
-void solve() {
-    int n, x;
-    cin >> n >> x;
-    vector<int> v(n);
-    for (int i = 0; i < n; i++) cin >> v[i];
-    auto check = [&](int a) -> bool {
-        int res = 0;
-        for (int i = 0; i < n; i++) {
-            if (v[i] < a) {
-                res += a - v[i];
-            }
-            check
-        }
-        return res <= x;
-        func
-    };
-checkkkkkkkkkkk
-    int l = 0, r = 1e10;
-    while (l < r) {
-        int mid = (l + r + 1) / 2;
-        if (check(mid)) {
-            l = mid;
-        } else
-            r = mid - 1;
-    }
-    cout << l << endl;
+#include <bits/stdc++.h>
+using namespace std;
+#ifdef LOCAL /* For Local Debugging Purposes */
+#include "algo/dbg.h"
+#else
+#define dbg(...) 1
+#endif
+
+auto main() -> int32_t {
+    cin.tie(nullptr), ios::sync_with_stdio(false);
+
+string a(10, ' ');
+    cerr << std::format("{0}", a);
+    cerr << std::format("\n");
+    cerr << std::format("{0}", a | std::views::reverse);
+
+    return 0;
 }
+/*
+
+*/
+

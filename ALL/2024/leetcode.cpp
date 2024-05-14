@@ -15,20 +15,60 @@ using namespace std;
 
 
 
+class DSU { // https://github.com/funcdfs
+   private:
+    vector<int> f, siz;  // father and size
+   public:
+    DSU() {}  // DSU dsu(N);
+    DSU(int n) { init(n); }
+    void init(int n) {
+        f.resize(n);
+        iota(f.begin(), f.end(), 0);
+        siz.assign(n, 1);
+    }
+    int find(int x) {  // dsu.find(i) == i
+        while (x != f[x]) {
+            x = f[x] = f[f[x]];
+        }
+        return x;
+    }
+    bool same(int x, int y) { return find(x) == find(y); }
+    bool merge(int x, int y) {  // dsu.merge(A, B);
+        x = find(x);
+        y = find(y);
+        if (x == y) {
+            return false;
+        }
+        siz[x] += siz[y];
+        f[y] = x;
+        return true;
+    }
+    int size(int x) { return siz[find(x)]; }  // s = dsu.size(i);
+};
 
 
 
 class Solution {
 public:
-    int maximumEnergy(vector<int>& a, int k) {
-        vector<int> sum((int)a.size() / k, 0);
-        int idx = 0;
-        for (int i = 0; i < (int)a.size(); i++) {
-            sum[idx] += a[i];
-            if (idx + 1 == (int)sums.size()) idx = 0;
+    int countCompleteComponents(int n, vector<vector<int>>& edges) {
+        DSU dsu(n);
+        vector<int> d(n, 0);
+        for (auto& edge : edges) {
+            int x = edge[0], y = edge[1];
+            dsu.merge(x, y);
+            d[x] += 1, d[y] += 1;
         }
-        for (int i = 0; i <(int)sum.size(); i++) cout <<sum[i] << ' ' << cout << endl;
-        return *max_element(sum.begin(), sum.end());
+        vector<bool> st(n, true);
+        for (int i = 0; i < n; i++) {
+            if (d[i] != 2) st[dsu.find(i)] = false;
+        }
+        int ans = 0;
+        for (int i = 0; i < n; i++) {
+            if (dsu.find(i) == i and st[dsu.find(i)] == true) {
+                ans += 1;
+            }
+        }
+        return ans;
     }
 };
 

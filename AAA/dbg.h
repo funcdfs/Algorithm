@@ -23,5 +23,15 @@ auto ptrace = [](const char* name, auto&& A, auto&&... rest) {
     const char* open = strchr(name, '['); cerr.write(name, open-name);
     ((cerr << '[' << rest << ']'), ...); cerr << " = " << A << '\n';;
 };
-// #define dline() cerr << "\n"
-// #define dbg(...) 42
+/*
+For Local Debugging Purposes
+usage: 
+
+#ifdef LOCAL
+#include "algo/dbg.h"
+#else
+#define dbg(...) 1
+#endif
+
+dbg(any);
+*/
