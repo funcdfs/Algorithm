@@ -1,6 +1,5 @@
 /**
- * author:  https://github.com/funcdfs
  * problem: {{problemURL}}
- * created: {{time}}	
+ * created: https://github.com/funcdfs {{time}} 
 **/
 
