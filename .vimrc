@@ -10,7 +10,7 @@ endfunction
 inoremap <expr> j JKescape('j')
 inoremap <expr> k JKescape('k')
 inoremap <nowait> kj <ESC>
-
+noremap <TAB> %
 
 
 

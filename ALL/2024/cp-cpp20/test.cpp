@@ -7,27 +7,20 @@ using namespace std;
 #define dbg(...) 1
 #endif /* https://gist.github.com/funcdfs */
 
-
-
-auto solve(int _case) -> void {
-    dbg(_case);
-    
-    dbg("HI");
-    vector<int> a(2, 0);
-    for (int i = 0; i < 2; i++) {
-        dbg(i);
-    }
-    
-    return;
-}
-
 auto main() -> int32_t {
-    cin.tie(nullptr), ios::sync_with_stdio(false);
+    cin.tie(nullptr), cout.tie(nullptr), ios::sync_with_stdio(false);
 
-    int TT = 0;
-    cin >> TT;
-    for (int _case = 1; _case <= TT; _case++) {
-        solve(_case);
+    int x, y;
+    cin >> x >> y;
+
+    vector<int> a(x, y);
+    for (int i = 0; i < (int)a.size(); i++) {
+        a[i] += 1;
+    }
+    cout << x << y;
+
+    for (int i = 0; i < (int)a.size(); i++) {
+        cout << a[i] << " \n"[i == (int)a.size() - 1];
     }
 
     return 0;
