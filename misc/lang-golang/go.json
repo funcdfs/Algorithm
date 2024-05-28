@@ -1,0 +1,197 @@
+{
+	"ii": {
+        "prefix": "ii",
+        "body": [
+            "fmt.Fscan(_in, &$1) $0"
+        ],
+        "description": "ii"
+    },
+	"oo": {
+        "prefix": "oo",
+        "body": [
+            "fmt.Fprintln(_out, $1) $0"
+        ],
+        "description": "oo"
+    },
+	"ox": {
+        "prefix": "ox",
+        "body": [
+            "fmt.Fprint(_out, $1, \" \")$0"
+        ],
+        "description": "ox"
+    },
+	"dbg": {
+        "prefix": "dbg",
+        "body": [
+            "fmt.Fprintln(os.Stderr, $1) $0"
+        ],
+        "description": "dbg"
+    },
+    "chec": {
+        "prefix": "chec",
+        "body": [
+            "check := func() bool {",
+            "\t$0",
+            "\treturn true",
+            
+            "}",
+            "if check() == true {",
+            "\tfmt.Fprintln(_out, \"YES\")",
+            "} else {",
+            "\tfmt.Fprintln(_out, \"NO\")",
+            "}"
+        ],
+        "description": "check function YES NO"
+    },
+	"tt": {
+        "prefix": "tt",
+        "body": [
+            "package main",
+            "",
+            "import (",
+            "\t\"bufio\"",
+            "\t\"fmt\"",
+            "\t\"os\"",
+            ")",
+            "",
+            "func solve(_in *bufio.Reader, _out *bufio.Writer) {",
+            "\t$0",
+            "}",
+            "",
+            "func main() {",
+            "\t_in := bufio.NewReader(os.Stdin)",
+            "\t_out := bufio.NewWriter(os.Stdout)",
+            "\tdefer _out.Flush()",
+            "",
+            "\tvar TT int",
+            "\tfor fmt.Fscan(_in, &TT); TT > 0; TT-- {",
+            "\t\tsolve(_in, _out)",
+            "\t}",
+            "}"
+        ],
+        "description": "tt"
+    },
+    "ttna": {
+        "prefix": "ttna",
+        "body": [
+            "package main",
+            "",
+            "import (",
+            "\t\"bufio\"",
+            "\t\"fmt\"",
+            "\t\"os\"",
+            ")",
+            "",
+            "func solve(_in *bufio.Reader, _out *bufio.Writer) {",
+            "\tn := 0",
+            "\tfmt.Fscan(_in, &n) ",
+            "\ta := make([]int, n)",
+            "\tfor i := 0; i < n; i++ {",
+            "\t\tfmt.Fscan(_in, &a[i]) ",
+            "\t}",
+            "\t",
+            "\t$0",
+            "\t",
+            "}",
+            "",
+            "func main() {",
+            "\t_in := bufio.NewReader(os.Stdin)",
+            "\t_out := bufio.NewWriter(os.Stdout)",
+            "\tdefer _out.Flush()",
+            "",
+            "\tvar TT int",
+            "\tfor fmt.Fscan(_in, &TT); TT > 0; TT-- {",
+            "\t\tsolve(_in, _out)",
+            "\t}",
+            "}"
+        ],
+        "description": "tt"
+    },
+	"cp": {
+        "prefix": "cp",
+        "body": [
+            "package main",
+            "",
+            "import (",
+            "\t\"bufio\"",
+            "\t\"fmt\"",
+            "\t\"os\"",
+            ")",
+            "",
+            "func solve(_in *bufio.Reader, _out *bufio.Writer) {",
+            "\t$0",
+            "}",
+            "",
+            "func main() {",
+            "\t_in := bufio.NewReader(os.Stdin)",
+            "\t_out := bufio.NewWriter(os.Stdout)",
+            "\tdefer _out.Flush()",
+            "",
+            "\tsolve(_in, _out)",
+            "}",
+            ""
+        ],
+        "description": "cp"
+    },
+	"algo": {
+        "prefix": "algo",
+        "body": [
+			"",
+            "/* algorithm function */",
+            "func Max[T int | int64 | float32 | float64 | string](args ...T) T {",
+            "\tres := args[0]",
+            "\tfor i := 1; i < len(args); i++ {",
+            "\t\tif args[i] > res {",
+            "\t\t\tres = args[i]",
+            "\t\t}",
+            "\t}",
+            "\treturn res",
+            "}",
+            "func Min[T int | int64 | float32 | float64 | string](args ...T) T {",
+            "\tres := args[0]",
+            "\tfor i := 1; i < len(args); i++ {",
+            "\t\tif args[i] < res {",
+            "\t\t\tres = args[i]",
+            "\t\t}",
+            "\t}",
+            "\treturn res",
+            "}",
+            "",
+            "/* slice function */",
+            "func Accumulate[T int | int64 | float32 | float64 | string](args ...T) T {",
+            "\tvar res T",
+            "\tfor _, v := range args {",
+            "\t\tres += v",
+            "\t}",
+            "\treturn res",
+            "}",
+            "func Unique[T comparable](l ...T) []T {",
+            "\tm := map[T]bool{}",
+            "\tfor _, v := range l {",
+            "\t\tm[v] = true",
+            "\t}",
+            "\tres := []T{}",
+            "\tfor v := range m {",
+            "\t\tres = append(res, v)",
+            "\t}",
+            "\treturn res",
+            "}",
+            "func Fill[T any](v T, n int) []T {",
+            "\tres := make([]T, n)",
+            "\tfor i := 0; i < n; i++ {",
+            "\t\tres[i] = v",
+            "\t}",
+            "\treturn res",
+            "}",
+            "func Reverse[T any](l []T) {",
+            "\ti, j := 0, len(l)-1",
+            "\tfor i < j {",
+            "\t\tl[i], l[j] = l[j], l[i]",
+            "\t\ti, j = i+1, j-1",
+            "\t}",
+            "}",
+            ""
+        ],
+        "description": "algo"
+    }
+}

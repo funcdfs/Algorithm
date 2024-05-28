@@ -5,3 +5,6 @@
 *.ans
 z-config/.cf/session
 z-config/.cpeditor/python.py
+*/*/.cph/*
+/2024/.cph
+/2023/.cph

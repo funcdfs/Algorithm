@@ -1,0 +1,254 @@
+
+{
+    "ttna": {
+        "prefix": "ttna",
+        "body": [
+            "import sys",
+            "",
+            "",
+            "# region solve",
+            "# ------------------------------------------------------------",
+            "def solve(_case) -> None:",
+            "\t# dbg(\"# Case: \", _case)",
+            "\tn = input_int()",
+            "\ta = input_list()",
+            "\t$0",
+            "",
+            "# ------------------------------------------------------------",
+            "# endregion solve",
+            "",
+            "",
+            "# region main",
+            "input_int = lambda: int(input_str())  # noqa: E731",
+            "input_str = lambda: sys.stdin.readline().rstrip()  # noqa: E731",
+            "input_multi_int = lambda: map(int, input_str().split())  # noqa: E731",
+            "input_list = lambda: list(map(int, input_str().split()))  # noqa: E731",
+            "dbg = lambda *args: sys.stderr.write(\" \".join(map(str, args)) + \"\\n\")  # noqa: E731",
+            "",
+            "testCase = input_int()",
+            "for _case in range(1, testCase + 1):",
+            "\tsolve(_case)  # multi cases with _case info",
+            "# endregion main",
+            ""
+        ],
+        "description": "ttna"
+    },
+    "tt": {
+        "prefix": "tt",
+        "body": [
+            "import sys",
+            "",
+            "",
+            "# region solve",
+            "# ------------------------------------------------------------",
+            "def solve(_case) -> None:",
+            "\t# dbg(\"# Case: \", _case)",
+            "\t$0",
+            "",
+            "# ------------------------------------------------------------",
+            "# endregion solve",
+            "",
+            "",
+            "# region main",
+            "input_int = lambda: int(input_str())  # noqa: E731",
+            "input_str = lambda: sys.stdin.readline().rstrip()  # noqa: E731",
+            "input_multi_int = lambda: map(int, input_str().split())  # noqa: E731",
+            "input_list = lambda: list(map(int, input_str().split()))  # noqa: E731",
+            "dbg = lambda *args: sys.stderr.write(\" \".join(map(str, args)) + \"\\n\")  # noqa: E731",
+            "",
+            "testCase = input_int()",
+            "for _case in range(1, testCase + 1):",
+            "\tsolve(_case)  # multi cases with _case info",
+            "# endregion main",
+            ""
+        ],
+        "description": "tt"
+    },
+    "cp": {
+        "prefix": "cp",
+        "body": [
+            "import sys",
+            "",
+            "",
+            "# region solve",
+            "# ------------------------------------------------------------",
+            "def solve() -> None:",
+            "\t$0",
+            "",
+            "# ------------------------------------------------------------",
+            "# endregion solve",
+            "",
+            "",
+            "# region main",
+            "input_int = lambda: int(input_str())  # noqa: E731",
+            "input_str = lambda: sys.stdin.readline().rstrip()  # noqa: E731",
+            "input_multi_int = lambda: map(int, input_str().split())  # noqa: E731",
+            "input_list = lambda: list(map(int, input_str().split()))  # noqa: E731",
+            "dbg = lambda *args: sys.stderr.write(\" \".join(map(str, args)) + \"\\n\")  # noqa: E731",
+            "",
+            "solve()",
+            "# endregion main",
+            ""
+        ],
+        "description": "tt"
+    },
+    "bootdfs": {
+        "prefix": "_classdfs",
+        "body": [
+            "from types import GeneratorType",
+            "",
+            "# region bootdfs",
+            "# Infinite Recursion method from https://pyrival.readthedocs.io/en/latest/bootstrap.html",
+            "def bootdfs(f, stack=[]):",
+            "\tdef wrappedfunc(*args, **kwargs):",
+            "\t\tif stack:",
+            "\t\t\treturn f(*args, **kwargs)",
+            "\t\telse:",
+            "\t\t\tto = f(*args, **kwargs)",
+            "\t\t\twhile True:",
+            "\t\t\t\tif type(to) is GeneratorType:",
+            "\t\t\t\t\tstack.append(to)",
+            "\t\t\t\t\tto = next(to)",
+            "\t\t\t\telse:",
+            "\t\t\t\t\tstack.pop()",
+            "\t\t\t\t\tif not stack:",
+            "\t\t\t\t\t\tbreak",
+            "\t\t\t\t\tto = stack[-1].send(to)",
+            "\t\t\treturn to",
+            "\treturn wrappedfunc",
+            "# endregion bootdfs"
+        ],
+        "description": "DFS 修饰函数"
+    },
+    "classdsu": {
+        "prefix": "_classdsu",
+        "body": [
+            "",
+            "class DSU:",
+            "\tdef __init__(self, n):",
+            "\t\tself.f = [i for i in range(n)]",
+            "\t\tself.siz = [1] * (n)",
+            "",
+            "\tdef find(self, x):",
+            "\t\twhile x != self.f[x]:",
+            "\t\t\tself.f[x] = self.f[self.f[x]]",
+            "\t\t\tx = self.f[x]",
+            "\t\treturn x",
+            "",
+            "\tdef same(self, x, y):",
+            "\t\treturn self.find(x) == self.find(y)",
+            "",
+            "\tdef merge(self, x, y):",
+            "\t\tx = self.find(x)",
+            "\t\ty = self.find(y)",
+            "\t\tif x == y:",
+            "\t\t\treturn False",
+            "\t\tself.siz[x] += self.siz[y]",
+            "\t\tself.f[y] = x",
+            "\t\treturn True",
+            "",
+            "\tdef size(self, x):",
+            "\t\treturn self.siz[self.find(x)]",
+            "",
+            ""
+        ],
+        "description": "classdsu"
+    },
+    "classprimetable": {
+        "prefix": "_classprime",
+        "body": [
+            "class PrimeTable:",
+            "\tdef __init__(self, n: int) -> None:",
+            "\t\tself.n = n",
+            "\t\tself.primes = []",
+            "\t\tself.max_div = list(range(n + 1))",
+            "\t\tself.max_div[1] = 1",
+            "\t\tself.phi = list(range(n + 1))",
+            "",
+            "\t\tfor i in range(2, n + 1):",
+            "\t\t\tif self.max_div[i] == i:",
+            "\t\t\t\tself.primes.append(i)",
+            "\t\t\t\tfor j in range(i, n + 1, i):",
+            "\t\t\t\t\tself.max_div[j] = i",
+            "\t\t\t\t\tself.phi[j] = self.phi[j] // i * (i - 1)",
+            "",
+            "\tdef is_prime(self, x: int):",
+            "\t\tif x < 2:",
+            "\t\t\treturn False",
+            "\t\tif x <= self.n:",
+            "\t\t\treturn self.max_div[x] == x",
+            "\t\tfor p in self.primes:",
+            "\t\t\tif p * p > x:",
+            "\t\t\t\tbreak",
+            "\t\t\tif x % p == 0:",
+            "\t\t\t\treturn False",
+            "\t\treturn True",
+            "",
+            "pt = PrimeTable(5 * 10**5)"
+        ],
+        "description": "primetable"
+    },
+    "input_str()": {
+        "prefix": "is",
+        "body": [
+            "list(input_str())\n"
+        ],
+        "description": "输入单个字符串"
+    },
+    "ig": {
+        "prefix": "ig",
+        "body": [
+            "[list(input_str()) for _ in range(n)]\n"
+        ],
+        "description": "输入 大小为 n 的字符串数组"
+    },
+    "input_int()": {
+        "prefix": "ii",
+        "body": [
+            "input_int()\n"
+        ],
+        "description": "输入单个 int"
+    },
+    "iii": {
+        "prefix": "iii",
+        "body": [
+            "input_multi_int()\n"
+        ],
+        "description": "输入多个 int"
+    },
+    "input_list()": {
+        "prefix": "il",
+        "body": [
+            "input_list()\n"
+        ],
+        "description": "输入 int 数组"
+    },
+    "DIR4": {
+        "prefix": "DIR4",
+        "body": [
+            "DIR4 = ((-1, 0), (0, 1), (1, 0), (0, -1))\n"
+        ],
+        "description": "上下左右 四个方向"
+    },
+    "DIR8": {
+        "prefix": "DIR8",
+        "body": [
+            "DIR8 = ((-1, 0), (-1, 1), (0, 1), (1, 1), (1, 0), (1, -1), (0, -1), (-1, -1))\n"
+        ],
+        "description": "周围 八个方向"
+    },
+    "MOD 998_244_353": {
+        "prefix": "MOD 998_244_353",
+        "body": [
+            "MOD = 998_244_353\n"
+        ],
+        "description": "取模数 998244353"
+    }, 
+    "MOD 1e9+7": {
+        "prefix": "MOD 1e9+7",
+        "body": [
+            "MOD = 10 ** 9 + 7\n"
+        ],
+        "description": "取模数 1e9+7"
+    }
+}
