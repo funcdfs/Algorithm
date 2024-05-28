@@ -1,0 +1,1 @@
+{"name":"Local: test1","url":"c:\\Algorithm\\ALL\\daily-2024\\test1.cpp","tests":[{"id":1716376623875,"input":"7 5\n3 2 5 4\n0\n2 1 2\n1 1\n2 6 7","output":"4 4 1 4 4 2 2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Algorithm\\ALL\\daily-2024\\test1.cpp","group":"local","local":true}

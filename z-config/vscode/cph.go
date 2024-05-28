@@ -1,5 +1,3 @@
-/**
- * author:  https://github.com/funcdfs
- * problem: {{problemURL}}
- * created: {{time}}
-**/
+// created: {{time}} author:  https://github.com/funcdfs 
+// problem: {{problemURL}}
+
