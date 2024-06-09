@@ -4,11 +4,9 @@
 import sys
 
 
-# region solve
 def solve() -> None:
     
 
-# endregion solve
 
 
 # region fastIO

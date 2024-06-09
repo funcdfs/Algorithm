@@ -1,29 +1,33 @@
+/**
+ * author: https://github.com/funcdfs
+ * created: 2024-06-08 23:22:32
+**/
+
+#pragma region github_funcdfs
 #include <bits/stdc++.h>
 using namespace std;
-
 #ifdef LOCAL
 #include "algo/dbg.h"
 #else
-#define dbg(...) 1
-#endif /* https://gist.github.com/funcdfs */
+#define dbg(...) 142857
+#endif
+struct __fastIO {
+   __fastIO() {
+      cin.tie(nullptr);
+      ios::sync_with_stdio(false);
+      // cout << fixed << setprecision(12);
+   };
+} ___fastIO;
+#define endl '\n'
+#pragma endregion github_funcdfs
+
+
 
 auto main() -> int32_t {
-    cin.tie(nullptr), cout.tie(nullptr), ios::sync_with_stdio(false);
-
-    int x, y;
-    cin >> x >> y;
-
-    vector<int> a(x, y);
-    for (int i = 0; i < (int)a.size(); i++) {
-        a[i] += 1;
-    }
-    cout << x << y;
-
-    for (int i = 0; i < (int)a.size(); i++) {
-        cout << a[i] << " \n"[i == (int)a.size() - 1];
-    }
-
-    return 0;
+   
+   
+   
+   return 0;
 }
 /*
 
