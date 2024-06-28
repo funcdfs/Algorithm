@@ -1,9 +1,4 @@
-/**
- * author: https://github.com/funcdfs
- * created: 2024-06-08 23:22:32
-**/
-
-#pragma region github_funcdfs
+#pragma region HEAD
 #include <bits/stdc++.h>
 using namespace std;
 #ifdef LOCAL
@@ -19,13 +14,27 @@ struct __fastIO {
    };
 } ___fastIO;
 #define endl '\n'
-#pragma endregion github_funcdfs
+#pragma endregion HEAD
 
 
 
 auto main() -> int32_t {
    
-   
+   auto isPrime = [&](auto x) -> bool {
+      if (x < 2) {
+         return false;  // 判断是否大于 1
+      }
+      for (int i = 2; i * i <= x; i++) {
+         // 判断从 2 到 i - 1 是否包含 n 的约数，是的话，返回 false，
+         // 否则返回 true
+         if (x % i == 0) {
+            return false;
+         }
+      }
+      return true;
+   };
+
+   dbg(isPrime(14689));
    
    return 0;
 }

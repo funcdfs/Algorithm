@@ -1,7 +1,3 @@
-/**
- * name: {{problemName}}
- * link: {{problemURL}}
- * time: {{time}} https://github.com/funcdfs
- **/
-
+// link: {{problemURL}} {{problemName}}
+// time: {{time}} https://github.com/funcdfs
 

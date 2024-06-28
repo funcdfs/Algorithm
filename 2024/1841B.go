@@ -1,3 +1,6 @@
+// link: https://codeforces.com/contest/1841/problem/B B. Keep it Beautiful
+// time: 2024/6/12 12:28:16 https://github.com/funcdfs
+
 // #region import
 package main
 
@@ -11,37 +14,40 @@ import (
 
 // solve -------------------------------------------------------------
 
-func solve() {
-	n := 10
+func solve(_case int) {
+	// fmt.Fprintln(os.Stderr, "# CASE: ", _case)
+	n := input[int]()
 	a := inputSlice[int](n)
-	hs := make(map[int]int)
-	for i := range a {
-		if i == 0 {
-			hs[Gcd(a[len(a)-1], a[0])] += 1
-		} else {
-			hs[Gcd(a[i], a[i-1])] += 1
-		}
-	}
-	print(a)
-	print(hs)
-	a = inputSlice[int](n)
-	hs = make(map[int]int)
-	for i := range a {
-		if i == 0 {
-			hs[Gcd(a[len(a)-1], a[0])] += 1
-		} else {
-			hs[Gcd(a[i], a[i-1])] += 1
-		}
-	}
-	print(a)
-	print(hs)
-}
 
-func Gcd(a, b int) int {
-	if b == 0 {
-		return a
+	x := make([]int, 0, n)
+	x = append(x, a[0])
+	print(1)
+
+	ok := false
+
+	for i := 1; i < len(a); i++ {
+		if ok == true {
+			if a[i] <= x[0] && a[i] >= x[len(x)-1] {
+				x = append(x, a[i])
+				print(1)
+			} else {
+				print(0)
+			}
+		} else if ok == false {
+			if a[i] >= x[len(x)-1] {
+				x = append(x, a[i])
+				print(1)
+			} else if a[i] <= x[len(x)-1] && a[i] <= x[0] {
+				x = append(x, a[i])
+				print(1)
+				ok = true
+			} else {
+				print(0)
+			}
+		}
 	}
-	return Gcd(b, a%b)
+	print("\n")
+	return
 }
 
 func preProcess() {
@@ -56,7 +62,10 @@ func main() {
 	_out = bufio.NewWriter(os.Stdout)
 	defer _out.Flush()
 	preProcess()
-	solve()
+	testCaseCnt := input[int]()
+	for i := 0; i < testCaseCnt; i++ {
+		solve(i + 1)
+	}
 }
 
 // #endregion main
@@ -81,18 +90,10 @@ func print[T any](x ...T) {
 	for i := range x {
 		fmt.Fprint(_out, x[i])
 		if i == len(x)-1 {
-			fmt.Fprint(_out, "\n")
+			// fmt.Fprintln(_out)
 		} else {
-			fmt.Fprint(_out, " ")
+			fmt.Fprint(_out, "")
 		}
-	}
-}
-func println() {
-	fmt.Fprint(_out, "\n")
-}
-func printx[T any](x ...T) {
-	for i := range x {
-		fmt.Fprint(_out, x[i], " ")
 	}
 }
 

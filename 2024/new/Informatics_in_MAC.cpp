@@ -1,70 +1,6 @@
-# 万物皆虚
+// link: https://www.luogu.com.cn/problem/CF1935B Informatics in MAC
+// time: 2024/6/27 16:39:00 https://github.com/funcdfs
 
-
-
-#### cpp setup backup
-
-
-<details> 
-<summary> config1: compile command and dbg.h </summary>
-
-```c++
--std=gnu++2a -D LOCAL -Wall -Wextra -O2 -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align
-
--std=gnu++2a -D LOCAL
--H stdc++.h
--H dbg.h
-```
-
-`dbg.h` file: [gist.github.com/funcdfs/algo/dbg.h](https://gist.github.com/funcdfs/093ea21e3e3d033298191a5f4c635069)
-
-</details>
-
-
-<details>
-
-<summary> config2: `fake bits/stdc++.h` for faster compile </summary>
-
-
-```c++
-#include <algorithm>
-#include <array>
-#include <bit>
-#include <bitset>
-#include <cassert>
-#include <chrono>
-#include <climits>
-#include <cmath>
-#include <complex>
-#include <cstdlib>
-#include <cstring>
-#include <ctime>
-#include <deque>
-#include <functional>
-#include <iomanip>
-#include <iostream>
-#include <list>
-#include <map>
-#include <numeric>
-#include <queue>
-#include <random>
-#include <ranges>
-#include <set>
-#include <span>
-#include <stack>
-#include <string>
-#include <tuple>
-#include <unordered_map>
-#include <unordered_set>
-#include <vector>
-```
-
-</details>
-
-
-my template
-
-```
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
 using namespace std;
@@ -91,9 +27,52 @@ template <class T1> basic_string<T1> operator*(const basic_string<T1> &s, int m)
 #define endl          '\n'
 #define print(...)    cout << format(__VA_ARGS__)
 #define println(...)  cout << format("{0}\n", __VA_ARGS__)
+auto solve(int _case) -> void; auto main() -> int32 { int testCaseCnt = 0; cin >> testCaseCnt; for (int _case = 1; _case <= testCaseCnt; _case++) { solve(_case); } return 0; }
 #pragma endregion github_funcdfs   // clang-format on
 
-int main() {
-   return 0;
+// -------------------------------------------------------------------
+auto solve(int _case) -> void {
+   dbg(_case);
+
+   int n = 0;
+   cin >> n;
+   vector<int> a(n, 0);
+   cin >> a;
+
+   // 每次询问给长度为 n 的数组，你要将其划分为 k 段，使得对每段的 mex 值相等。
+   // mex 是对于可重集的函数，其取值为这个可重集内没有出现的最小的自然数。
+
+   // 两个都是 x，则合并后依然是 x，所以切分为 2 份就行。
+   // 统计前缀和后缀，求相同的分割点。
+
+   vector<int> pre(n + 1, 0), suf(n + 1, 0);
+   unordered_map<int, int> hs;
+   int x = 0;
+   for (int i = 1; i <= n; i++) {
+      hs[a[i - 1]] += 1;
+      while (hs.contains(x)) {
+         x += 1;
+      }
+      pre[i] = x;
+   }
+   hs.clear(), x = 0;
+   for (int i = n; i >= 1; i--) {
+      hs[a[i - 1]] += 1;
+      while (hs.contains(x)) {
+         x += 1;
+      }
+      suf[i] = x;
+   }
+   for (int i = 1; i <= n - 1; i++) {
+      if (pre[i] == suf[i + 1]) {
+         println(2);
+         print("{} {}\n", 1, i);
+         print("{} {}\n", i + 1, n);
+         return;
+      }
+   }
+   println(-1);
+   return;
 }
-```
+
+// -------------------------------------------------------------------

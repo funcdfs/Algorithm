@@ -1,3 +1,3 @@
-# problem: {{problemURL}}
-# created: https://github.com/funcdfs {{time}} 
+# link: {{problemURL}} {{problemName}}
+# time: {{time}} https://github.com/funcdfs
 

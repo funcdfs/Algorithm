@@ -1,3 +1,6 @@
+// link: https://codeforces.com/contest/1617/problem/B B. GCD Problem
+// time: 2024/6/12 19:18:25 https://github.com/funcdfs
+
 // #region import
 package main
 
@@ -11,37 +14,35 @@ import (
 
 // solve -------------------------------------------------------------
 
-func solve() {
-	n := 10
-	a := inputSlice[int](n)
-	hs := make(map[int]int)
-	for i := range a {
-		if i == 0 {
-			hs[Gcd(a[len(a)-1], a[0])] += 1
-		} else {
-			hs[Gcd(a[i], a[i-1])] += 1
-		}
-	}
-	print(a)
-	print(hs)
-	a = inputSlice[int](n)
-	hs = make(map[int]int)
-	for i := range a {
-		if i == 0 {
-			hs[Gcd(a[len(a)-1], a[0])] += 1
-		} else {
-			hs[Gcd(a[i], a[i-1])] += 1
-		}
-	}
-	print(a)
-	print(hs)
-}
+func solve(_case int) {
+	// fmt.Fprintln(os.Stderr, "# CASE: ", _case)
 
-func Gcd(a, b int) int {
-	if b == 0 {
-		return a
+	n := input[int]()
+	// a + b + c == n
+	// gcd(a, b) == c
+	// find [a, b, c]
+	/*
+		a + b + gcd(a, b) == n
+		if c == 1:
+			gcd(a, b) == 1 -> (b == a - 1)
+		相邻的两个数是互质的
+		相邻的两个奇数是互质的
+		if n % 2 == 0:
+			ans: [n/2, n/2-1, 1]
+		else:
+	*/
+
+	if n%2 == 0 {
+		print(n/2, n/2-1, 1)
+	} else {
+		ans := n / 2
+		if ans%2 == 0 { // 偶数，拆成两个相邻的奇数
+			print(ans-1, ans+1, 1)
+		} else { // 奇数，拆成两个相邻的奇数
+			print(ans-2, ans+2, 1)
+		}
 	}
-	return Gcd(b, a%b)
+
 }
 
 func preProcess() {
@@ -56,7 +57,10 @@ func main() {
 	_out = bufio.NewWriter(os.Stdout)
 	defer _out.Flush()
 	preProcess()
-	solve()
+	testCaseCnt := input[int]()
+	for i := 0; i < testCaseCnt; i++ {
+		solve(i + 1)
+	}
 }
 
 // #endregion main
@@ -81,18 +85,10 @@ func print[T any](x ...T) {
 	for i := range x {
 		fmt.Fprint(_out, x[i])
 		if i == len(x)-1 {
-			fmt.Fprint(_out, "\n")
+			fmt.Fprintln(_out)
 		} else {
 			fmt.Fprint(_out, " ")
 		}
-	}
-}
-func println() {
-	fmt.Fprint(_out, "\n")
-}
-func printx[T any](x ...T) {
-	for i := range x {
-		fmt.Fprint(_out, x[i], " ")
 	}
 }
 

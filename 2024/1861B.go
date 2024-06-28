@@ -1,9 +1,13 @@
+// link: https://codeforces.com/contest/1861/problem/B B. Two Binary Strings
+// time: 2024/6/16 10:56:40 https://github.com/funcdfs
+
 // #region import
 package main
 
 import (
 	"bufio"
 	"fmt"
+	"log"
 	"os"
 )
 
@@ -11,40 +15,34 @@ import (
 
 // solve -------------------------------------------------------------
 
-func solve() {
-	n := 10
-	a := inputSlice[int](n)
-	hs := make(map[int]int)
-	for i := range a {
-		if i == 0 {
-			hs[Gcd(a[len(a)-1], a[0])] += 1
-		} else {
-			hs[Gcd(a[i], a[i-1])] += 1
-		}
-	}
-	print(a)
-	print(hs)
-	a = inputSlice[int](n)
-	hs = make(map[int]int)
-	for i := range a {
-		if i == 0 {
-			hs[Gcd(a[len(a)-1], a[0])] += 1
-		} else {
-			hs[Gcd(a[i], a[i-1])] += 1
-		}
-	}
-	print(a)
-	print(hs)
-}
+func solve(_case int) {
+	// log.Println("# CASE: ", _case)
 
-func Gcd(a, b int) int {
-	if b == 0 {
-		return a
-	}
-	return Gcd(b, a%b)
-}
+	constStr := input[string]()
+	s1 := []byte(constStr)
+	constStr = input[string]()
+	s2 := []byte(constStr)
 
-func preProcess() {
+	// 区间替换，端点处必须相等，然后整个段内都变成相同的。
+	// 问两个字符串是否可以变成相同的，都是 0 开头，1 结尾。
+
+	/// 000000011111111, find the same position "01"
+	check := func() bool {
+		for i := range s1 {
+			if i == 0 {
+				continue
+			}
+			if s1[i] == '1' && s1[i-1] == '0' && s2[i] == '1' && s2[i-1] == '0' {
+				return true
+			}
+		}
+		return false
+	}
+	if check() == true {
+		print("YES")
+	} else {
+		print("NO")
+	}
 
 }
 
@@ -54,14 +52,17 @@ func preProcess() {
 func main() {
 	_in = bufio.NewReader(os.Stdin)
 	_out = bufio.NewWriter(os.Stdout)
+	log.SetFlags(log.Lshortfile)
 	defer _out.Flush()
-	preProcess()
-	solve()
+	testCaseCnt := input[int]()
+	for i := 0; i < testCaseCnt; i++ {
+		solve(i + 1)
+	}
 }
 
 // #endregion main
 
-// #region fastIO
+// #region io
 var _in *bufio.Reader
 var _out *bufio.Writer
 
@@ -96,4 +97,4 @@ func printx[T any](x ...T) {
 	}
 }
 
-// #endregion fastIO
+// #endregion io

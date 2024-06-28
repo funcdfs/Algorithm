@@ -1,3 +1,6 @@
+// link: https://codeforces.com/contest/1858/problem/C C. Yet Another Permutation Problem
+// time: 2024/6/12 21:39:06 https://github.com/funcdfs
+
 // #region import
 package main
 
@@ -11,52 +14,47 @@ import (
 
 // solve -------------------------------------------------------------
 
-func solve() {
-	n := 10
-	a := inputSlice[int](n)
-	hs := make(map[int]int)
-	for i := range a {
-		if i == 0 {
-			hs[Gcd(a[len(a)-1], a[0])] += 1
-		} else {
-			hs[Gcd(a[i], a[i-1])] += 1
+func solve(_case int) {
+	// fmt.Fprintln(os.Stderr, "# CASE: ", _case)
+
+	n := input[int]()
+	st := make([]bool, n+1)
+
+	// 构造 gcd(a[i], a[i+1]) 的种类 最多的一个排列
+	// [1] [2 4 8 16] [3 6 12 24] 5 7 ...
+	a := make([]int, 0, n)
+	a = append(a, 1)
+	st[1] = true
+
+	for base := 2; base <= n; base += 1 {
+		if st[base] == true {
+			continue
+		}
+		x := base
+		a = append(a, x)
+		for x*2 <= n && st[x*2] == false {
+			x = x * 2
+			a = append(a, x)
+			st[x] = true
 		}
 	}
-	print(a)
-	print(hs)
-	a = inputSlice[int](n)
-	hs = make(map[int]int)
-	for i := range a {
-		if i == 0 {
-			hs[Gcd(a[len(a)-1], a[0])] += 1
-		} else {
-			hs[Gcd(a[i], a[i-1])] += 1
-		}
-	}
-	print(a)
-	print(hs)
-}
 
-func Gcd(a, b int) int {
-	if b == 0 {
-		return a
-	}
-	return Gcd(b, a%b)
-}
-
-func preProcess() {
-
+	print(a...)
 }
 
 // solve -------------------------------------------------------------
 
 // #region main
+
 func main() {
 	_in = bufio.NewReader(os.Stdin)
 	_out = bufio.NewWriter(os.Stdout)
 	defer _out.Flush()
-	preProcess()
-	solve()
+	// preProcess()
+	testCaseCnt := input[int]()
+	for i := 1; i <= testCaseCnt; i++ {
+		solve(i)
+	}
 }
 
 // #endregion main

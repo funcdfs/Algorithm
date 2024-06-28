@@ -1,9 +1,13 @@
+// link: https://www.luogu.com.cn/problem/CF266B Queue at the School
+// time: 2024/6/15 13:04:38 https://github.com/funcdfs
+
 // #region import
 package main
 
 import (
 	"bufio"
 	"fmt"
+	"log"
 	"os"
 )
 
@@ -12,39 +16,23 @@ import (
 // solve -------------------------------------------------------------
 
 func solve() {
-	n := 10
-	a := inputSlice[int](n)
-	hs := make(map[int]int)
-	for i := range a {
-		if i == 0 {
-			hs[Gcd(a[len(a)-1], a[0])] += 1
-		} else {
-			hs[Gcd(a[i], a[i-1])] += 1
+
+	n, t := input[int](), input[int]()
+	constStr := input[string]()
+	s := []byte(constStr)
+
+	for time := 1; time <= t; time++ {
+		for i := 0; i+1 < n; {
+			if s[i] == 'B' && s[i+1] == 'G' {
+				s[i], s[i+1] = s[i+1], s[i]
+				i += 2
+			} else {
+				i += 1
+			}
 		}
 	}
-	print(a)
-	print(hs)
-	a = inputSlice[int](n)
-	hs = make(map[int]int)
-	for i := range a {
-		if i == 0 {
-			hs[Gcd(a[len(a)-1], a[0])] += 1
-		} else {
-			hs[Gcd(a[i], a[i-1])] += 1
-		}
-	}
-	print(a)
-	print(hs)
-}
 
-func Gcd(a, b int) int {
-	if b == 0 {
-		return a
-	}
-	return Gcd(b, a%b)
-}
-
-func preProcess() {
+	print(string(s))
 
 }
 
@@ -54,14 +42,14 @@ func preProcess() {
 func main() {
 	_in = bufio.NewReader(os.Stdin)
 	_out = bufio.NewWriter(os.Stdout)
+	log.SetFlags(log.Lshortfile)
 	defer _out.Flush()
-	preProcess()
 	solve()
 }
 
 // #endregion main
 
-// #region fastIO
+// #region io
 var _in *bufio.Reader
 var _out *bufio.Writer
 
@@ -96,4 +84,4 @@ func printx[T any](x ...T) {
 	}
 }
 
-// #endregion fastIO
+// #endregion io

@@ -1,3 +1,6 @@
+// created: 2024/6/10 18:47:33 author:  https://github.com/funcdfs
+// problem: https://www.acwing.com/problem/content/1/
+
 // #region import
 package main
 
@@ -12,36 +15,8 @@ import (
 // solve -------------------------------------------------------------
 
 func solve() {
-	n := 10
-	a := inputSlice[int](n)
-	hs := make(map[int]int)
-	for i := range a {
-		if i == 0 {
-			hs[Gcd(a[len(a)-1], a[0])] += 1
-		} else {
-			hs[Gcd(a[i], a[i-1])] += 1
-		}
-	}
-	print(a)
-	print(hs)
-	a = inputSlice[int](n)
-	hs = make(map[int]int)
-	for i := range a {
-		if i == 0 {
-			hs[Gcd(a[len(a)-1], a[0])] += 1
-		} else {
-			hs[Gcd(a[i], a[i-1])] += 1
-		}
-	}
-	print(a)
-	print(hs)
-}
-
-func Gcd(a, b int) int {
-	if b == 0 {
-		return a
-	}
-	return Gcd(b, a%b)
+	a, b := input[int](), input[int]()
+	print(a + b)
 }
 
 func preProcess() {
@@ -81,18 +56,10 @@ func print[T any](x ...T) {
 	for i := range x {
 		fmt.Fprint(_out, x[i])
 		if i == len(x)-1 {
-			fmt.Fprint(_out, "\n")
+			fmt.Fprintln(_out)
 		} else {
 			fmt.Fprint(_out, " ")
 		}
-	}
-}
-func println() {
-	fmt.Fprint(_out, "\n")
-}
-func printx[T any](x ...T) {
-	for i := range x {
-		fmt.Fprint(_out, x[i], " ")
 	}
 }
 

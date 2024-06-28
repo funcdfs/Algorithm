@@ -4,48 +4,34 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"log"
 	"os"
+	"sort"
 )
 
 // #endregion import
 
 // solve -------------------------------------------------------------
 
-func solve() {
-	n := 10
+func solve(_case int) {
+	// log.Println("# CASE: ", _case)
+	n := input[int]()
 	a := inputSlice[int](n)
-	hs := make(map[int]int)
-	for i := range a {
-		if i == 0 {
-			hs[Gcd(a[len(a)-1], a[0])] += 1
-		} else {
-			hs[Gcd(a[i], a[i-1])] += 1
+
+	sort.Slice(a, func(i, j int) bool {
+		return a[i] < a[j]
+	})
+
+	for idxL, idxR, sumL, sumR := 1, n-1, int64(a[0]), int64(0); idxL < idxR; idxL, idxR = idxL+1, idxR-1 {
+		sumL += int64(a[idxL])
+		sumR += int64(a[idxR])
+		if sumL < sumR {
+			print("YES")
+			return
 		}
 	}
-	print(a)
-	print(hs)
-	a = inputSlice[int](n)
-	hs = make(map[int]int)
-	for i := range a {
-		if i == 0 {
-			hs[Gcd(a[len(a)-1], a[0])] += 1
-		} else {
-			hs[Gcd(a[i], a[i-1])] += 1
-		}
-	}
-	print(a)
-	print(hs)
-}
-
-func Gcd(a, b int) int {
-	if b == 0 {
-		return a
-	}
-	return Gcd(b, a%b)
-}
-
-func preProcess() {
-
+	print("NO")
+	return
 }
 
 // solve -------------------------------------------------------------
@@ -54,14 +40,17 @@ func preProcess() {
 func main() {
 	_in = bufio.NewReader(os.Stdin)
 	_out = bufio.NewWriter(os.Stdout)
+	log.SetFlags(log.Lshortfile)
 	defer _out.Flush()
-	preProcess()
-	solve()
+	testCaseCnt := input[int]()
+	for i := 0; i < testCaseCnt; i++ {
+		solve(i + 1)
+	}
 }
 
 // #endregion main
 
-// #region fastIO
+// #region io
 var _in *bufio.Reader
 var _out *bufio.Writer
 
@@ -96,4 +85,4 @@ func printx[T any](x ...T) {
 	}
 }
 
-// #endregion fastIO
+// #endregion io

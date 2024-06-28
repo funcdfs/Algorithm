@@ -1,3 +1,6 @@
+// link: https://codeforces.com/contest/1716/problem/B B. Permutation Chain
+// time: 2024/6/13 14:44:32 https://github.com/funcdfs
+
 // #region import
 package main
 
@@ -6,57 +9,36 @@ import (
 	"fmt"
 	"os"
 )
-
 // #endregion import
 
 // solve -------------------------------------------------------------
 
-func solve() {
-	n := 10
-	a := inputSlice[int](n)
-	hs := make(map[int]int)
+func solve(_case int) {
+	// fmt.Fprintln(os.Stderr, "# CASE: ", _case)
+	
+	n := input[int]()
+	
 	for i := range a {
-		if i == 0 {
-			hs[Gcd(a[len(a)-1], a[0])] += 1
-		} else {
-			hs[Gcd(a[i], a[i-1])] += 1
-		}
+		for j : =rang ea[i a]
 	}
-	print(a)
-	print(hs)
-	a = inputSlice[int](n)
-	hs = make(map[int]int)
-	for i := range a {
-		if i == 0 {
-			hs[Gcd(a[len(a)-1], a[0])] += 1
-		} else {
-			hs[Gcd(a[i], a[i-1])] += 1
-		}
-	}
-	print(a)
-	print(hs)
-}
-
-func Gcd(a, b int) int {
-	if b == 0 {
-		return a
-	}
-	return Gcd(b, a%b)
-}
-
-func preProcess() {
 
 }
+
 
 // solve -------------------------------------------------------------
 
+
 // #region main
+
 func main() {
 	_in = bufio.NewReader(os.Stdin)
 	_out = bufio.NewWriter(os.Stdout)
 	defer _out.Flush()
-	preProcess()
-	solve()
+	// preProcess()
+	testCaseCnt := input[int]()
+	for i := 1; i <= testCaseCnt; i++ {
+		solve(i)
+	}
 }
 
 // #endregion main
@@ -95,5 +77,4 @@ func printx[T any](x ...T) {
 		fmt.Fprint(_out, x[i], " ")
 	}
 }
-
 // #endregion fastIO

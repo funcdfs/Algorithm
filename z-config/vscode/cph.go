@@ -1,3 +1,3 @@
-// created: {{time}} author:  https://github.com/funcdfs 
-// problem: {{problemURL}}
+// link: {{problemURL}} {{problemName}}
+// time: {{time}} https://github.com/funcdfs
 

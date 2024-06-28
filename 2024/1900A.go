@@ -1,3 +1,6 @@
+// link: https://codeforces.com/contest/1900/problem/A A. Cover in Water
+// time: 2024/6/12 12:55:30 https://github.com/funcdfs
+
 // #region import
 package main
 
@@ -11,37 +14,44 @@ import (
 
 // solve -------------------------------------------------------------
 
-func solve() {
-	n := 10
-	a := inputSlice[int](n)
-	hs := make(map[int]int)
-	for i := range a {
-		if i == 0 {
-			hs[Gcd(a[len(a)-1], a[0])] += 1
-		} else {
-			hs[Gcd(a[i], a[i-1])] += 1
-		}
-	}
-	print(a)
-	print(hs)
-	a = inputSlice[int](n)
-	hs = make(map[int]int)
-	for i := range a {
-		if i == 0 {
-			hs[Gcd(a[len(a)-1], a[0])] += 1
-		} else {
-			hs[Gcd(a[i], a[i-1])] += 1
-		}
-	}
-	print(a)
-	print(hs)
-}
+func solve(_case int) {
+	// fmt.Fprintln(os.Stderr, "# CASE: ", _case)
 
-func Gcd(a, b int) int {
-	if b == 0 {
-		return a
+	n := input[int]()
+	constStr := input[string]()
+	s := []byte(constStr)
+
+	wall := make([]bool, n)
+	for i := range s {
+		if s[i] == '.' {
+			wall[i] = false
+		} else {
+			wall[i] = true
+		}
 	}
-	return Gcd(b, a%b)
+
+	ans := 0
+
+	for i := 0; i < len(wall); i++ {
+		if wall[i] == false {
+			idx := i
+			for idx < len(wall) && wall[idx] == false {
+				idx += 1
+			}
+			size := idx - i
+			if size > 2 {
+				print(2)
+				return
+			} else if size == 2 {
+				ans += 2
+			} else {
+				ans += 1
+			}
+			i = idx
+		}
+	}
+
+	print(ans)
 }
 
 func preProcess() {
@@ -56,7 +66,10 @@ func main() {
 	_out = bufio.NewWriter(os.Stdout)
 	defer _out.Flush()
 	preProcess()
-	solve()
+	testCaseCnt := input[int]()
+	for i := 0; i < testCaseCnt; i++ {
+		solve(i + 1)
+	}
 }
 
 // #endregion main
@@ -81,18 +94,10 @@ func print[T any](x ...T) {
 	for i := range x {
 		fmt.Fprint(_out, x[i])
 		if i == len(x)-1 {
-			fmt.Fprint(_out, "\n")
+			fmt.Fprintln(_out)
 		} else {
 			fmt.Fprint(_out, " ")
 		}
-	}
-}
-func println() {
-	fmt.Fprint(_out, "\n")
-}
-func printx[T any](x ...T) {
-	for i := range x {
-		fmt.Fprint(_out, x[i], " ")
 	}
 }
 

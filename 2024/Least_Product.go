@@ -1,3 +1,7 @@
+// LUOGU_RID: 161929880
+// link: https://www.luogu.com.cn/problem/CF1917A Least Product
+// time: 2024/6/12 11:40:28 https://github.com/funcdfs
+
 // #region import
 package main
 
@@ -11,42 +15,29 @@ import (
 
 // solve -------------------------------------------------------------
 
-func solve() {
-	n := 10
+func solve(_case int) {
+	// fmt.Fprintln(os.Stderr, "# CASE: ", _case)
+	n := input[int]()
 	a := inputSlice[int](n)
-	hs := make(map[int]int)
+
+	// a[i] < 0 => a[i] 替换为 [ai, 0] 的任意整数，否则将 a[i] 替换为 [0, ai] 中的任意整数
+	// 最小化操作次数，使得总乘积最小。
+
+	pow := int64(1)
 	for i := range a {
-		if i == 0 {
-			hs[Gcd(a[len(a)-1], a[0])] += 1
-		} else {
-			hs[Gcd(a[i], a[i-1])] += 1
-		}
+		pow *= int64(a[i])
 	}
-	print(a)
-	print(hs)
-	a = inputSlice[int](n)
-	hs = make(map[int]int)
-	for i := range a {
-		if i == 0 {
-			hs[Gcd(a[len(a)-1], a[0])] += 1
-		} else {
-			hs[Gcd(a[i], a[i-1])] += 1
-		}
+	if pow <= 0 {
+		print(0)
+		return
+	} else {
+		print(1)
+		print(1, 0)
+		return
 	}
-	print(a)
-	print(hs)
+	return
 }
 
-func Gcd(a, b int) int {
-	if b == 0 {
-		return a
-	}
-	return Gcd(b, a%b)
-}
-
-func preProcess() {
-
-}
 
 // solve -------------------------------------------------------------
 
@@ -55,8 +46,10 @@ func main() {
 	_in = bufio.NewReader(os.Stdin)
 	_out = bufio.NewWriter(os.Stdout)
 	defer _out.Flush()
-	preProcess()
-	solve()
+	testCaseCnt := input[int]()
+	for i := 0; i < testCaseCnt; i++ {
+		solve(i + 1)
+	}
 }
 
 // #endregion main
@@ -81,18 +74,10 @@ func print[T any](x ...T) {
 	for i := range x {
 		fmt.Fprint(_out, x[i])
 		if i == len(x)-1 {
-			fmt.Fprint(_out, "\n")
+			fmt.Fprintln(_out)
 		} else {
 			fmt.Fprint(_out, " ")
 		}
-	}
-}
-func println() {
-	fmt.Fprint(_out, "\n")
-}
-func printx[T any](x ...T) {
-	for i := range x {
-		fmt.Fprint(_out, x[i], " ")
 	}
 }
 
