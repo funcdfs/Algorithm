@@ -93,7 +93,6 @@ template <class T1> basic_string<T1> operator*(const basic_string<T1> &s, int m)
 #define println(...)  cout << format("{0}\n", __VA_ARGS__)
 #pragma endregion github_funcdfs   // clang-format on
 
-int main() {
-   return 0;
-}
+
+
 ```

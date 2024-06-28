@@ -1,4 +1,5 @@
-// link: https://codeforces.com/contest/1916/problem/C C. Training Before the Olympiad
+// link: https://codeforces.com/contest/1635/problem/C C. Differential Sorting
+// time: 2024/6/28 16:56:55 https://github.com/funcdfs
 
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
@@ -25,7 +26,6 @@ template <class T1> basic_string<T1> operator*(const basic_string<T1> &s, int m)
 #endif
 #define endl          '\n'
 #define print(...)    cout << format(__VA_ARGS__)
-#define printx(...)   cout << format("{} ", __VA_ARGS__)
 #define println(...)  cout << format("{0}\n", __VA_ARGS__)
 auto solve(int _case) -> void; auto main() -> int32 { int testCaseCnt = 0; cin >> testCaseCnt; for (int _case = 1; _case <= testCaseCnt; _case++) { solve(_case); } return 0; }
 #pragma endregion github_funcdfs   // clang-format on
@@ -40,42 +40,26 @@ auto solve(int _case) -> void {
    vector<int> a(n, 0);
    cin >> a;
    
-   // a[i], a[j] -> insert ((a[i]+a[j]) / 2) * 2 
-   // A 希望留下来的最大，B 希望留下来的最小，ABABAB，剩余 1 个的时候停止。
-   
-/*
-想使答案大的人
-   选择两个偶数和两个奇数，那么答案不会减小. 
-   在可以选择两个奇数时，绝对不会选择两个偶数，因为这样可以让想使答案小的人可以选择的奇数变少。
-   if odd >= 2:
-      odd -= 2
-想使答案小的人
-   如果选择了一个奇数一个偶数，那么答案会减小一。(偶数公用，奇数对变小有作用)
-   if odd >= 1:
-      odd -= 1
+   // choose xyz,  a[x] = a[y] - a[z] (x < y < z)
+   // 单调不减
 
-if odd >= 3:
-   odd -= 3, ans -= 1
-   ans -= (odd / 3)
+   if (a.rbegin()[1] > a.rbegin()[0]) {
+      println(-1);
+      return;
+   }
 
-然后单独考虑 odd % 3 之后的余数，0 不变，1 少一，2 不变
-*/
-   int64 sum = 0, odd = 0;
-   for (int i = 0; i < n; i++) {
-      sum += a[i];
-      odd += a[i] % 2;
-      if (i == 0) {
-         print("{} ", sum);
+   if (a.rbegin()[0] < 0) {
+      if (is_sorted(a.begin(), a.end())) {
+         println(0);
       } else {
-         int64 ans = sum - odd / 3;
-         if (odd % 3 == 1) {
-            ans -= 1;
-         } // 0. 1(-). 2
-         print("{} ", ans);
+         println(-1);
+      }
+   } else {
+      println(n-2);
+      for (int i = 1; i <= n - 2; i++) {
+         print("{0} {1} {2}\n", i, n-1, n);
       }
    }
-   println(""); 
-
 
    return;
 }

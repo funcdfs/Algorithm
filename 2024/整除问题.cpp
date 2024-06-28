@@ -1,5 +1,3 @@
-// link: https://codeforces.com/contest/1916/problem/C C. Training Before the Olympiad
-
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
 using namespace std;
@@ -25,58 +23,15 @@ template <class T1> basic_string<T1> operator*(const basic_string<T1> &s, int m)
 #endif
 #define endl          '\n'
 #define print(...)    cout << format(__VA_ARGS__)
-#define printx(...)   cout << format("{} ", __VA_ARGS__)
 #define println(...)  cout << format("{0}\n", __VA_ARGS__)
-auto solve(int _case) -> void; auto main() -> int32 { int testCaseCnt = 0; cin >> testCaseCnt; for (int _case = 1; _case <= testCaseCnt; _case++) { solve(_case); } return 0; }
+auto solve() -> void; auto main() -> int32 { solve(); return 0; }
 #pragma endregion github_funcdfs   // clang-format on
 
-
 // -------------------------------------------------------------------
-auto solve(int _case) -> void {
-   dbg(_case);
-
-   int n = 0;
-   cin >> n;
-   vector<int> a(n, 0);
-   cin >> a;
+auto solve() -> void {
    
-   // a[i], a[j] -> insert ((a[i]+a[j]) / 2) * 2 
-   // A 希望留下来的最大，B 希望留下来的最小，ABABAB，剩余 1 个的时候停止。
    
-/*
-想使答案大的人
-   选择两个偶数和两个奇数，那么答案不会减小. 
-   在可以选择两个奇数时，绝对不会选择两个偶数，因为这样可以让想使答案小的人可以选择的奇数变少。
-   if odd >= 2:
-      odd -= 2
-想使答案小的人
-   如果选择了一个奇数一个偶数，那么答案会减小一。(偶数公用，奇数对变小有作用)
-   if odd >= 1:
-      odd -= 1
-
-if odd >= 3:
-   odd -= 3, ans -= 1
-   ans -= (odd / 3)
-
-然后单独考虑 odd % 3 之后的余数，0 不变，1 少一，2 不变
-*/
-   int64 sum = 0, odd = 0;
-   for (int i = 0; i < n; i++) {
-      sum += a[i];
-      odd += a[i] % 2;
-      if (i == 0) {
-         print("{} ", sum);
-      } else {
-         int64 ans = sum - odd / 3;
-         if (odd % 3 == 1) {
-            ans -= 1;
-         } // 0. 1(-). 2
-         print("{} ", ans);
-      }
-   }
-   println(""); 
-
-
+   
    return;
 }
 // -------------------------------------------------------------------

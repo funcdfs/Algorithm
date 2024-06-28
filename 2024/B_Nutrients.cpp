@@ -1,4 +1,5 @@
-// link: https://codeforces.com/contest/1916/problem/C C. Training Before the Olympiad
+// link: https://atcoder.jp/contests/abc356/tasks/abc356_b B - Nutrients
+// time: 2024/6/28 13:42:33 https://github.com/funcdfs
 
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
@@ -25,58 +26,43 @@ template <class T1> basic_string<T1> operator*(const basic_string<T1> &s, int m)
 #endif
 #define endl          '\n'
 #define print(...)    cout << format(__VA_ARGS__)
-#define printx(...)   cout << format("{} ", __VA_ARGS__)
 #define println(...)  cout << format("{0}\n", __VA_ARGS__)
-auto solve(int _case) -> void; auto main() -> int32 { int testCaseCnt = 0; cin >> testCaseCnt; for (int _case = 1; _case <= testCaseCnt; _case++) { solve(_case); } return 0; }
+auto solve() -> void; auto main() -> int32 { solve(); return 0; }
 #pragma endregion github_funcdfs   // clang-format on
 
-
 // -------------------------------------------------------------------
-auto solve(int _case) -> void {
-   dbg(_case);
-
-   int n = 0;
-   cin >> n;
-   vector<int> a(n, 0);
+auto solve() -> void {
+   
+   int n, m;
+   cin >> n >> m;
+   vector<int> a(m, 0);
    cin >> a;
-   
-   // a[i], a[j] -> insert ((a[i]+a[j]) / 2) * 2 
-   // A 希望留下来的最大，B 希望留下来的最小，ABABAB，剩余 1 个的时候停止。
-   
-/*
-想使答案大的人
-   选择两个偶数和两个奇数，那么答案不会减小. 
-   在可以选择两个奇数时，绝对不会选择两个偶数，因为这样可以让想使答案小的人可以选择的奇数变少。
-   if odd >= 2:
-      odd -= 2
-想使答案小的人
-   如果选择了一个奇数一个偶数，那么答案会减小一。(偶数公用，奇数对变小有作用)
-   if odd >= 1:
-      odd -= 1
+   vector x(n, vector<int>(m, 0));
+   cin >> x;
 
-if odd >= 3:
-   odd -= 3, ans -= 1
-   ans -= (odd / 3)
+   // Print Yes if the goal is met for all M types of nutrients, and No otherwise.
 
-然后单独考虑 odd % 3 之后的余数，0 不变，1 少一，2 不变
-*/
-   int64 sum = 0, odd = 0;
+   vector<int> ans(m, 0);
    for (int i = 0; i < n; i++) {
-      sum += a[i];
-      odd += a[i] % 2;
-      if (i == 0) {
-         print("{} ", sum);
-      } else {
-         int64 ans = sum - odd / 3;
-         if (odd % 3 == 1) {
-            ans -= 1;
-         } // 0. 1(-). 2
-         print("{} ", ans);
+      for (int j = 0; j < m; j++) {
+         ans[j] += x[i][j];
       }
    }
-   println(""); 
-
-
+   dbg(ans, a);
+   auto satisify = [&]() -> bool {
+      for (int i = 0; i < int(ans.size()); i++) {
+         if (ans[i] < a[i]) {
+            return false;
+         }
+      }
+      return true;
+   };
+   if (satisify()) {
+      cout << "Yes\n";
+   } else {
+      cout << "No\n";
+   }
+   
    return;
 }
 // -------------------------------------------------------------------
