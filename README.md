@@ -6,7 +6,8 @@
 
 
 <details> 
-<summary> config1: compile command and dbg.h </summary>
+<summary> config1: compile command </summary>
+</br>
 
 ```c++
 -std=gnu++2a -D LOCAL -Wall -Wextra -O2 -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align
@@ -15,15 +16,14 @@
 -H stdc++.h
 -H dbg.h
 ```
-
-`dbg.h` file: [gist.github.com/funcdfs/algo/dbg.h](https://gist.github.com/funcdfs/093ea21e3e3d033298191a5f4c635069)
-
 </details>
+
+
 
 
 <details>
 <summary> config2: fake <code> bits/stdc++.h </code> for faster compile </summary>
-
+</br>
 
 ```c++
 #include <algorithm>
@@ -60,12 +60,29 @@
 
 </details>
 
+
+<details>
+<summary> config3: <code> algo/dbg.h </code> For Debugging Purposes </summary>
+</br>
+
+`dbg.h` file: [gist.github.com/funcdfs/algo/dbg.h](https://gist.github.com/funcdfs/093ea21e3e3d033298191a5f4c635069)
+
+https://gist.github.com/funcdfs/093ea21e3e3d033298191a5f4c635069
+
+</details>
+
+
+</br>
+
+---
+
 </br>
 
 
 <details>
 <summary> template with Modular </summary>
-
+</br>
+ 
 ```cpp
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
@@ -203,7 +220,7 @@ auto solve() -> void {
 
 <details>
 <summary> head template without any function </summary>
-
+</br>
 
 ```
 #pragma region github_funcdfs // clang-format off
