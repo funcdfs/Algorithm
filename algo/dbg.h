@@ -55,6 +55,19 @@ std::string to_string(A v) {
     res += "}";
     return res;
 }
+std::string to_string(std::vector<char>& v) {
+    bool first = true;
+    std::string res = "{";
+    for (const auto& x : v) {
+        if (!first) {
+            res += ", ";
+        }
+        first = false;
+        res += std::string(1, x);
+    }
+    res += "}";
+    return res;
+}
 
 template <typename A, typename B>
 std::string to_string(std::pair<A, B> p) {
@@ -82,6 +95,7 @@ void debug_out(Head H, Tail... T) {
 }
 
 #ifdef LOCAL
+#define eprint(...) cerr << format(__VA_ARGS__)
 #define dbg(...)                                                       \
     std::cerr << (#__VA_ARGS__ == "_case" ? "--- " : std::to_string(__LINE__)) \
          << (#__VA_ARGS__ == "_case" ? "✨" : "🎉 [")                  \
@@ -91,6 +105,7 @@ void debug_out(Head H, Tail... T) {
 // #define dbg(...) cerr << "[" << #__VA_ARGS__ << "]:", debug_out(__VA_ARGS__)
 #else
 #define dbg(...) 42
+#define eprint(...) ;
 #endif
 
 // idea from tourist  https://github.com/the-tourist/algo/

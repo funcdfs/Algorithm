@@ -1,5 +1,5 @@
 // link: https://codeforces.com/contest/1635/problem/C C. Differential Sorting
-// time: 2024/6/28 16:56:55 https://github.com/funcdfs
+// time: 2024/6/29 12:15:55 https://github.com/funcdfs
 
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
@@ -37,29 +37,22 @@ auto solve(int _case) -> void {
 
    int n = 0;
    cin >> n;
-   vector<int> a(n, 0);
+   vector<int64> a(n, 0);
    cin >> a;
    
-   // choose xyz,  a[x] = a[y] - a[z] (x < y < z)
-   // 单调不减
-
-   if (a.rbegin()[1] > a.rbegin()[0]) {
-      println(-1);
+   // (x<y<z) a[x] = a[y] - a[z]
+   if (is_sorted(a.begin(), a.end())) {
+      println("0");
       return;
    }
-
-   if (a.rbegin()[0] < 0) {
-      if (is_sorted(a.begin(), a.end())) {
-         println(0);
-      } else {
-         println(-1);
-      }
-   } else {
-      println(n-2);
-      for (int i = 1; i <= n - 2; i++) {
-         print("{0} {1} {2}\n", i, n-1, n);
-      }
+   if (a[n-2] > a[n-1] || a[n-1] < 0) {
+      println("-1");
+      return;
    }
+   println(n-2);
+   for (int i = 0; i < n-2; i++) {
+      print("{} {} {}\n", i+1, n-1, n);
+   } // [n-1 - n], [n-1 - n], [n-1 - n], [n-1 - n] ... [n-1]  [n]
 
    return;
 }

@@ -78,7 +78,7 @@ BreakBeforeTernaryOperators: true
 BreakConstructorInitializers: AfterColon
 BreakInheritanceList: AfterColon
 BreakStringLiterals: true
-ColumnLimit: 100
+ColumnLimit: 110
 CommentPragmas: "^ IWYU pragma:"
 CompactNamespaces: true
 ConstructorInitializerIndentWidth: 3
@@ -144,7 +144,7 @@ Language: Cpp
 LineEnding: DeriveLF
 MacroBlockBegin: ""
 MacroBlockEnd: ""
-MaxEmptyLinesToKeep: 1
+MaxEmptyLinesToKeep: 2
 NamespaceIndentation: All
 ObjCBinPackProtocolList: Never
 ObjCBlockIndentWidth: 2
