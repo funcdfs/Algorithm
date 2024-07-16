@@ -1,6 +1,3 @@
-// link: https://www.acwing.com/problem/content/description/789/ 归并排序
-// time: 2024/7/8 16:41:58 https://github.com/funcdfs
-
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
 /* using golang types */ using namespace std; using int32 = signed; using uint32 = unsigned; using float32 = double; using int64 = long long; using uint64 = unsigned long long; using float64 = long double; 
@@ -28,36 +25,41 @@ auto solve() -> void; /* main --> */ int32 main() {      solve(); return 0; }
 
 // ----------------------------- /* Start of useful functions */ -----------------------------
 
+#include <ext/pb_ds/assoc_container.hpp>	// Common file
+#include <ext/pb_ds/tree_policy.hpp>		 // Including tree_order_statistics_node_update
+using namespace __gnu_pbds;
+
+template <class T>
+using Tree = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+template <class T> 
+using MultiTree = tree<T, null_type, less_equal<T>, rb_tree_tag, tree_order_statistics_node_update>;
+
+
+/*
+If using MultiTree:
+   Ranking of x:                                                 mt.order_of_key(x) + 1
+   Find the number with rank idx:                                *mt.find_by_order(idx)
+   To delete only one of multiple identical numbers:             mt.erase(st.upper_bound(x));
+   Predecessor is defined as the largest number less than x:     *--mt.upper_bound(x)
+   Successor is defined as the smallest number greater than x:   *mt.lower_bound(x)
+*/
 
 auto solve() -> void {
-    int n = 0;
-    cin >> n;
-    vector<int> a(n, 0);
-    cin >> a;
-    
-    vector<int> tmp(n+1, 0);
-    function<void(int, int)> mergeSort = [&](int l, int r) -> void {
-        if (l >= r) {
-            return; 
-        }
-        int mid = (l+r) >> 1; 
-        mergeSort(l, mid); 
-        mergeSort(mid+1, r); 
-        int i = l, j = mid + 1, k = 0;
-        while (i <= mid && j <= r) {
-            if (a[i] < a[j]) tmp[k++] = a[i++]; 
-            else tmp[k++] = a[j++]; 
-        }
-        while (i <= mid) tmp[k++] = a[i++]; 
-        while (j <= r) tmp[k++] = a[j++];  
-        for (int i = l, j = 0; i <= r; i++, j++) {
-            a[i] = tmp[j];
-        }
-    };
-    
-    mergeSort(0, n-1); 
-    cout << a;
-    return;
+   
+   MultiTree<int> mt;
+
+   int n = 0; cin >> n;
+   while (n--) {
+      int op, x; cin >> op >> x;
+      if (op == 1) mt.insert(x);
+      if (op == 2) mt.erase(mt.upper_bound(x));
+      if (op == 3) cout << mt.order_of_key(x)+1 << endl; 
+      if (op == 4) cout << *mt.find_by_order(x-1) << endl; 
+      if (op == 5) cout << *--mt.upper_bound(x) << endl; 
+      if (op == 6) cout << *mt.lower_bound(x) << endl; 
+   }
+   
+   return;
 }
 
 // ----------------------------- /* End of useful functions */ -------------------------------

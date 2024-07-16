@@ -1,6 +1,3 @@
-// link: https://www.acwing.com/problem/content/description/789/ 归并排序
-// time: 2024/7/8 16:41:58 https://github.com/funcdfs
-
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
 /* using golang types */ using namespace std; using int32 = signed; using uint32 = unsigned; using float32 = double; using int64 = long long; using uint64 = unsigned long long; using float64 = long double; 
@@ -23,41 +20,40 @@ struct _init_end { _init_end() { cout << fixed << setprecision(      15      /* 
 #define eprintln(...) ;
 #endif
 
-auto solve() -> void; /* main --> */ int32 main() {      solve(); return 0; }
+auto solve(int _case) -> void; int32 main() {       int testCaseCnt = 0; cin >> testCaseCnt; for (int _case = 1; _case <= testCaseCnt; _case++) { solve(_case); } return 0; }
 #pragma endregion github_funcdfs   // clang-format on
 
 // ----------------------------- /* Start of useful functions */ -----------------------------
 
 
-auto solve() -> void {
-    int n = 0;
-    cin >> n;
-    vector<int> a(n, 0);
-    cin >> a;
-    
-    vector<int> tmp(n+1, 0);
-    function<void(int, int)> mergeSort = [&](int l, int r) -> void {
-        if (l >= r) {
-            return; 
-        }
-        int mid = (l+r) >> 1; 
-        mergeSort(l, mid); 
-        mergeSort(mid+1, r); 
-        int i = l, j = mid + 1, k = 0;
-        while (i <= mid && j <= r) {
-            if (a[i] < a[j]) tmp[k++] = a[i++]; 
-            else tmp[k++] = a[j++]; 
-        }
-        while (i <= mid) tmp[k++] = a[i++]; 
-        while (j <= r) tmp[k++] = a[j++];  
-        for (int i = l, j = 0; i <= r; i++, j++) {
-            a[i] = tmp[j];
-        }
-    };
-    
-    mergeSort(0, n-1); 
-    cout << a;
-    return;
+auto solve(int _case) -> void {
+   dbg(_case);
+   
+   int n = 0, k = 0;
+   cin >> n >> k;
+   string s; cin >> s;
+
+   int ans = 0; int cnt = n / k; 
+   for (int i = 0; i < (k + 1) / 2; i++) {
+      unordered_map<char, int> hs;
+      for (int j = 0; j < cnt; j++) {
+         int left = k * j + i; 
+         int right = k * (j + 1) - i - 1;
+         hs[s[left]] += 1;
+         hs[s[right]] += 1;
+      }
+      int maxFreq = 0;
+      for (char c = 'a'; c <= 'z'; c++) {
+         maxFreq = max(maxFreq, hs[c]);
+      }
+      ans += cnt * 2 - maxFreq;
+      if (i == (k / 2)) {
+         ans -= ((cnt * 2) - maxFreq) / 2;
+      }
+   }
+   println(ans);
+   
+   return;
 }
 
 // ----------------------------- /* End of useful functions */ -------------------------------

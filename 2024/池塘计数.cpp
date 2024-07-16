@@ -1,5 +1,5 @@
-// link: https://www.acwing.com/problem/content/description/789/ 归并排序
-// time: 2024/7/8 16:41:58 https://github.com/funcdfs
+// link: https://www.acwing.com/problem/content/description/1099/ 池塘计数
+// time: 2024/7/8 16:15:00 https://github.com/funcdfs
 
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
@@ -30,34 +30,47 @@ auto solve() -> void; /* main --> */ int32 main() {      solve(); return 0; }
 
 
 auto solve() -> void {
-    int n = 0;
-    cin >> n;
-    vector<int> a(n, 0);
-    cin >> a;
-    
-    vector<int> tmp(n+1, 0);
-    function<void(int, int)> mergeSort = [&](int l, int r) -> void {
-        if (l >= r) {
-            return; 
-        }
-        int mid = (l+r) >> 1; 
-        mergeSort(l, mid); 
-        mergeSort(mid+1, r); 
-        int i = l, j = mid + 1, k = 0;
-        while (i <= mid && j <= r) {
-            if (a[i] < a[j]) tmp[k++] = a[i++]; 
-            else tmp[k++] = a[j++]; 
-        }
-        while (i <= mid) tmp[k++] = a[i++]; 
-        while (j <= r) tmp[k++] = a[j++];  
-        for (int i = l, j = 0; i <= r; i++, j++) {
-            a[i] = tmp[j];
-        }
-    };
-    
-    mergeSort(0, n-1); 
-    cout << a;
-    return;
+   
+   int n = 0, m = 0;
+   cin >> n >> m;
+   vector<string> g(n);
+   cin >> g;
+
+   vector st(n, vector<bool>(m, false)); 
+   int ans = 0;
+   array<int, 8> dx = {0, 1, 1, 1, 0, -1, -1, -1};
+   array<int, 8> dy = {1, 1, 0, -1, -1, -1, 0, 1};
+   
+   auto bfs = [&](int x, int y) -> void {
+      queue<pair<int, int>> que;
+      que.push({x, y}); 
+      st[x][y] = true; 
+      while (que.size()) {
+         auto [tx, ty] = que.front(); 
+         que.pop(); 
+         for (int d = 0; d < int(dx.size()); d++) {
+            int nx = dx[d] + tx; 
+            int ny = dy[d] + ty; 
+            if (nx >= 0 && nx < n && ny >= 0 && ny < m && st[nx][ny] == false && g[nx][ny] == 'W') {
+               que.push({nx, ny}); 
+               st[nx][ny] = true; 
+            }
+         }
+      }
+   };
+
+   for (int i = 0; i < n; i++) {
+      for (int j = 0; j < m; j++) {
+         if (st[i][j] == false && g[i][j] == 'W') {
+            bfs(i, j);
+            ans += 1; 
+         }
+      }
+   }
+
+   cout << ans << endl; 
+   
+   return;
 }
 
 // ----------------------------- /* End of useful functions */ -------------------------------

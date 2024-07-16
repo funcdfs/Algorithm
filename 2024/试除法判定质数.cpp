@@ -1,97 +1,9 @@
-# 万物皆虚
+// link: https://www.acwing.com/problem/content/868/ 试除法判定质数
+// time: 2024/7/4 13:58:12 https://github.com/funcdfs
 
-
-
-#### cpp setup backup
-
-
-<details> 
-<summary> config1: compile command </summary>
-</br>
-
-```c++
--std=gnu++2a -D LOCAL -Wall -Wextra -O2 -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align
-
--std=gnu++2a -D LOCAL
--H stdc++.h
--H dbg.h
-```
-</details>
-
-
-
-
-<details>
-<summary> config2: fake <code> bits/stdc++.h </code> for faster compile </summary>
-</br>
-
-```c++
-#include <algorithm>
-#include <array>
-#include <bit>
-#include <bitset>
-#include <cassert>
-#include <chrono>
-#include <climits>
-#include <cmath>
-#include <complex>
-#include <cstdlib>
-#include <cstring>
-#include <ctime>
-#include <deque>
-#include <functional>
-#include <iomanip>
-#include <iostream>
-#include <list>
-#include <map>
-#include <numeric>
-#include <queue>
-#include <random>
-#include <ranges>
-#include <set>
-#include <span>
-#include <stack>
-#include <string>
-#include <tuple>
-#include <unordered_map>
-#include <unordered_set>
-#include <vector>
-#include <valarray>
-
-```
-
-</details>
-
-
-<details>
-<summary> config3: <code> algo/dbg.h </code> For Debugging Purposes </summary>
-</br>
-
-`dbg.h` file: [gist.github.com/funcdfs/algo/dbg.h](https://gist.github.com/funcdfs/093ea21e3e3d033298191a5f4c635069)
-
-https://gist.github.com/funcdfs/093ea21e3e3d033298191a5f4c635069
-
-</details>
-
-
-</br>
-
----
-
-</br>
-
-
-<details>
-<summary> template with Modular </summary>
-</br>
- 
-```cpp
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
 using namespace std; using int32 = signed; using uint32 = unsigned; using float32 = double; using int64 = long long; using uint64 = unsigned long long; using float64 = long double; 
-using int128 =  __int128;
-istream &operator>>(istream &cin, int128 &x) { x = 0; static string s; cin >> s; for (char &c : s) { x = x * 10 + (c - '0'); } return cin; }
-ostream &operator<<(ostream &cout, int128 x) { static char s[60]; int tp = 1; s[0] = '0' + char(x % 10); while(x /= 10) { s[tp++] = '0' + char(x % 10); } while(tp--) {cout << s[tp]; } return cout; }
 template <class T> istream &operator>> (istream &cin,  vector<T>           &a)  { for (auto &x : a) { cin >> x; } return cin; }
 template <class T> ostream &operator<< (ostream &cout, vector<T>           &a)  { int n = int(a.size()); if (!n) { return cout; } cout << a[0]; for (int i = 1; i < n; i++) { cout << ' ' << a[i]; } return cout; }
 template <class T> istream &operator>> (istream &cin,  valarray<T>         &a)  { for (auto &x : a) { cin >> x; } return cin; }
@@ -175,15 +87,15 @@ template <typename U, typename T> U& operator>>(U& stream, Modular<T>& number) {
 #pragma endregion Modular_DefineCode // clang-format on
 
 
-// using ModType = int; /* old c++ */
-// struct VarMod { static ModType value; };
-// ModType VarMod::value;
-// ModType& md = VarMod::value =  ...  ;
-// using Mint = Modular<VarMod>;
+using ModType = int; /* old c++ */
+struct VarMod { static ModType value; };
+ModType VarMod::value;
+ModType& md = VarMod::value =  INT_MAX  ;
+using Mint = Modular<VarMod>;
 
 
-constexpr int md =  1000000007  ; // 1000000007 998244353
-using Mint = Modular<std::integral_constant<decay<decltype(md)>::type, md>>;
+// constexpr int md =  INT_MAX  ; // 1000000007 998244353
+// using Mint = Modular<std::integral_constant<decay<decltype(md)>::type, md>>;
 
 
 // vector<Mint> fact(1, 1);
@@ -200,67 +112,132 @@ using Mint = Modular<std::integral_constant<decay<decltype(md)>::type, md>>;
 // }
 
 
+#pragma region factorizer_DefineCode // clang-format off
+
+namespace factorizer {	// 质数因子分解器
+   template <typename T> struct FactorizerVarMod { static T value; };
+   template <typename T> T FactorizerVarMod<T>::value;
+
+   template <typename T> 
+   bool IsPrime(T n, const vector<T>& bases) {
+      if (n < 2) { return false; } vector<T> small_primes = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
+      for (const T& x:small_primes){if(n%x==0){return n==x;}}if(n<31*31){return true; }
+      int s = 0; T d = n - 1; while ((d & 1) == 0) { d >>= 1; s++; }
+      FactorizerVarMod<T>::value = n; for (const T& a : bases) { if (a % n == 0) { continue; }
+      Modular<FactorizerVarMod<T>> cur=a;cur=power(cur,d);if(cur==1){continue;}bool witness = true;
+      for (int r = 0; r < s; r++) { if (cur == n - 1) { witness = false; break; } cur *= cur; }
+      if (witness) { return false; } } return true;
+   }
+   // 判断一个数是否为质数的函数 for int64
+   bool IsPrime(int64_t n) { return IsPrime(n, {2, 325, 9375, 28178, 450775, 9780504, 1795265022});}
+   // 判断一个数是否为质数的函数 for int32
+   bool IsPrime(int32_t n) { return IsPrime(n, {2, 7, 61}); }
+
+   // but if you really need uint64_t version...
+   /*
+   bool IsPrime(uint64_t n) {
+      if (n < 2) { return false; }
+      vector<uint32_t> small_primes = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
+      for (uint32_t x : small_primes) { if (n == x) { return true; } if (n % x == 0) { return false; } }
+      if (n < 31 * 31) { return true; } uint32_t s = __builtin_ctzll(n - 1); uint64_t d = (n - 1) >> s;
+      function<bool(uint64_t)> witness = [&n, &s, &d](uint64_t a) {
+         uint64_t cur = 1, p = d; while (p > 0) { if (p & 1) { cur = (__uint128_t) cur * a % n; }
+         a = (__uint128_t) a * a % n; p >>= 1; } if (cur == 1) { return false; }
+         for (uint32_t r = 0; r < s; r++) { if (cur == n - 1) { return false; } cur = (__uint128_t) cur * cur % n;}
+         return true;
+      }; vector<uint64_t> bases_64bit = {2, 325, 9375, 28178, 450775, 9780504, 1795265022};
+      for (uint64_t a : bases_64bit) { if (a % n == 0) { return true; } if (witness(a)) { return false;}}
+      return true;
+   }
+   */
+   vector<int> primes;	// 存储范围内的所有的质数 
+   vector<int> least = {0, 1};  int precalculated = 1;
+   
+   // 使用线性筛法筛选质数
+   void RunLinearSieve(int n) {
+      n = max(n, 1); least.assign(n + 1, 0); primes.clear();
+      for (int i = 2; i <= n; i++) { if (least[i] == 0) { least[i] = i; primes.push_back(i); }
+         for (int x : primes) { if (x > least[i] || i * x > n) { break; } least[i * x] = x; } }
+      precalculated = n;
+   }
+   
+   // 使用慢速筛法筛选质数
+   void RunSlowSieve(int n) {
+      n = max(n, 1); least.assign(n + 1, 0);
+      for (int i = 2; i * i <= n; i++) { if (least[i] == 0) { for (int j = i * i; j <= n; j += i) {
+      if (least[j] == 0) { least[j] = i; } } } } primes.clear(); for (int i = 2; i <= n; i++) {
+      if (least[i] == 0) { least[i] = i; primes.push_back(i); } } precalculated = n;
+   }
+   
+   // 筛选范围内的所有质数
+   void RunSieve(int n) {
+      RunLinearSieve(n);
+      // RunSlowSieve(n);
+   }
+   
+   // 合并两个质因数分解结果
+   template <typename T> 
+   vector<pair<T, int>> MergeFactors(const vector<pair<T, int>>& a, const vector<pair<T, int>>& b) {
+      vector<pair<T, int>> c; int i = 0; int j = 0;
+      while (i < (int)a.size() || j < (int)b.size()) { if (i < (int)a.size() && j < (int)b.size() 
+      &&a[i].first==b[j].first){c.emplace_back(a[i].first,a[i].second+b[j].second);++i;++j; continue; }
+      if (j == (int)b.size() || (i < (int)a.size() && a[i].first < b[j].first)) { c.push_back(a[i++]); } 
+      else { c.push_back(b[j++]); }} return c;
+   }
+
+   // 使用 Pollard's rho 算法进行质因数分解.
+   template <typename T>
+   vector<pair<T, int>> RhoC(const T& n, const T& c) { if (n <= 1) { return {}; }
+      if ((n & 1) == 0) { return MergeFactors( { {2, 1} }, RhoC(n / 2, c)); }
+      if (IsPrime(n)) {return{{n,1}};}FactorizerVarMod<T>::value = n; Modular<FactorizerVarMod<T>> x = 2; 
+      Modular<FactorizerVarMod<T>> saved = 2; T power = 1; T lam = 1; while (true) { x = x * x + c;
+         T g=__gcd((x-saved)(),n);if(g!=1){return MergeFactors(RhoC(g,c+1),RhoC(n/g,c+1));}
+         if (power == lam) { saved = x; power <<= 1; lam = 0; } lam++;
+      } return {};
+   }
+
+   // 给定一个整数 N ，试快速找到它的一个因数。使用 Pollard's rho 算法进行质因数分解.
+   template <typename T>
+   vector<pair<T, int>> Rho(const T& n) { return RhoC(n, static_cast<T>(1)); }
+
+   // 质因数分解函数
+   template <typename T>
+   vector<pair<T, int>> Factorize(T x) {
+      if (x <= 1) { return {}; } if (x <= precalculated) { vector<pair<T, int>> ret;
+      while (x > 1) { if (!ret.empty() && ret.back().first == least[x]) { ret.back().second++;
+      } else { ret.emplace_back(least[x], 1); } x /= least[x]; }return ret; }
+      if (x <= static_cast<int64_t>(precalculated) * precalculated) {
+      vector<pair<T, int>> ret; if (!IsPrime(x)){for(T i:primes){T t=x/i;if(i>t){break;}
+      if (x == t * i) { int cnt = 0; while (x % i == 0) { x /= i; cnt++; } ret.emplace_back(i, cnt);
+      if(IsPrime(x)){break;}}}}if(x>1){ret.emplace_back(x,1);}return ret;}return Rho(x);
+   }
+
+   // 根据质因数构建所有因数
+   template <typename T>
+   vector<T> BuildDivisorsFromFactors(const vector<pair<T, int>>& factors) {
+      vector<T> divisors = {1}; for (auto& p : factors) { int sz = (int)divisors.size();
+      for (int i = 0; i < sz; i++) { T cur = divisors[i]; for (int j = 0; j < p.second; j++) {
+      cur*=p.first;divisors.push_back(cur);}}}sort(divisors.begin(),divisors.end());return divisors;
+   }
+}	// namespace factorizer
+
+#pragma endregion factorizer_DefineCode	// clang-format on
+
 
 // -------------------------------------------------------------------
 auto solve() -> void {
    
-   
+   int n = 0;
+   cin >> n;
+   for (int x = 0; cin >> x;) {
+      if (factorizer::IsPrime(x)) {
+         cout << "Yes\n"; 
+      } else {
+         cout << "No\n";
+      }
+   }
    
    return;
 }
 
 // -------------------------------------------------------------------
-
-```
-
-
-</details>
-
-</br>
-
-
-
-<details>
-<summary> head template without any function </summary>
-</br>
-
-```
-#pragma region github_funcdfs // clang-format off
-#include <bits/stdc++.h> 
-using namespace std;              using int128 =  __int128;
-using float32 = double;           using int32  =    signed;      using uint32 = unsigned;
-using float64 = long double;      using int64  = long long;      using uint64 = unsigned long long;
-istream &operator>>(istream &cin, int128 &x) { x = 0; static string s; cin >> s; for (char &c : s) { x = x * 10 + (c - '0'); } return cin; }
-ostream &operator<<(ostream &cout, int128 x) { static char s[60]; int tp = 1; s[0] = '0' + char(x % 10); while(x /= 10) { s[tp++] = '0' + char(x % 10); } while(tp--) {cout << s[tp]; } return cout; }
-struct __fastIO {__fastIO() { cin.tie(nullptr); ios::sync_with_stdio(false); cout << fixed << setprecision(15); }} ___fastIO; 
-template <class T1> istream &operator>>(istream &cin, vector<T1> &a) { for (auto &x : a) { cin >> x; } return cin; }
-template <class T1> istream &operator>>(istream &cin, valarray<T1> &a) { for (auto &x : a) { cin >> x; } return cin; }
-template <class T1, class T2> ostream &operator<<(ostream &cout, const pair<T1, T2> &a) { return cout << a.first << ' ' << a.second; }
-template <class T1, class T2> ostream &operator<<(ostream &cout, const vector<pair<T1, T2>> &a) { for (auto &x : a) { cout << x << '\n'; } return cout; }
-template <class T1> ostream &operator<<(ostream &cout, vector<T1> a) { int n = int(a.size()); if (!n) { return cout; } cout << a[0]; for (int i = 1; i < n; i++) { cout << ' ' << a[i]; } return cout; }
-template <class T1> ostream &operator<<(ostream &cout, const valarray<T1> &a) { int n = int(a.size()); if (!n) { return cout; } cout << a[0]; for (int i = 1; i < n; i++) { cout << ' ' << a[i]; } return cout; }
-template <class T1> ostream &operator<<(ostream &cout, const vector<valarray<T1>> &a) { int n = int(a.size()); if (!n) { return cout; } cout << a[0]; for (int i = 1; i < n; i++) { cout << '\n' << a[i]; } return cout; }
-template <class T1> ostream &operator<<(ostream &cout, const vector<vector<T1>> &a) { int n = int(a.size()); if (!n) { return cout; } cout << a[0]; for (int i = 1; i < n; i++) { cout << '\n' << a[i]; } return cout; }
-template <class T1> basic_string<T1> operator*(const basic_string<T1> &s, int m) { auto r = s; m *= int(s.size()); r.resize(m); for (int i = int(s.size()); i < m; i++) { r[i] = r[i - s.size()]; } return r; }
-#ifdef  LOCAL //  dbg
-#include "algo/dbg.h"
-#else
-#define dbg(...)    ;
-#define eprint(...) ;
-#endif
-#define endl          '\n'
-#define print(...)    cout << format(__VA_ARGS__)
-#define println(...)  cout << format("{0}\n", __VA_ARGS__)
-#pragma endregion github_funcdfs   // clang-format on
-
-
-
-
-```
-
-
-</details>
-
-
-
-</br>

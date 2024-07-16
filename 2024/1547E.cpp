@@ -1,5 +1,5 @@
-// link: https://www.acwing.com/problem/content/description/789/ 归并排序
-// time: 2024/7/8 16:41:58 https://github.com/funcdfs
+// link: https://codeforces.com/contest/1547/problem/E E. Air Conditioners
+// time: 2024/7/6 22:01:43 https://github.com/funcdfs
 
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
@@ -23,41 +23,37 @@ struct _init_end { _init_end() { cout << fixed << setprecision(      15      /* 
 #define eprintln(...) ;
 #endif
 
-auto solve() -> void; /* main --> */ int32 main() {      solve(); return 0; }
+auto solve(int _case) -> void; int32 main() {       int testCaseCnt = 0; cin >> testCaseCnt; for (int _case = 1; _case <= testCaseCnt; _case++) { solve(_case); } return 0; }
 #pragma endregion github_funcdfs   // clang-format on
 
 // ----------------------------- /* Start of useful functions */ -----------------------------
 
 
-auto solve() -> void {
-    int n = 0;
-    cin >> n;
-    vector<int> a(n, 0);
-    cin >> a;
-    
-    vector<int> tmp(n+1, 0);
-    function<void(int, int)> mergeSort = [&](int l, int r) -> void {
-        if (l >= r) {
-            return; 
-        }
-        int mid = (l+r) >> 1; 
-        mergeSort(l, mid); 
-        mergeSort(mid+1, r); 
-        int i = l, j = mid + 1, k = 0;
-        while (i <= mid && j <= r) {
-            if (a[i] < a[j]) tmp[k++] = a[i++]; 
-            else tmp[k++] = a[j++]; 
-        }
-        while (i <= mid) tmp[k++] = a[i++]; 
-        while (j <= r) tmp[k++] = a[j++];  
-        for (int i = l, j = 0; i <= r; i++, j++) {
-            a[i] = tmp[j];
-        }
-    };
-    
-    mergeSort(0, n-1); 
-    cout << a;
-    return;
+auto solve(int _case) -> void {
+   dbg(_case);
+
+   int n = 0, k = 0;
+   cin >> n >> k;
+   vector<int> a(k, 0), w(k, 0);
+   cin >> a;
+   cin >> w;
+
+   vector<int> f(n+1, numeric_limits<int32>::max()/2);
+   for (int i = 0; i < k; i++) {
+      f[a[i]] = w[i];
+   }   
+   for (int i = 2; i <= n; i++) {
+      f[i] = min(f[i], f[i-1]+1);
+   }
+   for (int i = n-1; i >= 1; i--) {
+      f[i] = min(f[i], f[i+1]+1);
+   }
+
+   for (int i = 1; i <= n; i++) {
+      cout << f[i] << " \n"[i == n];
+   }
+
+   return;
 }
 
 // ----------------------------- /* End of useful functions */ -------------------------------

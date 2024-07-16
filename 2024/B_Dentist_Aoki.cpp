@@ -1,5 +1,5 @@
-// link: https://www.acwing.com/problem/content/description/789/ 归并排序
-// time: 2024/7/8 16:41:58 https://github.com/funcdfs
+// link: https://atcoder.jp/contests/abc350/tasks/abc350_b B - Dentist Aoki
+// time: 2024/7/8 21:36:32 https://github.com/funcdfs
 
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
@@ -30,34 +30,26 @@ auto solve() -> void; /* main --> */ int32 main() {      solve(); return 0; }
 
 
 auto solve() -> void {
-    int n = 0;
-    cin >> n;
-    vector<int> a(n, 0);
-    cin >> a;
-    
-    vector<int> tmp(n+1, 0);
-    function<void(int, int)> mergeSort = [&](int l, int r) -> void {
-        if (l >= r) {
-            return; 
-        }
-        int mid = (l+r) >> 1; 
-        mergeSort(l, mid); 
-        mergeSort(mid+1, r); 
-        int i = l, j = mid + 1, k = 0;
-        while (i <= mid && j <= r) {
-            if (a[i] < a[j]) tmp[k++] = a[i++]; 
-            else tmp[k++] = a[j++]; 
-        }
-        while (i <= mid) tmp[k++] = a[i++]; 
-        while (j <= r) tmp[k++] = a[j++];  
-        for (int i = l, j = 0; i <= r; i++, j++) {
-            a[i] = tmp[j];
-        }
-    };
-    
-    mergeSort(0, n-1); 
-    cout << a;
-    return;
+   int N = 0, Q = 0;
+   cin >> N >> Q;
+   vector<bool> x(N, true);
+   for (int i = 0; i < Q; i++) {
+      int t = 0;
+      cin >> t;
+      t -= 1;
+      x[t] = !x[t]; 
+   }
+
+   int cnt = 0;
+   for (int i = 0; i < N; i++) {
+      if (x[i] == true) {
+         cnt += 1;
+      }
+   }
+
+   cout << cnt << endl;
+
+   return;
 }
 
 // ----------------------------- /* End of useful functions */ -------------------------------
