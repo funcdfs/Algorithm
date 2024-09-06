@@ -1,4 +1,4 @@
-" kj Esc
+" kj for Esc
 let g:esc_j_lasttime = 0
 let g:esc_k_lasttime = 0
 function! JKescape(key)
@@ -10,8 +10,18 @@ endfunction
 inoremap <expr> j JKescape('j')
 inoremap <expr> k JKescape('k')
 inoremap <nowait> kj <ESC>
+
+" bracket jump 
 noremap <TAB> %
 
+
+" Shift+H goto head of the line, Shift+L goto end of the line
+nnoremap H ^
+nnoremap L $
+
+
+"Map ; to : and save a million keystrokes
+nnoremap ; :
 
 
 " leader key is '\' 
