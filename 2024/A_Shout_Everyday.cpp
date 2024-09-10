@@ -1,3 +1,6 @@
+// link: https://atcoder.jp/contests/abc367/tasks/abc367_a A - Shout Everyday
+// time: 2024/9/10 12:43:14 https://github.com/funcdfs
+
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
 /* using golang types */ using namespace std; using int32 = signed; using uint32 = unsigned; using float32 = double; using int64 = long long; using uint64 = unsigned long long; using float64 = long double; 
@@ -27,23 +30,23 @@ auto solve() -> void; /* main --> */ int32 main() { solve(); return 0; }
 
 
 auto solve() -> void {
-  
-  int n = 0;
-  cin >> n;
-  vector<int> a(n, 0);
-  cin >> a;
+   
+   int A, B, C; 
+   cin >> A >> B >> C;
 
-  int maxVal = numeric_limits<int32>::min();
-  int minVal = numeric_limits<int32>::max();
-
-  for (int i = 0; i < ssize(a); i++) {
-    maxVal = max(maxVal, a[i]);
-    minVal = min(minVal, a[i]);
-  }
-  print("{} {}", maxVal, minVal);
-
-  
-  return;
+   // B: sleep, C: wake, A: shout
+   int now = B;
+   while (now != C) {
+      if (now == A) {
+         println("No");
+         return;
+      }
+      now += 1;
+      now = now % 24;
+   }
+   println("Yes");
+   
+   return;
 }
 
 // ----------------------------- /* End of useful functions */ -------------------------------

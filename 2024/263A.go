@@ -1,3 +1,6 @@
+// link: https://codeforces.com/contest/263/problem/A A. Beautiful Matrix
+// time: 2024/9/10 13:22:11 https://github.com/funcdfs
+
 // #region main
 package main
 
@@ -5,12 +8,11 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"sort"
 )
 
 var _in, _out = new(bufio.Reader), new(bufio.Writer)
 
-func _github_funcdfs[T any](sep, end string, arr ...T) {
+func _print_config[T any](sep, end string, arr ...T) {
 	for idx := range arr {
 		fmt.Fprint(_out, arr[idx])
 		if idx == len(arr)-1 {
@@ -34,22 +36,36 @@ func inputSlice[T any](size int) []T {
 	}
 	return data
 }
-func print[T any](arr ...T)   { _github_funcdfs("", "", arr...) }
-func println[T any](arr ...T) { _github_funcdfs(" ", "\n", arr...) }
+func print[T any](arr ...T)   { _print_config(" ", " ", arr...) }
+func println[T any](arr ...T) { _print_config(" ", "\n", arr...) }
 
 // #endregion main
 
 // ----------------------------- /* Start of useful functions */ -----------------------------
 
 func solve() {
-	n := input[int]()
-	a := inputSlice[int](n)
 
-	sort.Slice(a, func(i, j int) bool {
-		return a[i] < a[j]
-	})
-	print(a...)
-	println(a...)
+	x, y := 0, 0
+
+	grid := make([][]int, 5)
+	for i := 0; i < 5; i++ {
+		grid[i] = make([]int, 5)
+		for j := 0; j < 5; j++ {
+			grid[i][j] = input[int]()
+			if grid[i][j] == 1 {
+				x, y = i, j
+			}
+		}
+	}
+
+	cnt := Abs(x-2) + Abs(y-2)
+	println(cnt)
 }
 
+func Abs[T int | int64 | float32 | float64](x T) T {
+	if x < T(0) {
+		return -x
+	}
+	return x
+}
 // ----------------------------- /* End of useful functions */ -------------------------------

@@ -1,3 +1,6 @@
+// link: https://atcoder.jp/contests/abc366/tasks/abc366_a A - Election 2
+// time: 2024/9/10 13:01:44 https://github.com/funcdfs
+
 // #region main
 package main
 
@@ -5,12 +8,11 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"sort"
 )
 
 var _in, _out = new(bufio.Reader), new(bufio.Writer)
 
-func _github_funcdfs[T any](sep, end string, arr ...T) {
+func _print_config[T any](sep, end string, arr ...T) {
 	for idx := range arr {
 		fmt.Fprint(_out, arr[idx])
 		if idx == len(arr)-1 {
@@ -34,22 +36,43 @@ func inputSlice[T any](size int) []T {
 	}
 	return data
 }
-func print[T any](arr ...T)   { _github_funcdfs("", "", arr...) }
-func println[T any](arr ...T) { _github_funcdfs(" ", "\n", arr...) }
+func print[T any](arr ...T)   { _print_config(" ", " ", arr...) }
+func println[T any](arr ...T) { _print_config(" ", "\n", arr...) }
 
 // #endregion main
 
 // ----------------------------- /* Start of useful functions */ -----------------------------
 
 func solve() {
-	n := input[int]()
-	a := inputSlice[int](n)
 
-	sort.Slice(a, func(i, j int) bool {
-		return a[i] < a[j]
-	})
-	print(a...)
-	println(a...)
+	total, a, b := input[int](), input[int](), input[int]()
+
+	diff := total - (a + b)
+	if diff+Min(a, b) > Max(a, b) {
+		println("No")
+	} else {
+		println("Yes")
+	}
+}
+
+func Max[T int | int64 | float32 | float64](x ...T) T {
+	maxVal := x[0]
+	for _, v := range x {
+		if v > maxVal {
+			maxVal = v
+		}
+	}
+	return maxVal
+}
+
+func Min[T int | int64 | float32 | float64](x ...T) T {
+	minVal := x[0]
+	for _, v := range x {
+		if v < minVal {
+			minVal = v
+		}
+	}
+	return minVal
 }
 
 // ----------------------------- /* End of useful functions */ -------------------------------

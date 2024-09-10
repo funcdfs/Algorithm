@@ -1,3 +1,6 @@
+// link: https://codeforces.com/contest/281/problem/A A. Word Capitalization
+// time: 2024/9/10 14:04:08 https://github.com/funcdfs
+
 // #region main
 package main
 
@@ -5,12 +8,11 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"sort"
 )
 
 var _in, _out = new(bufio.Reader), new(bufio.Writer)
 
-func _github_funcdfs[T any](sep, end string, arr ...T) {
+func _print_config[T any](sep, end string, arr ...T) {
 	for idx := range arr {
 		fmt.Fprint(_out, arr[idx])
 		if idx == len(arr)-1 {
@@ -34,22 +36,22 @@ func inputSlice[T any](size int) []T {
 	}
 	return data
 }
-func print[T any](arr ...T)   { _github_funcdfs("", "", arr...) }
-func println[T any](arr ...T) { _github_funcdfs(" ", "\n", arr...) }
+func print[T any](arr ...T)   { _print_config("", "", arr...) }
+func println[T any](arr ...T) { _print_config(" ", "\n", arr...) }
 
 // #endregion main
 
 // ----------------------------- /* Start of useful functions */ -----------------------------
 
 func solve() {
-	n := input[int]()
-	a := inputSlice[int](n)
 
-	sort.Slice(a, func(i, j int) bool {
-		return a[i] < a[j]
-	})
-	print(a...)
-	println(a...)
+	s := input[[]byte]()
+
+	if s[0] >= 'a' && s[0] <= 'z' {
+		s[0] = byte(int(s[0]) + (int('A') - int('a')))
+	}
+	println(string(s))
+
 }
 
 // ----------------------------- /* End of useful functions */ -------------------------------

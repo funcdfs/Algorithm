@@ -27,23 +27,31 @@ auto solve() -> void; /* main --> */ int32 main() { solve(); return 0; }
 
 
 auto solve() -> void {
-  
-  int n = 0;
-  cin >> n;
-  vector<int> a(n, 0);
-  cin >> a;
+   int n = 0, k = 0;
+   cin >> n >> k;
+   vector<int> a(n, 0);
+   cin >> a;
+   ranges::sort(a);
+   int val = max(1, a[n-k]); // 第k名选手 && 获得正分
+   // int cnt = distance(lower_bound(a.begin(), a.end(), val), a.end());
+   int cnt = 0;
+   int l = 0, r = n-1;
+   while (l < r) {
+      int mid = (l+r)>>1;
+      if (a[mid] >= val) {
+         r = mid;
+      } else {
+         l = mid + 1;
+      }
+   }
+   dbg(l, r);
+   if (a[l] >= val) {
+      cnt = n - l; 
+   }
 
-  int maxVal = numeric_limits<int32>::min();
-  int minVal = numeric_limits<int32>::max();
+   println(cnt);
 
-  for (int i = 0; i < ssize(a); i++) {
-    maxVal = max(maxVal, a[i]);
-    minVal = min(minVal, a[i]);
-  }
-  print("{} {}", maxVal, minVal);
-
-  
-  return;
+   return;
 }
 
 // ----------------------------- /* End of useful functions */ -------------------------------

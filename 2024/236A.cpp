@@ -1,3 +1,6 @@
+// link: https://codeforces.com/contest/236/problem/A A. Boy or Girl
+// time: 2024/9/8 16:21:31 https://github.com/funcdfs
+
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
 /* using golang types */ using namespace std; using int32 = signed; using uint32 = unsigned; using float32 = double; using int64 = long long; using uint64 = unsigned long long; using float64 = long double; 
@@ -27,23 +30,26 @@ auto solve() -> void; /* main --> */ int32 main() { solve(); return 0; }
 
 
 auto solve() -> void {
-  
-  int n = 0;
-  cin >> n;
-  vector<int> a(n, 0);
-  cin >> a;
+   
+   string s;
+   cin >> s;
 
-  int maxVal = numeric_limits<int32>::min();
-  int minVal = numeric_limits<int32>::max();
+   auto check = [&]() -> bool {
+      set<char> S(s.begin(), s.end());
+      if (int(S.size()) % 2) {
+         return true;
+      } else {
+         return false;
+      }
+   };
 
-  for (int i = 0; i < ssize(a); i++) {
-    maxVal = max(maxVal, a[i]);
-    minVal = min(minVal, a[i]);
-  }
-  print("{} {}", maxVal, minVal);
-
-  
-  return;
+   if (check() == true) {
+      println("IGNORE HIM!");
+   } else {
+      println("CHAT WITH HER!");
+   }
+   
+   return;
 }
 
 // ----------------------------- /* End of useful functions */ -------------------------------

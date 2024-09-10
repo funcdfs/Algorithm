@@ -1,3 +1,6 @@
+// link: https://codeforces.com/contest/71/problem/A A. Way Too Long Words
+// time: 2024/9/10 13:11:40 https://github.com/funcdfs
+
 // #region main
 package main
 
@@ -5,12 +8,12 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"sort"
+	"strconv"
 )
 
 var _in, _out = new(bufio.Reader), new(bufio.Writer)
 
-func _github_funcdfs[T any](sep, end string, arr ...T) {
+func _print_config[T any](sep, end string, arr ...T) {
 	for idx := range arr {
 		fmt.Fprint(_out, arr[idx])
 		if idx == len(arr)-1 {
@@ -24,7 +27,10 @@ func main() {
 	_in = bufio.NewReader(os.Stdin)
 	_out = bufio.NewWriter(os.Stdout)
 	defer _out.Flush()
-	solve()
+	testCaseCnt := input[int]()
+	for i := 0; i < testCaseCnt; i++ {
+		solve(i + 1)
+	}
 }
 func input[T any]() T { var value T; fmt.Fscan(_in, &value); return value }
 func inputSlice[T any](size int) []T {
@@ -34,22 +40,27 @@ func inputSlice[T any](size int) []T {
 	}
 	return data
 }
-func print[T any](arr ...T)   { _github_funcdfs("", "", arr...) }
-func println[T any](arr ...T) { _github_funcdfs(" ", "\n", arr...) }
+func print[T any](arr ...T)   { _print_config(" ", " ", arr...) }
+func println[T any](arr ...T) { _print_config(" ", "\n", arr...) }
 
 // #endregion main
 
 // ----------------------------- /* Start of useful functions */ -----------------------------
+func solve(_case int) {
 
-func solve() {
-	n := input[int]()
-	a := inputSlice[int](n)
+	s := input[[]byte]()
 
-	sort.Slice(a, func(i, j int) bool {
-		return a[i] < a[j]
-	})
-	print(a...)
-	println(a...)
+	if len(s) > 10 {
+		x := len(s) - 2
+		ans := make([]byte, 0)
+		ans = append(ans, s[0])
+		ans = append(ans, []byte(strconv.FormatInt(int64(x), 10))...)
+		ans = append(ans, s[len(s)-1])
+		println(string(ans))
+	} else {
+		println(string(s))
+	}
+
 }
 
 // ----------------------------- /* End of useful functions */ -------------------------------

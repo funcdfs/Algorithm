@@ -1,3 +1,6 @@
+// link: https://codeforces.com/contest/155/problem/A A. I_love_%username%
+// time: 2024/9/8 16:32:56 https://github.com/funcdfs
+
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
 /* using golang types */ using namespace std; using int32 = signed; using uint32 = unsigned; using float32 = double; using int64 = long long; using uint64 = unsigned long long; using float64 = long double; 
@@ -27,23 +30,27 @@ auto solve() -> void; /* main --> */ int32 main() { solve(); return 0; }
 
 
 auto solve() -> void {
-  
-  int n = 0;
-  cin >> n;
-  vector<int> a(n, 0);
-  cin >> a;
+   int n = 0;
+   cin >> n;
+   vector<int> a(n, 0);
+   cin >> a;
 
-  int maxVal = numeric_limits<int32>::min();
-  int minVal = numeric_limits<int32>::max();
+   int minVal = numeric_limits<int32>::max();
+   int maxVal = numeric_limits<int32>::min();
 
-  for (int i = 0; i < ssize(a); i++) {
-    maxVal = max(maxVal, a[i]);
-    minVal = min(minVal, a[i]);
-  }
-  print("{} {}", maxVal, minVal);
+   int cnt = 0;
+   for (int i = 0; i < n; i++) {
+      if (a[i] > maxVal && maxVal != numeric_limits<int32>::min()) {
+         cnt += 1;
+      } else if (a[i] < minVal && minVal != numeric_limits<int32>::max()) {
+         cnt += 1;
+      }
+      minVal = min(minVal, a[i]);
+      maxVal = max(maxVal, a[i]);
+   }
+   println(cnt);
 
-  
-  return;
+   return;
 }
 
 // ----------------------------- /* End of useful functions */ -------------------------------

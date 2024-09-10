@@ -1,3 +1,6 @@
+// link: https://codeforces.com/contest/43/problem/A A. Football
+// time: 2024/9/8 16:39:49 https://github.com/funcdfs
+
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
 /* using golang types */ using namespace std; using int32 = signed; using uint32 = unsigned; using float32 = double; using int64 = long long; using uint64 = unsigned long long; using float64 = long double; 
@@ -27,23 +30,28 @@ auto solve() -> void; /* main --> */ int32 main() { solve(); return 0; }
 
 
 auto solve() -> void {
-  
-  int n = 0;
-  cin >> n;
-  vector<int> a(n, 0);
-  cin >> a;
+   
+   int n = 0;
+   cin >> n;
+   unordered_map<string, int> hs;
+   while (n--) {
+      string s;
+      cin >> s;
+      hs[s] += 1;
+   }
 
-  int maxVal = numeric_limits<int32>::min();
-  int minVal = numeric_limits<int32>::max();
+   string ans = "none";
+   int freq = 0;
+   for (auto& [k, v] : hs) {
+      if (v > freq) {
+         ans = k;
+         freq = v;
+      }
+   }
+   
+   println(ans);
 
-  for (int i = 0; i < ssize(a); i++) {
-    maxVal = max(maxVal, a[i]);
-    minVal = min(minVal, a[i]);
-  }
-  print("{} {}", maxVal, minVal);
-
-  
-  return;
+   return;
 }
 
 // ----------------------------- /* End of useful functions */ -------------------------------

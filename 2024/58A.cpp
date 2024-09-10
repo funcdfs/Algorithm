@@ -1,3 +1,6 @@
+// link: https://codeforces.com/contest/58/problem/A A. Chat room
+// time: 2024/9/8 16:26:04 https://github.com/funcdfs
+
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
 /* using golang types */ using namespace std; using int32 = signed; using uint32 = unsigned; using float32 = double; using int64 = long long; using uint64 = unsigned long long; using float64 = long double; 
@@ -27,23 +30,30 @@ auto solve() -> void; /* main --> */ int32 main() { solve(); return 0; }
 
 
 auto solve() -> void {
-  
-  int n = 0;
-  cin >> n;
-  vector<int> a(n, 0);
-  cin >> a;
+   
+   string s; 
+   cin >> s;
 
-  int maxVal = numeric_limits<int32>::min();
-  int minVal = numeric_limits<int32>::max();
+   string HELLO = "hello";
+   int idx = 0;
+   int cnt = 0;
+   const int n = int(s.size());
+   for (int i = 0; i < n; i++) {
+      if (s[i] != HELLO[idx]) {
+         // do nothing;
+      } else {
+         idx += 1;
+         cnt += 1;
+      }
+   }
 
-  for (int i = 0; i < ssize(a); i++) {
-    maxVal = max(maxVal, a[i]);
-    minVal = min(minVal, a[i]);
-  }
-  print("{} {}", maxVal, minVal);
-
-  
-  return;
+   if (cnt == int(HELLO.size())) {
+      println("YES");
+   } else {
+      println("NO");
+   }
+   
+   return;
 }
 
 // ----------------------------- /* End of useful functions */ -------------------------------

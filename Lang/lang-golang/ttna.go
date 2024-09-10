@@ -5,7 +5,6 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"sort"
 )
 
 var _in, _out = new(bufio.Reader), new(bufio.Writer)
@@ -24,7 +23,10 @@ func main() {
 	_in = bufio.NewReader(os.Stdin)
 	_out = bufio.NewWriter(os.Stdout)
 	defer _out.Flush()
-	solve()
+	testCaseCnt := input[int]()
+	for i := 0; i < testCaseCnt; i++ {
+		solve(i + 1)
+	}
 }
 func input[T any]() T { var value T; fmt.Fscan(_in, &value); return value }
 func inputSlice[T any](size int) []T {
@@ -40,16 +42,13 @@ func println[T any](arr ...T) { _github_funcdfs(" ", "\n", arr...) }
 // #endregion main
 
 // ----------------------------- /* Start of useful functions */ -----------------------------
+func solve(_case int) {
 
-func solve() {
 	n := input[int]()
 	a := inputSlice[int](n)
 
-	sort.Slice(a, func(i, j int) bool {
-		return a[i] < a[j]
-	})
-	print(a...)
-	println(a...)
+	
+
 }
 
 // ----------------------------- /* End of useful functions */ -------------------------------

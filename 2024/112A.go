@@ -5,12 +5,11 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"sort"
 )
 
 var _in, _out = new(bufio.Reader), new(bufio.Writer)
 
-func _github_funcdfs[T any](sep, end string, arr ...T) {
+func _print_config[T any](sep, end string, arr ...T) {
 	for idx := range arr {
 		fmt.Fprint(_out, arr[idx])
 		if idx == len(arr)-1 {
@@ -34,22 +33,33 @@ func inputSlice[T any](size int) []T {
 	}
 	return data
 }
-func print[T any](arr ...T)   { _github_funcdfs("", "", arr...) }
-func println[T any](arr ...T) { _github_funcdfs(" ", "\n", arr...) }
+func print[T any](arr ...T)   { _print_config(" ", " ", arr...) }
+func println[T any](arr ...T) { _print_config(" ", "\n", arr...) }
 
 // #endregion main
 
 // ----------------------------- /* Start of useful functions */ -----------------------------
 
 func solve() {
-	n := input[int]()
-	a := inputSlice[int](n)
 
-	sort.Slice(a, func(i, j int) bool {
-		return a[i] < a[j]
-	})
-	print(a...)
-	println(a...)
+	s1 := input[[]byte]()
+	s2 := input[[]byte]()
+	for i := 0; i < len(s1); i++ {
+		if s1[i] >= 'A' && s1[i] <= 'Z' {
+			s1[i] = byte(int(s1[i]) - (int('A') - int('a')))
+		}
+		if s2[i] >= 'A' && s2[i] <= 'Z' {
+			s2[i] = byte(int(s2[i]) - (int('A') - int('a')))
+		}
+		if s1[i] < s2[i] {
+			println(-1)
+			return
+		} else if s1[i] > s2[i] {
+			println(1)
+			return
+		}
+	}
+	println(0)
 }
 
 // ----------------------------- /* End of useful functions */ -------------------------------

@@ -10,7 +10,7 @@ template <class T> ostream &operator<< (ostream &cout, vector<valarray<T>> &a)  
 #define endl '\n'    /* Use '\n' instead of std::endl to avoid unnecessary buffer flushes for performance */ 
 #define print(...)   std::cout << format(__VA_ARGS__)           /* C++23 std::print()   -> the format string is printed to the standard output */ 
 #define println(...) std::cout << format("{0}\n", __VA_ARGS__); /* C++23 std::println() -> to print a single value and append a newline */
-struct _init_end { _init_end() { std::cout << fixed << setprecision(      15      /* float output precision */);  { cin.tie(nullptr); ios::sync_with_stdio(false); }}} __author_github_funcdfs; 
+struct _init_end { _init_end() { cout << fixed << setprecision(      15      /* float output precision */);  { cin.tie(nullptr); ios::sync_with_stdio(false); }}} __author_github_funcdfs; 
 
 #ifdef LOCAL /* For local debugging purposes */ 
 #include "algo/dbg.h"
@@ -20,30 +20,23 @@ struct _init_end { _init_end() { std::cout << fixed << setprecision(      15    
 #define eprintln(...) ;
 #endif
 
-auto solve() -> void; /* main --> */ int32 main() { solve(); return 0; }
+auto solve(int _case) -> void; int32 main() { int testCaseCnt = 0; cin >> testCaseCnt; for (int _case = 1; _case <= testCaseCnt; _case++) { solve(_case); } return 0; }
 #pragma endregion github_funcdfs   // clang-format on
 
 // ----------------------------- /* Start of useful functions */ -----------------------------
 
 
-auto solve() -> void {
-  
-  int n = 0;
-  cin >> n;
-  vector<int> a(n, 0);
-  cin >> a;
+auto solve(int _case) -> void {
+   dbg(_case);
 
-  int maxVal = numeric_limits<int32>::min();
-  int minVal = numeric_limits<int32>::max();
-
-  for (int i = 0; i < ssize(a); i++) {
-    maxVal = max(maxVal, a[i]);
-    minVal = min(minVal, a[i]);
-  }
-  print("{} {}", maxVal, minVal);
-
-  
-  return;
+   int n = 0;
+   cin >> n;
+   vector<int> a(n, 0);
+   cin >> a;
+   
+   
+   
+   return;
 }
 
 // ----------------------------- /* End of useful functions */ -------------------------------
