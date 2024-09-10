@@ -1,3 +1,6 @@
+// link: https://www.acwing.com/problem/content/3481/ 旧帐单
+// time: 2024/9/10 15:20:06 https://github.com/funcdfs
+
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
 /* using golang types */ using namespace std; using int32 = signed; using uint32 = unsigned; using float32 = double; using int64 = long long; using uint64 = unsigned long long; using float64 = long double; 
@@ -27,9 +30,36 @@ auto solve() -> void; /* main --> */ int32 main() { solve(); return 0; }
 
 
 auto solve() -> void {
-   
-   println("Hello world");
-   
+   // 火鸡的数量
+   int n = 0;
+   while (cin >> n) {
+      string price = "xxxxx";
+      // 五位数中间的三位数字。
+      cin >> price[1] >> price[2] >> price[3];
+      bool end = false;
+      for (int i = 9; i > 0; i--) {
+         for (int j = 9; j >= 0; j--) {
+            price[0] = char(i + '0');
+            price[4] = char(j + '0');
+            int p = stoi(price);
+            if (p % n == 0) {
+               end = true;
+               cout << price.front() << ' ' << price.back() << ' ' << int(p / n) << endl;
+            }
+            if (end == true) {
+               break;
+            }
+         }
+         if (end == true) {
+            break;
+         }
+      }
+      if (end == false) {
+         price = "0";
+         cout << price << endl;
+      }
+   }
+
    return;
 }
 

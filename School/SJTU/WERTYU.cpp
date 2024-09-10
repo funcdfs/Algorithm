@@ -25,11 +25,24 @@ auto solve() -> void; /* main --> */ int32 main() { solve(); return 0; }
 
 // ----------------------------- /* Start of useful functions */ -----------------------------
 
-
 auto solve() -> void {
-   
-   println("Hello world");
-   
+   string s = "1234567890-=QWERTYUIOP[]ASDFGHJKL;'ZXCVBNM,./";
+   unordered_map<char, int> hs;
+   for (int i = 0; i < (int)s.size(); i++) {
+      hs[char(s[i])] = i;
+   }
+   string input = "";
+   while (getline(cin, input)) {
+      string ans = input;
+      for (int i = 0; i < (int)input.size(); i++) {
+         if (input[i] == ' ') {
+            continue;
+         }
+         ans[i] = s[hs[input[i]] - 1];
+      }
+      cout << ans << endl;
+   }
+
    return;
 }
 

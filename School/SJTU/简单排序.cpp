@@ -1,3 +1,6 @@
+// link: https://www.acwing.com/problem/content/3480/ 简单排序
+// time: 2024/9/10 15:18:27 https://github.com/funcdfs
+
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
 /* using golang types */ using namespace std; using int32 = signed; using uint32 = unsigned; using float32 = double; using int64 = long long; using uint64 = unsigned long long; using float64 = long double; 
@@ -28,7 +31,17 @@ auto solve() -> void; /* main --> */ int32 main() { solve(); return 0; }
 
 auto solve() -> void {
    
-   println("Hello world");
+   int n = 0;
+   cin >> n;
+   vector<int> a(n, 0);
+   cin >> a;
+
+   set<int> s(a.begin(), a.end());
+   vector<int> b(s.begin(), s.end());
+   sort(b.begin(), b.end(), [](const auto& x1, const auto& x2) {
+      return x1 < x2;
+   });
+   cout << b;
    
    return;
 }
