@@ -1,14 +1,13 @@
+// link: https://codeforces.com/contest/520/problem/A A. Pangram
+// time: 2024/9/11 18:15:04 https://github.com/funcdfs
+
 // #region main
 package main
 
 import (
 	"bufio"
-	"cmp"
 	"fmt"
 	"os"
-	"slices"
-	"strconv"
-	"strings"
 )
 
 var _in, _out = new(bufio.Reader), new(bufio.Writer)
@@ -46,21 +45,27 @@ func println[T any](arr ...T) { _github_funcdfs(" ", "\n", arr...) }
 
 func solve() {
 
-	x := 65535
+	n := input[int]()
+	s := input[[]byte]()
 
-	sixTeen := strconv.FormatInt(int64(x), 16)
-
-	cnt := strings.Count(sixTeen, "f")
-	println(cnt)
-
-	slices.SortFunc(sixTeen, func(_x1, _x2 int) int {
-		return cmp.Compare(_x1, _x2)
-	})
-
-	slices.SortFunc(sixTeen, func(_x1, _x2 int) int {
-		return cmp.Compare(_x2, _x1)
-	})
-
+	tb := make([]int, int('z')-int('a')+1)
+	for i := 0; i < n; i++ {
+		if s[i] >= 'A' && s[i] <= 'Z' {
+			s[i] = byte(int(s[i]) - (int('A') - int('a')))
+		}
+		tb[int(s[i])-int('a')] = 1
+	}
+	cnt := 0
+	for i := 0; i < len(tb); i++ {
+		if tb[i] == 1 {
+			cnt += 1
+		}
+	}
+	if cnt == len(tb) {
+		println("YES")
+	} else {
+		println("NO")
+	}
 }
 
 // ----------------------------- /* End of useful functions */ -------------------------------

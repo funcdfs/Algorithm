@@ -1,14 +1,13 @@
+// link: https://codeforces.com/contest/133/problem/A A. HQ9+
+// time: 2024/9/13 19:59:58 https://github.com/funcdfs
+
 // #region main
 package main
 
 import (
 	"bufio"
-	"cmp"
 	"fmt"
 	"os"
-	"slices"
-	"strconv"
-	"strings"
 )
 
 var _in, _out = new(bufio.Reader), new(bufio.Writer)
@@ -46,20 +45,20 @@ func println[T any](arr ...T) { _github_funcdfs(" ", "\n", arr...) }
 
 func solve() {
 
-	x := 65535
+	s := input[[]byte]()
+	hs := make(map[byte]struct{})
+	hs['H'] = struct{}{}
+	hs['Q'] = struct{}{}
+	hs['9'] = struct{}{}
 
-	sixTeen := strconv.FormatInt(int64(x), 16)
+	for i := 0; i < len(s); i++ {
+		if _, exist := hs[s[i]]; exist == true {
+			println("YES")
+			return
+		}
+	}
 
-	cnt := strings.Count(sixTeen, "f")
-	println(cnt)
-
-	slices.SortFunc(sixTeen, func(_x1, _x2 int) int {
-		return cmp.Compare(_x1, _x2)
-	})
-
-	slices.SortFunc(sixTeen, func(_x1, _x2 int) int {
-		return cmp.Compare(_x2, _x1)
-	})
+	println("NO")
 
 }
 

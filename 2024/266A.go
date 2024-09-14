@@ -1,14 +1,13 @@
+// link: https://codeforces.com/contest/266/problem/A A. Stones on the Table
+// time: 2024/9/11 10:31:50 https://github.com/funcdfs
+
 // #region main
 package main
 
 import (
 	"bufio"
-	"cmp"
 	"fmt"
 	"os"
-	"slices"
-	"strconv"
-	"strings"
 )
 
 var _in, _out = new(bufio.Reader), new(bufio.Writer)
@@ -46,21 +45,32 @@ func println[T any](arr ...T) { _github_funcdfs(" ", "\n", arr...) }
 
 func solve() {
 
-	x := 65535
+	n := input[int]()
+	s := input[[]byte]()
+	tot := 0
 
-	sixTeen := strconv.FormatInt(int64(x), 16)
+	for i, j := 0, 0; i < n; i = j {
+		for j = i + 1; j < n && s[j] == s[i]; j++ {
+			// tot += 1
+		}
+		// println(string(s[i:j])), all same pattern
+		// tot += len(s[i:j]) - 1
+		tot += j - i - 1
+	}
 
-	cnt := strings.Count(sixTeen, "f")
-	println(cnt)
+	
 
-	slices.SortFunc(sixTeen, func(_x1, _x2 int) int {
-		return cmp.Compare(_x1, _x2)
-	})
+	// last := s[0]
+	// for i := 1; i < n; i++ {
+	// 	if s[i] == last {
+	// 		tot += 1
+	// 	} else {
+	// 		last = s[i]
+	// 	}
+	// }
 
-	slices.SortFunc(sixTeen, func(_x1, _x2 int) int {
-		return cmp.Compare(_x2, _x1)
-	})
 
+	println(tot)
 }
 
 // ----------------------------- /* End of useful functions */ -------------------------------

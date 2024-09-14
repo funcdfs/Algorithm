@@ -1,14 +1,13 @@
+// link: https://codeforces.com/contest/344/problem/A A. Magnets
+// time: 2024/9/10 20:56:36 https://github.com/funcdfs
+
 // #region main
 package main
 
 import (
 	"bufio"
-	"cmp"
 	"fmt"
 	"os"
-	"slices"
-	"strconv"
-	"strings"
 )
 
 var _in, _out = new(bufio.Reader), new(bufio.Writer)
@@ -46,21 +45,19 @@ func println[T any](arr ...T) { _github_funcdfs(" ", "\n", arr...) }
 
 func solve() {
 
-	x := 65535
+	n := input[int]()
+	cnt := 0
+	s := input[[]byte]()
 
-	sixTeen := strconv.FormatInt(int64(x), 16)
+	for i := 1; i < n; i++ {
+		prev := s
+		s = input[[]byte]()
+		if prev[1] == s[0] {
+			cnt += 1
+		}
+	}
 
-	cnt := strings.Count(sixTeen, "f")
-	println(cnt)
-
-	slices.SortFunc(sixTeen, func(_x1, _x2 int) int {
-		return cmp.Compare(_x1, _x2)
-	})
-
-	slices.SortFunc(sixTeen, func(_x1, _x2 int) int {
-		return cmp.Compare(_x2, _x1)
-	})
-
+	println(cnt + 1)
 }
 
 // ----------------------------- /* End of useful functions */ -------------------------------

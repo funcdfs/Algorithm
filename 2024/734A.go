@@ -1,14 +1,13 @@
+// link: https://codeforces.com/contest/734/problem/A A. Anton and Danik
+// time: 2024/9/11 17:33:28 https://github.com/funcdfs
+
 // #region main
 package main
 
 import (
 	"bufio"
-	"cmp"
 	"fmt"
 	"os"
-	"slices"
-	"strconv"
-	"strings"
 )
 
 var _in, _out = new(bufio.Reader), new(bufio.Writer)
@@ -46,20 +45,25 @@ func println[T any](arr ...T) { _github_funcdfs(" ", "\n", arr...) }
 
 func solve() {
 
-	x := 65535
+	n := input[int]()
+	s := input[[]byte]()
 
-	sixTeen := strconv.FormatInt(int64(x), 16)
+	cntA, cntD := 0, 0
+	for i := 0; i < n; i++ {
+		if s[i] == 'A' {
+			cntA += 1
+		} else if s[i] == 'D' {
+			cntD += 1
+		}
+	}
 
-	cnt := strings.Count(sixTeen, "f")
-	println(cnt)
-
-	slices.SortFunc(sixTeen, func(_x1, _x2 int) int {
-		return cmp.Compare(_x1, _x2)
-	})
-
-	slices.SortFunc(sixTeen, func(_x1, _x2 int) int {
-		return cmp.Compare(_x2, _x1)
-	})
+	if cntA == cntD {
+		println("Friendship")
+	} else if cntA > cntD {
+		println("Anton")
+	} else if cntA < cntD {
+		println("Danik")
+	}
 
 }
 

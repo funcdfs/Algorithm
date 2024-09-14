@@ -1,14 +1,14 @@
+// link: https://codeforces.com/contest/110/problem/A A. Nearly Lucky Number
+// time: 2024/9/11 17:15:08 https://github.com/funcdfs
+
 // #region main
 package main
 
 import (
 	"bufio"
-	"cmp"
 	"fmt"
 	"os"
-	"slices"
 	"strconv"
-	"strings"
 )
 
 var _in, _out = new(bufio.Reader), new(bufio.Writer)
@@ -46,21 +46,28 @@ func println[T any](arr ...T) { _github_funcdfs(" ", "\n", arr...) }
 
 func solve() {
 
-	x := 65535
+	s := input[[]byte]()
 
-	sixTeen := strconv.FormatInt(int64(x), 16)
+	cntLucky := 0
+	for i := 0; i < len(s); i++ {
+		if s[i] == '4' || s[i] == '7' {
+			cntLucky += 1
+		}
+	}
 
-	cnt := strings.Count(sixTeen, "f")
-	println(cnt)
+	numCntLucky := 0
+	num := []byte(strconv.Itoa(cntLucky))
+	for i := 0; i < len(num); i++ {
+		if num[i] == '4' || num[i] == '7' {
+			numCntLucky += 1
+		}
+	}
 
-	slices.SortFunc(sixTeen, func(_x1, _x2 int) int {
-		return cmp.Compare(_x1, _x2)
-	})
-
-	slices.SortFunc(sixTeen, func(_x1, _x2 int) int {
-		return cmp.Compare(_x2, _x1)
-	})
-
+	if cntLucky > 0 && numCntLucky == len(num) {
+		println("YES")
+	} else {
+		println("NO")
+	}
 }
 
 // ----------------------------- /* End of useful functions */ -------------------------------

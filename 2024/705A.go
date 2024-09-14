@@ -1,14 +1,13 @@
+// link: https://codeforces.com/contest/705/problem/A A. Hulk
+// time: 2024/9/11 18:07:54 https://github.com/funcdfs
+
 // #region main
 package main
 
 import (
 	"bufio"
-	"cmp"
 	"fmt"
 	"os"
-	"slices"
-	"strconv"
-	"strings"
 )
 
 var _in, _out = new(bufio.Reader), new(bufio.Writer)
@@ -46,20 +45,32 @@ func println[T any](arr ...T) { _github_funcdfs(" ", "\n", arr...) }
 
 func solve() {
 
-	x := 65535
+	n := input[int]()
+	str1 := "I hate"
+	str2 := "I love"
+	str3 := "that"
+	str4 := "it"
 
-	sixTeen := strconv.FormatInt(int64(x), 16)
+	even := false
 
-	cnt := strings.Count(sixTeen, "f")
-	println(cnt)
-
-	slices.SortFunc(sixTeen, func(_x1, _x2 int) int {
-		return cmp.Compare(_x1, _x2)
-	})
-
-	slices.SortFunc(sixTeen, func(_x1, _x2 int) int {
-		return cmp.Compare(_x2, _x1)
-	})
+	for i := 0; i < n; i++ {
+		if i == n-1 {
+			if even {
+				print(str2, " ")
+			} else {
+				print(str1, " ")
+			}
+			print(str4)
+			return
+		}
+		if even {
+			print(str2, " ")
+		} else {
+			print(str1, " ")
+		}
+		print(str3, " ")
+		even = !even
+	}
 
 }
 

@@ -1,14 +1,14 @@
+// link: https://codeforces.com/contest/41/problem/A A. Translation
+// time: 2024/9/14 10:53:59 https://github.com/funcdfs
+
 // #region main
 package main
 
 import (
 	"bufio"
-	"cmp"
 	"fmt"
 	"os"
 	"slices"
-	"strconv"
-	"strings"
 )
 
 var _in, _out = new(bufio.Reader), new(bufio.Writer)
@@ -46,20 +46,29 @@ func println[T any](arr ...T) { _github_funcdfs(" ", "\n", arr...) }
 
 func solve() {
 
-	x := 65535
+	original := input[[]byte]()
+	translation := input[[]byte]()
 
-	sixTeen := strconv.FormatInt(int64(x), 16)
+	slices.Reverse[[]byte](translation)
 
-	cnt := strings.Count(sixTeen, "f")
-	println(cnt)
+	ok := true
+	if len(original) != len(translation) {
+		ok = false
+		goto final
+	}
+	for i := range original {
+		if translation[i] != original[i] {
+			ok = false
+			goto final
+		}
+	}
 
-	slices.SortFunc(sixTeen, func(_x1, _x2 int) int {
-		return cmp.Compare(_x1, _x2)
-	})
-
-	slices.SortFunc(sixTeen, func(_x1, _x2 int) int {
-		return cmp.Compare(_x2, _x1)
-	})
+final:
+	if ok {
+		println("YES")
+	} else {
+		println("NO")
+	}
 
 }
 

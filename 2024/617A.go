@@ -1,14 +1,13 @@
+// link: https://codeforces.com/contest/617/problem/A A. Elephant
+// time: 2024/9/11 12:09:11 https://github.com/funcdfs
+
 // #region main
 package main
 
 import (
 	"bufio"
-	"cmp"
 	"fmt"
 	"os"
-	"slices"
-	"strconv"
-	"strings"
 )
 
 var _in, _out = new(bufio.Reader), new(bufio.Writer)
@@ -46,20 +45,14 @@ func println[T any](arr ...T) { _github_funcdfs(" ", "\n", arr...) }
 
 func solve() {
 
-	x := 65535
+	x := input[int]()
+	cnt := x / 5
 
-	sixTeen := strconv.FormatInt(int64(x), 16)
+	if x%5 > 0 {
+		cnt += 1
+	}
 
-	cnt := strings.Count(sixTeen, "f")
 	println(cnt)
-
-	slices.SortFunc(sixTeen, func(_x1, _x2 int) int {
-		return cmp.Compare(_x1, _x2)
-	})
-
-	slices.SortFunc(sixTeen, func(_x1, _x2 int) int {
-		return cmp.Compare(_x2, _x1)
-	})
 
 }
 

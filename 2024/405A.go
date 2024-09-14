@@ -1,3 +1,6 @@
+// link: https://codeforces.com/contest/405/problem/A A. Gravity Flip
+// time: 2024/9/11 17:47:50 https://github.com/funcdfs
+
 // #region main
 package main
 
@@ -7,8 +10,6 @@ import (
 	"fmt"
 	"os"
 	"slices"
-	"strconv"
-	"strings"
 )
 
 var _in, _out = new(bufio.Reader), new(bufio.Writer)
@@ -46,20 +47,14 @@ func println[T any](arr ...T) { _github_funcdfs(" ", "\n", arr...) }
 
 func solve() {
 
-	x := 65535
+	n := input[int]()
+	a := inputSlice[int](n)
 
-	sixTeen := strconv.FormatInt(int64(x), 16)
-
-	cnt := strings.Count(sixTeen, "f")
-	println(cnt)
-
-	slices.SortFunc(sixTeen, func(_x1, _x2 int) int {
+	slices.SortFunc(a, func(_x1, _x2 int) int {
 		return cmp.Compare(_x1, _x2)
 	})
 
-	slices.SortFunc(sixTeen, func(_x1, _x2 int) int {
-		return cmp.Compare(_x2, _x1)
-	})
+	println(a...)
 
 }
 
