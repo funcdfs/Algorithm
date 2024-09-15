@@ -1,5 +1,5 @@
-// link: https://codeforces.com/contest/701/problem/C C. They Are Everywhere
-// time: 2024/7/9 12:40:35 https://github.com/funcdfs
+// link: https://codeforces.com/contest/1542/problem/A A. Odd Set
+// time: 2024/9/15 16:48:08 https://github.com/funcdfs
 
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
@@ -11,8 +11,8 @@ template <class T> ostream &operator<< (ostream &cout, valarray<T>         &a)  
 template <class T> ostream &operator<< (ostream &cout, vector<vector<T>>   &a)  { int n = int(a.size()); if (!n) { return cout; } cout << a[0]; for (int i = 1; i < n; i++) { cout << '\n' << a[i]; } return cout; }
 template <class T> ostream &operator<< (ostream &cout, vector<valarray<T>> &a)  { int n = int(a.size()); if (!n) { return cout; } cout << a[0]; for (int i = 1; i < n; i++) { cout << '\n' << a[i]; } return cout; }
 #define endl '\n'    /* Use '\n' instead of std::endl to avoid unnecessary buffer flushes for performance */ 
-#define print(...)   cout << format(__VA_ARGS__)           /* the format string is printed to the standard output */ 
-#define println(...) cout << format("{0}\n", __VA_ARGS__); /* to print a single value and append a newline */
+#define print(...)   std::cout << format(__VA_ARGS__)           /* C++23 std::print()   -> the format string is printed to the standard output */ 
+#define println(...) std::cout << format("{0}\n", __VA_ARGS__); /* C++23 std::println() -> to print a single value and append a newline */
 struct _init_end { _init_end() { cout << fixed << setprecision(      15      /* float output precision */);  { cin.tie(nullptr); ios::sync_with_stdio(false); }}} __author_github_funcdfs; 
 
 #ifdef LOCAL /* For local debugging purposes */ 
@@ -23,46 +23,33 @@ struct _init_end { _init_end() { cout << fixed << setprecision(      15      /* 
 #define eprintln(...) ;
 #endif
 
-auto solve() -> void; /* main --> */ int32 main() {      solve(); return 0; }
+auto solve(int _case) -> void; int32 main() { int testCaseCnt = 0; cin >> testCaseCnt; for (int _case = 1; _case <= testCaseCnt; _case++) { solve(_case); } return 0; }
 #pragma endregion github_funcdfs   // clang-format on
 
 // ----------------------------- /* Start of useful functions */ -----------------------------
 
-#include <ext/pb_ds/assoc_container.hpp>   // Common file
-#include <ext/pb_ds/tree_policy.hpp>       // Including tree_order_statistics_node_update
-using namespace __gnu_pbds;
 
-template <class T>
-using Tree = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
-
-auto solve() -> void {
+auto solve(int _case) -> void {
+   dbg(_case);
+   
    int n = 0;
    cin >> n;
-   string s(n, ' ');
-   cin >> s;
+   vector<int> a(2 * n, 0);
+   cin >> a;
 
-   // 长度最小的区间，包含字符串中的所有字母（区分大小写）
-
-   unordered_set<char> hs;
-   for (auto& c : s) hs.insert(c); 
-
-   int ans = n;
-   unordered_map<char, int> now; 
-   for (int i = 0, r = 0; i < n; i++) {
-      while (r < n && now.size() < hs.size()) {
-         now[s[r]] += 1; 
-         r += 1; 
-      }
-      if (ssize(now) == ssize(hs)) {
-         ans = min(ans, r-i);
-      }
-      now[s[i]] -= 1; 
-      if (now[s[i]] == 0) {
-         now.erase(s[i]); 
-      }
+   int oddCnt = count_if(a.begin(), a.end(), [](const auto& x){
+      return x % 2 == 1;
+   });
+   int evenCnt = count_if(a.begin(), a.end(), [](const auto& x){
+      return x % 2 == 0;
+   });
+   
+   if (oddCnt == evenCnt) {
+      println("Yes");
+   } else {
+      println("No");
    }
-   cout << ans << endl; 
-
+   
    return;
 }
 
