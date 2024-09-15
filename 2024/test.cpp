@@ -28,20 +28,7 @@ auto solve() -> void; /* main --> */ int32 main() { solve(); return 0; }
 
 auto solve() -> void {
   
-  int n = 0;
-  cin >> n;
-  vector<int> a(n, 0);
-  cin >> a;
-
-  int maxVal = numeric_limits<int32>::min();
-  int minVal = numeric_limits<int32>::max();
-
-  for (int i = 0; i < ssize(a); i++) {
-    maxVal = max(maxVal, a[i]);
-    minVal = min(minVal, a[i]);
-  }
-  print("{} {}", maxVal, minVal);
-
+  println("hello world");
   
   return;
 }

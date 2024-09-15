@@ -1,5 +1,5 @@
-// link: https://codeforces.com/contest/266/problem/A A. Stones on the Table
-// time: 2024/9/11 10:31:50 https://github.com/funcdfs
+// link: https://codeforces.com/contest/208/problem/A A. Dubstep
+// time: 2024/9/15 12:17:54 https://github.com/funcdfs
 
 // #region main
 package main
@@ -44,34 +44,36 @@ func println[T any](arr ...T) { _github_funcdfs(" ", "\n", arr...) }
 // ----------------------------- /* Start of useful functions */ -----------------------------
 
 func solve() {
-
-	n := input[int]()
+	
 	s := input[[]byte]()
-	tot := 0
+	ans := make([]byte, 0)
+	ansWithoutSpace := make([]byte, 0)
+	s = append(s, []byte("WUBWUB")...)
 
-	// same part
-	for i, j := 0, 0; i < n; i = j {
-		for j = i + 1; j < n && s[j] == s[i]; j++ {
-			// tot += 1
+	for i := 0; i < len(s) - 3; i++ {
+		if string(s[i:i+3]) == "WUB" {
+			ans = append(ans, []byte(" ")...)
+			i += 2
+		} else {
+			ans = append(ans, s[i])
 		}
-		// println(string(s[i:j])), all same pattern
-		// tot += len(s[i:j]) - 1
-		tot += j - i - 1
 	}
 
-	
+	for i := 0; i < len(ans); i++ {
+		if ans[i] == ' ' {
+			ansWithoutSpace = append(ansWithoutSpace, []byte(" ")...)
+			idx := i 
+			for idx < len(ans) && ans[idx] == ' ' {
+				idx += 1
+			}
+			i = idx-1
+		} else {
+			ansWithoutSpace = append(ansWithoutSpace, ans[i])
+		}
+	}
 
-	// last := s[0]
-	// for i := 1; i < n; i++ {
-	// 	if s[i] == last {
-	// 		tot += 1
-	// 	} else {
-	// 		last = s[i]
-	// 	}
-	// }
+	println(string(ansWithoutSpace))
 
-
-	println(tot)
 }
 
 // ----------------------------- /* End of useful functions */ -------------------------------

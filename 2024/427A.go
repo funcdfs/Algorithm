@@ -1,5 +1,5 @@
-// link: https://codeforces.com/contest/144/problem/A A. Arrival of the General
-// time: 2024/9/15 15:40:53 https://github.com/funcdfs
+// link: https://codeforces.com/contest/427/problem/A A. Police Recruits
+// time: 2024/9/14 22:18:13 https://github.com/funcdfs
 
 // #region main
 package main; import ( "bufio"; "fmt"; "os"; ); var _in, _out = new(bufio.Reader), new(bufio.Writer)
@@ -19,22 +19,19 @@ func solve() {
 	n := input[int]()
 	a := inputSlice[int](n) 
 	
-	idxMax, idxMin := 0, 0
-	maxVal, minVal := a[0], a[0]
+	man, crime := 0, 0 
 	for i := range a {
-		if a[i] > maxVal {
-			maxVal = a[i]
-			idxMax = i
-		} else if a[i] <= minVal {
-			minVal = a[i]
-			idxMin = i
+		if a[i] == -1 {
+			if man <= 0 {
+				crime += 1
+			} else {
+				man -= 1
+			}
+		} else if a[i] != -1 {
+			man += a[i]
 		}
 	}
-	if idxMax <= idxMin {
-		println(n-idxMin-1 + idxMax)
-	} else {
-		println(n-idxMin-1+idxMax - 1)
-	}
+	println(crime)
 
 }
 

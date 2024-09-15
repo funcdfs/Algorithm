@@ -1,5 +1,5 @@
-// link: https://codeforces.com/contest/144/problem/A A. Arrival of the General
-// time: 2024/9/15 15:40:53 https://github.com/funcdfs
+// link: https://codeforces.com/contest/510/problem/A A. Fox And Snake
+// time: 2024/9/14 22:12:19 https://github.com/funcdfs
 
 // #region main
 package main; import ( "bufio"; "fmt"; "os"; ); var _in, _out = new(bufio.Reader), new(bufio.Writer)
@@ -16,24 +16,31 @@ func println    [T any] (arr ...T)     { _github_funcdfs(" ", "\n", arr...) }
 
 func solve() {
 
-	n := input[int]()
-	a := inputSlice[int](n) 
+	n, m := input[int](), input[int]()
 	
-	idxMax, idxMin := 0, 0
-	maxVal, minVal := a[0], a[0]
-	for i := range a {
-		if a[i] > maxVal {
-			maxVal = a[i]
-			idxMax = i
-		} else if a[i] <= minVal {
-			minVal = a[i]
-			idxMin = i
+	flag := false
+	for i := 0; i < n; i++ {
+		if i % 2 == 0 {
+			for i := 0; i < m; i++ {
+				print("#")
+			}
+			println("")
+		} else {
+			if flag {
+				print("#")
+				for i := 1; i < m; i++ {
+					print(".")
+				}
+				println("")
+			} else {
+				for i := 1; i < m; i++ {
+					print(".")
+				}
+				print("#")
+				println("")
+			}
+			flag = !flag
 		}
-	}
-	if idxMax <= idxMin {
-		println(n-idxMin-1 + idxMax)
-	} else {
-		println(n-idxMin-1+idxMax - 1)
 	}
 
 }

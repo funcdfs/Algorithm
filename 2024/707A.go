@@ -1,5 +1,5 @@
-// link: https://codeforces.com/contest/144/problem/A A. Arrival of the General
-// time: 2024/9/15 15:40:53 https://github.com/funcdfs
+// link: https://codeforces.com/contest/707/problem/A A. Brain's Photos
+// time: 2024/9/15 16:29:13 https://github.com/funcdfs
 
 // #region main
 package main; import ( "bufio"; "fmt"; "os"; ); var _in, _out = new(bufio.Reader), new(bufio.Writer)
@@ -7,35 +7,33 @@ func _github_funcdfs[T any](sep, end string, arr ...T) { for idx := range arr { 
 func main() { _in = bufio.NewReader(os.Stdin); _out = bufio.NewWriter(os.Stdout); defer _out.Flush(); solve() }
 func input      [T any] ()           T { var value T; fmt.Fscan(_in, &value); return value }
 func inputSlice [T any] (size int) []T { data := make([]T, size); for idx := 0; idx < size; idx++ { data[idx] = input[T](); }; return data }
-func print      [T any] (arr ...T)     { _github_funcdfs("", "", arr...) }
-func println    [T any] (arr ...T)     { _github_funcdfs(" ", "\n", arr...) }
+func print      [T any] (arr ...T)     { _github_funcdfs("", "", arr...) } func println    [T any] (arr ...T)     { _github_funcdfs(" ", "\n", arr...) }
 // #endregion main
 
 
 // ----------------------------- /* Start of useful functions */ -----------------------------
 
 func solve() {
-
-	n := input[int]()
-	a := inputSlice[int](n) 
-	
-	idxMax, idxMin := 0, 0
-	maxVal, minVal := a[0], a[0]
-	for i := range a {
-		if a[i] > maxVal {
-			maxVal = a[i]
-			idxMax = i
-		} else if a[i] <= minVal {
-			minVal = a[i]
-			idxMin = i
+	n, m := input[int](), input[int]()
+	grid := make([][]byte, n)
+	ok := true
+	for i := range grid {
+		grid[i] = input[[]byte]() 
+		for j := 0; j < m; j++ {
+			println(string(grid[i][j]))
+			if grid[i][j] != 'B' && grid[i][j] != 'W' {
+				ok = false
+				goto color
+			}
 		}
 	}
-	if idxMax <= idxMin {
-		println(n-idxMin-1 + idxMax)
-	} else {
-		println(n-idxMin-1+idxMax - 1)
-	}
 
+	color:
+	if ok {
+		println("#Black&White")
+	} else {
+		println("#Color")
+	}
 }
 
 // ----------------------------- /* End of useful functions */ -------------------------------
