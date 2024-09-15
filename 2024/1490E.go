@@ -1,33 +1,19 @@
-// created: 2024/5/29 00:40:02 author:  https://github.com/funcdfs 
-// problem: https://codeforces.com/contest/1490/problem/E
+// #region main
+package main; import ( "bufio"; "fmt"; "os"; ); var _in, _out = new(bufio.Reader), new(bufio.Writer)
+func _github_funcdfs[T any](sep, end string, arr ...T) { for idx := range arr { fmt.Fprint(_out, arr[idx]); if idx == len(arr)-1 { fmt.Fprint(_out, end); } else { fmt.Fprint(_out, sep) } } }
+func main() { _in = bufio.NewReader(os.Stdin); _out = bufio.NewWriter(os.Stdout); defer _out.Flush(); solve() }
+func input      [T any] ()           T { var value T; fmt.Fscan(_in, &value); return value }
+func inputSlice [T any] (size int) []T { data := make([]T, size); for idx := 0; idx < size; idx++ { data[idx] = input[T](); }; return data }
+func print      [T any] (arr ...T)     { _github_funcdfs("", "", arr...) }
+func println    [T any] (arr ...T)     { _github_funcdfs(" ", "\n", arr...) }
+// #endregion main
 
-package main
 
-import (
-	"bufio"
-	"fmt"
-	"os"
-)
+// ----------------------------- /* Start of useful functions */ -----------------------------
 
-func solve(_in *bufio.Reader, _out *bufio.Writer) {
-	n := 0
-	fmt.Fscan(_in, &n) 
-	a := make([]int, n)
-	for i := 0; i < n; i++ {
-		fmt.Fscan(_in, &a[i]) 
-	}
-	
-	
+func solve() {
+
 	
 }
 
-func main() {
-	_in := bufio.NewReader(os.Stdin)
-	_out := bufio.NewWriter(os.Stdout)
-	defer _out.Flush()
-
-	var TT int
-	for fmt.Fscan(_in, &TT); TT > 0; TT-- {
-		solve(_in, _out)
-	}
-}
+// ----------------------------- /* End of useful functions */ -------------------------------
