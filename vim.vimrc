@@ -1,8 +1,4 @@
-
-" ====================================== key map ================================
-
-
-" better kj for quick Esc
+" kj for Esc
 let g:esc_j_lasttime = 0
 let g:esc_k_lasttime = 0
 function! JKescape(key)
@@ -14,6 +10,8 @@ endfunction
 inoremap <expr> j JKescape('j')
 inoremap <expr> k JKescape('k')
 inoremap <nowait> kj <ESC>
+
+" bracket jump 
 noremap <TAB> %
 
 
@@ -22,34 +20,23 @@ nnoremap H ^
 nnoremap L $
 
 
-nnoremap <F5> :set nu! nu?<CR>
-nnoremap <F6> :set list! list?<CR>
-nnoremap <F7> :set wrap! wrap?<CR>
-set pastetoggle=<F8>            
-"    when in insert mode, press <F5> to go to
-"    paste mode, where you can paste mass data
-"    that won't be autoindented
-au InsertLeave * set nopaste
-nnoremap <F9> :exec exists('syntax_on') ? 'syn off' : 'syn on'<CR>
-
+"Map ; to : and save a million keystrokes
+nnoremap ; :
 
 
 " leader key is '\' 
-
-nnoremap <leader>q :q<CR>       
 " Quickly close the current window
-
-nnoremap <leader>s :w<CR>       
+nnoremap <leader>q :q<CR>
 " Quickly save the current file
-
-map <Leader>y ggVG+y            
+nnoremap <leader>w :w<CR>
 " Quickly copy all content
-
-map <Leader>d ggdG              
+map <Leader>v ggVG
+map <Leader>y ggyG
 " Quickly delete all content
+map <Leader>d ggdG
 
 
-"Keep search pattern at the center of the screen."
+" zen mode Keep search pattern at the center of the screen."
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
 nnoremap <silent> * *zz
@@ -57,21 +44,14 @@ nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 
 
-
 "Reselect visual block after indent/outdent.调整缩进后自动选中，方便再次操作
 vnoremap < <gv 
 vnoremap > >gv
 
 
-
 " y$ -> Y Make Y behave like other capitals
 map Y y$
 
-
-
-"Map ; to : and save a million keystrokes
-" ex mode commands made easy 用于快速进入命令行
-nnoremap ; :
 
 
 

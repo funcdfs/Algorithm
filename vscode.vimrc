@@ -27,18 +27,16 @@ nnoremap ; :
 " leader key is '\' 
 " Quickly close the current window
 nnoremap <leader>q :q<CR>
-
 " Quickly save the current file
 nnoremap <leader>w :w<CR>
-
 " Quickly copy all content
-map <Leader>s ggVG+y
-
+map <Leader>v ggVG
+map <Leader>y ggyG
 " Quickly delete all content
 map <Leader>d ggdG
 
 
-"Keep search pattern at the center of the screen."
+" zen mode Keep search pattern at the center of the screen."
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
 nnoremap <silent> * *zz
