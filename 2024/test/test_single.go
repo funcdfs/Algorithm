@@ -12,13 +12,7 @@ func println    [T any] (arr ...T)     { _github_funcdfs(" ", "\n", arr...) }
 // ----------------------------- /* Start of useful functions */ -----------------------------
 
 func solve() {
-
-	n := input[int]()
-	a := inputSlice[int](n) 
 	
-	for i := range a {
-		a[i]++
-	}
 }
 
 // ----------------------------- /* End of useful functions */ -------------------------------

@@ -8,8 +8,8 @@ template <class T> ostream &operator<< (ostream &cout, valarray<T>         &a)  
 template <class T> ostream &operator<< (ostream &cout, vector<vector<T>>   &a)  { int n = int(a.size()); if (!n) { return cout; } cout << a[0]; for (int i = 1; i < n; i++) { cout << '\n' << a[i]; } return cout; }
 template <class T> ostream &operator<< (ostream &cout, vector<valarray<T>> &a)  { int n = int(a.size()); if (!n) { return cout; } cout << a[0]; for (int i = 1; i < n; i++) { cout << '\n' << a[i]; } return cout; }
 #define endl '\n'    /* Use '\n' instead of std::endl to avoid unnecessary buffer flushes for performance */ 
-#define print(...)   std::cout << /*format*/(__VA_ARGS__) /* mac os: C++23 std::print()   -> the format string is printed to the standard output */ 
-#define println(...) std::cout << __VA_ARGS__ << '\n' /* mac os: C++23 std::println() -> to print a single value and append a newline */
+#define print(...)   std::cout << /*format*/(__VA_ARGS__)           /* C++23 std::print()   -> the format string is printed to the standard output */ 
+#define println(...) std::cout << /*format*/("{0}\n", __VA_ARGS__); /* C++23 std::println() -> to print a single value and append a newline */
 struct _init_end { _init_end() { std::cout << fixed << setprecision(      15      /* float output precision */);  { cin.tie(nullptr); ios::sync_with_stdio(false); }}} __author_github_funcdfs; 
 
 #ifdef LOCAL /* For local debugging purposes */ 
@@ -28,7 +28,19 @@ auto solve() -> void; /* main --> */ int32 main() { solve(); return 0; }
 
 auto solve() -> void {
     
-    
+    int n = 0; cin >> n;
+    vector<int> a(n, 0);
+    cin >> a;
+
+    sort(a.begin(), a.end(), [](const auto& x1, const auto& x2) {
+       return x1 < x2;
+    });
+
+    int64 sum = 0;
+    for (int i = 0; i < n; i++) {
+        sum += int64(a.back() - a[i]);
+    }
+    println(sum);
     
     return;
 }

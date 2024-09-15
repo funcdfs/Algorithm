@@ -1,3 +1,6 @@
+// link: https://codeforces.com/contest/1367/problem/B B. Even Array
+// time: 2024/9/15 20:12:40 https://github.com/funcdfs
+
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
 /* using golang types */ using namespace std; using int32 = signed; using uint32 = unsigned; using float32 = double; using int64 = long long; using uint64 = unsigned long long; using float64 = long double; 
@@ -10,7 +13,7 @@ template <class T> ostream &operator<< (ostream &cout, vector<valarray<T>> &a)  
 #define endl '\n'    /* Use '\n' instead of std::endl to avoid unnecessary buffer flushes for performance */ 
 #define print(...)   std::cout << /*format*/(__VA_ARGS__) /* mac os: C++23 std::print()   -> the format string is printed to the standard output */ 
 #define println(...) std::cout << __VA_ARGS__ << '\n' /* mac os: C++23 std::println() -> to print a single value and append a newline */
-struct _init_end { _init_end() { std::cout << fixed << setprecision(      15      /* float output precision */);  { cin.tie(nullptr); ios::sync_with_stdio(false); }}} __author_github_funcdfs; 
+struct _init_end { _init_end() { cout << fixed << setprecision(      15      /* float output precision */);  { cin.tie(nullptr); ios::sync_with_stdio(false); }}} __author_github_funcdfs; 
 
 #ifdef LOCAL /* For local debugging purposes */ 
 #include "algo/dbg.h"
@@ -20,17 +23,37 @@ struct _init_end { _init_end() { std::cout << fixed << setprecision(      15    
 #define eprintln(...) ;
 #endif
 
-auto solve() -> void; /* main --> */ int32 main() { solve(); return 0; }
+auto solve(int _case) -> void; int32 main() { int testCaseCnt = 0; cin >> testCaseCnt; for (int _case = 1; _case <= testCaseCnt; _case++) { solve(_case); } return 0; }
 #pragma endregion github_funcdfs   // clang-format on
 
 // ----------------------------- /* Start of useful functions */ -----------------------------
 
 
-auto solve() -> void {
-    
-    
-    
-    return;
+auto solve(int _case) -> void {
+   dbg(_case);
+
+   int n = 0;
+   cin >> n;
+   vector<int> a(n, 0);
+   cin >> a;
+
+   int oddCnt = 0, evenCnt = 0;
+   for (int i = 0; i < n; i++) {
+      if (a[i] % 2 != i % 2) {
+         if (i % 2 == 1) {
+            oddCnt += 1;
+         } else {
+            evenCnt += 1;
+         }
+      }
+   }
+   if (oddCnt == evenCnt) {
+      println(oddCnt);
+   } else {
+      println(-1);
+   }
+
+   return;
 }
 
 // ----------------------------- /* End of useful functions */ -------------------------------
