@@ -1,4 +1,4 @@
 time=$(date "+%Y%m%d-%H:%M:%S")
-git add .
-git commit -m ${time} 
+sudo git add .
+sudo git commit -m ${time} 
 git push
