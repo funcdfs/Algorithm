@@ -11,3 +11,4 @@ z-config/.cpeditor/python.py
 */.cph
 *.bin
 /*/*/*.bin
+.DS_Store
