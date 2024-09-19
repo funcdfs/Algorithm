@@ -1,5 +1,5 @@
-// link: https://atcoder.jp/contests/abc350/tasks/abc350_a A - Past ABCs
-// time: 2024/9/19 00:04:17 https://github.com/funcdfs
+// link: https://codeforces.com/contest/115/problem/A A. Party
+// time: 2024/9/19 21:50:52 https://github.com/funcdfs
 
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
@@ -30,34 +30,24 @@ auto solve() -> void; /* main --> */ int32 main() { solve(); return 0; }
 
 
 auto solve() -> void {
-    
-    string s;
-    cin >> s;
+   
+   int n = 0;
+   cin >> n;
 
-    int num = s.rbegin()[2]-'0';
-    num *= 10;
-    num += s.rbegin()[1]-'0';
-    num *= 10;
-    num += s.rbegin()[0]-'0';
+   vector<int> p(n, 0);
+   cin >> p;
 
-dbg(num);
-    bool ok = true;
-    if (num >= 1 && num <= 349) {
-        ok = true;
-        if (num == 316) {
-            ok = false;
-        }
-    } else {
-        ok = false;
-    }
+   dbg(p);
 
-    if (ok == true) {
-        println("Yes");
-    } else {
-        println("No");
-    }
-    
-    return;
+   // a graph, a->b->c can not in same map
+   // the minimum cnt of map
+
+   
+
+
+
+   
+   return;
 }
 
 // ----------------------------- /* End of useful functions */ -------------------------------

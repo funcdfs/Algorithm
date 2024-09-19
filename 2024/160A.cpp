@@ -1,5 +1,5 @@
-// link: https://atcoder.jp/contests/abc350/tasks/abc350_a A - Past ABCs
-// time: 2024/9/19 00:04:17 https://github.com/funcdfs
+// link: https://codeforces.com/contest/160/problem/A A. Twins
+// time: 2024/9/19 17:51:32 https://github.com/funcdfs
 
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
@@ -30,34 +30,31 @@ auto solve() -> void; /* main --> */ int32 main() { solve(); return 0; }
 
 
 auto solve() -> void {
-    
-    string s;
-    cin >> s;
+   
+   int n = 0;
+   cin >> n;
+   vector<int> a(n, 0);
+   cin >> a;
 
-    int num = s.rbegin()[2]-'0';
-    num *= 10;
-    num += s.rbegin()[1]-'0';
-    num *= 10;
-    num += s.rbegin()[0]-'0';
+   auto b = a;
+   sort(b.begin(), b.end());
+   reverse(b.begin(), b.end());
 
-dbg(num);
-    bool ok = true;
-    if (num >= 1 && num <= 349) {
-        ok = true;
-        if (num == 316) {
-            ok = false;
-        }
-    } else {
-        ok = false;
-    }
+   vector<int64> preSum(n+1, 0);
+   for (int i = 1; i <= n; i++) {
+      preSum[i] = preSum[i-1] + b[i-1];
+   }
 
-    if (ok == true) {
-        println("Yes");
-    } else {
-        println("No");
-    }
-    
-    return;
+   int64 sum = accumulate(b.begin(), b.end(), int64_t(0));
+
+   for (int i = 1; i <= n; i++) {
+      if (preSum[i] > sum-preSum[i]) {
+         println(i);
+         return;
+      }
+   }
+   
+   return;
 }
 
 // ----------------------------- /* End of useful functions */ -------------------------------

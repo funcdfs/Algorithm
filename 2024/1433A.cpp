@@ -1,5 +1,5 @@
-// link: https://atcoder.jp/contests/abc371/tasks/abc371_a A - Jiro
-// time: 2024/9/18 22:36:27 https://github.com/funcdfs
+// link: https://codeforces.com/contest/1433/problem/A A. Boring Apartments
+// time: 2024/9/18 23:32:45 https://github.com/funcdfs
 
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
@@ -24,62 +24,35 @@ struct _init_end { _init_end() { std::cout << fixed << setprecision(		15		/* flo
 #endif
 
 auto solve() -> void; /* main --> */ int32 main() { solve(); return 0; }
-#pragma endregion github_funcdfs   // clang-format on
+#pragma endregion github_funcdfs	// clang-format on
 
 // ----------------------------- /* Start of useful functions */ -----------------------------
 
 
 auto solve() -> void {
-   string a, b, c;
-   cin >> a >> b >> c;
-   /*
-      if (a == "<" and b == "<") {
-         // a is smallest
-         if (c == "<") {
-            println("B");
-         } else if (c == ">") {
-            println("C");
-         }
-      } else if (b == ">" and c == ">") {
-         // c is bigest
-         if (a == "<") {
-            println("B");
-         } else {
-            println("A");
-         }
-      } else if (a == "<" and c == "")
-     */
-   vector<int> x(3, 0);
-   if (a == "<") {
-      x[1] += 1;
-   } else {
-      x[0] += 1;
+   
+   int tt = 0;
+   cin >> tt;
+   unordered_map<int, int> hs;
+   hs[1] = 1;
+   for (int i = 2; i <= 4; i++) {
+      hs[i] = hs[i-1] + 1;
    }
-
-   if (b == "<") {
-      x[2] += 1;
-   } else {
-      x[0] += 1;
+   for (int i = 1; i <= 4; i++) {
+      hs[i] = hs[i-1] + hs[i];
    }
+   while (tt--) {
+      string s;
+      cin >> s;
+      int startNum = s[0] - '0';
+      int cnt = int(s.size()); 
 
-   if (c == "<") {
-      x[2] += 1;
-   } else {
-      x[1] += 1;
+      int loop = (startNum-1);
+
+dbg(startNum, cnt, loop);
+      println(loop*(1+2+3+4) + hs[cnt]);
    }
-   dbg(x);
-
-   auto it = find_if(x.begin(), x.end(), [=](const int &val) -> bool { return val == 1; });
-
-   int idx = distance(x.begin(), it);
-   if (idx == 0) {
-      println("A");
-   } else if (idx == 1) {
-      println("B");
-   } else if (idx == 2) {
-      println("C");
-   }
-
+   
    return;
 }
 

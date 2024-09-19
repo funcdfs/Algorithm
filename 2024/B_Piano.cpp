@@ -1,8 +1,7 @@
-// link: https://atcoder.jp/contests/abc350/tasks/abc350_a A - Past ABCs
-// time: 2024/9/19 00:04:17 https://github.com/funcdfs
-
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
+#undef UNICODE
+#undef _UNICODEj
 /* using golang types */ using namespace std; using int32 = signed; using uint32 = unsigned; using float32 = double; using int64 = long long; using uint64 = unsigned long long; using float64 = long double; 
 /* vec<(any)> cincout */ template <class T> istream &operator>> (istream &cin,  vector<T> &a)  { for (auto &x : a) { cin >> x; } return cin; }
 template <class T> ostream &operator<< (ostream &cout, vector<T>           &a)  { int n = int(a.size()); if (!n) { return cout; } cout << a[0]; for (int i = 1; i < n; i++) { cout << ' ' << a[i]; } return cout; }
@@ -30,34 +29,16 @@ auto solve() -> void; /* main --> */ int32 main() { solve(); return 0; }
 
 
 auto solve() -> void {
-    
-    string s;
-    cin >> s;
+   
+   int w = 0, b = 0;
+   cin >> w >> b;
 
-    int num = s.rbegin()[2]-'0';
-    num *= 10;
-    num += s.rbegin()[1]-'0';
-    num *= 10;
-    num += s.rbegin()[0]-'0';
+   string t = "wbwbwwbwbwbw";
+   for (int i = 0; i < std::ssize(t); i++) {
 
-dbg(num);
-    bool ok = true;
-    if (num >= 1 && num <= 349) {
-        ok = true;
-        if (num == 316) {
-            ok = false;
-        }
-    } else {
-        ok = false;
-    }
-
-    if (ok == true) {
-        println("Yes");
-    } else {
-        println("No");
-    }
-    
-    return;
+   }
+   
+   return;
 }
 
 // ----------------------------- /* End of useful functions */ -------------------------------

@@ -1,5 +1,5 @@
-// link: https://atcoder.jp/contests/abc350/tasks/abc350_a A - Past ABCs
-// time: 2024/9/19 00:04:17 https://github.com/funcdfs
+// link: https://codeforces.com/contest/709/problem/A A. Juicer
+// time: 2024/9/19 21:21:49 https://github.com/funcdfs
 
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
@@ -24,40 +24,44 @@ struct _init_end { _init_end() { std::cout << fixed << setprecision(		15		/* flo
 #endif
 
 auto solve() -> void; /* main --> */ int32 main() { solve(); return 0; }
-#pragma endregion github_funcdfs	// clang-format on
+#pragma endregion github_funcdfs   // clang-format on
 
 // ----------------------------- /* Start of useful functions */ -----------------------------
 
 
 auto solve() -> void {
-    
-    string s;
-    cin >> s;
+   int n = 0;
+   cin >> n;
+   int machine, trash;
+   cin >> machine >> trash;
+   vector<int> a(n, 0);
+   cin >> a;
 
-    int num = s.rbegin()[2]-'0';
-    num *= 10;
-    num += s.rbegin()[1]-'0';
-    num *= 10;
-    num += s.rbegin()[0]-'0';
+   int now = 0;
+   int cnt = 0;
+   for (int i = 0; i < ssize(a); i++) {
+      // if (a[i] <= machine) {
+      //    now += a[i];
+      // }
+      // if (now > trash) {
+      //    now = 0;
+      //    cnt += 1;
+      // }
+      if (a[i] > machine) {
+         continue;
+      } else {
+         now += a[i];
+         if (now > trash) {
+            now = 0;
+            cnt += 1;
+         }
+      }
+   }
 
-dbg(num);
-    bool ok = true;
-    if (num >= 1 && num <= 349) {
-        ok = true;
-        if (num == 316) {
-            ok = false;
-        }
-    } else {
-        ok = false;
-    }
+   println(cnt);
 
-    if (ok == true) {
-        println("Yes");
-    } else {
-        println("No");
-    }
-    
-    return;
+
+   return;
 }
 
 // ----------------------------- /* End of useful functions */ -------------------------------

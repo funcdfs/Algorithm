@@ -1,5 +1,5 @@
-// link: https://atcoder.jp/contests/abc350/tasks/abc350_a A - Past ABCs
-// time: 2024/9/19 00:04:17 https://github.com/funcdfs
+// link: https://atcoder.jp/contests/abc358/tasks/abc358_a A - Welcome to AtCoder Land
+// time: 2024/9/19 00:02:23 https://github.com/funcdfs
 
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
@@ -30,34 +30,17 @@ auto solve() -> void; /* main --> */ int32 main() { solve(); return 0; }
 
 
 auto solve() -> void {
-    
-    string s;
-    cin >> s;
+   
+   string s, t;
+   cin >> s >> t;
 
-    int num = s.rbegin()[2]-'0';
-    num *= 10;
-    num += s.rbegin()[1]-'0';
-    num *= 10;
-    num += s.rbegin()[0]-'0';
-
-dbg(num);
-    bool ok = true;
-    if (num >= 1 && num <= 349) {
-        ok = true;
-        if (num == 316) {
-            ok = false;
-        }
-    } else {
-        ok = false;
-    }
-
-    if (ok == true) {
-        println("Yes");
-    } else {
-        println("No");
-    }
-    
-    return;
+   if (s == "AtCoder" and t == "Land") {
+      println("Yes");
+   } else {
+      println("No");
+   }
+   
+   return;
 }
 
 // ----------------------------- /* End of useful functions */ -------------------------------
