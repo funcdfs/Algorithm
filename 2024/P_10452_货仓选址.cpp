@@ -1,5 +1,5 @@
-// link: https://codeforces.com/contest/115/problem/A A. Party
-// time: 2024/9/20 12:07:35 https://github.com/funcdfs
+// link: https://www.luogu.com.cn/problem/P10452 P10452 货仓选址
+// time: 2024/9/20 13:53:36 https://github.com/funcdfs
 
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
@@ -33,24 +33,22 @@ auto solve() -> void {
    
    int n = 0;
    cin >> n;
-   vector<int> p(n, 0);
-   cin >> p;
+   vector<int> a(n, 0);
+   cin >> a;
 
-   int ans = 0;
-   // max depath tree in a forest 
+   sort(a.begin(), a.end());
 
-   for (int i = 0; i < n; i++) {
-      int fa = p[i];
-      int cnt = 1;
-      while (fa >= 0) {
-         fa = p[fa - 1];
-         cnt += 1;
-      }
-      ans = max(ans, cnt);
+   // mid num
+
+   int startNum = a[n/2]; // if index begin from zero, odd == even == a[n/2]
+
+   int64 sum = 0;
+   for (int i = 0; i < ssize(a); i++) {
+      sum += abs(int64(startNum - a[i]));
    }
 
-   println(ans);
-   
+   println(sum);
+
    
    return;
 }

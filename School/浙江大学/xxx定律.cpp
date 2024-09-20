@@ -1,6 +1,3 @@
-// link: https://codeforces.com/contest/115/problem/A A. Party
-// time: 2024/9/20 12:07:35 https://github.com/funcdfs
-
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
 /* using golang types */ using namespace std; using int32 = signed; using uint32 = unsigned; using float32 = double; using int64 = long long; using uint64 = unsigned long long; using float64 = long double; 
@@ -28,29 +25,29 @@ auto solve() -> void; /* main --> */ int32 main() { solve(); return 0; }
 
 // ----------------------------- /* Start of useful functions */ -----------------------------
 
+// link: https://www.nowcoder.com/share/jump/2121624911726815461106
 
 auto solve() -> void {
    
    int n = 0;
-   cin >> n;
-   vector<int> p(n, 0);
-   cin >> p;
-
-   int ans = 0;
-   // max depath tree in a forest 
-
-   for (int i = 0; i < n; i++) {
-      int fa = p[i];
-      int cnt = 1;
-      while (fa >= 0) {
-         fa = p[fa - 1];
+   while (cin >> n) {
+      if (n == 1) {
+         println(0);
+         continue;
+      }
+      int cnt = 0;
+      while (n != 1) {
+         if (n % 2 == 0) {
+            n /= 2;
+         } else if (n % 2 == 1) {
+            n *= 3;
+            n += 1;
+            n /= 2;
+         }
          cnt += 1;
       }
-      ans = max(ans, cnt);
+      println(cnt);
    }
-
-   println(ans);
-   
    
    return;
 }
