@@ -1,3 +1,6 @@
+// link: https://codeforces.com/contest/320/problem/A A. Magic Numbers
+// time: 2024/9/20 15:43:47 https://github.com/funcdfs
+
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
 /* using golang types */ using namespace std; using int32 = signed; using uint32 = unsigned; using float32 = double; using int64 = long long; using uint64 = unsigned long long; using float64 = long double; 
@@ -20,20 +23,46 @@ struct _init_end { _init_end() { std::cout << fixed << setprecision(		15		/* flo
 #define eprintln(...) ;
 #endif
 
-void solve(); /* main --> */ int32 main() { solve(); return 0; }
+auto solve() -> void; /* main --> */ int32 main() { solve(); return 0; }
 #pragma endregion github_funcdfs	// clang-format on
 
 // ----------------------------- /* Start of useful functions */ -----------------------------
 
 
-void solve() {
+auto solve() -> void {
    
    string s;
    cin >> s;
 
-   for (int i = 0; i < ssize(s); i++) [
-      println("Hello world");
-   ]
+   unordered_map<string, bool> hs;
+   hs["1"] = true;
+   hs["14"] = true;
+   hs["144"] = true;
+
+   bool ok = true;
+
+   int cnt = count_if(s.begin(), s.end(), [=](const auto& xx){
+      return xx != '1' && xx != '4';
+   });
+
+   if (cnt > 0 || s[0] == '4') {
+      ok = false;
+      goto end;
+   } else {
+      for (int i = 0; i+2 < ssize(s); i++) {
+         if (s[i] == '4' && s[i+1] == '4' && s[i+2] == '4') {
+            ok = false;
+            goto end;
+         }
+      }
+   }
+   
+end:
+   if (ok == true) {
+      println("YES");
+   } else {
+      println("NO");
+   }
    
    return;
 }

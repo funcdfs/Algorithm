@@ -41,7 +41,7 @@ sudo cp -f /Users/wei/code/Algorithm/Faster/dbg.h ./algo/dbg.h
 
 ```sh
 cd algo
-sudo g++ '-std=c++20' -D LOCAL -H dbg.h
+sudo g++ '-std=c++23' -D LOCAL -H dbg.h
 cd ../
 ```
 
@@ -49,6 +49,6 @@ cd ../
 
 ```sh
 cd bits
-sudo g++ '-std=c++20' -D LOCAL -H stdc++.h
+sudo g++ '-std=c++23' -D LOCAL -H stdc++.h
 cd ../
 ```

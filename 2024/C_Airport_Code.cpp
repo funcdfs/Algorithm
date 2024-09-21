@@ -1,3 +1,6 @@
+// link: https://atcoder.jp/contests/abc349/tasks/abc349_c C - Airport Code
+// time: 2024/9/20 21:38:02 https://github.com/funcdfs
+
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
 /* using golang types */ using namespace std; using int32 = signed; using uint32 = unsigned; using float32 = double; using int64 = long long; using uint64 = unsigned long long; using float64 = long double; 
@@ -28,12 +31,31 @@ void solve(); /* main --> */ int32 main() { solve(); return 0; }
 
 void solve() {
    
-   string s;
-   cin >> s;
+   string all;
+   string aim;
+   cin >> all >> aim;
 
-   for (int i = 0; i < ssize(s); i++) [
-      println("Hello world");
-   ]
+   int now = 0;
+   for (int i = 0, j = 0; i < ssize(all); i++) {
+      if (all[i] + ('A'-'a') == aim[j]) {
+         j += 1;
+      }
+      if (j == ssize(aim)) {
+         println("Yes");
+         return;
+      } else {
+         now = j;
+      }
+   }
+
+   if (now == 2) {
+      if (aim[2] == 'X') {
+         println("Yes");
+         return;
+      }
+   }
+
+   println("No");
    
    return;
 }

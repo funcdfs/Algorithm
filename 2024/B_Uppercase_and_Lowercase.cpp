@@ -1,3 +1,6 @@
+// link: https://atcoder.jp/contests/abc357/tasks/abc357_b B - Uppercase and Lowercase
+// time: 2024/9/20 19:11:46 https://github.com/funcdfs
+
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
 /* using golang types */ using namespace std; using int32 = signed; using uint32 = unsigned; using float32 = double; using int64 = long long; using uint64 = unsigned long long; using float64 = long double; 
@@ -20,20 +23,41 @@ struct _init_end { _init_end() { std::cout << fixed << setprecision(		15		/* flo
 #define eprintln(...) ;
 #endif
 
-void solve(); /* main --> */ int32 main() { solve(); return 0; }
+auto solve() -> void; /* main --> */ int32 main() { solve(); return 0; }
 #pragma endregion github_funcdfs	// clang-format on
 
 // ----------------------------- /* Start of useful functions */ -----------------------------
 
 
-void solve() {
+auto solve() -> void {
    
    string s;
    cin >> s;
 
-   for (int i = 0; i < ssize(s); i++) [
-      println("Hello world");
-   ]
+   int cntLower = count_if(s.begin(), s.end(), [=](const auto& xx){
+      return xx >= 'a' && xx <= 'z';
+   });
+   
+   int cntUpper = count_if(s.begin(), s.end(), [=](const auto& xx){
+      return xx >= 'A' && xx <= 'Z';
+   });
+
+   if (cntLower > cntUpper) {
+      for (int i = 0; i < ssize(s); i++) {
+         if (s[i] >= 'A' && s[i] <= 'Z') {
+            s[i] = s[i] - ('A' - 'a');
+         }
+      }
+   } else {
+      for (int i = 0; i < ssize(s); i++) {
+         if (s[i] >= 'a' && s[i] <= 'z') {
+            s[i] = s[i] + ('A' - 'a');
+         }
+      }
+   }
+
+   println(s);
+   
    
    return;
 }

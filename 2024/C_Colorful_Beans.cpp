@@ -1,3 +1,6 @@
+// link: https://atcoder.jp/contests/abc348/tasks/abc348_c C - Colorful Beans
+// time: 2024/9/20 21:30:41 https://github.com/funcdfs
+
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
 /* using golang types */ using namespace std; using int32 = signed; using uint32 = unsigned; using float32 = double; using int64 = long long; using uint64 = unsigned long long; using float64 = long double; 
@@ -28,12 +31,28 @@ void solve(); /* main --> */ int32 main() { solve(); return 0; }
 
 void solve() {
    
-   string s;
-   cin >> s;
+   // max, min, val 
+   int n = 0;
+   cin >> n;
+   vector<int> val(n, 0), color(n, 0);
+   for (int i = 0; i < n; i++) {
+      cin >> val[i] >> color[i];
+   }
 
-   for (int i = 0; i < ssize(s); i++) [
-      println("Hello world");
-   ]
+   unordered_map<int, int> hs;
+   for (int i = 0; i < n; i++) {
+      if (hs.contains(color[i]) == false) {
+         hs[color[i]] = numeric_limits<int32>::max();
+      }
+      hs[color[i]] = min(hs[color[i]], val[i]);
+   }
+
+   int ans = numeric_limits<int32>::min();
+   for (const auto& [k, v] : hs) {
+      ans = max(ans, v);
+   }
+
+   println(ans);
    
    return;
 }

@@ -1,3 +1,6 @@
+// link: https://atcoder.jp/contests/abc348/tasks/abc348_a A - Penalty Kick
+// time: 2024/9/20 21:16:44 https://github.com/funcdfs
+
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
 /* using golang types */ using namespace std; using int32 = signed; using uint32 = unsigned; using float32 = double; using int64 = long long; using uint64 = unsigned long long; using float64 = long double; 
@@ -28,12 +31,16 @@ void solve(); /* main --> */ int32 main() { solve(); return 0; }
 
 void solve() {
    
-   string s;
-   cin >> s;
+   int n = 0;
+   cin >> n;
 
-   for (int i = 0; i < ssize(s); i++) [
-      println("Hello world");
-   ]
+   for (int i = 0; i < n; i++) {
+      if ((i+1) % 3 == 0) {
+         cout << 'x';
+      } else {
+         cout << 'o';
+      }
+   }
    
    return;
 }

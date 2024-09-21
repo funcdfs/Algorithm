@@ -1,3 +1,6 @@
+// link: https://atcoder.jp/contests/abc358/tasks/abc358_b B - Ticket Counter
+// time: 2024/9/20 20:59:29 https://github.com/funcdfs
+
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
 /* using golang types */ using namespace std; using int32 = signed; using uint32 = unsigned; using float32 = double; using int64 = long long; using uint64 = unsigned long long; using float64 = long double; 
@@ -21,20 +24,34 @@ struct _init_end { _init_end() { std::cout << fixed << setprecision(		15		/* flo
 #endif
 
 void solve(); /* main --> */ int32 main() { solve(); return 0; }
-#pragma endregion github_funcdfs	// clang-format on
+#pragma endregion github_funcdfs   // clang-format on
 
 // ----------------------------- /* Start of useful functions */ -----------------------------
 
 
 void solve() {
-   
-   string s;
-   cin >> s;
+   int n = 0, time = 0;
+   cin >> n >> time;
 
-   for (int i = 0; i < ssize(s); i++) [
-      println("Hello world");
-   ]
-   
+   vector<int> arrive(n, 0);
+   cin >> arrive;
+
+   int64 nowTotalTime = 0;
+   vector<int> ans(n, 0);
+   for (int i = 0; i < n; i++) {
+      if (arrive[i] >= nowTotalTime) {
+         ans[i] = arrive[i] + time;
+         nowTotalTime = arrive[i] + time;
+      } else if (arrive[i] < nowTotalTime) {
+         ans[i] = nowTotalTime + time;
+         nowTotalTime += time;
+      }
+   }
+
+   for (int i = 0; i < ssize(ans); i++) {
+      println(ans[i]);
+   }
+
    return;
 }
 

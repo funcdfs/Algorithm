@@ -1,3 +1,6 @@
+// link: https://atcoder.jp/contests/abc348/tasks/abc348_b B - Farthest Point
+// time: 2024/9/20 21:18:25 https://github.com/funcdfs
+
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
 /* using golang types */ using namespace std; using int32 = signed; using uint32 = unsigned; using float32 = double; using int64 = long long; using uint64 = unsigned long long; using float64 = long double; 
@@ -25,15 +28,37 @@ void solve(); /* main --> */ int32 main() { solve(); return 0; }
 
 // ----------------------------- /* Start of useful functions */ -----------------------------
 
+struct point {
+   int x, y;
+};
 
 void solve() {
    
-   string s;
-   cin >> s;
+   int n = 0;
+   cin >> n;
 
-   for (int i = 0; i < ssize(s); i++) [
-      println("Hello world");
-   ]
+   vector<point> p(n);
+   for (int i = 0; i < n; i++) {
+      cin >> p[i].x >> p[i].y;
+   }
+
+   vector<int> ans(n, 0);
+   vector<int> ansIdx(n, 0);
+   for (int i = 0; i < n; i++) {
+      for (int j = 0; j < n; j++) {
+         int64 distanceX = p[j].x-p[i].x;
+         int64 distanceY = p[j].y-p[i].y;
+         int64 distance = distanceX*distanceX + distanceY*distanceY;
+         if (distance > ans[i]) {
+            ans[i] = distance;
+            ansIdx[i] = j+1;
+         }
+      }
+   }
+
+   for (int i = 0; i < ssize(ans); i++) {
+      cout << ansIdx[i] << '\n';
+   }
    
    return;
 }

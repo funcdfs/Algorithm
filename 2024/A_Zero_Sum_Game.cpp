@@ -1,3 +1,6 @@
+// link: https://atcoder.jp/contests/abc349/tasks/abc349_a A - Zero Sum Game
+// time: 2024/9/20 21:08:59 https://github.com/funcdfs
+
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
 /* using golang types */ using namespace std; using int32 = signed; using uint32 = unsigned; using float32 = double; using int64 = long long; using uint64 = unsigned long long; using float64 = long double; 
@@ -28,12 +31,13 @@ void solve(); /* main --> */ int32 main() { solve(); return 0; }
 
 void solve() {
    
-   string s;
-   cin >> s;
+   int n = 0;
+   cin >> n;
+   vector<int> a(n-1, 0);
+   cin >> a;
 
-   for (int i = 0; i < ssize(s); i++) [
-      println("Hello world");
-   ]
+   int64 sum = accumulate(a.begin(), a.end(), int64_t(0));
+   println(-sum);
    
    return;
 }

@@ -1,3 +1,6 @@
+// link: https://codeforces.com/contest/567/problem/A A. Lineland Mail
+// time: 2024/9/21 13:41:12 https://github.com/funcdfs
+
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
 /* using golang types */ using namespace std; using int32 = signed; using uint32 = unsigned; using float32 = double; using int64 = long long; using uint64 = unsigned long long; using float64 = long double; 
@@ -28,12 +31,30 @@ void solve(); /* main --> */ int32 main() { solve(); return 0; }
 
 void solve() {
    
-   string s;
-   cin >> s;
+   int n = 0;
+   cin >> n;
+   vector<int> a(n, 0);
+   cin >> a;
 
-   for (int i = 0; i < ssize(s); i++) [
-      println("Hello world");
-   ]
+   // 数轴上有 n 个点，给出每个点的横坐标（保证从小到大排序），求每个点到其他点的最小距离和最大距离。
+
+   cout << abs(a[1]-a[0]) << ' ' << abs(a.back()-a[0]) << endl;
+   for (int i = 1; i < n-1; i++) {
+      if (abs(a[i-1] - a[i]) < abs(a[i+1] - a[i])) {
+         cout << abs(a[i-1] - a[i]);
+      } else {
+         cout << abs(a[i+1] - a[i]);
+      }
+      cout << ' ';
+      if (abs(a[0] - a[i]) < abs(a.rbegin()[0] - a[i])) {
+         cout << abs(a.back() - a[i]);
+      } else {
+         cout << abs(a[0] - a[i]);
+      }
+      cout << endl;
+   }
+
+   cout << abs(a.rbegin()[1]-a.back()) << ' ' << abs(a.at(0)-a.back()) << endl;
    
    return;
 }
