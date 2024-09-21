@@ -1,3 +1,6 @@
+// link: https://codeforces.com/contest/149/problem/A A. Business trip
+// time: 2024/9/21 18:49:38 https://github.com/funcdfs
+
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
 /* using golang types */ using namespace std; using int32 = signed; using uint32 = unsigned; using float32 = double; using int64 = long long; using uint64 = unsigned long long; using float64 = long double; 
@@ -27,6 +30,30 @@ void solve(); /* main --> */ int32 main() { solve(); return 0; }
 
 
 void solve() {
+   
+   int k = 0;
+   cin >> k;
+
+   vector<int> a(12, 0);
+   cin >> a;
+   dbg(k, a);
+
+   sort(a.begin(), a.end(), [](const auto& x1, const auto& x2) {
+      return x1 > x2;
+   });
+   
+
+   int nowSum = 0;
+   int cnt = 0;
+   for (int i = 0; i < ssize(a); i++) {
+      if (nowSum >= k) {
+         println(cnt);
+         return;
+      } else {
+         nowSum += a[i];
+         cnt += 1;
+      }
+   }
    
    return;
 }

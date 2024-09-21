@@ -36,10 +36,10 @@ auto solve(int _case) -> void {
    cin >> n;
    vector<int> a(n, 0);
    cin >> a;
-   
+
    unordered_map<int, int> hs;
    int maxFreqVal = 0;
-   for (auto& x : a) {
+   for (auto &x : a) {
       hs[x] += 1;
       if (hs[x] >= 2) {
          maxFreqVal = x;
@@ -47,13 +47,11 @@ auto solve(int _case) -> void {
       }
    }
 
-   auto it = find_if(a.begin(), a.end(), [=](const int& x) {
-      return x != maxFreqVal;
-   });
+   auto it = find_if(a.begin(), a.end(), [=](const int &x) { return x != maxFreqVal; });
 
    println(distance(a.begin(), it) + 1);
 
-   
+
    return;
 }
 

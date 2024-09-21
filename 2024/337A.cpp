@@ -1,3 +1,6 @@
+// link: https://codeforces.com/contest/337/problem/A A. Puzzles
+// time: 2024/9/21 16:25:00 https://github.com/funcdfs
+
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
 /* using golang types */ using namespace std; using int32 = signed; using uint32 = unsigned; using float32 = double; using int64 = long long; using uint64 = unsigned long long; using float64 = long double; 
@@ -27,6 +30,23 @@ void solve(); /* main --> */ int32 main() { solve(); return 0; }
 
 
 void solve() {
+   
+   int n = 0, m = 0;
+   cin >> n >> m;
+
+   vector<int> f(m, 0);
+   cin >> f;
+
+   sort(f.begin(), f.end());
+
+   int windowsSize = n;
+   int minDiff = numeric_limits<int32>::max();
+   
+   for (int i = 0; i+n-1 < m; i++) {
+      minDiff = min(minDiff, f[i+n-1]-f[i]);
+   }
+
+   println(minDiff);
    
    return;
 }
