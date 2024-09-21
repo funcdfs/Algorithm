@@ -1,27 +1,48 @@
+" funcdfs@gmail.com
+" china
+" version1: 2024-09-22 night:01:29
+
+" ============================ key map ============================
+
+" nnoremap <F1> :w !clip.exe<CR>
+" nnoremap <F2> :set nu! nu?<CR>
+" nnoremap <F3> :set list! list?<CR>
+" nnoremap <F4> :set wrap! wrap?<CR>
+" set pastetoggle=<F5>
+" au InsertLeave * set nopaste 
+" nnoremap <F6> :exec exists('syntax_on') ? 'syn off' : 'syn on'<CR>
+" nnoremap <F7> :w !clip.exe<CR><CR>
+"
 " kj for Esc
-let g:esc_j_lasttime = 0
 let g:esc_k_lasttime = 0
-function! JKescape(key)
-	if a:key=='j' | let g:esc_j_lasttime = reltimefloat(reltime()) | endif
+let g:esc_j_lasttime = 0
+function! KJescape(key)
 	if a:key=='k' | let g:esc_k_lasttime = reltimefloat(reltime()) | endif
-	let l:timediff = abs(g:esc_j_lasttime - g:esc_k_lasttime)
+	if a:key=='j' | let g:esc_j_lasttime = reltimefloat(reltime()) | endif
+	let l:timediff = abs(g:esc_k_lasttime - g:esc_j_lasttime)
 	return (l:timediff <= 0.05 && l:timediff >=0.001) ? "\b\e" : a:key
 endfunction
-inoremap <expr> j JKescape('j')
-inoremap <expr> k JKescape('k')
+inoremap <expr> k KJescape('k')
+inoremap <expr> j KJescape('j')
 inoremap <nowait> kj <ESC>
 
 " bracket jump 
 noremap <TAB> %
 
+" remap U to <C-r> for easier redo
+nnoremap U <C-r>
+
+" remove highlight
+noremap <silent><leader>/ :nohls<CR>
 
 " Shift+H goto head of the line, Shift+L goto end of the line
 nnoremap H ^
 nnoremap L $
 
 
-"Map ; to : and save a million keystrokes
-nnoremap ; :
+" Map ; to : and save a million keystrokes
+" if in very fast typing, this may make eroor touch
+" nnoremap ; :
 
 
 " leader key is '\' 
@@ -30,7 +51,7 @@ nnoremap <leader>q :q<CR>
 " Quickly save the current file
 nnoremap <leader>w :w<CR>
 " Quickly copy all content
-map <Leader>v ggVG
+map <Leader>c ggVG"+y
 map <Leader>y ggyG
 " Quickly delete all content
 map <Leader>d ggdG
@@ -44,7 +65,7 @@ nnoremap <silent> # #zz
 nnoremap <silent> g* g*zz
 
 
-"Reselect visual block after indent/outdent.调整缩进后自动选中，方便再次操作
+"Reselect visual block after indent/outdent
 vnoremap < <gv 
 vnoremap > >gv
 
@@ -53,48 +74,26 @@ vnoremap > >gv
 map Y y$
 
 
-
-
-
-" ================================ with neovide =========================
-
-if exists("g:neovide")
-    " Put anything you want to happen only in Neovide here
-    set guifont=source_code_pro:h10
-
-    "  let g:neovide_transparency = 0.97
-    let g:neovide_scroll_animation_length = 0.2
-    let g:neovide_cursor_trail_size = 0.4
-endif
-
-
-set background=dark
-" colorscheme oceanic_material
-
+" save
+cmap w!! w !sudo tee >/dev/null %
 
 
 " ==================================  base ==================================
 
-set noeb
 
-" set cursorcolumn  "or set cuc 设置光标所在的列
-set cursorline    "or set cul 设置光标所在的行
-" cterm 表示原生 vim 设置样式, 设置为 NONE 表示可以自定义设置
-" red（红），white（白），black（黑），green（绿），yellow（黄），blue（蓝），purple（紫），
-" gray（灰），brown（棕），tan(褐色)，syan(青色)
+" syntax
+syntax on
 
-" 更多高亮颜色设置, 可以:h highlight 查看manual
-highlight CursorLine   cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
-highlight CursorColumn cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+" history : how many lines of history VIM has to remember
+set history=2000
 
-set noswapfile
-set mouse=a
+" filetype
+filetype on
+" Enable filetype plugins
+filetype plugin on
+filetype indent on
 
-set shortmess=a
-set cmdheight=2
-
-
-
+" base
 set nocompatible                " don't bother with vi compatibility
 set autoread                    " reload files when changed on disk, i.e. via `git checkout`
 set shortmess=atI
@@ -109,13 +108,11 @@ set tm=500
 
 
 " show location
-" set cursorcolumn
+"   set cursorcolumn
 set cursorline
 
-
-
 " movement
-set scrolloff=7                 " keep 6 lines when scrolling
+set scrolloff=8                 " keep 8 lines when scrolling
 
 
 " show
@@ -126,7 +123,6 @@ set showcmd                     " display incomplete commands
 set showmode                    " display current modes
 set showmatch                   " jump to matches when entering parentheses
 set matchtime=2                 " tenths of a second to show the matching parenthesis
-
 
 
 " search
@@ -147,6 +143,22 @@ set shiftwidth=4
 set tabstop=4
 set softtabstop=4                " insert mode tab and backspace use 4 spaces
 
+" NOT SUPPORT
+" fold
+set foldenable
+set foldmethod=indent
+set foldlevel=99
+let g:FoldMethod = 0
+map <leader>zz :call ToggleFold()<cr>
+fun! ToggleFold()
+    if g:FoldMethod == 0
+        exe "normal! zM"
+        let g:FoldMethod = 1
+    else
+        exe "normal! zR"
+        let g:FoldMethod = 0
+    endif
+endfun
 
 " encoding
 set encoding=utf-8
@@ -157,7 +169,6 @@ set formatoptions+=m
 set formatoptions+=B
 
 
-
 " select & complete
 set selection=inclusive
 set selectmode=mouse,key
@@ -166,3 +177,32 @@ set completeopt=longest,menu
 set wildmenu                           " show a navigable menu for tab completion"
 set wildmode=longest,list,full
 set wildignore=*.o,*~,*.pyc,*.class
+
+
+" others
+set backspace=indent,eol,start  " make that backspace key work the way it should
+set whichwrap+=<,>,h,l
+
+" if this not work ,make sure .viminfo is writable for you
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+" NOT SUPPORT
+" Enable basic mouse behavior such as resizing buffers.
+set mouse=a
+
+" ============================ theme and status line ============================
+
+" theme
+set background=dark
+
+" set mark column color
+hi! link SignColumn   LineNr
+hi! link ShowMarksHLl DiffAdd
+hi! link ShowMarksHLu DiffChange
+
+" status line
+set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
+set laststatus=2   " Always show the status line - use 2 lines for the status bar
+

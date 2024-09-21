@@ -11,8 +11,13 @@ std::string cpp_standard() {
       return "C++14";
    } else if (VER == 201703) {
       return "C++17";
-   } else {
+   } else if (VER == 202002) {
       return "C++20";
+   } else if (VER == 202302) {
+      return "C++23";
+   } else  {
+      std::cout << __cplusplus << std::endl;
+      return "hh";
    }
 }
 
