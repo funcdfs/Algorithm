@@ -1,3 +1,6 @@
+// link: https://codeforces.com/contest/556/problem/A A. Case of the Zeros and Ones
+// time: 2024/9/22 13:55:21 https://github.com/funcdfs
+
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
 /* using golang types */ using namespace std; using int32 = signed; using uint32 = unsigned; using float32 = double; using int64 = long long; using uint64 = unsigned long long; using float64 = long double; 
@@ -7,9 +10,9 @@ template <class T> istream &operator>> (istream &cin,  valarray<T>         &a)  
 template <class T> ostream &operator<< (ostream &cout, valarray<T>         &a)  { int n = int(a.size()); if (!n) { return cout; } cout << a[0]; for (int i = 1; i < n; i++) { cout << ' ' << a[i]; } return cout; }
 template <class T> ostream &operator<< (ostream &cout, vector<vector<T>>   &a)  { int n = int(a.size()); if (!n) { return cout; } cout << a[0]; for (int i = 1; i < n; i++) { cout << '\n' << a[i]; } return cout; }
 template <class T> ostream &operator<< (ostream &cout, vector<valarray<T>> &a)  { int n = int(a.size()); if (!n) { return cout; } cout << a[0]; for (int i = 1; i < n; i++) { cout << '\n' << a[i]; } return cout; }
-#define endl '\n'    /* Use '\n' instead of std::endl to avoid unnecessary buffer flushes for performance */ 
-#define print(...)   std::cout << __VA_ARGS__            /* C++23 std::print()	-> the format string is printed to the standard output */ 
-#define println(...) std::cout << __VA_ARGS__ << '\n'    /* C++23 std::println() -> to print a single value and append a newline */
+#define endl '\n'	 /* Use '\n' instead of std::endl to avoid unnecessary buffer flushes for performance */ 
+#define print(...)	std::cout << __VA_ARGS__ 			  /* C++23 std::print()	-> the format string is printed to the standard output */ 
+#define println(...) std::cout << __VA_ARGS__ << '\n' /* C++23 std::println() -> to print a single value and append a newline */
 struct _init_end { _init_end() { std::cout << fixed << setprecision(		15		/* float output precision */);  { cin.tie(nullptr); ios::sync_with_stdio(false); }}} __author_github_funcdfs; 
 
 #ifdef LOCAL /* For local debugging purposes */ 
@@ -20,15 +23,9 @@ struct _init_end { _init_end() { std::cout << fixed << setprecision(		15		/* flo
 #define eprintln(...) ;
 #endif
 
-#define ssize(x) (int32)((x).size()) /* support C++20: std::ssize() feature*/
+#define len(x) (int32)((x).size())
 template<class T> bool Min(T& a, const T& b) { return b < a ? a = b, 1 : 0; }
 template<class T> bool Max(T& a, const T& b) { return a < b ? a = b, 1 : 0; }
-
-#define BitCount(a)      (int)__builtin_popcount(a)
-#define BitCountInt64(a) (int)__builtin_popcountll(a)
-#define BitAt(x, i)      (((x)>>(i))&1)
-constexpr inline int64   LgEqualPow2(int64 x) { return 1LL << (lg2(x - 1) + 1); }
-constexpr inline int     Log2(int64 x) { return x == 0 ? -1 : sizeof(int64) * 8 - 1 - __builtin_clzll(x); }
 
 void solve(); /* main --> */ int32 main() { solve(); return 0; }
 #pragma endregion github_funcdfs	// clang-format on
@@ -38,6 +35,17 @@ void solve(); /* main --> */ int32 main() { solve(); return 0; }
 
 void solve() {
    
+   int n = 0; cin >> n;
+   string s; cin >> s;
+
+   int cnt1 = count_if(s.begin(), s.end(), [=](const auto& xx){
+      return xx == '1';
+   });
+   int cnt0 = count_if(s.begin(), s.end(), [=](const auto& xx){
+      return xx == '0';
+   });
+   
+   println(abs(cnt1-cnt0));
    
    return;
 }

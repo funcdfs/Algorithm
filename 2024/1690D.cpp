@@ -1,3 +1,6 @@
+// link: https://codeforces.com/contest/1690/problem/D D. Black and White Stripe
+// time: 2024/9/22 15:10:35 https://github.com/funcdfs
+
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h> 
 /* using golang types */ using namespace std; using int32 = signed; using uint32 = unsigned; using float32 = double; using int64 = long long; using uint64 = unsigned long long; using float64 = long double; 
@@ -24,12 +27,6 @@ struct _init_end { _init_end() { std::cout << fixed << setprecision(		15		/* flo
 template<class T> bool Min(T& a, const T& b) { return b < a ? a = b, 1 : 0; }
 template<class T> bool Max(T& a, const T& b) { return a < b ? a = b, 1 : 0; }
 
-#define BitCount(a)      (int)__builtin_popcount(a)
-#define BitCountInt64(a) (int)__builtin_popcountll(a)
-#define BitAt(x, i)      (((x)>>(i))&1)
-constexpr inline int64   LgEqualPow2(int64 x) { return 1LL << (lg2(x - 1) + 1); }
-constexpr inline int     Log2(int64 x) { return x == 0 ? -1 : sizeof(int64) * 8 - 1 - __builtin_clzll(x); }
-
 void solve(); /* main --> */ int32 main() { solve(); return 0; }
 #pragma endregion github_funcdfs	// clang-format on
 
@@ -38,6 +35,24 @@ void solve(); /* main --> */ int32 main() { solve(); return 0; }
 
 void solve() {
    
+   int tt = 0;
+   cin >> tt;
+   while (tt--) {
+      int n = 0, k = 0;
+      cin >> n >> k;
+      string s;
+      cin >> s;
+
+      vector<int> pre(n+1, 0);
+      for (int i = 1; i <= n; i++) {
+         pre[i] = pre[i-1] + (s[i-1]=='W');
+      }
+      int ans = n;
+      for (int i = 0; i+k <= n; i++) {
+         ans = min(ans, pre[i+k]-pre[i]);
+      }
+      println(ans);
+   }
    
    return;
 }

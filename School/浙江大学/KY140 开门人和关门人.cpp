@@ -24,20 +24,44 @@ struct _init_end { _init_end() { std::cout << fixed << setprecision(		15		/* flo
 template<class T> bool Min(T& a, const T& b) { return b < a ? a = b, 1 : 0; }
 template<class T> bool Max(T& a, const T& b) { return a < b ? a = b, 1 : 0; }
 
-#define BitCount(a)      (int)__builtin_popcount(a)
-#define BitCountInt64(a) (int)__builtin_popcountll(a)
-#define BitAt(x, i)      (((x)>>(i))&1)
-constexpr inline int64   LgEqualPow2(int64 x) { return 1LL << (lg2(x - 1) + 1); }
-constexpr inline int     Log2(int64 x) { return x == 0 ? -1 : sizeof(int64) * 8 - 1 - __builtin_clzll(x); }
-
 void solve(); /* main --> */ int32 main() { solve(); return 0; }
 #pragma endregion github_funcdfs	// clang-format on
 
 // ----------------------------- /* Start of useful functions */ -----------------------------
 
+// https://www.nowcoder.com/share/jump/2121624911726991665469
 
 void solve() {
    
+   struct stu {
+      string name;
+      string in;
+      string out;
+   };
+
+   int n = 0;
+   cin >> n;
+   vector<stu> track(n);
+   for (int i = 0; i < ssize(track); i++) {
+      cin >> track[i].name >> track[i].in >> track[i].out;
+   }
+
+   auto clock = [&](string str) -> int64 { // =, &a, &b
+      int64 a = ((str[0]-'0')*10 + (str[1]-'0') ) * 60 * 60;
+      int64 b = ((str[3]-'0')*10 + (str[4]-'0') ) * 60;
+      int64 c = ((str[6]-'0')*10 + (str[7]-'0') );
+      return a+b+c;
+   };
+
+   sort(track.begin(), track.end(), [&](const auto& x1, const auto& x2) {
+      return clock(x1.in) < clock(x2.in);
+   });
+   cout << track[0].name << ' ';
+
+   sort(track.begin(), track.end(), [&](const auto& x1, const auto& x2) {
+      return clock(x1.out) > clock(x2.out);
+   });
+   cout << track[0].name << ' ';
    
    return;
 }
