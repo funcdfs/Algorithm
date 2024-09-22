@@ -20,6 +20,10 @@ struct _init_end { _init_end() { cout << fixed << setprecision(      15      /* 
 #define eprintln(...) ;
 #endif
 
+#define ssize(x) (int32)((x).size()) /* support C++20: std::ssize() feature*/
+template<class T> bool Min(T& a, const T& b) { return b < a ? a = b, 1 : 0; }
+template<class T> bool Max(T& a, const T& b) { return a < b ? a = b, 1 : 0; }
+
 auto solve(int _case) -> void; int32 main() { int testCaseCnt = 0; cin >> testCaseCnt; for (int _case = 1; _case <= testCaseCnt; _case++) { solve(_case); } return 0; }
 #pragma endregion github_funcdfs   // clang-format on
 
