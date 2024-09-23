@@ -37,7 +37,7 @@ sudo cp -f /Users/wei/code/Algorithm/Faster/stdc++_simplify.h ./bits/stdc++.h
 sudo cp -f /Users/wei/code/Algorithm/Faster/dbg.h ./algo/dbg.h
 ```
 
-3:
+3: under code is useless for clangd
 
 ```sh
 cd algo
