@@ -27,16 +27,27 @@ noremap <TAB> %
 nnoremap U <C-r>
 
 
+set timeout
+set ttimeout
+set timeoutlen=500
+set ttimeoutlen=10
+
 " Shift+H goto head of the line, Shift+L goto end of the line
 nnoremap H ^
 nnoremap L $
+" in Visual
+vnoremap H ^
+vnoremap L $
+" in waiting such as dL
+onoremap h ^
+onoremap L $
+" in select
+xnoremap H ^
+xnoremap L $
 
 
 " remove highlight
 noremap <silent><leader>/ :nohls<CR>
-
-" Map ; to : and save a million keystrokes
-" nnoremap ; :
 
 
 " leader key is '\' 
@@ -44,11 +55,12 @@ noremap <silent><leader>/ :nohls<CR>
 nnoremap <leader>q :q<CR>
 " Quickly save the current file
 nnoremap <leader>w :w<CR>
-" Quickly copy all content
-map <Leader>c ggVG"+y
-map <Leader>y ggyG
 " Quickly delete all content
-map <Leader>d ggdG
+nnoremap <Leader>d ggdG
+" When normal Mode Quickly copy all content to system clipboard
+nnoremap <Leader>c ggVG"+y
+" When Visual Mode Quickly copy select content to system clipboard
+vnoremap <leader>c "+y
 
 
 " zen mode Keep search pattern at the center of the screen."

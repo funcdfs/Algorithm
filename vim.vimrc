@@ -1,9 +1,10 @@
 " funcdfs@gmail.com
 " china
-" version1: 2024-09-22 night:01:29
 
 " ============================ key map ============================
-
+" 
+"
+"
 " nnoremap <F1> :w !clip.exe<CR>
 " nnoremap <F2> :set nu! nu?<CR>
 " nnoremap <F3> :set list! list?<CR>
@@ -12,8 +13,8 @@
 " au InsertLeave * set nopaste 
 " nnoremap <F6> :exec exists('syntax_on') ? 'syn off' : 'syn on'<CR>
 " nnoremap <F7> :w !clip.exe<CR><CR>
-"
 " kj for Esc
+
 let g:esc_k_lasttime = 0
 let g:esc_j_lasttime = 0
 function! KJescape(key)
@@ -25,6 +26,11 @@ endfunction
 inoremap <expr> k KJescape('k')
 inoremap <expr> j KJescape('j')
 inoremap <nowait> kj <ESC>
+
+set timeout
+set ttimeout
+set timeoutlen=700
+set ttimeoutlen=10
 
 " bracket jump 
 noremap <TAB> %
@@ -38,23 +44,33 @@ noremap <silent><leader>/ :nohls<CR>
 " Shift+H goto head of the line, Shift+L goto end of the line
 nnoremap H ^
 nnoremap L $
+" in Visual
+vnoremap H ^
+vnoremap L $
+" in waiting such as dL
+onoremap h ^
+onoremap L $
+" in select
+xnoremap H ^
+xnoremap L $
 
 
 " Map ; to : and save a million keystrokes
-" if in very fast typing, this may make eroor touch
+" if in very fast typing, this will may make a lots of eroor touch
 " nnoremap ; :
-
 
 " leader key is '\' 
 " Quickly close the current window
 nnoremap <leader>q :q<CR>
 " Quickly save the current file
 nnoremap <leader>w :w<CR>
-" Quickly copy all content
-map <Leader>c ggVG"+y
-map <Leader>y ggyG
 " Quickly delete all content
-map <Leader>d ggdG
+nnoremap <Leader>d ggdG
+" When normal Mode Quickly copy all content to system clipboard
+nnoremap <Leader>c ggVG"+y
+" When Visual Mode Quickly copy select content to system clipboard
+vnoremap <leader>c "+y
+
 
 
 " zen mode Keep search pattern at the center of the screen."
@@ -205,4 +221,3 @@ hi! link ShowMarksHLu DiffChange
 " status line
 set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
 set laststatus=2   " Always show the status line - use 2 lines for the status bar
-
