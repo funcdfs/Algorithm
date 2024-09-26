@@ -1,14 +1,13 @@
 
-## use finder to open the c++ header folder 
+## use finder to open the c++ header folder
 
 ```sh
 
 copy pwd
 
-cd pwd
+such as: /Library/Developer/CommandLineTools/SDKs/MacOSX15.0.sdk/usr/include/c++/v1/
 
-then:
-
+cd {pwd}
 ```
 
 
@@ -32,9 +31,9 @@ sudo mkdir ./algo
 sudo touch ./bits/stdc++.h
 sudo touch ./algo/dbg.h
 
-sudo cp -f /Users/wei/code/Algorithm/Faster/stdc++_simplify.h ./bits/stdc++.h
+sudo cp -f /Users/w/code/Algorithm/Faster/stdc++_simplify.h ./bits/stdc++.h
 
-sudo cp -f /Users/wei/code/Algorithm/Faster/dbg.h ./algo/dbg.h
+sudo cp -f /Users/w/code/Algorithm/Faster/dbg.h ./algo/dbg.h
 ```
 
 3: under code is useless for clangd
