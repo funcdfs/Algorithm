@@ -105,12 +105,11 @@ void debug_out(Head H, Tail... T) {
 #ifdef LOCAL
 #   define endl '\n'
 
-// #define eprint(...)     cerr << format(__VA_ARGS__)
-// #define eprintln(...)   cerr << format("{0}\n", __VA_ARGS__)
+#   define eprint(...)   cerr << format(__VA_ARGS__)
+#   define eprintln(...) cerr << format("{0}", __VA_ARGS__) << '\n'
 
-#   define eprint(...)   cerr << __VA_ARGS__
-#   define eprintln(...) cerr << __VA_ARGS__ << '\n'
-
+// #   define eprint(...)   cerr << __VA_ARGS__
+// #   define eprintln(...) cerr << __VA_ARGS__ << '\n'
 #   define dbg(...)                                                              \
       std::cerr << (#__VA_ARGS__ == "_case" ? "--- " : std::to_string(__LINE__)) \
                 << (#__VA_ARGS__ == "_case" ? "✨" : "🎉 [")                     \

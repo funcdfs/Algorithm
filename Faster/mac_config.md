@@ -40,7 +40,7 @@ sudo cp -f /Users/w/code/Algorithm/Faster/dbg.h ./algo/dbg.h
 
 ```sh
 cd algo
-sudo g++ '-std=c++23' -D LOCAL -H dbg.h
+sudo g++ '-std=c++2b' -D LOCAL -H dbg.h
 cd ../
 ```
 
@@ -48,6 +48,6 @@ cd ../
 
 ```sh
 cd bits
-sudo g++ '-std=c++23' -D LOCAL -H stdc++.h
+sudo g++ '-std=c++2b' -D LOCAL -H stdc++.h
 cd ../
 ```
