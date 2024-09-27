@@ -8,7 +8,7 @@
 </br>
 
 ```sh
--std=c++2b -D LOCAL -Wno-string-compare -Wno-deprecated-array-compare -O1 -gline-tables-only -fno-omit-frame-pointer -fno-inline -Wformat=2 -Wfloat-equal -Wconversion -Wshift-overflow -Wcast-qual -Wcast-align -fsanitize=undefined",
+-std=c++2b -D LOCAL -Wno-string-compare -Wno-deprecated-array-compare -fno-omit-frame-pointer -fno-inline -Wformat=2 -Wfloat-equal -Wconversion -Wshift-overflow -Wcast-qual -Wcast-align -fsanitize=undefined -fsanitize=address -fstack-protector -Wall -Wextra
 ```
 </details>
 

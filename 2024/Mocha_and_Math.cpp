@@ -1,3 +1,6 @@
+// link: https://www.luogu.com.cn/problem/CF1559A Mocha and Math
+// time: 2024/9/27 16:20:14 https://github.com/funcdfs
+
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h>
 /* ----------------------------- using golang types ----------------------------- */
@@ -26,14 +29,26 @@ template <class T> ostream &operator<< (ostream &cout, valarray<T>         &a)  
 template <class T> ostream &operator<< (ostream &cout, vector<vector<T>>   &a)  { int n = int(a.size()); if (!n) { return cout; } cout << a[0]; for (int i = 1; i < n; i++) { cout << '\n' << a[i]; } return cout; }
 template <class T> ostream &operator<< (ostream &cout, vector<valarray<T>> &a)  { int n = int(a.size()); if (!n) { return cout; } cout << a[0]; for (int i = 1; i < n; i++) { cout << '\n' << a[i]; } return cout; }
 struct __init_io { __init_io() { std::cout << fixed << setprecision(       15   /* Set the floating-point precision */); cin.tie(nullptr); ios::sync_with_stdio(false);  }} __author_github_funcdfs; // Global instance of __init_io to apply I/O settings.
-void solve(); int32 main() { solve(); return 0; }
-#pragma endregion github_funcdfs       // clang-format on
+auto solve(int _case) -> void; int32 main() { int testCaseCnt = 0; cin >> testCaseCnt; for (int _case = 1; _case <= testCaseCnt; _case++) { solve(_case); } return 0; }
+#pragma endregion github_funcdfs   // clang-format on
 
 // ----------------------------- /* Start of useful functions */ -----------------------------
 
 
-void solve() {
-   
+auto solve(int _case) -> void {
+   dbg(_case);
+
+   int n = 0;
+   cin >> n;
+   vector<int> a(n, 0);
+   cin >> a;
+
+   int ans = a[0];
+   for (int i = 1; i < ssize(a); i++) {
+      ans &= a[i];
+   }
+   println(ans);
+
    return;
 }
 

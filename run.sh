@@ -2,7 +2,7 @@
 
 # 检查参数数量
 if [ "$#" -ne 1 ]; then
-   echo -e "\033[0;31m用法: ./run.sh <cpp 源文件>\033[0m"
+   echo -e "\033[0;31m用法: ./run.sh <源文件>\033[0m"
    exit 1
 fi
 
@@ -20,22 +20,22 @@ CXX_FLAGS=(
    -D LOCAL                      # dbg.h
    -Wno-string-compare           # dbg.h
    -Wno-deprecated-array-compare # dbg.h
-   # -Wall # wall for common error
-   # -Wextra # extra wall
-   -O1                     # o^1
-   -g                      # 生成调试信息
-   -gline-tables-only      # 只提供行号调试信息
-   -fno-omit-frame-pointer # 保留栈帧指针
-   -fno-inline             # 禁止内联优化
-   -Wformat=2              # string format error
-   -Wfloat-equal           # float >=< error
-   -Wconversion            # int64 -> int error
-   -Wshift-overflow        # (l+r)>>1 error
-   -Wcast-qual             # const -> !const
-   -Wcast-align            # pointer cast
+   -Wall                         # wall for common error
+   -Wextra                       # extra wall
+   #-O3                           # o^1
+   #-g # 生成调试信息
+   #-gline-tables-only # 只提供行号调试信息
+   #-fno-omit-frame-pointer # 保留栈帧指针
+   -fno-inline      # 禁止内联优化
+   -Wformat=2       # string format error
+   -Wfloat-equal    # float >=< error
+   -Wconversion     # int64 -> int error
+   -Wshift-overflow # (l+r)>>1 error
+   -Wcast-qual      # const -> !const
+   -Wcast-align     # pointer cast
    #-fsanitize=address # 地址消毒器
-   -fsanitize=undefined       # 未定义行为消毒器
-   -fsanitize-recover=address # 允许继续运行（可选）
+   #-fsanitize=undefined # 未定义行为消毒器
+   #-fsanitize-recover=address # 允许继续运行（可选）
 )
 
 # 开始计时
