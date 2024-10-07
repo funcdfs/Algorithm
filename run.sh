@@ -2,7 +2,7 @@
 
 # 检查参数数量
 if [ "$#" -ne 1 ]; then
-   echo -e "\033[0;31m用法: ./run.sh <源文件>\033[0m"
+   echo -e "\033[0;31mUsage: ./run.sh <*.cpp source file path>\033[0m"
    exit 1
 fi
 
@@ -13,7 +13,6 @@ YELLOW='\033[0;33m' # 黄色
 BLUE='\033[0;34m'   # 蓝色
 NC='\033[0m'        # 无色（重置颜色）
 
-# 编译选项
 # 编译选项
 CXX_FLAGS=(
    -std=c++2b                    # c++23
@@ -51,14 +50,12 @@ g++ "${CXX_FLAGS[@]}" "$1" -o "$OUTPUT_FILE"
 if [ $? -eq 0 ]; then
    END_TIME=$(date +%s)
    DIFF_TIME=$((END_TIME - START_TIME))
-   echo -e "${GREEN}编译成功！${NC}"
-   echo -e "${YELLOW}编译时间: ${DIFF_TIME} 秒${NC}"
-
+   echo -e "${GREEN}  Compilation completed successfully!  ${YELLOW} Time taken: ${DIFF_TIME}s ${NC}"
    # 执行生成的可执行文件
    ./"$OUTPUT_FILE"
+    # 删除可执行文件（如果你希望保留可执行文件，可以注释掉这一行）
+    rm "$OUTPUT_FILE"
 else
-   echo -e "${RED}编译失败！请检查错误信息。${NC}"
+   echo -e "${RED} Compilation failed. Please review the error details.  ${NC}"
 fi
 
-# 删除可执行文件（如果你希望保留可执行文件，可以注释掉这一行）
-rm "$OUTPUT_FILE"

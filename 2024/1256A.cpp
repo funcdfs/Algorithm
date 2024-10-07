@@ -1,3 +1,6 @@
+// link: https://codeforces.com/contest/1256/problem/A A. Payment Without Change
+// time: 2024/10/7 12:36:12 https://github.com/funcdfs
+
 #pragma region github_funcdfs // clang-format off
 #include <bits/stdc++.h>
 /* int  int8  int16   int32   int64  */ using int8 = signed char; using int16 = short; using int32 = int; using int64 = long long; using namespace std;
@@ -30,7 +33,36 @@ void solve(); int32 main() { solve(); return 0; }
 
 void solve() {
 
-   
+   int q = 0;
+   cin >> q;
+   while (q--) {
+      int a, b, n, S;
+      cin >> a >> b >> n >> S;
+
+      auto check = [&]() -> bool {
+         int cnt = a*n;
+         if (a*n == S) {
+            return true;
+         } else {
+            int left = S - a*n;
+            if (a >= S/n) {
+               left = S % n;
+            } else {
+               left = S - a*n;
+            }
+            if (b >= left) {
+               return true;
+            } else {
+               return false;
+            }
+         }
+      };
+      if (check() == true) {
+         println("YES");
+      } else {
+         println("NO");
+      }
+   }
 
    return;
 }
