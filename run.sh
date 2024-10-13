@@ -15,26 +15,35 @@ NC='\033[0m'        # 无色（重置颜色）
 
 # 编译选项
 CXX_FLAGS=(
+   # macos:
    -std=c++2b                    # c++23
    -D LOCAL                      # dbg.h
    -Wno-string-compare           # dbg.h
    -Wno-deprecated-array-compare # dbg.h
+   #-Wshadow                     # dbg.h cin cout 
    -Wall                         # wall for common error
    -Wextra                       # extra wall
-   #-O3                           # o^1
-   #-g # 生成调试信息
-   #-gline-tables-only # 只提供行号调试信息
-   #-fno-omit-frame-pointer # 保留栈帧指针
    -fno-inline      # 禁止内联优化
    -Wformat=2       # string format error
    -Wfloat-equal    # float >=< error
-   -Wconversion     # int64 -> int error
    -Wshift-overflow # (l+r)>>1 error
    -Wcast-qual      # const -> !const
    -Wcast-align     # pointer cast
-   #-fsanitize=address # 地址消毒器
-   #-fsanitize=undefined # 未定义行为消毒器
-   #-fsanitize-recover=address # 允许继续运行（可选）
+   -O2
+
+
+   # win:
+   #-Wl
+   #--stack=536870912
+   #-Wlogical-op
+   #-Wshift-overflow=2
+   #-Wduplicated-cond
+   #-fmax-errors=1
+   -pedantic
+   -Wfloat-equal
+   #-Wconversion
+   -Wno-conversion
+   -D_GLIBCXX_DEBUG
 )
 
 # 开始计时
