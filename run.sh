@@ -7,64 +7,51 @@ if [ "$#" -ne 1 ]; then
 fi
 
 # 设置彩色输出
-RED='\033[0;31m'    # 红色
-GREEN='\033[0;32m'  # 绿色
-YELLOW='\033[0;33m' # 黄色
-BLUE='\033[0;34m'   # 蓝色
-NC='\033[0m'        # 无色（重置颜色）
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+NC='\033[0m'
 
 # 编译选项
 CXX_FLAGS=(
-   # macos:
-   -std=c++2b                    # c++23
-   -D LOCAL                      # dbg.h
-   -Wno-string-compare           # dbg.h
-   -Wno-deprecated-array-compare # dbg.h
-   #-Wshadow                     # dbg.h cin cout 
-   -Wall                         # wall for common error
-   -Wextra                       # extra wall
-   -fno-inline      # 禁止内联优化
-   -Wformat=2       # string format error
-   -Wfloat-equal    # float >=< error
-   -Wshift-overflow # (l+r)>>1 error
-   -Wcast-qual      # const -> !const
-   -Wcast-align     # pointer cast
-   -O2
-
-
-   # win:
-   #-Wl
-   #--stack=536870912
-   #-Wlogical-op
-   #-Wshift-overflow=2
-   #-Wduplicated-cond
-   #-fmax-errors=1
-   -pedantic
-   -Wfloat-equal
-   #-Wconversion
-   -Wno-conversion
-   -D_GLIBCXX_DEBUG
+   -O2                          # 优化等级
+   -Wall                        # 常见错误警告
+   -Wextra                      # 额外的警告信息
+   -std=c++2b                   # C++ 标准
+   -pedantic                    # 严格语法检查
+   -Wshadow                     # 变量名隐藏警告
+   -Wformat=2                   # 字符串格式检查
+   -Wfloat-equal                # 浮点比较警告
+   -Wconversion                 # 隐式转换警告
+   -Wcast-qual                  # const 属性丢失警告
+   -Wcast-align                 # 指针对齐警告
+   -D_GLIBCXX_DEBUG             # 启用调试模式
+   -D LOCAL                      # 本地宏定义
 )
 
 # 开始计时
 START_TIME=$(date +%s)
 
 # 生成可执行文件的名称
-OUTPUT_FILE="./test"
+SOURCE_FILE="$1"
+FILE_DIR=$(dirname "$SOURCE_FILE")
+FILE_BASENAME=$(basename "$SOURCE_FILE" .cpp)
+OUTPUT_FILE="${FILE_DIR}/${FILE_BASENAME}.out"
 
 # 编译命令
-g++ "${CXX_FLAGS[@]}" "$1" -o "$OUTPUT_FILE"
+cd "$FILE_DIR" && clang++ "${CXX_FLAGS[@]}" "$SOURCE_FILE" -o "$OUTPUT_FILE"
 
 # 检查编译是否成功
 if [ $? -eq 0 ]; then
    END_TIME=$(date +%s)
    DIFF_TIME=$((END_TIME - START_TIME))
-   echo -e "${GREEN}  Compilation completed successfully!  ${YELLOW} Time taken: ${DIFF_TIME}s ${NC}"
+   echo -e "${GREEN}Compilation completed successfully!${YELLOW} Time taken: ${DIFF_TIME}s ${NC}"
    # 执行生成的可执行文件
    ./"$OUTPUT_FILE"
-    # 删除可执行文件（如果你希望保留可执行文件，可以注释掉这一行）
-    rm "$OUTPUT_FILE"
+   # 删除可执行文件（如果需要保留，注释掉以下行）
+   rm "$OUTPUT_FILE"
 else
-   echo -e "${RED} Compilation failed. Please review the error details.  ${NC}"
+   echo -e "${RED}Compilation failed. Please review the error details.${NC}"
 fi
 
